@@ -1,98 +1,70 @@
-<!doctype html>
-<html lang="{{ app()->getLocale() }}">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>E.E.S Nº. 9 "Maestro Sarmiento"</title>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-        <title>Laravel</title>
+    <link rel="stylesheet" href="{{mix('css/home.css')}}">
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css">
-
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Nunito', sans-serif;
-                font-weight: 200;
-                height: 100vh;
-                margin: 0;
-            }
-
-            .full-height {
-                height: 100vh;
-            }
-
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 12px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-                        <a href="{{ route('register') }}">Register</a>
-                    @endauth
-                </div>
-            @endif
-
-            <div class="content">
-                <div class="title m-b-md">
-                
-                    Soy el Guason
-
-                </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div>
+    
+</head>
+<body>
+    <div class="navbar-fixed">
+        <nav>
+            <div class="nav-wrapper pink darken-1">
+              <a href="/"><img class="circle" style="max-height:64px;" src="img/logo.jpg" alt=""><class="brand-logo"></a>
+              <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="{{route('asistencias.index')}}">Asistencias</a></li>
+                <li><a href="{{route('notas.index')}}">Notas</a></li>
+                <li><a href="{{route('alumnos.index')}}">Alumnos</a></li>
+                <li><a href="{{route('padres.index')}}">Padres</a></li>
+                <li><a href="{{route('cursos.index')}}">Cursos</a></li>
+                <li><a href="{{route('materias.index')}}">Materias</a></li>
+                <li><a href="{{route('docentes.index')}}">Docentes</a></li>
+              </ul>
             </div>
-        </div>
-    </body>
+          </nav>
+    </div>
+
+    <div class="row center">
+      <blockquote>
+        <h1>BIENVENIDO</h1>
+      </blockquote>
+    </div>
+
+    <div class="parallax-container">
+      <div class="parallax"><img class="circle" style="" src="img/parallax.JPG" alt=""></div>
+    </div>
+
+    <div class="container">
+          @yield('contenido')
+    </div>
+
+    <div class="row center">
+      <blockquote>
+        <h1>E.E.S. Nº. 9 "Maestro Sarmiento"</h1>
+      </blockquote>
+    </div>
+    
+
+    <footer class="page-footer pink darken-1">
+      <div class="footer-copyright">
+        © 2018 Copyright Controller Group
+      </div>
+    </footer>
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+    <script>
+        M.AutoInit();
+    </script>
+
+    <script src="{{mix('js/home.js')}}"></script>
+    
+</body>
 </html>
