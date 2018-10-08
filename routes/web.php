@@ -2,6 +2,7 @@
 use App\Alumno;
 use App\Materia;
 use App\Docente;
+use App\Padre;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -33,6 +34,8 @@ Route::resource('padres', 'PadresController');
 
 Route::resource('asistencias', 'AsistenciasController');
 
+Route::resource('notas', 'NotasController');
+
 Route::get('descargarMateria/{id}', function($id){
 	$materia = Materia::find($id);
 	$pdf = PDF::loadView('materias.verMateria',compact('materia'));
@@ -47,10 +50,26 @@ Route::get('descargarDocente/{id}', function($id){
 
 Route::get('descargarAlumno/{id}', function($id){
 	$alumno = Alumno::find($id);
-	$pdf = PDF::loadView('alumnos.show',compact('alumno'));
+	$pdf = PDF::loadView('alumnos.verAlumno',compact('alumno'));
 	return $pdf->stream();
 })->name('descargarAlumno');
 
-// Route::get('','CursosController@agregarAlumno')->name('cursos.agregarAlumno');
+Route::get('descargarPadre/{id}', function($id){
+	$padre = Padre::find($id);
+	$pdf = PDF::loadView('padres.verPadre',compact('padre'));
+	return $pdf->stream();
+})->name('descargarPadre');
 
-// Route::get('','CursosController@agregarMateria')->name('cursos.agregarMateria');
+Route::post('buscarAlumno','AlumnosController@buscar')->name('alumnos.buscar');
+
+Route::post('buscarCurso','CursosController@buscar')->name('cursos.buscar');
+
+Route::post('buscarDocente','DocentesController@buscar')->name('docentes.buscar');
+
+Route::post('buscarMateria','MateriasController@buscar')->name('materias.buscar');
+
+Route::post('buscarPadre','PadresController@buscar')->name('padres.buscar');
+
+Route::post('agregarAlumno','CursosController@agregarAlumno')->name('cursos.agregarAlumno');
+
+Route::post('AgregarMateria','CursosController@agregarMateria')->name('cursos.agregarMateria');

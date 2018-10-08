@@ -26,6 +26,14 @@ class CursosController extends Controller
         return view('cursos.index',compact('cursos'));
     }
 
+    public function buscar(Request $request){
+
+        $cursos = Curso::where('curso','like','%'.$request->busqueda.'%')->orWhere('orientacion','like','%'.$request->busqueda.'%')->orWhere('turno','like','%'.$request->busqueda.'%')->get();
+
+        return view('cursos.index', compact('cursos'));
+
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -48,7 +56,7 @@ class CursosController extends Controller
 
         $curso->curso = $request->curso;
         $curso->orientacion = $request->orientacion;
-        $curso->turno = $request->turno;
+        $curso->turno = $request->get("turno");
 
         $curso->save();
 
@@ -78,26 +86,34 @@ class CursosController extends Controller
         //recupera los alumnos que no existen en la tabla intermedia
         $agregarAlumnos = Alumno::doesntHave('cursos')->orderBy('nombre')->get();
 
-        $hoy = today()->format('d-m-Y');
+        $hoy = now()->toDateString();
 
         return view('cursos.show', compact('curso', 'materias', 'alumnos', 'agregarMaterias', 'agregarAlumnos', 'hoy'));
     }
 
-    // public function agregarMateria($id){
+    public function agregarMateria(Request $request){
+
+        $id = $request->get('curso');
+
+        $curso = Curso::find($id);
         
-    //     $curso->materias()->attach($id);
+        $curso->materias()->attach($request->get('seleccionMateria'));
 
-    //     return redirect('/cursos');
-    // }
+        return redirect('/cursos/'.$id);
+    }
 
-    // public function agregarAlumno($id){
+    public function agregarAlumno(Request $request){
 
-    //     $anio = now()->format('Y');
+        $id = $request->get('curso');
+
+        $curso = Curso::find($id);
+
+        $anio = now()->format('Y');
         
-    //     $curso->alumnos()->attach($id,['anio'=>$anio]);
+        $curso->alumnos()->attach($request->get('seleccion'),['anio'=>$anio]);
 
-    //     return redirect('/cursos');
-    // }
+        return redirect('/cursos/'.$id);
+    }
 
     /**
      * Show the form for editing the specified resource.

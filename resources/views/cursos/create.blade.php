@@ -20,10 +20,10 @@
 				</div>
 
 				<div class="input-field col s4">
-		    		<select class="input-field col s3">
+		    		<select name="turno" class="input-field col s3">
 			    		<option value="" disabled selected>Turno</option>
-			      		<option value="0">Mañana</option>
-			      		<option value="1">Tarde</option>
+			      		<option value="Mañana">Mañana</option>
+			      		<option value="Tarde">Tarde</option>
 			    	</select>
 				</div>
 			</div>

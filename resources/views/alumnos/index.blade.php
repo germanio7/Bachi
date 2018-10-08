@@ -16,7 +16,7 @@
 	<table class="highlight">
 		<thead>
 			<tr>
-				<th class="hide-on-small-only">ID</th>
+				<th>ID</th>
 				<th>Cuil</th>
 				<th>Apellido</th>
 				<th>Nombre</th>
@@ -42,10 +42,10 @@
 				<td>{{$alumno->nacionalidad}}</td>
 				<td>{{$alumno->direccion}}</td>
 				<td>{{$alumno->telefono}}</td>
-				<td>{{$alumno->email}}</td>
+				<td>{{$alumno->email}}</td>				
 				<td>
 					<div class="btn-group btn-group-justified">
-						<a href="{{route('alumnos.show',$alumno->id)}}" class="btn green darken-4">Ver</a>
+						<a href="{{route('alumnos.show',$alumno->id)}}" class="btn green darken-4">Ver más</a>
 					</div>
 				</td>
 			</tr>
@@ -59,74 +59,19 @@
 	{{-- Estructura Modal --}}
 	<div id="modalBuscarAlumno" class="modal">
 		<div class="modal-content">
+			{!! Form::open(['action' => 'AlumnosController@buscar','method'=>'POST','file'=>'true','enctype'=>'multipart/form-data','class'=>'form']) !!}
 			
-			<div class="row">
-				<div class="input-field col s12">
-		    		{{ Form::label('cuil','Ingrese Cuil, Apellido o Nombre para la búsqueda del Alumno',(['class'=>'active','for'=>'cuil'])) }}
-		    		{{ Form::text('bcuil','',(['class'=>'validate'])) }}
+				<div class="row">
+					<div class="input-field col s4">
+			    		{{ Form::label('busqueda','Cuil, Apellido o Nombre',(['class'=>'active','for'=>'busqueda'])) }}
+			    		{{ Form::text('busqueda','',(['class'=>'validate'])) }}
+					</div>
 				</div>
-			</div>
 
-			<button class="btn lime" id="buscar">Buscar</button>
-
-			<div class="card-panel hoverable green lighten-4">
-
-				<table id="tablaModal" class="highlight">
-					<thead>
-						<tr>
-							<th>ID</th>
-							<th>Cuil</th>
-							<th>Apellido</th>
-							<th>Nombre</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-						</tr>
-					</tbody>
-				</table>
-
-			</div>
-			
-		</div>
-		<div class="modal-footer">
-			<a href="{{-- {{route('cursos.agregarMateria','$curso->id')}} --}}" class="modal-close waves-effect waves-green btn-flat">Cerrar</a>
+			{{ Form::submit('Buscar',(['class'=>'btn green',])) }}
+	    	
+			{!! Form::close() !!}
 		</div>
 	</div>
-
-	<script>
-		const axios = require('axios');
-		
-		axios.get('http://127.0.0.1:8000/alumnos')
-		  .then(function (response) {
-		    $.each(response, function(i, alumno) {
-					 $('#tablaModal').append('<tr><td>'+alumno.id+'</td><td>'+alumno.cuil+'</td><td>'+alumno.apellido+'</td><td>'+alumno.nombre+'</td></tr>');
-					});
-		    console.log(response);
-		  })
-		  .catch(function (error) {
-		    // handle error
-		    console.log(error);
-		  })
-		  .then(function () {
-		    // always executed
-		  });
-
-		  function buscarAlumno(cuil) {
-			  try {
-			    axios.get('http://127.0.0.1:8000/alumnos?id.'+'$cuil');
-			    console.log(response);
-			  } catch (error) {
-			    console.error(error);
-			  }
-			}
-		
-		$('#buscar').click(function(event) {
-				var cuil = $('#bcuil').val();
-
-				buscarAlumno(cuil);
-			});
-
-	</script>
 
 @endsection

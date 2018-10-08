@@ -1,9 +1,12 @@
 @extends('home')
 
 @section('contenido')
-	<a href="{{route('docentes.create')}}" class="btn-floating btn-large green"><i class="material-icons">add</i>>Agregar Docente</a>
+	
+	<div class="fixed-action-btn">
+		<a href="{{route('docentes.create')}}" class="btn-floating btn-large green"><i class="material-icons">add</i>>Agregar Docente</a>
 
-	<a href="#modalBuscarDocente" class="waves-effect waves-light btn modal-trigger"><i class="material-icons">search</i></a>
+		<a href="#modalBuscarDocente" class="waves-effect waves-light btn modal-trigger"><i class="material-icons">search</i></a>
+	</div>
 
 	<blockquote class="blockquote text-center"><h1>Lista Docentes</h1></blockquote>
 	
@@ -39,7 +42,7 @@
 				<td>{{$docente->email}}</td>
 				<td>
 					<div class="btn-group btn-group-justified">
-						<a href="{{route('docentes.show',$docente->id)}}" class="btn green darken-4">Ver</a>
+						<a href="{{route('docentes.show',$docente->id)}}" class="btn green darken-4">Ver más</a>
 					</div>
 				</td>
 			</tr>
@@ -54,16 +57,19 @@
 	<div id="modalBuscarDocente" class="modal">
 		<div class="modal-content">
 			
-			<div class="row">
-			<div class="input-field col s12">
-	    		{{ Form::label('curso','Cuil, Apellido o Nombre del Alumno',(['class'=>'active','for'=>'curso'])) }}
-	    		{{ Form::text('curso','',(['class'=>'validate'])) }}
-			</div>
-			</div>
+			{!! Form::open(['action' => 'DocentesController@buscar','method'=>'POST','file'=>'true','enctype'=>'multipart/form-data','class'=>'form']) !!}
 			
-		</div>
-		<div class="modal-footer">
-			<a href="{{-- {{route('cursos.agregarMateria','$curso->id')}} --}}" class="modal-close waves-effect waves-green btn-flat">Buscar</a>
+				<div class="row">
+					<div class="input-field col s4">
+			    		{{ Form::label('busqueda','Cuil, Apellido, Nombre, Matricula',(['class'=>'active','for'=>'busqueda'])) }}
+			    		{{ Form::text('busqueda','',(['class'=>'validate'])) }}
+					</div>
+				</div>
+
+			{{ Form::submit('Buscar',(['class'=>'btn green',])) }}
+	    	
+			{!! Form::close() !!}
+			
 		</div>
 	</div>
 

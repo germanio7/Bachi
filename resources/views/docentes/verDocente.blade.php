@@ -1,4 +1,9 @@
 <div class="row">
+
+		<blockquote class="blockquote text-center"><h3>E.E.S. Nº. 9 "Maestro Sarmiento"</h3></blockquote>
+
+		<blockquote class="blockquote text-center"><h4>Docente</h4></blockquote>
+
 		<div class="input-field col s4">
 			<blockquote class="blockquote"><h5>ID: </h5></blockquote> {{$docente->id}}
 		</div>

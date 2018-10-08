@@ -27,6 +27,14 @@ class MateriasController extends Controller
         return view('materias.index', ['materias' => $materias]);
     }
 
+    public function buscar(Request $request){
+
+        $materias = Materia::where('nombre','like','%'.$request->busqueda.'%')->get();
+
+        return view('materias.index', compact('materias'));
+
+    }
+
     /**
      * Show the form for creating a new resource.
      *

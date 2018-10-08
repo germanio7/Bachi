@@ -13,6 +13,6 @@ class Docente extends Model
     public function materia()
     {
     	//relacion uno a uno
-        return $this->hasMany('App\Materia');
+        return $this->belongsToMany('App\Materia');
     }
 }

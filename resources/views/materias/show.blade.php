@@ -1,13 +1,18 @@
 @extends('home')
 
 @section('contenido')
-	
-	<div class="row">
-		<blockquote class="blockquote"><h5>ID: </h5></blockquote> {{$materia->id}}
-	</div>
-	
-	<div class="row">
-		<blockquote class="blockquote"><h5>Materia: </h5></blockquote> {{$materia->nombre}}
+	<div class="card-panel hoverable green lighten-4">
+		<div class="row">
+			<div class="input-field col s4">
+				{{ Form::label('id','ID',(['class'=>'active','for'=>''])) }}
+				<h5>{{$materia->id}}</h5>
+			</div>
+			
+			<div class="input-field col s4">
+				{{ Form::label('nombre','Nombre',(['class'=>'active','for'=>''])) }}
+				<h5>{{$materia->nombre}}</h5>
+			</div>
+		</div>
 	</div>
 
 	<div class="row">

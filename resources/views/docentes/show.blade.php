@@ -1,42 +1,54 @@
 @extends('home')
 
 @section('contenido')
+	
+	<div class="card-panel hoverable green lighten-4">
+		<div class="row">
+		
+			<div class="input-field col s4">
+				{{ Form::label('id','ID',(['class'=>'active','for'=>''])) }} 
+				<h5>{{$docente->id}}</h5>
+			</div>
 
-	<div class="row">
-		<div class="input-field col s4">
-			<blockquote class="blockquote"><h5>ID: </h5></blockquote> {{$docente->id}}
-		</div>
+			<div class="input-field col s4">
+				{{ Form::label('cuil','Cuil',(['class'=>'active','for'=>''])) }}
+				<h5>{{$docente->cuil}}</h5>
+			</div>
 
-		<div class="input-field col s4">
-			<blockquote class="blockquote"><h5>Cuil: </h5></blockquote> {{$docente->cuil}}
-		</div>
+			<div class="input-field col s4">
+				{{ Form::label('apellido','Apellido',(['class'=>'active','for'=>''])) }}
+				<h5>{{$docente->apellido}}</h5>
+			</div>
 
-		<div class="input-field col s4">
-			<blockquote class="blockquote"><h5>Apellido: </h5></blockquote> {{$docente->apellido}}
-		</div>
+			<div class="input-field col s4">
+				{{ Form::label('nombre','Nombre',(['class'=>'active','for'=>''])) }}
+				<h5>{{$docente->nombre}}</h5>
+			</div>
 
-		<div class="input-field col s4">
-			<blockquote class="blockquote"><h5>Nombre: </h5></blockquote> {{$docente->nombre}}
-		</div>
+			<div class="input-field col s4">
+				{{ Form::label('matricula','Matricula',(['class'=>'active','for'=>''])) }}
+				<h5>{{$docente->matricula}}</h5>
+			</div>
 
-		<div class="input-field col s4">
-			<blockquote class="blockquote"><h5>Matricula: </h5></blockquote> {{$docente->matricula}}
-		</div>
+			<div class="input-field col s4">
+				{{ Form::label('titulo','Titulo',(['class'=>'active','for'=>''])) }}
+				<h5>{{$docente->titulo}}</h5>
+			</div>
 
-		<div class="input-field col s4">
-			<blockquote class="blockquote"><h5>Titulo: </h5></blockquote> {{$docente->titulo}}
-		</div>
+			<div class="input-field col s4">
+				{{ Form::label('direccion','Direccion',(['class'=>'active','for'=>''])) }}
+				<h5>{{$docente->direccion}}</h5>
+			</div>
 
-		<div class="input-field col s4">
-			<blockquote class="blockquote"><h5>Dirección: </h5></blockquote> {{$docente->direccion}}
-		</div>
+			<div class="input-field col s4">
+				{{ Form::label('telefono','Telefono',(['class'=>'active','for'=>''])) }}
+				<h5>{{$docente->telefono}}</h5>
+			</div>
 
-		<div class="input-field col s4">
-			<blockquote class="blockquote"><h5>Telefono: </h5></blockquote> {{$docente->telefono}}
-		</div>
-
-		<div class="input-field col s4">
-			<blockquote class="blockquote"><h5>Email: </h5></blockquote> {{$docente->email}}
+			<div class="input-field col s4">
+				{{ Form::label('email','Email',(['class'=>'active','for'=>''])) }}
+				<h5>{{$docente->email}}</h5>
+			</div>
 		</div>
 	</div>
 

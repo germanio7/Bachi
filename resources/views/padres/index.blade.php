@@ -1,9 +1,11 @@
 @extends('home')
 
 @section('contenido')
-	<a href="{{route('padres.create')}}" class="btn-floating btn-large green"><i class="material-icons">add</i>>Agregar Padre</a>
+	<div class="fixed-action-btn">
+		<a href="{{route('padres.create')}}" class="btn-floating btn-large green"><i class="material-icons">add</i>>Agregar Padre</a>
 
-	<a href="#modalBuscarPadre" class="waves-effect waves-light btn modal-trigger"><i class="material-icons">search</i></a>
+		<a href="#modalBuscarPadre" class="waves-effect waves-light btn modal-trigger"><i class="material-icons">search</i></a>
+	</div>
 
 	<blockquote class="blockquote text-center"><h1>Lista Padres</h1></blockquote>
 	
@@ -13,7 +15,6 @@
 		<thead>
 			<tr>
 				<th>ID</th>
-				<th>Alumno</th>
 				<th>Cuil</th>
 				<th>Apellido</th>
 				<th>Nombre</th>
@@ -30,7 +31,6 @@
 			
 			<tr>
 				<td>{{$padre->id}}</td>
-				<td>{{$padre->alumno_id}}</td>
 				<td>{{$padre->cuil}}</td>
 				<td>{{$padre->apellido}}</td>
 				<td>{{$padre->nombre}}</td>
@@ -39,12 +39,9 @@
 				<td>{{$padre->nacionalidad}}</td>
 				<td>{{$padre->direccion}}</td>
 				<td>{{$padre->ocupacion}}</td>
-				{{-- @foreach($padre->alumnos as $alumno)
-					<td>{{$alumno->nombre}}</td>
-				@endforeach --}}
 				<td>
 					<div class="btn-group btn-group-justified">
-						<a href="{{-- {{route('padre.show',$padre->id)}} --}}" class="btn green darken-4">Ver</a>
+						<a href="{{route('padres.show',$padre->id)}}" class="btn green darken-4">Ver más</a>
 					</div>
 				</td>
 			</tr>
@@ -58,17 +55,18 @@
 	{{-- Estructura Modal --}}
 	<div id="modalBuscarPadre" class="modal">
 		<div class="modal-content">
+			{!! Form::open(['action' => 'PadresController@buscar','method'=>'POST','file'=>'true','enctype'=>'multipart/form-data','class'=>'form']) !!}
 			
-			<div class="row">
-			<div class="input-field col s12">
-	    		{{ Form::label('curso','Cuil, Apellido o Nombre del Alumno',(['class'=>'active','for'=>'curso'])) }}
-	    		{{ Form::text('curso','',(['class'=>'validate'])) }}
-			</div>
-			</div>
-			
-		</div>
-		<div class="modal-footer">
-			<a href="{{-- {{route('cursos.agregarMateria','$curso->id')}} --}}" class="modal-close waves-effect waves-green btn-flat">Buscar</a>
+				<div class="row">
+					<div class="input-field col s4">
+			    		{{ Form::label('busqueda','Cuil, Apellido o Nombre',(['class'=>'active','for'=>'busqueda'])) }}
+			    		{{ Form::text('busqueda','',(['class'=>'validate'])) }}
+					</div>
+				</div>
+
+			{{ Form::submit('Buscar',(['class'=>'btn green',])) }}
+	    	
+			{!! Form::close() !!}
 		</div>
 	</div>
 

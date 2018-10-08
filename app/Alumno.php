@@ -11,12 +11,22 @@ class Alumno extends Model
     public function padre()
     {
     	//relacion uno a uno
-        return $this->belongsTo('App\Padre');
+        return $this->belongsTo('App\Padre', 'id');
     }
 
     public function cursos()
     {
     	//relacion muchos a muchos
         return $this->belongsToMany('App\Curso');
+    }
+
+    public function asistencias(){
+        
+        return $this->belongsTo('App\Asistencia', 'id');
+    }
+
+    public function notas(){
+        
+        return $this->belongsTo('App\Nota', 'id');
     }
 }

@@ -30,6 +30,14 @@ class DocentesController extends Controller
         return view('docentes.index', ['docentes' => $docentes]);
     }
 
+    public function buscar(Request $request){
+
+        $docentes = Docente::where('cuil','like','%'.$request->busqueda.'%')->orWhere('apellido','like','%'.$request->busqueda.'%')->orWhere('nombre','like','%'.$request->busqueda.'%')->orWhere('matricula','like','%'.$request->busqueda.'%')->get();
+
+        return view('docentes.index', compact('docentes'));
+
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -50,10 +58,14 @@ class DocentesController extends Controller
     {
         $docente = new Docente;
 
-        $docente->dni = $request->dni;
+        $docente->cuil = $request->cuil;
+        $docente->apellido = $request->apellido;
         $docente->nombre = $request->nombre;
         $docente->matricula = $request->matricula;
         $docente->titulo = $request->titulo;
+        $docente->direccion = $request->direccion;
+        $docente->telefono = $request->telefono;
+        $docente->email = $request->email;
 
         $docente->save();
 

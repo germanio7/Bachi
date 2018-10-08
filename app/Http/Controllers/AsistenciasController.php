@@ -15,7 +15,9 @@ class AsistenciasController extends Controller
      */
     public function index()
     {
-        //
+        $asistencias = Asistencia::orderBy('fecha')->get();
+
+        return view('asistencias.index', compact('asistencias'));
     }
 
     /**
@@ -36,15 +38,21 @@ class AsistenciasController extends Controller
      */
     public function store(Request $request)
     {
-        $asistencia = new Asistencia;
 
+        $id = $request->id;
+        $asis = $request->asistencia;
+        $comentario = $request->comentario;
 
-        $asistencia->alumno_id = $request->id;
-        $asistencia->fecha = $request->fecha;
-        $asistencia->asistencia = $request->asistencia;
-        $asistencia->comentario = $request->comentario;
+        for ($i=0; $i <count($request->asistencia) ; $i++) { 
+            $asistencia = new Asistencia;
+            $asistencia->alumno_id = $id[$i];
+            $asistencia->fecha = now();
+            $asistencia->asistencia = $asis[$i];
+            $asistencia->comentario = $comentario[$i];
+            $asistencia->save();
+        }
 
-        $asistencia->save();
+        return redirect('cursos');
 
     }
 

@@ -11,6 +11,6 @@ class Padre extends Model
     public function alumnos()
     {
     	//relacion uno a muchos
-        return $this->hasMany('App\Alumno');
+        return $this->hasMany('App\Alumno','id');
     }
 }

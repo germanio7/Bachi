@@ -10,15 +10,16 @@
 			
 			<div class="row">
 				<div class="input-field col s4">
-		    		<select class="input-field col s3">
-			    		<option value="" disabled selected>Alumnos</option>
-			      		<option value="0">Mañana</option>
-			      		<option value="1">Tarde</option>
-			    	</select>
+		    		<select name="alumno_id" class="input-field col s3">
+					<option value="" disabled selected>Elegir Alumno</option>
+					@foreach($alumnos as $alum)
+			      		<option value="{{$alum->id}}">{{$alum->cuil}} - {{$alum->apellido}} {{$alum->nombre}}</option>
+		      		@endforeach
+		    	</select>
 				</div>
 
 				<div class="input-field col s4">
-		    		<select class="input-field col s3">
+		    		<select name="madre_padre" class="input-field col s3">
 			    		<option value="" disabled selected>Parentesco</option>
 			      		<option value="0">Madre</option>
 			      		<option value="1">Padre</option>
@@ -42,7 +43,7 @@
 
 				<div class="input-field col s4">
 		    		{{ Form::label('fecha_nacimiento','Fecha Nacimiento',(['class'=>'active','for'=>'fecha_nacimiento'])) }}
-		    		{{ Form::text('fecha_nacimiento','',(['class'=>'validate'])) }}
+		    		{{ Form::date('fecha_nacimiento','',(['class'=>'validate'])) }}
 				</div>
 
 				<div class="input-field col s4">
@@ -61,7 +62,7 @@
 				</div>
 
 				<div class="input-field col s4">
-		    		<select class="input-field col s3">
+		    		<select name="a_cargo" class="input-field col s3">
 			    		<option value="" disabled selected>A Cargo</option>
 			      		<option value="0">No</option>
 			      		<option value="1">Si</option>
@@ -69,7 +70,7 @@
 				</div>
 
 				<div class="input-field col s4">
-		    		<select class="input-field col s3">
+		    		<select name="es_tutor" class="input-field col s3">
 			    		<option value="" disabled selected>Es Tutor</option>
 			      		<option value="0">No</option>
 			      		<option value="1">Si</option>
@@ -77,7 +78,7 @@
 				</div>
 
 				<div class="input-field col s4">
-		    		<select class="input-field col s3">
+		    		<select name="patria_potestad" class="input-field col s3">
 			    		<option value="" disabled selected>Patria Potestad</option>
 			      		<option value="0">No</option>
 			      		<option value="1">Si</option>
@@ -85,7 +86,7 @@
 				</div>
 
 				<div class="input-field col s4">
-		    		<select class="input-field col s3">
+		    		<select name="vive_con_alumno" class="input-field col s3">
 			    		<option value="" disabled selected>Vive con Alumno</option>
 			      		<option value="0">No</option>
 			      		<option value="1">Si</option>

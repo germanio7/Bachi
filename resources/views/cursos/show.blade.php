@@ -75,49 +75,38 @@
 	{{-- Estructura Modal Materia --}}
 	<div id="modalMateria" class="modal lime lighten-4">
 		<div class="modal-content">
-			{{ Form::label('agregarMateria','Agregar Materia',(['class'=>'active','for'=>'direccion'])) }}
-		    @foreach($agregarMaterias as $mater)
-				<form action="#">
-				    <p>
-				      <label>
-				        <input type="checkbox" />
-				        <span>{{$mater->nombre}}</span>
-				      </label>
-				    </p>
-				</form>
-			@endforeach
-		</div>
-		<div class="modal-footer">
-			<a href="{{-- {{'cursos.agregarMateria','$materia->id'}} --}}" class="modal-close btn">Agregar</a>
+			{!! Form::open(['action' => 'CursosController@agregarMateria','method'=>'POST','file'=>'true','enctype'=>'multipart/form-data','class'=>'form']) !!}
+			
+				<select name="seleccionMateria" class="input-field col s3">
+					<option value="" disabled selected>Elegir Materia</option>
+					@foreach($agregarMaterias as $mater)
+			      		<option value="{{$mater->id}}">{{$mater->nombre}}</option>
+		      		@endforeach
+		    	</select>
+
+		    	<input type="hidden" name="curso" value="{{$curso->id}}">
+			{{ Form::submit('Agregar',(['class'=>'btn green',])) }}
+	    	
+			{!! Form::close() !!}
 		</div>
 	</div>
 
 	{{-- Estructura Modal Alumno --}}
 	<div id="modalAlumno" class="modal lime lighten-4">
 		<div class="modal-content">
-			{{ Form::label('agregarAlumnos','Agregar Alumno',(['class'=>'active'])) }}
-	    	
-				{{-- <form action="#">
-				    <p>
-				      <label>
-				        <input type="checkbox" />
-				        <span>{{$alum->cuil}} - {{$alum->apellido}},  {{$alum->nombre}}</span>
-				      </label>
-				    </p>
-				</form> --}}
-				
-				<select class="input-field col s3">
+			{!! Form::open(['action' => 'CursosController@agregarAlumno','method'=>'POST','file'=>'true','enctype'=>'multipart/form-data','class'=>'form']) !!}
+			
+				<select name="seleccion" class="input-field col s3">
 					<option value="" disabled selected>Elegir Alumno</option>
 					@foreach($agregarAlumnos as $alum)
-			    		
-			      		<option value="{{$alum->id}}">{{$alum->cuil}} - {{$alum->apellido}}</option>
+			      		<option value="{{$alum->id}}">{{$alum->cuil}} - {{$alum->apellido}} {{$alum->nombre}}</option>
 		      		@endforeach
 		    	</select>
 
-			
-		</div>
-		<div class="modal-footer">
-			<a href="{{-- {{'cursos.agregarAlumno','$alum->id'}} --}}" class="modal-close btn">Agregar</a>
+		    	<input type="hidden" name="curso" value="{{$curso->id}}">
+			{{ Form::submit('Agregar',(['class'=>'btn green',])) }}
+	    	
+			{!! Form::close() !!}
 		</div>
 	</div>
 
@@ -125,10 +114,9 @@
 	<div id="modalAsistencia" class="modal lime lighten-4">
 		<div class="modal-content">
 			{!! Form::open(['action' => 'AsistenciasController@store','method'=>'POST','file'=>'true','enctype'=>'multipart/form-data','class'=>'form']) !!}
-			{{ Form::label('asistencia','Asistencia del día: ',(['class'=>'active','for'=>''])) }}
+			<b>Asistencia del Día: </b>
 
-			{{ Form::text('fecha','',(['disabled','placeholder'=>$hoy,'value'=>$hoy])) }} 
-			{{-- <h5>{{$hoy}}</h5> --}}
+			<p>{{$hoy}}</p>
 
 			<div class="card-panel hoverable">
 
@@ -145,23 +133,20 @@
 				<tbody>
 					@foreach($alumnos as $alumno)
 					<tr>
-						<td>{{ Form::text('id','',(['disabled','placeholder'=>$alumno->id,'value'=>$alumno->id])) }}</td>
-						@php
-							$fecha = $hoy;
-							$id = $alumno->id;
-						@endphp
+						<input type="hidden" name="id[]" value="{{$alumno->id}}">
+						<td>{{$alumno->id}}</td>
 						<td>{{$alumno->apellido}}</td>
 						<td>{{$alumno->nombre}}</td>
 						<td>
-							<select id="asistencia" class="input-field col s3">
+							<select name="asistencia[]" class="input-field col s3">
 					    		<option value="" disabled selected>Asistencia</option>
-					      		<option value="1">Presente</option>
-					      		<option value="0">Ausente</option>
-					      		<option value="0,5">Media Falta</option>
+					      		<option value=1 >Presente</option>
+					      		<option value=0 >Ausente</option>
+					      		<option value=0.5 >Media Falta</option>
 					    	</select>
 						</td>
 						<td>
-							{{ Form::text('comentario','',(['class'=>'validate'])) }}
+							<input type="text" name="comentario[]" class="validate">
 						</td>
 					</tr>
 					@endforeach
@@ -170,8 +155,6 @@
 		</div>
 		<div class="modal-footer">
 			{{ Form::submit('Alamacenar',(['class'=>'btn green'])) }}
-	    	
-		
 		</div>
 		{!! Form::close() !!}
 	</div>

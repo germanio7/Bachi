@@ -25,6 +25,11 @@
 				</div>
 
 				<div class="input-field col s4">
+		    		{{ Form::label('matricula','Matricula',(['class'=>'active','for'=>'matricula'])) }}
+		    		{{ Form::text('matricula','',(['class'=>'validate'])) }}
+				</div>
+
+				<div class="input-field col s4">
 		    		{{ Form::label('titulo','Titulo',(['class'=>'active','for'=>'titulo'])) }}
 		    		{{ Form::text('titulo','',(['class'=>'validate'])) }}
 				</div>
