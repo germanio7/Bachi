@@ -45,7 +45,7 @@
 
     <div class="row center">
       <blockquote>
-        <h1>E.E.S. Nº. 9 "Maestro Sarmiento"</h1>
+        <h1>E.E.S. Nº.9 "Maestro Sarmiento"</h1>
       </blockquote>
     </div>
     
