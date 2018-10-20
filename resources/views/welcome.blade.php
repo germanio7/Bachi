@@ -1,70 +1,82 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>E.E.S Nº. 9 "Maestro Sarmiento"</title>
-    <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+@extends('home')
 
-    <link rel="stylesheet" href="{{mix('css/home.css')}}">
+@section('contenido')
 
-    
-</head>
-<body>
-    <div class="navbar-fixed">
-        <nav>
-            <div class="nav-wrapper pink darken-1">
-              <a href="/"><img class="circle" style="max-height:64px;" src="img/logo.jpg" alt=""><class="brand-logo"></a>
-              <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li><a href="{{route('asistencias.index')}}">Asistencias</a></li>
-                <li><a href="{{route('notas.index')}}">Notas</a></li>
-                <li><a href="{{route('alumnos.index')}}">Alumnos</a></li>
-                <li><a href="{{route('padres.index')}}">Padres</a></li>
-                <li><a href="{{route('cursos.index')}}">Cursos</a></li>
-                <li><a href="{{route('materias.index')}}">Materias</a></li>
-                <li><a href="{{route('docentes.index')}}">Docentes</a></li>
-              </ul>
-            </div>
-          </nav>
-    </div>
 
-    <div class="row center">
-      <blockquote>
-        <h1>BIENVENIDO</h1>
-      </blockquote>
-    </div>
+<nav class="hide-on-med-and-up light-green">
+  <div class="nav-wrapper">
+    <a href="#!" class="brand-logo">Bachi</a>
+    <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+  </div>
+</nav>
 
-    <div class="parallax-container">
-      <div class="parallax"><img class="circle" style="" src="img/parallax.JPG" alt=""></div>
-    </div>
-
-    <div class="container">
-          @yield('contenido')
-    </div>
-
-    <div class="row center">
-      <blockquote>
-        <h1>E.E.S. Nº. 9 "Maestro Sarmiento"</h1>
-      </blockquote>
-    </div>
-    
-
-    <footer class="page-footer pink darken-1">
-      <div class="footer-copyright">
-        © 2018 Copyright Controller Group
+<ul class="sidenav light-green" id="mobile-demo">
+  <li>
+    <div class="user-view">
+      <div class="background">
+        <img src="{{'/img/BachiFondo.png'}}" width="300" height="auto">
       </div>
-    </footer>
+      <br><br><br><br>
+    </div>
+  </li>
+  <li><a class="waves-effect" href="{{route('cursos.index')}}">Cursos</a></li>
+  <li><a class="waves-effect" href="{{route('materias.index')}}">Materias</a></li>
+  <li><a class="waves-effect" href="{{route('alumnos.index')}}">Alumnos</a></li>
+  <li><a class="waves-effect" href="{{route('docentes.index')}}">Docentes</a></li>
+  <li><a class="waves-effect" href="{{route('notas.index')}}">Calificaciones</a></li>
+  <li><a class="waves-effect" href="{{route('asistencias.index')}}">Asistencias</a></li>
+  <li><a class="waves-effect" href="{{route('padres.index')}}">Tutores</a></li>
+</ul>
 
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<ul id="slide-out" class="sidenav sidenav-fixed light-green">
+  <li>
+    <div class="user-view">
+      <div class="background">
+        <img src="{{'/img/BachiFondo.png'}}" width="300" height="auto">
+      </div>
+      <br><br><br><br>
+    </div>
+  </li>
+  <li><a class="waves-effect" href="{{route('cursos.index')}}">Cursos</a></li>
+  <li><a class="waves-effect" href="{{route('materias.index')}}">Materias</a></li>
+  <li><a class="waves-effect" href="{{route('alumnos.index')}}">Alumnos</a></li>
+  <li><a class="waves-effect" href="{{route('docentes.index')}}">Docentes</a></li>
+  <li><a class="waves-effect" href="{{route('notas.index')}}">Calificaciones</a></li>
+  <li><a class="waves-effect" href="{{route('asistencias.index')}}">Asistencias</a></li>
+  <li><a class="waves-effect" href="{{route('padres.index')}}">Tutores</a></li>
+</ul>
 
-    <script>
-        M.AutoInit();
-    </script>
+<div class="row">
+  <div class="col s12 m4 l3">
+  </div>
 
-    <script src="{{mix('js/home.js')}}"></script>
-    
-</body>
-</html>
+  <div class="col s12 m8 l9">
+    <div class="container">
+
+      <h1 class="center-align green-text text-light">Bachi</h1>
+      <br>
+      <h4 class="center-align">E.E.S Nº. 9 "Maestro Sarmiento"</h4>
+      <br><br>
+
+      <div class="col s12">
+        <div class="card horizontal">
+          <div class="card-image">
+            <img src="https://lorempixel.com/200/200/nature/6">
+          </div>
+          <div class="card-stacked">
+            <div class="card-content">
+              <p><h3>1º Ciclo Basico</h3></p>
+            </div>
+            <div class="card-action">
+              <a>3 Alumnos</a>
+            </div>
+          </div>
+        </div>
+      </div>
+          
+    </div>
+  </div>
+
+</div>
+
+@endsection
