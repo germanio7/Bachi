@@ -12,6 +12,8 @@ use App\Materia;
 
 use App\Alumno;
 
+use App\Asistencia;
+
 class CursosController extends Controller
 {
     /**
@@ -75,20 +77,24 @@ class CursosController extends Controller
 
         $curso = Curso::find($id);
 
-        $materias = $curso->materias()->orderBy('nombre')->get();
+        $materiasCurso = $curso->materias()->orderBy('nombre')->get();
 
         //recupera los alumnos de la tabla intermedia donde el año coincide con el actual
         $alumnos = $curso->alumnos()->orderBy('apellido')->where('anio', $anio)->get();
 
-        //recupera las materias que no existen en la tabla intermedia
-        $agregarMaterias = Materia::doesntHave('cursos')->orderBy('nombre')->get();
+        // $agregarMaterias = Materia::all();
 
         //recupera los alumnos que no existen en la tabla intermedia
         $agregarAlumnos = Alumno::doesntHave('cursos')->orderBy('nombre')->get();
 
         $hoy = now()->toDateString();
 
-        return view('cursos.show', compact('curso', 'materias', 'alumnos', 'agregarMaterias', 'agregarAlumnos', 'hoy'));
+        $todas = Materia::all();
+
+        //contiene las materias que no estan relacionadas con el curso en cuestion
+        $agregarMaterias = $todas->diff($materiasCurso);
+
+        return view('cursos.show', compact('curso', 'materiasCurso', 'alumnos', 'agregarMaterias', 'agregarAlumnos', 'hoy'));
     }
 
     public function agregarMateria(Request $request){

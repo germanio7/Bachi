@@ -15,9 +15,7 @@ class NotasController extends Controller
      */
     public function index()
     {
-        $notas = Nota::all();
-
-        return view('notas.index', compact('notas'));
+        //
     }
 
     /**
