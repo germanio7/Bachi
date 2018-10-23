@@ -91,7 +91,7 @@ class CursosController extends Controller
 
         $todas = Materia::all();
 
-        //materias que no estan relacionadas con el curso en cuestion
+        //contiene las materias que no estan relacionadas con el curso en cuestion
         $agregarMaterias = $todas->diff($materiasCurso);
 
         return view('cursos.show', compact('curso', 'materiasCurso', 'alumnos', 'agregarMaterias', 'agregarAlumnos', 'hoy'));
