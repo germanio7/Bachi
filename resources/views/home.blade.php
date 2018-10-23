@@ -17,8 +17,6 @@
 		    <div class="nav-wrapper pink darken-1">
 		      <a href="/"><img class="circle" style="max-height:64px;" src="../img/logo.jpg" alt=""><class="brand-logo"></a>
 		      <ul id="nav-mobile" class="right hide-on-med-and-down">
-		      	<li><a href="{{route('asistencias.index')}}">Asistencias</a></li>
-		      	<li><a href="{{route('notas.index')}}">Notas</a></li>
 		        <li><a href="{{route('alumnos.index')}}">Alumnos</a></li>
 		        <li><a href="{{route('padres.index')}}">Padres</a></li>
 		        <li><a href="{{route('cursos.index')}}">Cursos</a></li>
@@ -36,8 +34,10 @@
 
     <footer class="page-footer pink darken-1">
       <div class="footer-copyright">
+        <div class="footer-fixed">
         © 2018 Copyright Controller Group
       </div>
+        </div>
     </footer>
 
 	<!-- Compiled and minified JavaScript -->

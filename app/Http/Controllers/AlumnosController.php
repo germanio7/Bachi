@@ -109,7 +109,13 @@ class AlumnosController extends Controller
 
         $notas = Nota::where('alumno_id',$alumno->id)->get();
 
-        $asistencias = Asistencia::where('alumno_id',$alumno->id)->get();
+        $asistencias = Asistencia::where('alumno_id',$alumno->id)->orderBy('fecha')->get();
+
+        $cantAsistencia = Asistencia::where('alumno_id',$alumno->id)->sum('asistencia');
+
+        $totalAsistencia = Asistencia::where('alumno_id',$alumno->id)->count();
+
+        $porcentaje = Asistencia::where('alumno_id',$alumno->id)->avg('asistencia')*100;
 
         //año actual
         $hoy = now()->format('Y');
@@ -127,9 +133,15 @@ class AlumnosController extends Controller
             $curso = $idcurso;
         }
 
-        $materias = Materia::doesntHave('cursos')->orderBy('nombre')->get();
+        $materias = Materia::whereDoesntHave('notas')->orderBy('nombre')->get();
+
+        // $materias = Materia::whereDoesntHave('notas')->whereNotIn('id',Alumno::doesntHave('notas'))->orderBy('nombre')->get();
+
+        // $materias = Materia::whereRaw('notas', )->get();
+
+        // $materias = Materia::whereIn('id', Nota::whereDoesntHave('alumnos'))->get();
         
-        return view('alumnos.show', compact('alumno', 'curso', 'anio', 'notas', 'materias', 'asistencias'));
+        return view('alumnos.show', compact('alumno', 'curso', 'anio', 'notas', 'materias', 'asistencias', 'cantAsistencia', 'totalAsistencia', 'porcentaje'));
     }
 
     /**

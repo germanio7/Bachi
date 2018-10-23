@@ -36,7 +36,7 @@
 						</tr>
 					</thead>
 					<tbody>
-						@foreach($materias as $materia)
+						@foreach($materiasCurso as $materia)
 						<tr>
 							<td>{{$materia->nombre}}</td>
 						</tr>
@@ -79,8 +79,8 @@
 			
 				<select name="seleccionMateria" class="input-field col s3">
 					<option value="" disabled selected>Elegir Materia</option>
-					@foreach($agregarMaterias as $mater)
-			      		<option value="{{$mater->id}}">{{$mater->nombre}}</option>
+					@foreach($agregarMaterias as $agregar)
+			      		<option value="{{$agregar->id}}">{{$agregar->nombre}}</option>
 		      		@endforeach
 		    	</select>
 
@@ -113,50 +113,52 @@
 	{{-- Estructura Modal Asistencia --}}
 	<div id="modalAsistencia" class="modal lime lighten-4">
 		<div class="modal-content">
-			{!! Form::open(['action' => 'AsistenciasController@store','method'=>'POST','file'=>'true','enctype'=>'multipart/form-data','class'=>'form']) !!}
-			<b>Asistencia del Día: </b>
+		
+				{!! Form::open(['action' => 'AsistenciasController@store','method'=>'POST','file'=>'true','enctype'=>'multipart/form-data','class'=>'form']) !!}
+				<b>Asistencia del Día: </b>
 
-			<p>{{$hoy}}</p>
+				<p>{{$hoy}}</p>
 
-			<div class="card-panel hoverable">
+				<div class="card-panel hoverable">
 
-			<table class="highlight">
-				<thead>
-					<tr>
-						<th>ID</th>
-						<th>Apellido</th>
-						<th>Nombre</th>
-						<th>Asistencia</th>
-						<th>Comentario</th>
-					</tr>
-				</thead>
-				<tbody>
-					@foreach($alumnos as $alumno)
-					<tr>
-						<input type="hidden" name="id[]" value="{{$alumno->id}}">
-						<td>{{$alumno->id}}</td>
-						<td>{{$alumno->apellido}}</td>
-						<td>{{$alumno->nombre}}</td>
-						<td>
-							<select name="asistencia[]" class="input-field col s3">
-					    		<option value="" disabled selected>Asistencia</option>
-					      		<option value=1 >Presente</option>
-					      		<option value=0 >Ausente</option>
-					      		<option value=0.5 >Media Falta</option>
-					    	</select>
-						</td>
-						<td>
-							<input type="text" name="comentario[]" class="validate">
-						</td>
-					</tr>
-					@endforeach
-				</tbody>
-			</table>
-		</div>
-		<div class="modal-footer">
-			{{ Form::submit('Alamacenar',(['class'=>'btn green'])) }}
-		</div>
-		{!! Form::close() !!}
+				<table class="highlight">
+					<thead>
+						<tr>
+							<th>ID</th>
+							<th>Apellido</th>
+							<th>Nombre</th>
+							<th>Asistencia</th>
+							<th>Comentario</th>
+						</tr>
+					</thead>
+					<tbody>
+						@foreach($alumnos as $alumno)
+						<tr>
+							<input type="hidden" name="id[]" value="{{$alumno->id}}">
+							<td>{{$alumno->id}}</td>
+							<td>{{$alumno->apellido}}</td>
+							<td>{{$alumno->nombre}}</td>
+							<td>
+								<select name="asistencia[]" class="input-field col s3">
+						    		<option value="" disabled selected>Asistencia</option>
+						      		<option value=1 >Presente</option>
+						      		<option value=0 >Ausente</option>
+						      		<option value=0.5 >Media Falta</option>
+						    	</select>
+							</td>
+							<td>
+								<input type="text" name="comentario[]" class="validate">
+							</td>
+						</tr>
+						@endforeach
+					</tbody>
+				</table>
+			</div>
+			<div class="modal-footer">
+				{{ Form::submit('Alamacenar',(['class'=>'btn green'])) }}
+			</div>
+			{!! Form::close() !!}
+		
 	</div>
 
 @endsection
