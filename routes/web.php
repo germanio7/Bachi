@@ -15,7 +15,7 @@ use App\Padre;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect()->action('InicioController@index');
 });
 
 Route::view('verMateria', 'materias.verMateria');
@@ -35,6 +35,8 @@ Route::resource('padres', 'PadresController');
 Route::resource('asistencias', 'AsistenciasController');
 
 Route::resource('notas', 'NotasController');
+
+Route::resource('inicio', 'InicioController');
 
 Route::get('descargarMateria/{id}', function($id){
 	$materia = Materia::find($id);

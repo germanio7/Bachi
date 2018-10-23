@@ -3,15 +3,12 @@
 <head>
 	<meta charset="UTF-8">
 	<title>E.E.S Nº. 9 "Maestro Sarmiento"</title>
-	<!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-    <link rel="stylesheet" href="{{mix('css/home.css')}}">
-
-    
+	<link rel="stylesheet" href="{{'/materialize/css/materialize.css'}}">
+	<link rel="stylesheet" href="{{'/materialize/css/style.css'}}">
+	<link rel="stylesheet" href="{{'/fontawesome/css/all.css'}}">
 </head>
 <body>
+<<<<<<< HEAD
     <div class="navbar-fixed">
 		<nav>
 		    <div class="nav-wrapper pink darken-1">
@@ -47,8 +44,17 @@
     <script>
     	M.AutoInit();
     </script>
+=======
+>>>>>>> 0e738aea7de4beefff13bd9d602ecf42d2fc3bb9
 
-    <script src="{{mix('js/home.js')}}"></script>
+	<div>
+		@yield('contenido')
+	</div>
 	
+	<script src="{{'/materialize/js/materialize.js'}}"></script>
+	<script src="{{'/fontawesome/js/all.js'}}"></script>
+	<script>
+		M.AutoInit();
+	</script>
 </body>
 </html>
