@@ -1,6 +1,5 @@
-function hola(id){
+function desplegar(id){
 
-	console.log(id);
 	var cursos = document.getElementById("tabss" + id);	
 	var bars = document.getElementById("bars" + id);
 	var times = document.getElementById("times" + id);
@@ -15,7 +14,17 @@ function hola(id){
 			bars.style.display = "inline";
 		}
 	
-	console.log(bars);
+}
+
+function soltar(idanterior){
+
+	var cursos = document.getElementById("tabss" + idanterior);	
+	var bars = document.getElementById("bars" + idanterior);
+	var times = document.getElementById("times" + idanterior);
+
+	cursos.style.display = "none";
+	times.style.display = "none";
+	bars.style.display = "inline";
 	
 }
 

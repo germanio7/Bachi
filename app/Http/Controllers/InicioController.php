@@ -12,6 +12,8 @@ use App\Materia;
 
 use App\Alumno;
 
+use App\Docente;
+
 
 class InicioController extends Controller
 {
@@ -20,9 +22,13 @@ class InicioController extends Controller
     {
         $cursos = Curso::orderBy('curso')->get();
         $alumnos = Alumno::orderBy('apellido')->get();
+        $docentes = Docente::orderBy('apellido')->get();
+        $materias = Materia::orderBy('nombre')->get();
         $alumnocurso = DB::table('alumno_curso')->get();
+        $cursomateria = DB::table('curso_materia')->get();
+        $docentemateria = DB::table('docente_materia')->get();
         $num = count($cursos);
-        return view('welcome', ['alumnocurso' => $alumnocurso, 'cursos' => $cursos, 'num' => $num, 'alumnos' => $alumnos]);
+        return view('welcome', ['alumnocurso' => $alumnocurso, 'cursos' => $cursos, 'num' => $num, 'alumnos' => $alumnos, 'cursomateria' => $cursomateria, 'docentemateria' => $docentemateria, 'docentes' => $docentes, 'materias' => $materias]);
     
     }
 
