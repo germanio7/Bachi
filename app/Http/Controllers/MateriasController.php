@@ -42,7 +42,9 @@ class MateriasController extends Controller
      */
     public function create()
     {
-        return view('materias.create');
+        $docentes = Docente::all();
+
+        return view('materias.create', compact('docentes'));
     }
 
     /**
@@ -53,11 +55,14 @@ class MateriasController extends Controller
      */
     public function store(Request $request)
     {
-        $materia = new Materia;
+        //crea la materia
+        $materia = Materia::create(['nombre' => $request->nombre]);
 
-        $materia->nombre = $request->nombre;
+        //obtiene la materia recientemente creada
+        $mat = Materia::find($materia->id);
 
-        $materia->save();
+        //se hace la relacion 
+        $mat->docente()->attach($request->get('docente_id'));
 
         return redirect('materias');
     }

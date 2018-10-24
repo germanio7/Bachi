@@ -22,11 +22,12 @@ class DocentesController extends Controller
 
         // $materias = Materia::all();
 
-        // $docentes = Docente::all();
+        //usar eloquent para que no muestre los softDelete
+        $docentes = Docente::orderBy('nombre')->get();
 
         // return view('docentes.index',compact('docentes'));
 
-        $docentes = DB::table('docentes')->orderBy('nombre')->get();
+        // $docentes = DB::table('docentes')->orderBy('nombre')->get();
         return view('docentes.index', ['docentes' => $docentes]);
     }
 
@@ -116,6 +117,10 @@ class DocentesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $docente = Docente::find($id);
+
+        $docente->delete();
+
+        return redirect('docentes');
     }
 }
