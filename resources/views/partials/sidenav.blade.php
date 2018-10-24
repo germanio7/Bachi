@@ -14,6 +14,8 @@
   <li><a class="waves-effect" href="{{route('notas.index')}}">Calificaciones</a></li>
   <li><a class="waves-effect" href="{{route('asistencias.index')}}">Asistencias</a></li>
   <li><a class="waves-effect" href="{{route('padres.index')}}">Tutores</a></li>
+  <div class="divider"></div>
+  <li><a class="waves-effect" href="{{'/'}}">Inicio</a></li>
 </ul>
 
 <ul id="slide-out" class="sidenav sidenav-fixed light-green">
@@ -32,4 +34,6 @@
   <li><a class="waves-effect" href="{{route('notas.index')}}">Calificaciones</a></li>
   <li><a class="waves-effect" href="{{route('asistencias.index')}}">Asistencias</a></li>
   <li><a class="waves-effect" href="{{route('padres.index')}}">Tutores</a></li>
+  <div class="divider"></div>
+  <li><a class="waves-effect" href="{{'/'}}">Inicio</a></li>
 </ul>
