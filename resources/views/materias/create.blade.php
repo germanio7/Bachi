@@ -13,6 +13,15 @@
 		    		{{ Form::label('nombre','Nombre',(['class'=>'active','for'=>'nombre'])) }}
 		    		{{ Form::text('nombre','',(['class'=>'validate'])) }}
 				</div>
+
+				<div class="input-field col s4">
+		    		<select name="docente_id" class="input-field col s3">
+					<option value="" disabled selected>Elegir Docente</option>
+						@foreach($docentes as $docente)
+				      		<option value="{{$docente->id}}">{{$docente->cuil}} - {{$docente->apellido}} {{$docente->nombre}}</option>
+			      		@endforeach
+		    		</select>
+				</div>
 			</div>
 
 			{{ Form::submit('Guardar',(['class'=>'btn green',])) }}
