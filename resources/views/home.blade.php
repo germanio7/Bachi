@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	 <link rel="shortcut icon" href="{{'/img/icono.png'}}" />
+	<link rel="shortcut icon" href="{{'/img/icono.png'}}"/>
 	<title>E.E.S Nº. 9 "Maestro Sarmiento"</title>
 	<link rel="stylesheet" href="{{'/materialize/css/materialize.css'}}">
 	<link rel="stylesheet" href="{{'/materialize/css/style.css'}}">
@@ -22,6 +22,7 @@
     </div>
 	
 	<script src="{{'/materialize/js/materialize.js'}}"></script>
+	<script src="{{'/js/funciones.js'}}"></script>
 	<script src="{{'/fontawesome/js/all.js'}}"></script>
 	<script>
 		M.AutoInit();
