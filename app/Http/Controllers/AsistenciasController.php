@@ -15,9 +15,7 @@ class AsistenciasController extends Controller
      */
     public function index()
     {
-        $asistencias = Asistencia::orderBy('fecha')->get();
-
-        return view('asistencias.index', compact('asistencias'));
+        //
     }
 
     /**

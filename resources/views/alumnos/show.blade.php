@@ -3,6 +3,42 @@
 @section('contenido')
 	
 	<div class="card-panel hoverable green lighten-4">
+		<b>Datos del Curso</b>
+		<div class="row">
+			<div class="input-field col s4">
+				@if(is_null($curso))
+					{{ Form::label('curso','Curso',(['class'=>'active','for'=>''])) }}
+					<h5>{{$curso}}</h5>
+				@else
+					{{ Form::label('curso','Curso',(['class'=>'active','for'=>''])) }}
+					<h5>{{$curso->curso}}</h5>
+				@endif
+			</div>
+			<div class="input-field col s4">
+				{{ Form::label('anio','Año',(['class'=>'active','for'=>''])) }}
+				<h5>{{$anio}}</h5>
+			</div>
+			
+			<div class="container">
+				
+				<div class="input-field col s4">
+					<a href="#modalAgregarNotas" class="waves-effect waves-light btn modal-trigger">Agregar Notas</a>
+				</div>
+				
+				<div class="input-field col s4">
+					<a href="#modelVerNotas" class="waves-effect waves-light btn modal-trigger">Ver Notas</a>
+				</div>
+				
+				<div class="input-field col s4">
+					<a href="#modelVerAsistencia" class="waves-effect waves-light btn modal-trigger">Ver Asistencias</a>
+				</div>
+			</div>
+
+			
+		</div>
+	</div>
+
+	<div class="card-panel hoverable green lighten-4">
 		<b>Datos del Alumno</b>
 		<div class="row">
 			<div class="input-field col s4">
@@ -221,42 +257,6 @@
 	</div>
 
 	<div class="card-panel hoverable green lighten-4">
-		<b>Datos del Curso</b>
-		<div class="row">
-			<div class="input-field col s4">
-				@if(is_null($curso))
-					{{ Form::label('curso','Curso',(['class'=>'active','for'=>''])) }}
-					<h5>{{$curso}}</h5>
-				@else
-					{{ Form::label('curso','Curso',(['class'=>'active','for'=>''])) }}
-					<h5>{{$curso->curso}}</h5>
-				@endif
-			</div>
-			<div class="input-field col s4">
-				{{ Form::label('anio','Año',(['class'=>'active','for'=>''])) }}
-				<h5>{{$anio}}</h5>
-			</div>
-			
-			<div class="container">
-				
-				<div class="input-field col s4">
-					<a href="#modalAgregarNotas" class="waves-effect waves-light btn modal-trigger">Agregar Notas</a>
-				</div>
-				
-				<div class="input-field col s4">
-					<a href="#modelVerNotas" class="waves-effect waves-light btn modal-trigger">Ver Notas</a>
-				</div>
-				
-				<div class="input-field col s4">
-					<a href="#modelVerAsistencia" class="waves-effect waves-light btn modal-trigger">Ver Asistencias</a>
-				</div>
-			</div>
-
-			
-		</div>
-	</div>
-
-	<div class="card-panel hoverable green lighten-4">
 		<b>Datos Del Tutor</b>
 		<div class="row">
 			<div class="input-field col s4">
@@ -413,19 +413,31 @@
 								@foreach($asistencias as $asistencia)
 									<tr>
 										<td>{{$asistencia->fecha}}</td>
-										@if($asistencia->asistencia='0')
-											<td>Ausente</td>
-										@elseif($asistencia->asistencia='1')
-											<td>Presente</td>
-										@elseif($asistencia->asistencia='0.5')
-											<td>Tardanza</td>	
-										@endif
+										@switch($asistencia->asistencia)
+											@case('0')
+												<td>Ausente</td>
+											@break
+											@case('0.5')
+												<td>Media Falta</td>
+											@break
+											@case('1')
+												<td>Presente</td>
+											@break
+										@endswitch
 										<td>{{$asistencia->comentario}}</td>
 									</tr>
 								@endforeach
 							@endif					
 						</tbody>
 					</table>
+					
+					<div class="card-panel hoverable">
+						<b>Debió Asistir: </b>{{$totalAsistencia}}
+
+						<b>Asistió: </b>{{$cantAsistencia}}
+
+						<b>Porcentaje: </b>{{number_format($porcentaje,2)}}%
+					</div>
 				</div>
 		</div>
 	</div>
