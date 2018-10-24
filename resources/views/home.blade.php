@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	 <link rel="shortcut icon" href="{{'/img/icono.png'}}" />
 	<title>E.E.S Nº. 9 "Maestro Sarmiento"</title>
 	<link rel="stylesheet" href="{{'/materialize/css/materialize.css'}}">
 	<link rel="stylesheet" href="{{'/materialize/css/style.css'}}">
@@ -9,9 +10,19 @@
 </head>
 <body>
 
-	<div>
-		@yield('contenido')
-	</div>
+	<div class="row">
+		@include('partials.navbar')
+    	<div class="col s12 m4 l3">
+    		@include('partials.sidenav')
+    	</div>
+
+    	<div class="col s12 m8 l9">
+    		<div class="container"> 
+				@yield('contenido')
+			</div>
+    	</div>
+    </div>
+
 	
 	<script src="{{'/materialize/js/materialize.js'}}"></script>
 	<script src="{{'/fontawesome/js/all.js'}}"></script>
