@@ -16,9 +16,9 @@ class Docente extends Model
 
     protected $dates = ['deleted_at'];
 
-    public function materia()
+    public function materias()
     {
-    	//relacion uno a uno
-        return $this->belongsToMany('App\Materia');
+    	
+        return $this->belonsToMany('App\Materia');
     }
 }

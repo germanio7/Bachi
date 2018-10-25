@@ -12,6 +12,13 @@
 				{{ Form::label('nombre','Nombre',(['class'=>'active','for'=>''])) }}
 				<h5>{{$materia->nombre}}</h5>
 			</div>
+
+			<div class="input-field col s4">
+				{{ Form::label('docente','Docente',(['class'=>'active','for'=>''])) }}
+				@foreach($materia->docentes as $docente)
+					<h5>{{$docente->cuil}} - {{$docente->apellido}} {{$docente->nombre}}</h5>
+				@endforeach
+			</div>
 		</div>
 	</div>
 
