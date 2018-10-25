@@ -14,9 +14,9 @@ class Materia extends Model
         return $this->belongsToMany('App\Curso');
     }
 
-    public function docente()
+    public function docentes()
     {
-    	//relacion uno a uno
+    	
         return $this->belongsToMany('App\Docente');
     }
 

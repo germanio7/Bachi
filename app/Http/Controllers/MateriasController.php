@@ -62,7 +62,7 @@ class MateriasController extends Controller
         $mat = Materia::find($materia->id);
 
         //se hace la relacion 
-        $mat->docente()->attach($request->get('docente_id'));
+        $mat->docentes()->attach($request->get('docente_id'));
 
         return redirect('materias');
     }
