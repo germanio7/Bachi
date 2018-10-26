@@ -24,6 +24,7 @@
 	    		</div>
 	    		<div class="card-content grey lighten-5">
 			      <div id="alumno" class="container">
+
 			      	<div class="row">
 			      		<p class="green-text light-text-darken-2">Repitente:</p>
 								<div class="switch">
@@ -87,6 +88,61 @@
         				</div>
 							</div>
 
+							<div class="row">
+								<div class="switch col s4">
+									<p class="green-text light-text-darken-2">Asignación Familiar:</p>
+							    <label>
+							      NO
+							      <input type="checkbox">
+							      <span class="lever"></span>
+							      SI
+							    </label>
+							  </div>
+								<div class="switch col s4">
+									<p class="green-text light-text-darken-2">Salario Familiar:</p>
+							    <label>
+							      NO
+							      <input type="checkbox">
+							      <span class="lever"></span>
+							      SI
+							    </label>
+							  </div>
+								<div class="switch col s4">
+									<p class="green-text light-text-darken-2">Pertenece a Pueblo Originario:</p>
+							    <label>
+							      NO
+							      <input type="checkbox">
+							      <span class="lever"></span>
+							      SI
+							    </label>
+							  </div>
+			      	</div>
+
+			      	<div class="divider"></div>
+
+			      	<div class="row">
+			      		<div class="col s12 offset-s2">
+									<div class="switch col s4">
+										<p class="green-text light-text-darken-2">Programa CAI:</p>
+								    <label>
+								      NO
+								      <input type="checkbox">
+								      <span class="lever"></span>
+								      SI
+								    </label>
+								  </div>
+									<div class="switch col s4">
+										<p class="green-text light-text-darken-2">Discapacidad:</p>
+								    <label>
+								      NO
+								      <input type="checkbox">
+								      <span class="lever"></span>
+								      SI
+								    </label>
+								  </div>
+								</div>
+			      	</div>
+			      	
 			      </div>
 			      <div id="test5">Test 2</div>
 			      <div id="test6">Test 3</div>

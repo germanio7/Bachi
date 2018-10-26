@@ -17,13 +17,13 @@ class CreateNotasTable extends Migration
             $table->increments('id');
             $table->unsignedInteger('alumno_id');
             $table->unsignedInteger('materia_id');
-            $table->float('primer_trimestre');
-            $table->float('segundo_trimestre');
-            $table->float('tercer_trimestre');
-            $table->float('integral');
-            $table->float('diciembre');
-            $table->float('marzo');
-            $table->float('final');
+            $table->float('primer_trimestre')->nullable();
+            $table->float('segundo_trimestre')->nullable();
+            $table->float('tercer_trimestre')->nullable();
+            $table->float('integral')->nullable();
+            $table->float('diciembre')->nullable();
+            $table->float('marzo')->nullable();
+            $table->float('final')->nullable();
             $table->timestamps();
 
             $table->foreign('alumno_id')->references('id')->on('alumnos');

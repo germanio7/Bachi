@@ -22,8 +22,17 @@ class CreateAlumnosTable extends Migration
             $table->string('lugar_nacimiento');
             $table->string('nacionalidad');
             $table->string('direccion');
-            $table->string('telefono');
-            $table->string('email')->unique();
+            $table->string('barrio')->nullable();
+            $table->string('departamento')->nullable();
+            $table->string('telefono')->nullable();
+            $table->string('email')->unique()->nullable();
+            $table->string('grado')->nullable();
+            $table->string('seccion')->nullable();
+            $table->string('turno')->nullable();
+            $table->string('otro_establecimiento')->nullable();
+            $table->tinyInteger('pase')->nullable();
+            $table->date('anio_anterior')->nullable();
+            $table->tinyInteger('repitente');
             $table->tinyInteger('asignacion_universal');
             $table->tinyInteger('salario_familiar');
             $table->tinyInteger('pueblo_originario');
@@ -38,7 +47,7 @@ class CreateAlumnosTable extends Migration
             $table->tinyInteger('esguinces');
             $table->tinyInteger('enfermedades_infectocontagiosas');
             $table->tinyInteger('incapacidad');
-            $table->string('otros');
+            $table->string('otros')->nullable();
             $table->tinyInteger('certificado_salud');
             $table->tinyInteger('certificado_dental');
             $table->tinyInteger('carnet_vacuna');
