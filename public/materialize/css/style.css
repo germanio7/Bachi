@@ -1,3 +1,39 @@
+.switch label input[type=checkbox]:checked + .lever {
+  background-color: #689f38;
+}
+
+.switch label input[type=checkbox]:checked + .lever:after {
+  background-color: #aed581;
+}
+
+/*configuracion text-imput*/
+
+/* label color */
+   .input-field label {
+     color: #689f38;
+   }
+/* label focus color */
+ .input-field input:focus + label {
+   color: #689f38 !important;
+ }
+ /* label underline focus color */
+ .row .input-field input:focus {
+   border-bottom: 1px solid #689f38 !important;
+   box-shadow: 0 1px 0 0 #689f38 !important
+ }
+
+/*configuracion sidenav*/
+
+.sidenav {
+  width: 200px;
+}
+
+.sidenav-fix {
+    margin-top: 64px;
+}
+
+/*configuracion blockquote*/
+
 blockquote {
   margin: 20px 0;
   padding-left: 1.5rem;
@@ -73,6 +109,19 @@ blockquote {
 
 /*Configuracion del NavBar*/
 
+@media only screen and (min-width: 601px) {
+  nav.nav-extended .nav-wrapper {
+    min-height: 64px;
+  }
+  nav, nav .nav-wrapper i, nav a.sidenav-trigger, nav a.sidenav-trigger i {
+    height: 64px;
+    line-height: 75px;
+  }
+  .navbar-fixed {
+    height: 64px;
+  }
+}
+
 nav ul a,
 nav .brand-logo {
   color: #444;
@@ -85,6 +134,8 @@ p {
 .sidenav-trigger {
   color: #26a69a;
 }
+
+/*configuracion parallax*/
 
 .parallax-container {
   min-height: 500px;

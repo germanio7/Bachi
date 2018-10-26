@@ -12,11 +12,11 @@
 
 	<div class="row">
 		@include('partials.navbar')
-    	<div class="col s12 m4 l3">
+    	<div class="col s12 l2">
     		@include('partials.sidenav')
     	</div>
 
-    	<div class="col s12 m8 l9">
+    	<div class="col s12 l10">
 			@yield('contenido')
     	</div>
     </div>
