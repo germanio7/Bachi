@@ -13,6 +13,6 @@ class PadreSeeder extends Seeder
      */
     public function run()
     {
-        factory(Padre::class, 400)->create();
+        factory(Padre::class, 40)->create();
     }
 }
