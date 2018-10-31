@@ -7,15 +7,6 @@
 	<link rel="stylesheet" href="{{'/materialize/css/materialize.css'}}">
 	<link rel="stylesheet" href="{{'/materialize/css/style.css'}}">
 	<link rel="stylesheet" href="{{'/fontawesome/css/all.css'}}">
-	<style>
-		body::-webkit-scrollbar{
-			width: 7px;
-		}
-		body::-webkit-scrollbar-thumb{
-			background: #2196f3,
-			border-radius: 101;
-		}
-	</style>
 </head>
 <body class="scrollbar">
 
