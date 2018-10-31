@@ -18,7 +18,7 @@ class CreateAlumnosTable extends Migration
             $table->BigInteger('cuil')->unique();
             $table->string('apellido');
             $table->string('nombre');
-            $table->date('fecha_nacimiento')->format('d-m-Y');
+            $table->string('fecha_nacimiento');
             $table->string('lugar_nacimiento');
             $table->string('nacionalidad');
             $table->string('direccion');

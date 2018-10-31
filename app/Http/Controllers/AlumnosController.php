@@ -58,8 +58,13 @@ class AlumnosController extends Controller
      */
     public function store(Request $request)
     {
+        if ($request->repitente == null) {
+            $repitente = 0;
+        }
+        else{
+            $repitente = 1;
+        }
         $alumno = new Alumno;
-
         $alumno->cuil = $request->cuil;
         $alumno->apellido = $request->apellido;
         $alumno->nombre = $request->nombre;
@@ -67,8 +72,11 @@ class AlumnosController extends Controller
         $alumno->lugar_nacimiento = $request->lugar_nacimiento;
         $alumno->nacionalidad = $request->nacionalidad;
         $alumno->direccion = $request->direccion;
+        $alumno->barrio = $request->barrio;
+        $alumno->departamento = $request->departamento;
         $alumno->telefono = $request->telefono;
         $alumno->email = $request->email;
+        $alumno->repitente = $repitente;
         $alumno->asignacion_universal = $request->get('asignacion_universal');
         $alumno->salario_familiar = $request->get('salario_familiar');
         $alumno->pueblo_originario = $request->get('pueblo_originario');
