@@ -1,3 +1,51 @@
+/*scrollbar*/
+
+.scrollbar::-webkit-scrollbar {
+  width: 7px;
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+  background: #689f38;
+  border-radius: 100px;
+}
+
+/*datepicker color*/
+
+.datepicker-date-display {
+  background-color: #689f38;
+}
+
+.datepicker-table td.is-today {
+  color: #689f38;
+}
+
+.datepicker-table td.is-selected {
+  background-color: #689f38;
+  color: #fff;
+}
+
+.datepicker-cancel,
+.datepicker-clear,
+.datepicker-today,
+.datepicker-done {
+  color: #689f38;
+  padding: 0 1rem;
+}
+
+/*color radio buttoms*/
+
+[type="radio"]:checked + span:after,
+[type="radio"].with-gap:checked + span:before,
+[type="radio"].with-gap:checked + span:after {
+  border: 2px solid #689f38;
+}
+
+[type="radio"]:checked + span:after,
+[type="radio"].with-gap:checked + span:after {
+  background-color: #689f38;
+}
+
+/*color switch*/
 .switch label input[type=checkbox]:checked + .lever {
   background-color: #689f38;
 }
@@ -21,6 +69,12 @@
    border-bottom: 1px solid #689f38 !important;
    box-shadow: 0 1px 0 0 #689f38 !important
  }
+
+ textarea.materialize-textarea:focus:not([readonly]) {
+  border-bottom: 1px solid #689f38;
+  -webkit-box-shadow: 0 1px 0 0 #689f38;
+          box-shadow: 0 1px 0 0 #689f38;
+}
 
 /*configuracion sidenav*/
 

@@ -58,8 +58,13 @@ class AlumnosController extends Controller
      */
     public function store(Request $request)
     {
+        if ($request->repitente == null) {
+            $repitente = 0;
+        }
+        else{
+            $repitente = 1;
+        }
         $alumno = new Alumno;
-
         $alumno->cuil = $request->cuil;
         $alumno->apellido = $request->apellido;
         $alumno->nombre = $request->nombre;
@@ -67,8 +72,11 @@ class AlumnosController extends Controller
         $alumno->lugar_nacimiento = $request->lugar_nacimiento;
         $alumno->nacionalidad = $request->nacionalidad;
         $alumno->direccion = $request->direccion;
+        $alumno->barrio = $request->barrio;
+        $alumno->departamento = $request->departamento;
         $alumno->telefono = $request->telefono;
         $alumno->email = $request->email;
+        $alumno->repitente = $repitente;
         $alumno->asignacion_universal = $request->get('asignacion_universal');
         $alumno->salario_familiar = $request->get('salario_familiar');
         $alumno->pueblo_originario = $request->get('pueblo_originario');
@@ -93,6 +101,34 @@ class AlumnosController extends Controller
         $alumno->contribucion_cooperadora = $request->get('contribucion_cooperadora');
 
         $alumno->save();
+
+        $alumno = Alumno::orderby('created_at','DESC')->take(1)->get();
+
+        foreach ($alumno as $a) {
+            $alumno_id = $a->id;
+        }
+
+        $padre = new Padre;
+
+        $padre->alumno_id = $alumno_id;
+        $padre->madre_padre = $request->get('madre_padre');
+        $padre->cuil = $request->cuil_tutor;
+        $padre->apellido = $request->apellido_tutor;
+        $padre->nombre = $request->nombre_tutor;
+        $padre->fecha_nacimiento = $request->fecha_nacimiento_tutor;
+        $padre->lugar_nacimiento = $request->lugar_nacimiento_tutor;
+        $padre->nacionalidad = $request->nacionalidad_tutor;
+        $padre->direccion = $request->direccion_tutor;
+        $padre->barrio = $request->barrio_tutor;
+        $padre->departamento = $request->departamento_tutor;
+        $padre->telefono = $request->telefono_tutor;
+        $padre->a_cargo = $request->get('a_cargo');
+        $padre->es_tutor = $request->get('es_tutor');
+        $padre->patria_potestad = $request->get('patria_potestad');
+        $padre->vive_con_alumno = $request->get('vive_con_alumno');
+        $padre->ocupacion = $request->ocupacion;
+
+        $padre->save();
 
         return redirect('alumnos');
     }

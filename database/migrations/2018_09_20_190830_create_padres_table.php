@@ -20,10 +20,13 @@ class CreatePadresTable extends Migration
             $table->BigInteger('cuil')->unique();
             $table->string('apellido');
             $table->string('nombre');
-            $table->date('fecha_nacimiento');
+            $table->string('fecha_nacimiento');
             $table->string('lugar_nacimiento');
             $table->string('nacionalidad');
             $table->string('direccion');
+            $table->string('barrio')->nullable();
+            $table->string('departamento')->nullable();
+            $table->string('telefono');
             $table->tinyInteger('a_cargo');
             $table->tinyInteger('es_tutor');
             $table->tinyInteger('patria_potestad');
