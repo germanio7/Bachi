@@ -56,6 +56,7 @@ class CreateAlumnosTable extends Migration
             $table->tinyInteger('fotocopia_dni');
             $table->tinyInteger('contribucion_cooperadora');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
