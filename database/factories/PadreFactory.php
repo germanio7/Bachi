@@ -15,6 +15,7 @@ $factory->define(Padre::class, function (Faker $faker) {
     	'lugar_nacimiento' => $faker->city,
     	'nacionalidad' => $faker->country,
     	'direccion' => $faker->streetAddress,
+        'telefono' => $faker->e164PhoneNumber,
     	'a_cargo' => $faker->boolean,
     	'es_tutor' => $faker->boolean,
     	'patria_potestad' => $faker->boolean,
