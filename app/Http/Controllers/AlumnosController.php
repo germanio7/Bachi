@@ -211,10 +211,6 @@ class AlumnosController extends Controller
      */
     public function destroy($id)
     {
-        $alumno = Alumno::find($id);
-
-        $alumno->delete();
-
-        return redirect('alumnos');
+        //
     }
 }

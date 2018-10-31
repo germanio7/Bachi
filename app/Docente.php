@@ -6,9 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 use Illuminate\Database\Eloquent\SoftDeletes;
 
+use App\Materia;
+
 class Docente extends Model
 {
-	 use SoftDeletes;
+	 use SoftDeletes; 
 
     protected $fillable = ['cuil','apellido','nombre','matricula','titulo','direccion','telefono','email'];
 

@@ -15,12 +15,8 @@
 				</div>
 
 				<div class="input-field col s4">
-		    		<select name="orientacion" class="input-field col s3">
-			    		<option value="" disabled selected>Orientación</option>
-			      		<option value="Ciclo Basico">Ciclo Básico</option>
-			      		<option value="Ciencias Sociales">Ciencias Sociales</option>
-			      		<option value="Educacion Fisica">Educación Física</option>
-			    	</select>
+		    		{{ Form::label('orientacion','Orientacion',(['class'=>'active','for'=>'orientacion'])) }}
+		    		{{ Form::text('orientacion','',(['class'=>'validate'])) }}
 				</div>
 
 				<div class="input-field col s4">

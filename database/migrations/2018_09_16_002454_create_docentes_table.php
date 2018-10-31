@@ -24,7 +24,7 @@ class CreateDocentesTable extends Migration
             $table->string('telefono');
             $table->string('email')->unique();
             $table->timestamps();
-            $table->softDeletes();
+            $table->softDeletes(); 
         });
     }
 
