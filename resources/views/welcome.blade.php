@@ -4,6 +4,17 @@
 
 <br><br><br>
 
+<div class="fixed-action-btn">
+  <a class="btn-floating btn-large light-green darken-2">
+    <i class="fas fa-plus fa-lg"></i></a>
+  <ul>
+    <li><a href="#curso" class="waves-effect waves-light btn modal-trigger btn-floating green"><i class="fas fa-folder-open"></i></a></li>
+    <li><a href="#materia" class="waves-effect waves-light btn modal-trigger btn-floating red"><i class="fas fa-file"></i></a></li>
+    <li><a href="{{'alumnos/create'}}" class="btn-floating blue"><i class="fas fa-user"></i></a></li>
+  </ul>
+</div>
+
+
 <div class="container">
   <ul class="collapsible popout">
     @foreach($cursos as $curso)
@@ -92,5 +103,73 @@
     @endforeach
   </ul>  
 </div>
+
+  <div id="curso" class="modal modal-fixed-footer">
+    <div class="modal-content scrollbar">
+
+      <div class="container">
+
+        <blockquote><h4>Nuevo Curso</h4></blockquote>
+
+        {!! Form::open(['action' => 'CursosController@store','method'=>'POST','file'=>'true','enctype'=>'multipart/form-data','class'=>'form']) !!}
+
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="curso" type="text" class="validate" name="curso">
+            <label for="curso">Curso</label>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="orientacion" type="text" class="validate" name="orientacion">
+            <label for="orientacion">Orientación</label>
+          </div>
+        </div>
+
+        <div class="input-field col s12">
+          <select name="turno" class="input-field col s3">
+            <option value="" disabled selected>Turno</option>
+            <option value="Mañana">Mañana</option>
+            <option value="Tarde">Tarde</option>
+          </select>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="modal-footer">
+      {{ Form::submit('Guardar',(['class'=>'btn green'])) }}
+    </div>
+
+    {!! Form::close() !!}
+  </div>
+
+  <div id="materia" class="modal">
+    <div class="modal-content scrollbar">
+
+      <div class="container">
+
+        <blockquote><h4>Nueva Materia</h4></blockquote>
+
+        {!! Form::open(['action' => 'MateriasController@store','method'=>'POST','file'=>'true','enctype'=>'multipart/form-data','class'=>'form']) !!}
+
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="nombre" type="text" class="validate" name="nombre">
+            <label for="nombre">Nombre</label>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="modal-footer">
+      {{ Form::submit('Guardar',(['class'=>'btn green'])) }}
+    </div>
+
+    {!! Form::close() !!}
+  </div>
 
 @endsection

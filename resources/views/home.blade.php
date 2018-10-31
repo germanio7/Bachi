@@ -8,7 +8,7 @@
 	<link rel="stylesheet" href="{{'/materialize/css/style.css'}}">
 	<link rel="stylesheet" href="{{'/fontawesome/css/all.css'}}">
 </head>
-<body>
+<body class="scrollbar">
 
 	<div class="row">
 		@include('partials.navbar')
@@ -26,6 +26,15 @@
 	<script src="{{'/fontawesome/js/all.js'}}"></script>
 	<script>
 		M.AutoInit();
+	</script>
+	<script>
+		document.addEventListener('DOMContentLoaded', function() {
+	    var elems = document.querySelectorAll('.fixed-action-btn');
+	    var instances = M.FloatingActionButton.init(elems, {
+	      hoverEnabled: false
+	    });
+	  });
+      
 	</script>
 </body>
 </html>

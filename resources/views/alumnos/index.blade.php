@@ -36,21 +36,4 @@
 		</tbody>
 	</table>
 
-{{-- 	<div id="modalBuscarAlumno" class="modal">
-		<div class="modal-content">
-			{!! Form::open(['action' => 'AlumnosController@buscar','method'=>'POST','file'=>'true','enctype'=>'multipart/form-data','class'=>'form']) !!}
-			
-				<div class="row">
-					<div class="input-field col s4">
-			    		{{ Form::label('busqueda','Cuil, Apellido o Nombre',(['class'=>'active','for'=>'busqueda'])) }}
-			    		{{ Form::text('busqueda','',(['class'=>'validate'])) }}
-					</div>
-				</div>
-
-			{{ Form::submit('Buscar',(['class'=>'btn green',])) }}
-	    	
-			{!! Form::close() !!}
-		</div>
-	</div> --}}
-
 @endsection

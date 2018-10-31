@@ -18,7 +18,7 @@
 	    		<div class="card-tabs">
 	      		<ul class="tabs tabs-fixed-width">
 			        <li class="tab"><a href="#alumno"><b>Datos del Alumno</b></a></li>
-			        <li class="tab"><a href="#tutor"><b>Tutor</b></a></li>
+			        <li class="tab"><a href="#tutor"><b>Datos de la Familia o Tutor</b></a></li>
 			        <li class="tab"><a href="#enfermedades"><b>Información Medica</b></a></li>
 			        <li class="tab"><a href="#documentacion"><b>Documentación Presentada</b></a></li>
 	      		</ul>
@@ -192,6 +192,163 @@
 					  </div>
 
 			      <div id="tutor">
+								
+								<div class="container">
+								<br>				
+									<p>
+							      <label>
+							        <input name="madre_padre" type="radio" value="0" />
+							        <span>Madre</span>
+							      </label>
+							    </p>
+							    <p>
+							      <label>
+							        <input name="madre_padre" type="radio" value="1" />
+							        <span>Padre</span>
+							      </label>
+							    </p>
+							    <br>
+
+				      		<div class="row">
+										<div class="input-field col s4">
+		          				<input id="cuil_tutor" type="text" class="validate" name="cuil_tutor">
+		          				<label for="cuil_tutor">CUIL Nº</label>
+		        				</div>
+									</div>
+
+									<div class="row">
+										<div class="input-field col s12">
+		          				<input id="apellido_tutor" type="text" class="validate" name="apellido_tutor">
+		          				<label for="apellido_tutor">Apellidos</label>
+		        				</div>
+									</div>
+
+									<div class="row">
+										<div class="input-field col s12">
+		          				<input id="nombre_tutor" type="text" class="validate" name="nombre_tutor">
+		          				<label for="nombre_tutor">Nombres</label>
+		        				</div>
+									</div>
+
+									<div class="row">
+										<div class="input-field col s4">
+		          				<input id="fecha_nacimiento_tutor" type="text" class="datepicker" name="fecha_nacimiento_tutor">
+		          				<label for="fecha_nacimiento_tutor">Fecha de Nacimiento</label>
+		        				</div>
+		        				<div class="input-field col s4">
+		          				<input id="lugar_nacimiento_tutor" type="text" class="validate" name="lugar_nacimiento_tutor">
+		          				<label for="lugar_nacimiento_tutor">Lugar de Nacimiento</label>
+		        				</div>
+		        				<div class="input-field col s4">
+		          				<input id="nacionalidad_tutor" type="text" class="validate" name="nacionalidad_tutor">
+		          				<label for="nacionalidad_tutor">Nacionalidad</label>
+		        				</div>
+									</div>
+
+									<div class="row">
+										<div class="input-field col s4">
+		          				<input id="direccion_tutor" type="text" class="validate" name="direccion_tutor">
+		          				<label for="direccion_tutor">Domicilio</label>
+		        				</div>
+		        				<div class="input-field col s4">
+		          				<input id="barrio_tutor" type="text" class="validate" name="barrio_tutor">
+		          				<label for="barrio_tutor">Barrio</label>
+		        				</div>
+		        				<div class="input-field col s4">
+		          				<input id="departamento_tutor" type="text" class="validate" name="departamento_tutor">
+		          				<label for="departamento_tutor">Departamento</label>
+		        				</div>
+									</div>
+
+									<div class="row">
+										<div class="input-field col s4 offset-s4">
+		          				<input id="telefono_tutor" type="text" class="validate" name="telefono_tutor">
+		          				<label for="telefono_tutor">CEL/TEL</label>
+		        				</div>
+									</div>
+
+									<table>
+		                <thead>
+		                  <tr>
+		                    <th></th>
+		                    <th>SI</th>
+		                    <th>NO</th>
+		                  </tr>
+		                </thead>
+		                <tbody>
+		                  <tr>
+		                    <td>Esta a Cargo del Alumno</td>
+		                    <td>
+													<label>
+										        <input name="a_cargo" type="radio" value="1" />
+										        <span></span>
+										      </label>
+		                    </td>
+		                    <td>
+		                    	<label>
+										        <input name="a_cargo" type="radio" value="0" />
+										        <span></span>
+										      </label>
+		                    </td>
+		                  </tr>
+		                  <tr>
+		                    <td>Es Tutor del Alumno</td>
+		                    <td>
+													<label>
+										        <input name="es_tutor" type="radio" value="1"/>
+										        <span></span>
+										      </label>
+		                    </td>
+		                    <td>
+		                    	<label>
+										        <input name="es_tutor" type="radio" value="0"/>
+										        <span></span>
+										      </label>
+		                    </td>
+		                  </tr>
+		                  <tr>
+		                    <td>Tiene la Patria Potestad del Alumno</td>
+		                    <td>
+													<label>
+										        <input name="patria_potestad" type="radio" value="1"/>
+										        <span></span>
+										      </label>
+		                    </td>
+		                    <td>
+		                    	<label>
+										        <input name="patria_potestad" type="radio" value="0"/>
+										        <span></span>
+										      </label>
+		                    </td>
+		                  </tr>
+		                  <tr>
+		                    <td>Vive con el Alumno</td>
+		                    <td>
+													<label>
+										        <input name="vive_con_alumno" type="radio" value="1"/>
+										        <span></span>
+										      </label>
+		                    </td>
+		                    <td>
+		                    	<label>
+										        <input name="vive_con_alumno" type="radio" value="0"/>
+										        <span></span>
+										      </label>
+		                    </td>
+		                  </tr>
+		                </tbody>
+	              	</table>
+
+	              	<br>
+
+	              	<div class="row">
+										<div class="input-field col s12">
+		          				<input id="ocupacion" type="text" class="validate" name="ocupacion">
+		          				<label for="ocupacion">Ocupación</label>
+		        				</div>
+									</div>
+
+	              </div>
 			      </div>
 
 						<div id="enfermedades">
