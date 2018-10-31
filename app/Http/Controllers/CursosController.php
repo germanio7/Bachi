@@ -57,7 +57,7 @@ class CursosController extends Controller
         $curso = new Curso;
 
         $curso->curso = $request->curso;
-        $curso->orientacion = $request->orientacion;
+        $curso->orientacion = $request->get("orientacion");
         $curso->turno = $request->get("turno");
 
         $curso->save();
@@ -152,6 +152,10 @@ class CursosController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $curso = Curso::find($id);
+
+        $curso->delete();
+
+        return redirect('cursos');
     }
 }

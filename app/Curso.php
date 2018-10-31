@@ -4,9 +4,15 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
+use Illuminate\Database\Eloquent\SoftDeletes;
+
 class Curso extends Model
 {
+    use SoftDeletes;
+
     protected $fillable = ['curso','orientacion','turno'];
+
+    protected $dates = ['deleted_at'];
 
     public function materias()
     {

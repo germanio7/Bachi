@@ -19,11 +19,11 @@ class MateriasController extends Controller
      */
     public function index()
     {
-        // $materias = Materia::all();
+        $materias = Materia::orderBy('nombre')->get();
 
         // return view('materias.index',compact('materias'));
 
-        $materias = DB::table('materias')->orderBy('id','desc')->get();
+        // $materias = DB::table('materias')->orderBy('id','desc')->get();
         return view('materias.index', ['materias' => $materias]);
     }
 
@@ -111,6 +111,10 @@ class MateriasController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $materia = Materia::find($id);
+
+        $materia->delete();
+
+        return redirect('materias');
     }
 }

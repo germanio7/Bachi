@@ -23,7 +23,7 @@ class DocentesController extends Controller
         // $materias = Materia::all();
 
         //usar eloquent para que no muestre los softDelete
-        $docentes = Docente::orderBy('nombre')->get();
+        $docentes = Docente::orderBy('apellido')->get();
 
         // return view('docentes.index',compact('docentes'));
 
