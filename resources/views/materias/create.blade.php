@@ -14,11 +14,11 @@
 		    		{{ Form::text('nombre','',(['class'=>'validate'])) }}
 				</div>
 
-				<div class="input-field col s6">
+				<div class="input-field col s4">
 		    		<select name="docente_id" class="input-field col s3">
 					<option value="" disabled selected>Elegir Docente</option>
 						@foreach($docentes as $docente)
-				      		<option value="{{$docente->id}}">Matricula: {{$docente->matricula}} - {{$docente->apellido}} {{$docente->nombre}} -Titulo: {{$docente->titulo}}</option>
+				      		<option value="{{$docente->id}}">{{$docente->cuil}} - {{$docente->apellido}} {{$docente->nombre}}</option>
 			      		@endforeach
 		    		</select>
 				</div>
