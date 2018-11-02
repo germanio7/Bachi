@@ -3,43 +3,14 @@
 @section('contenido')
 
 
-	<blockquote><h1>Nuevo Alumno</h1></blockquote>
-
-
 		{!! Form::open(['action' => 'AlumnosController@store','method'=>'POST','file'=>'true','enctype'=>'multipart/form-data','class'=>'form']) !!}
 
 			<div class="col s12">	
 				<div class="card">
-	    		<div class="card-content">
-	      		<img src="{{'/img/ministerio.png'}}" width="300" height="auto">
-	      		<br>
-	      		<h5 class="center-align">PLANILLA ANEXA I - RESOLUCION Nº 9858</h5>
-	    		</div>
-	    		<div class="card-tabs">
-	      		<ul class="tabs tabs-fixed-width">
-			        <li class="tab"><a href="#alumno"><b>Datos del Alumno</b></a></li>
-			        <li class="tab"><a href="#tutor"><b>Datos de la Familia o Tutor</b></a></li>
-			        <li class="tab"><a href="#enfermedades"><b>Información Medica</b></a></li>
-			        <li class="tab"><a href="#documentacion"><b>Documentación Presentada</b></a></li>
-	      		</ul>
-	    		</div>
+
 	    		<div class="card-content grey lighten-5">
 
-			      <div id="alumno" class="container">
-
-			      	<br>
-							
-							<p>Repitente</p>
-			      	<div class="switch">
-						    <label>
-						      NO
-						      <input type="checkbox" name="repitente">
-						      <span class="lever"></span>
-						      SI
-						    </label>
-						  </div>
-
-					    <br>
+			     	<div id="alumno" class="container" style="display: block;">
 
 								<div class="row">
 									<div class="input-field col s4">
@@ -101,9 +72,12 @@
 	          				<input id="email" type="text" class="validate" name="email">
 	          				<label for="email">Email</label>
 	        				</div>
-								</div>
+								</div>	
+					  </div>
 
-								<table>
+					  <div id="alumno2" class="container" style="display: none;">
+
+							<table>
                 <thead>
                   <tr>
                     <th></th>
@@ -191,7 +165,7 @@
               </table>
 					  </div>
 
-			      <div id="tutor">
+			      <div id="tutor" style="display: none;">
 								
 								<div class="container">
 								<br>				
@@ -351,7 +325,7 @@
 	              </div>
 			      </div>
 
-						<div id="enfermedades">
+						<div id="enfermedades" style="display: none;">
 							<table>
                 <thead>
                   <tr>
@@ -505,7 +479,7 @@
 							<br>
 			      </div>
 
-			      <div id="documentacion">
+			      <div id="documentacion" style="display: none;">
 			      	<table>
                 <thead>
                   <tr>
@@ -624,10 +598,10 @@
               </table>
 			      </div>
 
-	    		</div>
-
 	    		<div class="card-action">
-						{{ Form::submit('Guardar',(['class'=>'btn green'])) }}
+	    			<a class="black-text" id="anterior"><i class="fas fa-angle-left fa-4x"></i></a>
+	    			<a class="right black-text" id="siguiente" onclick="siguiente();"><i class="fas fa-angle-right fa-4x"></i></a>
+						{{-- {{ Form::submit('Guardar',(['class'=>'btn green'])) }} --}}
         	</div>
 
 	  		</div>
