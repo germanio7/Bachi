@@ -6,76 +6,67 @@
 		{!! Form::open(['action' => 'AlumnosController@store','method'=>'POST','file'=>'true','enctype'=>'multipart/form-data','class'=>'form']) !!}
 
 			<div class="col s12">	
-				<div class="card">
+				<div class="card margin">
 
-	    		<div class="card-content grey lighten-5">
+	    		<div class="card-content">
 
 			     	<div id="alumno" class="container" style="display: block;">
 
+			     			<p class="center-align"><b>Datos Personales del Alumno</b></p>
+
 								<div class="row">
-									<div class="input-field col s4">
+									<div class="input-field col m4 s12">
 	          				<input id="cuil" type="text" class="validate" name="cuil">
 	          				<label for="cuil">CUIL Nº</label>
 	        				</div>
 								</div>
 
 								<div class="row">
-									<div class="input-field col s12">
+									<div class="input-field col m6 s12">
 	          				<input id="apellido" type="text" class="validate" name="apellido">
 	          				<label for="apellido">Apellidos</label>
 	        				</div>
-								</div>
 
-								<div class="row">
-									<div class="input-field col s12">
+									<div class="input-field col m6 s12">
 	          				<input id="nombre" type="text" class="validate" name="nombre">
 	          				<label for="nombre">Nombres</label>
 	        				</div>
 								</div>
 
 								<div class="row">
-									<div class="input-field col s4">
+									<div class="input-field col m4 s12">
 	          				<input id="nacimiento" type="text" class="datepicker" name="fecha_nacimiento">
 	          				<label for="nacimiento">Fecha de Nacimiento</label>
 	        				</div>
-	        				<div class="input-field col s4">
+	        				<div class="input-field col m4 s12">
 	          				<input id="lugar" type="text" class="validate" name="lugar_nacimiento">
 	          				<label for="lugar">Lugar de Nacimiento</label>
 	        				</div>
-	        				<div class="input-field col s4">
+	        				<div class="input-field col m4 s12">
 	          				<input id="nacionalidad" type="text" class="validate" name="nacionalidad">
 	          				<label for="nacionalidad">Nacionalidad</label>
 	        				</div>
 								</div>
 
 								<div class="row">
-									<div class="input-field col s4">
+									<div class="input-field col m4 s12">
 	          				<input id="domiciolio" type="text" class="validate" name="direccion">
 	          				<label for="domiciolio">Domicilio</label>
 	        				</div>
-	        				<div class="input-field col s4">
+	        				<div class="input-field col m4 s12">
 	          				<input id="barrio" type="text" class="validate" name="barrio">
 	          				<label for="barrio">Barrio</label>
 	        				</div>
-	        				<div class="input-field col s4">
+	        				<div class="input-field col m4 s12">
 	          				<input id="departamento" type="text" class="validate" name="departamento">
 	          				<label for="departamento">Departamento</label>
 	        				</div>
 								</div>
-
-								<div class="row">
-									<div class="input-field col s4 offset-s2">
-	          				<input id="telefono" type="text" class="validate" name="telefono">
-	          				<label for="telefono">CEL/TEL</label>
-	        				</div>
-	        				<div class="input-field col s4">
-	          				<input id="email" type="text" class="validate" name="email">
-	          				<label for="email">Email</label>
-	        				</div>
-								</div>	
 					  </div>
 
 					  <div id="alumno2" class="container" style="display: none;">
+
+					  	<p class="center-align"><b>Datos Administrativos del Alumno</b></p>
 
 							<table>
                 <thead>
@@ -166,6 +157,8 @@
 					  </div>
 
 			      <div id="tutor" style="display: none;">
+
+			      		<p class="center-align"><b>Datos Personales del Tutor</b></p>
 								
 								<div class="container">
 								<br>				
@@ -174,8 +167,8 @@
 							        <input name="madre_padre" type="radio" value="0" />
 							        <span>Madre</span>
 							      </label>
-							    </p>
-							    <p>
+									</p>
+									<p>
 							      <label>
 							        <input name="madre_padre" type="radio" value="1" />
 							        <span>Padre</span>
@@ -184,62 +177,60 @@
 							    <br>
 
 				      		<div class="row">
-										<div class="input-field col s4">
+										<div class="input-field col m4 s12">
 		          				<input id="cuil_tutor" type="text" class="validate" name="cuil_tutor">
 		          				<label for="cuil_tutor">CUIL Nº</label>
 		        				</div>
 									</div>
 
 									<div class="row">
-										<div class="input-field col s12">
+										<div class="input-field col m6 s12">
 		          				<input id="apellido_tutor" type="text" class="validate" name="apellido_tutor">
 		          				<label for="apellido_tutor">Apellidos</label>
 		        				</div>
-									</div>
 
-									<div class="row">
-										<div class="input-field col s12">
+										<div class="input-field col m6 s12">
 		          				<input id="nombre_tutor" type="text" class="validate" name="nombre_tutor">
 		          				<label for="nombre_tutor">Nombres</label>
 		        				</div>
 									</div>
 
 									<div class="row">
-										<div class="input-field col s4">
+										<div class="input-field col m4 s12">
 		          				<input id="fecha_nacimiento_tutor" type="text" class="datepicker" name="fecha_nacimiento_tutor">
 		          				<label for="fecha_nacimiento_tutor">Fecha de Nacimiento</label>
 		        				</div>
-		        				<div class="input-field col s4">
+		        				<div class="input-field col m4 s12">
 		          				<input id="lugar_nacimiento_tutor" type="text" class="validate" name="lugar_nacimiento_tutor">
 		          				<label for="lugar_nacimiento_tutor">Lugar de Nacimiento</label>
 		        				</div>
-		        				<div class="input-field col s4">
+		        				<div class="input-field col m4 s12">
 		          				<input id="nacionalidad_tutor" type="text" class="validate" name="nacionalidad_tutor">
 		          				<label for="nacionalidad_tutor">Nacionalidad</label>
 		        				</div>
 									</div>
 
 									<div class="row">
-										<div class="input-field col s4">
+										<div class="input-field col m4 s12">
 		          				<input id="direccion_tutor" type="text" class="validate" name="direccion_tutor">
 		          				<label for="direccion_tutor">Domicilio</label>
 		        				</div>
-		        				<div class="input-field col s4">
+		        				<div class="input-field col m4 s12">
 		          				<input id="barrio_tutor" type="text" class="validate" name="barrio_tutor">
 		          				<label for="barrio_tutor">Barrio</label>
 		        				</div>
-		        				<div class="input-field col s4">
+		        				<div class="input-field col m4 s12">
 		          				<input id="departamento_tutor" type="text" class="validate" name="departamento_tutor">
 		          				<label for="departamento_tutor">Departamento</label>
 		        				</div>
 									</div>
 
-									<div class="row">
-										<div class="input-field col s4 offset-s4">
-		          				<input id="telefono_tutor" type="text" class="validate" name="telefono_tutor">
-		          				<label for="telefono_tutor">CEL/TEL</label>
-		        				</div>
-									</div>
+	              </div>
+			      </div>
+
+			      <div id="tutor2" style="display: none;">
+
+			      	<p class="center-align"><b>Datos del Tutor en relación con el Alumno</b></p>
 
 									<table>
 		                <thead>
@@ -321,11 +312,12 @@
 		          				<label for="ocupacion">Ocupación</label>
 		        				</div>
 									</div>
-
-	              </div>
 			      </div>
 
 						<div id="enfermedades" style="display: none;">
+							
+							<p class="center-align"><b>Información Médica del Alumno</b></p>
+
 							<table>
                 <thead>
                   <tr>
@@ -426,7 +418,7 @@
                     </td>
                   </tr>
                   <tr>
-                    <td>En los últimos 60 días ha padecido: Luxaciones - Esguínces (torceduras de tobillos, hombres, muñecas, etc)</td>
+                    <td>En los últimos 60 días ha padecido: Luxaciones - Esguínces (torceduras de tobillos, hombros, muñecas, etc)</td>
                     <td>
 											<label>
 								        <input name="esguinces" type="radio" value="1"/>
@@ -480,6 +472,9 @@
 			      </div>
 
 			      <div id="documentacion" style="display: none;">
+							
+							<p class="center-align"><b>Documentación presentada por el Alumno</b></p>
+
 			      	<table>
                 <thead>
                   <tr>
@@ -597,11 +592,16 @@
                 </tbody>
               </table>
 			      </div>
+					
+					</div>
 
-	    		<div class="card-action">
-	    			<a class="black-text" id="anterior"><i class="fas fa-angle-left fa-4x"></i></a>
-	    			<a class="right black-text" id="siguiente" onclick="siguiente();"><i class="fas fa-angle-right fa-4x"></i></a>
-						{{-- {{ Form::submit('Guardar',(['class'=>'btn green'])) }} --}}
+					<div class="card-action grey lighten-5">
+						<a id="falso" class="grey-text"><i class="fas fa-angle-left fa-4x"></i></a>
+						<a id="antes" class="tooltipped" data-position="top" data-tooltip="Anterior" style="display: none; cursor: pointer;" onclick="anterior();"><i class="fas fa-angle-left fa-4x"></i></a>
+          	<a class="right tooltipped" data-position="top" data-tooltip="Siguiente" id="sigue" style="cursor: pointer;" onclick="siguiente();"><i class="fas fa-angle-right fa-4x"></i></a>
+          	<div class="right" id="submit" style="display: none;">
+							{{ Form::submit('Guardar',(['class'=>'btn btn-large green'])) }}
+						</div>
         	</div>
 
 	  		</div>

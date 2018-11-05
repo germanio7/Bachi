@@ -27,7 +27,7 @@
 				<td></td>
 				<td>
 					<div class="btn-group" role="group">
-			        <a class="btn blue" href="#"><i class="fas fa-print fa-lg"></i></a>
+			        <a class="btn blue" href="{{route('alumnos.show',$alumno->id)}}"><i class="fas fa-print fa-lg"></i></a>
 			        <a class="btn green" href="#"><i class="fas fa-pen fa-lg"></i></a>
 			      <a class="btn red" href="#"><i class="fas fa-trash fa-lg"></i></a>
 			    </div>

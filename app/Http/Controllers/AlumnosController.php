@@ -3,20 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
 use App\Alumno;
-
 use App\Padre;
-
 use App\Curso;
-
 use App\Nota;
-
 use App\Asistencia;
-
 use App\Materia;
-
 use Illuminate\Support\Facades\DB;
+use Barryvdh\DomPDF\Facade as PDF;
 
 class AlumnosController extends Controller
 {
@@ -130,8 +124,11 @@ class AlumnosController extends Controller
 
         $padre->save();
 
-        return redirect('alumnos');
+        $inscripcion = Alumno::find($alumno_id);
+        $pdf = PDF::loadView('alumnos.inscripcion',compact('inscripcion'))->setPaper('a4');
+        return $pdf->stream();
     }
+
 
     /**
      * Display the specified resource.
@@ -141,43 +138,47 @@ class AlumnosController extends Controller
      */
     public function show($id)
     {
-        $alumno = Alumno::find($id);
+        // $alumno = Alumno::find($id);
 
-        $notas = Nota::where('alumno_id',$alumno->id)->get();
+        // $notas = Nota::where('alumno_id',$alumno->id)->get();
 
-        $asistencias = Asistencia::where('alumno_id',$alumno->id)->orderBy('fecha')->get();
+        // $asistencias = Asistencia::where('alumno_id',$alumno->id)->orderBy('fecha')->get();
 
-        $cantAsistencia = Asistencia::where('alumno_id',$alumno->id)->sum('asistencia');
+        // $cantAsistencia = Asistencia::where('alumno_id',$alumno->id)->sum('asistencia');
 
-        $totalAsistencia = Asistencia::where('alumno_id',$alumno->id)->count();
+        // $totalAsistencia = Asistencia::where('alumno_id',$alumno->id)->count();
 
-        $porcentaje = Asistencia::where('alumno_id',$alumno->id)->avg('asistencia')*100;
+        // $porcentaje = Asistencia::where('alumno_id',$alumno->id)->avg('asistencia')*100;
 
-        //año actual
-        $hoy = now()->format('Y');
+        // //año actual
+        // $hoy = now()->format('Y');
 
-        //devuelve el año de la tabla intermedia alumno_curso
-        $anio = $alumno->cursos()->select('anio')->where('anio', $hoy)->value('anio');
+        // //devuelve el año de la tabla intermedia alumno_curso
+        // $anio = $alumno->cursos()->select('anio')->where('anio', $hoy)->value('anio');
 
-        //recupera el id del curso de la tabla intermedia alumno_curso
-        $idcurso = $alumno->cursos()->select('curso_id')->where('anio', $hoy)->value('curso_id');
-        if ($idcurso>0) {
-            //busca el curso a partir del id recuperado
-            $curso = Curso::find($idcurso);
+        // //recupera el id del curso de la tabla intermedia alumno_curso
+        // $idcurso = $alumno->cursos()->select('curso_id')->where('anio', $hoy)->value('curso_id');
+        // if ($idcurso>0) {
+        //     //busca el curso a partir del id recuperado
+        //     $curso = Curso::find($idcurso);
 
-        } else {
-            $curso = $idcurso;
-        }
+        // } else {
+        //     $curso = $idcurso;
+        // }
 
-        $materias = Materia::whereDoesntHave('notas')->orderBy('nombre')->get();
+        // $materias = Materia::whereDoesntHave('notas')->orderBy('nombre')->get();
 
-        // $materias = Materia::whereDoesntHave('notas')->whereNotIn('id',Alumno::doesntHave('notas'))->orderBy('nombre')->get();
+        // // $materias = Materia::whereDoesntHave('notas')->whereNotIn('id',Alumno::doesntHave('notas'))->orderBy('nombre')->get();
 
-        // $materias = Materia::whereRaw('notas', )->get();
+        // // $materias = Materia::whereRaw('notas', )->get();
 
-        // $materias = Materia::whereIn('id', Nota::whereDoesntHave('alumnos'))->get();
+        // // $materias = Materia::whereIn('id', Nota::whereDoesntHave('alumnos'))->get();
         
-        return view('alumnos.show', compact('alumno', 'curso', 'anio', 'notas', 'materias', 'asistencias', 'cantAsistencia', 'totalAsistencia', 'porcentaje'));
+        // return view('alumnos.show', compact('alumno', 'curso', 'anio', 'notas', 'materias', 'asistencias', 'cantAsistencia', 'totalAsistencia', 'porcentaje'));
+
+        $inscripcion = Alumno::find($id);
+        $pdf = PDF::loadView('alumnos.inscripcion',compact('inscripcion'))->setPaper('a4');
+        return $pdf->stream();
     }
 
     /**

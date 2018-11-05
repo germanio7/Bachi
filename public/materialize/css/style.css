@@ -1,3 +1,15 @@
+/*color card action*/
+
+.card .card-action a:not(.btn):not(.btn-large):not(.btn-small):not(.btn-large):not(.btn-floating) {
+  color: #689f38;
+}
+
+.card .card-action a:not(.btn):not(.btn-large):not(.btn-small):not(.btn-large):not(.btn-floating):hover {
+  color: #8bc34a;
+}
+
+/*trasparencia*/
+
 .trasparent {
   background: -webkit-linear-gradient(rgba(0,0,0,0) 0%, rgba(0,0,0,0) 100%);
   background: -o-linear-gradient(rgba(0,0,0,0) 0%, rgba(0,0,0,0) 100%);
