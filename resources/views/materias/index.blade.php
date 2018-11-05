@@ -28,6 +28,10 @@
 				<td>
 					<div class="btn-group btn-group-justified">
 						<a href="{{route('materias.show',$materia->id)}}" class="btn green darken-4">Ver más</a>
+
+						{!!Form::open(['route'=>['materias.destroy',$materia->id],'method'=>'DELETE'])!!}
+							<button class="btn red darken-4">Eliminar</button>
+						{!!Form::close()!!}
 					</div>
 
 				</td>

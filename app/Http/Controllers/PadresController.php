@@ -119,6 +119,10 @@ class PadresController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $padre = Padre::find($id);
+
+        $padre->delete();
+
+        return redirect('padres');
     }
 }

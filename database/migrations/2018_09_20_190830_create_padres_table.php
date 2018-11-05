@@ -33,6 +33,7 @@ class CreatePadresTable extends Migration
             $table->tinyInteger('vive_con_alumno');
             $table->string('ocupacion');
             $table->timestamps();
+            $table->softDeletes();
 
             $table->foreign('alumno_id')->references('id')->on('alumnos');
         });
