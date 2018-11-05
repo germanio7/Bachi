@@ -19,6 +19,7 @@ class CreateCursosTable extends Migration
             $table->string('orientacion');
             $table->string('turno');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
