@@ -94,7 +94,8 @@ class DocentesController extends Controller
      */
     public function edit($id)
     {
-        //
+        $docente = Docente::find($id);
+        return view('docentes.edit',compact('docente'));
     }
 
     /**
@@ -106,7 +107,20 @@ class DocentesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $docente = Docente::find($id);
+
+        $docente->cuil = $request->cuil;
+        $docente->apellido = $request->apellido;
+        $docente->nombre = $request->nombre;
+        $docente->matricula = $request->matricula;
+        $docente->titulo = $request->titulo;
+        $docente->direccion = $request->direccion;
+        $docente->telefono = $request->telefono;
+        $docente->email = $request->email;
+
+        $docente->save();
+
+        return redirect('docentes');
     }
 
     /**

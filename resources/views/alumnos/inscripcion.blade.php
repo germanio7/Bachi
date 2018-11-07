@@ -188,10 +188,10 @@
 									<b>CUIL Nº: </b>{{$t->cuil}}
 								</p>
 								<p>
-									<b>A Cargo: </b>
-									<b>Es Tutor: </b>
-									<b>Patria Potestad: </b>
-									<b>Vive con el Alumno: </b>
+									<b>A Cargo: </b>@if($t->a_cargo == 1) SI @else NO @endif 
+									<b>Es Tutor: </b>@if($t->es_tutor == 1) SI @else NO @endif 
+									<b>Patria Potestad: </b>@if($t->patria_potestad == 1) SI @else NO @endif 
+									<b>Vive con el Alumno: </b>@if($t->vive_con_alumno == 1) SI @else NO @endif 
 								</p>
 								<p>
 									<b>Ocupación: </b>{{$t->ocupacion}}
