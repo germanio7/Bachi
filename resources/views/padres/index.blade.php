@@ -43,6 +43,8 @@
 					<div class="btn-group btn-group-justified">
 						<a href="{{route('padres.show',$padre->id)}}" class="btn green darken-4">Ver más</a>
 
+						<a href="{{route('padres.edit',$padre->id)}}" class="btn green darken-4">edit</a>
+
 						{!!Form::open(['route'=>['padres.destroy',$padre->id],'method'=>'DELETE'])!!}
 							<button class="btn red darken-4">Eliminar</button>
 						{!!Form::close()!!}

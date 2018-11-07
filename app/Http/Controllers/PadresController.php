@@ -96,7 +96,8 @@ class PadresController extends Controller
      */
     public function edit($id)
     {
-        //
+        $padre = Padre::find($id);
+        return view('padres.edit',compact('padre'));
     }
 
     /**
@@ -108,7 +109,24 @@ class PadresController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $padre = Padre::find($id);
+        $padre->madre_padre = $request->get('madre_padre');
+        $padre->cuil = $request->cuil;
+        $padre->apellido = $request->apellido;
+        $padre->nombre = $request->nombre;
+        $padre->fecha_nacimiento = $request->fecha_nacimiento;
+        $padre->lugar_nacimiento = $request->lugar_nacimiento;
+        $padre->nacionalidad = $request->nacionalidad;
+        $padre->direccion = $request->direccion;
+        $padre->a_cargo = $request->get('a_cargo');
+        $padre->es_tutor = $request->get('es_tutor');
+        $padre->patria_potestad = $request->get('patria_potestad');
+        $padre->vive_con_alumno = $request->get('vive_con_alumno');
+        $padre->ocupacion = $request->ocupacion;
+
+        $padre->save();
+
+        return redirect('padres');
     }
 
     /**

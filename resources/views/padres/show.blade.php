@@ -45,7 +45,7 @@
 
 			<div class="input-field col s4">
 				{{ Form::label('a_cargo','A Cargo',(['class'=>'active','for'=>''])) }}
-				@if($padre->a_cargo=0)
+				@if($padre->a_cargo==0)
 					<h5>NO</h5>
 				@else
 					<h5>SI</h5>
@@ -54,7 +54,7 @@
 
 			<div class="input-field col s4">
 				{{ Form::label('es_tutor','Es Tutor',(['class'=>'active','for'=>''])) }}
-				@if($padre->es_tutor=0)
+				@if($padre->es_tutor==0)
 					<h5>NO</h5>
 				@else
 					<h5>SI</h5>
@@ -63,7 +63,7 @@
 
 			<div class="input-field col s4">
 				{{ Form::label('patria_potestad','Patria Potestad',(['class'=>'active','for'=>''])) }}
-				@if($padre->patria_potestad=0)
+				@if($padre->patria_potestad==0)
 					<h5>NO</h5>
 				@else
 					<h5>SI</h5>
@@ -72,7 +72,7 @@
 
 			<div class="input-field col s4">
 				{{ Form::label('vive_con_alumno','Vive Con Alumno',(['class'=>'active','for'=>''])) }}
-				@if($padre->vive_con_alumno=0)
+				@if($padre->vive_con_alumno==0)
 					<h5>NO</h5>
 				@else
 					<h5>SI</h5>
