@@ -28,7 +28,7 @@
 				<td>
 					<div class="btn-group" role="group">
 			        <a class="btn blue" href="{{route('alumnos.show',$alumno->id)}}"><i class="fas fa-print fa-lg"></i></a>
-			        <a class="btn green" href="#"><i class="fas fa-pen fa-lg"></i></a>
+			        <a class="btn green" href="{{route('alumnos.edit',$alumno->id)}}"><i class="fas fa-pen fa-lg"></i></a>
 			      
 			      {!!Form::open(['route'=>['alumnos.destroy',$alumno->id],'method'=>'DELETE'])!!}
 						<button class="btn red darken-4"><i class="fas fa-trash fa-lg"></i></button>
