@@ -26,7 +26,7 @@ class CreatePadresTable extends Migration
             $table->string('direccion');
             $table->string('barrio')->nullable();
             $table->string('departamento')->nullable();
-            $table->string('telefono');
+            $table->string('telefono')->nullable();
             $table->tinyInteger('a_cargo');
             $table->tinyInteger('es_tutor');
             $table->tinyInteger('patria_potestad');

@@ -75,3 +75,5 @@ Route::post('buscarPadre','PadresController@buscar')->name('padres.buscar');
 Route::post('agregarAlumno','CursosController@agregarAlumno')->name('cursos.agregarAlumno');
 
 Route::post('AgregarMateria','CursosController@agregarMateria')->name('cursos.agregarMateria');
+
+Route::get('pdf', 'PDFController@pdf');

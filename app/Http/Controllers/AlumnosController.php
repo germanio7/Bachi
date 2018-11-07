@@ -16,6 +16,8 @@ use App\Asistencia;
 
 use App\Materia;
 
+use PDF;
+
 use Illuminate\Support\Facades\DB;
 
 class AlumnosController extends Controller
@@ -130,7 +132,11 @@ class AlumnosController extends Controller
 
         $padre->save();
 
-        return redirect('alumnos');
+        $alumno = Alumno::find($alumno_id);
+        $tutor = Padre::where('alumno_id',$alumno_id)->get();
+
+        $pdf = PDF::loadView('alumnos.inscripcion', compact('alumno', 'tutor'))->setPaper('Legal');;
+        return $pdf->stream();
     }
 
     /**
@@ -178,6 +184,7 @@ class AlumnosController extends Controller
         // $materias = Materia::whereIn('id', Nota::whereDoesntHave('alumnos'))->get();
         
         return view('alumnos.show', compact('alumno', 'curso', 'anio', 'notas', 'materias', 'asistencias', 'cantAsistencia', 'totalAsistencia', 'porcentaje'));
+
     }
 
     /**
