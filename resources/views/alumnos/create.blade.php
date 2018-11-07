@@ -225,6 +225,13 @@
 		        				</div>
 									</div>
 
+									<div class="row">
+										<div class="input-field col m4 s12 offset-m4">
+		          				<input id="telefono" type="text" class="validate" name="telefono">
+		          				<label for="telefono">CEL/TEL</label>
+		        				</div>
+									</div>
+
 	              </div>
 			      </div>
 
