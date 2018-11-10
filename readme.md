@@ -1,1 +1,1 @@
-<img src="public/img/BachiFondo.png" alt="">
+<img src="public/img/BachiFondo.png">
