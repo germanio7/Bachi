@@ -39,24 +39,22 @@
                   </tr>
                 </thead>
                 <tbody>
-                  @foreach($alumnocurso as $ac)
-                    @foreach($alumnos as $alumno)
-                      @if($alumno->id == $ac->alumno_id && $curso->id == $ac->curso_id)
-                        <tr>
-                          <td>{{$alumno->cuil}}</td>
-                          <td>{{$alumno->apellido}}</td>
-                          <td>{{$alumno->nombre}}</td>
-                          <td>
-                            <div class="btn-group" role="group">
-                              <a class="btn blue" href="#"><i class="fas fa-print fa-lg"></i></a>
-                              <a class="btn green" href="#"><i class="fas fa-pen fa-lg"></i></a>
-                              <a class="btn red" href="#"><i class="fas fa-trash fa-lg"></i></a>
-                            </div>
-                          </td>
-                        </tr>
-                      @endif
+        
+                    @foreach($curso->alumnos as $alumno)
+                      <tr>
+                        <td>{{$alumno->cuil}}</td>
+                        <td>{{$alumno->apellido}}</td>
+                        <td>{{$alumno->nombre}}</td>
+                        <td>
+                          <div class="btn-group" role="group">
+                            <a class="btn blue" href="#"><i class="fas fa-print fa-lg"></i></a>
+                            <a class="btn green" href="#"><i class="fas fa-pen fa-lg"></i></a>
+                            <a class="btn red" href="#"><i class="fas fa-trash fa-lg"></i></a>
+                          </div>
+                        </td>
+                      </tr>
                     @endforeach
-                  @endforeach  
+            
                 </tbody>
               </table>
             </div>
@@ -70,30 +68,23 @@
                   </tr>
                 </thead>
                 <tbody>
-                    @foreach($cursomateria as $cm)
-                      @foreach($materias as $materia)
-                        @foreach($docentemateria as $dm)
-                          @foreach($docentes as $docente)
-                            @if($materia->id == $cm->materia_id && $curso->id == $cm->curso_id)
-                              @if($materia->id == $dm->materia_id && $docente->id == $dm->docente_id)
-                                <tr>
-                                  <td>{{$materia->nombre}}</td>
-                                      
-                                        <td>{{$docente->apellido}} {{$docente->nombre}}</td>
-                                  <td>
-                                    <div class="btn-group" role="group">
-                                      <a class="btn blue" href="#"><i class="fas fa-print fa-lg"></i></a>
-                                      <a class="btn green" href="#"><i class="fas fa-pen fa-lg"></i></a>
-                                      <a class="btn red" href="#"><i class="fas fa-trash fa-lg"></i></a>
-                                    </div>
-                                  </td>
-                                </tr>
-                              @endif
-                            @endif
-                          @endforeach
-                        @endforeach
-                      @endforeach
-                    @endforeach  
+                    
+                  @foreach($curso->materias as $materia)
+                    <tr>
+                      <td>{{$materia->nombre}}</td>
+                          @foreach($materia->docentes as $docente)
+                            <td>{{$docente->apellido}} {{$docente->nombre}}</td>
+                      <td>
+                        <div class="btn-group" role="group">
+                          <a class="btn blue" href="#"><i class="fas fa-print fa-lg"></i></a>
+                          <a class="btn green" href="#"><i class="fas fa-pen fa-lg"></i></a>
+                          <a class="btn red" href="#"><i class="fas fa-trash fa-lg"></i></a>
+                        </div>
+                      </td>
+                    </tr>
+                    @endforeach
+                  @endforeach
+      
                 </tbody>
               </table>
             </div>
