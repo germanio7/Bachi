@@ -162,13 +162,13 @@
 
 									<p>
 							      <label>
-							        <input name="madre_padre" type="radio" value="0" />
+							        <input name="madre_padre" type="radio" value="0" v-model="newMadrePadre" />
 							        <span>Madre</span>
 							      </label>
 									</p>
 									<p>
 							      <label>
-							        <input name="madre_padre" type="radio" value="1" />
+							        <input name="madre_padre" type="radio" value="1" v-model="newMadrePadre" />
 							        <span>Padre</span>
 							      </label>
 							    </p>
@@ -176,56 +176,56 @@
 
 				      		<div class="row">
 										<div class="input-field col m4 s12">
-		          				<input id="cuil_tutor" type="text" class="validate" name="cuil_tutor">
+		          				<input id="cuil_tutor" type="text" class="validate" name="cuil_tutor" v-model="newCuilTutor">
 		          				<label for="cuil_tutor">CUIL Nº</label>
 		        				</div>
 									</div>
 
 									<div class="row">
 										<div class="input-field col m6 s12">
-		          				<input id="apellido_tutor" type="text" class="validate" name="apellido_tutor">
+		          				<input id="apellido_tutor" type="text" class="validate" name="apellido_tutor" v-model="newApellidoTutor">
 		          				<label for="apellido_tutor">Apellidos</label>
 		        				</div>
 
 										<div class="input-field col m6 s12">
-		          				<input id="nombre_tutor" type="text" class="validate" name="nombre_tutor">
+		          				<input id="nombre_tutor" type="text" class="validate" name="nombre_tutor" v-model="newNombreTutor">
 		          				<label for="nombre_tutor">Nombres</label>
 		        				</div>
 									</div>
 
 									<div class="row">
 										<div class="input-field col m4 s12">
-		          				<input id="fecha_nacimiento_tutor" type="text" class="datepicker" name="fecha_nacimiento_tutor">
+		          				<input id="fecha_nacimiento_tutor" type="text" class="datepicker" name="fecha_nacimiento_tutor" v-model="newFechaNacimientoTutor">
 		          				<label for="fecha_nacimiento_tutor">Fecha de Nacimiento</label>
 		        				</div>
 		        				<div class="input-field col m4 s12">
-		          				<input id="lugar_nacimiento_tutor" type="text" class="validate" name="lugar_nacimiento_tutor">
+		          				<input id="lugar_nacimiento_tutor" type="text" class="validate" name="lugar_nacimiento_tutor" v-model="newLugarNacimientoTutor">
 		          				<label for="lugar_nacimiento_tutor">Lugar de Nacimiento</label>
 		        				</div>
 		        				<div class="input-field col m4 s12">
-		          				<input id="nacionalidad_tutor" type="text" class="validate" name="nacionalidad_tutor">
+		          				<input id="nacionalidad_tutor" type="text" class="validate" name="nacionalidad_tutor" v-model="newNacionalidadTutor">
 		          				<label for="nacionalidad_tutor">Nacionalidad</label>
 		        				</div>
 									</div>
 
 									<div class="row">
 										<div class="input-field col m8 s12">
-		          				<input id="direccion_tutor" type="text" class="validate" name="direccion_tutor">
+		          				<input id="direccion_tutor" type="text" class="validate" name="direccion_tutor" v-model="newDireccionTutor">
 		          				<label for="direccion_tutor">Domicilio</label>
 		        				</div>
 		        				<div class="input-field col m4 s12">
-		          				<input id="telefono_tutor" type="text" class="validate" name="telefono_tutor">
+		          				<input id="telefono_tutor" type="text" class="validate" name="telefono_tutor" v-model="newTelefonoTutor">
 		          				<label for="telefono_tutor">CEL/TEL</label>
 		        				</div>
 									</div>
 
 									<div class="row">
 		        				<div class="input-field col m6 s12">
-		          				<input id="barrio_tutor" type="text" class="validate" name="barrio_tutor">
+		          				<input id="barrio_tutor" type="text" class="validate" name="barrio_tutor" v-model="newBarrioTutor">
 		          				<label for="barrio_tutor">Barrio</label>
 		        				</div>
 		        				<div class="input-field col m6 s12">
-		          				<input id="departamento_tutor" type="text" class="validate" name="departamento_tutor">
+		          				<input id="departamento_tutor" type="text" class="validate" name="departamento_tutor" v-model="newDepartamentoTutor">
 		          				<label for="departamento_tutor">Departamento</label>
 		        				</div>
 									</div>
