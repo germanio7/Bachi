@@ -73,7 +73,7 @@
 	</div>
 
 	{{-- Estructura Modal Materia --}}
-	<div id="modalMateria" class="modal lime lighten-4">
+{{-- 	<div id="modalMateria" class="modal lime lighten-4">
 		<div class="modal-content">
 			{!! Form::open(['action' => 'CursosController@agregarMateria','method'=>'POST','file'=>'true','enctype'=>'multipart/form-data','class'=>'form']) !!}
 			
@@ -89,10 +89,10 @@
 	    	
 			{!! Form::close() !!}
 		</div>
-	</div>
+	</div> --}}
 
 	{{-- Estructura Modal Alumno --}}
-	<div id="modalAlumno" class="modal lime lighten-4">
+{{-- 	<div id="modalAlumno" class="modal lime lighten-4">
 		<div class="modal-content">
 			{!! Form::open(['action' => 'CursosController@agregarAlumno','method'=>'POST','file'=>'true','enctype'=>'multipart/form-data','class'=>'form']) !!}
 			
@@ -108,7 +108,7 @@
 	    	
 			{!! Form::close() !!}
 		</div>
-	</div>
+	</div> --}}
 
 	{{-- Estructura Modal Asistencia --}}
 	<div id="modalAsistencia" class="modal lime lighten-4">

@@ -82,7 +82,7 @@
                         </div>
                       </td>
                     </tr>
-                          @endforeach
+                    @endforeach
                   @endforeach
       
                 </tbody>

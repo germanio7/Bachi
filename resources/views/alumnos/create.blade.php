@@ -1,74 +1,70 @@
-@extends('home')
-
-@section('contenido')
 
 
-		{!! Form::open(['action' => 'AlumnosController@store','method'=>'POST','file'=>'true','enctype'=>'multipart/form-data','class'=>'form']) !!}
+		<form method='POST' v-on:submit.prevent="createAlumno">
 
-			<div class="col s12">	
+			<div class="col s12">
 				<div class="card margin">
+					<div class="card-content">
 
-	    		<div class="card-content">
+						<div id="alumno" class="container">
 
-			     	<div id="alumno" class="container" style="display: block;">
+							<h6><b><u>Datos del Alumno:</u></b></h6>
+							<br>
 
-			     			<p class="center-align"><b>Datos Personales del Alumno</b></p>
-
-								<div class="row">
+							<div class="row">
 									<div class="input-field col m4 s12">
-	          				<input id="cuil" type="text" class="validate" name="cuil">
+	          				<input id="cuil" type="text" class="validate" name="cuil" v-model="newCuil">
 	          				<label for="cuil">CUIL Nº</label>
 	        				</div>
 								</div>
 
 								<div class="row">
 									<div class="input-field col m6 s12">
-	          				<input id="apellido" type="text" class="validate" name="apellido">
+	          				<input id="apellido" type="text" class="validate" name="apellido" v-model="newApellido">
 	          				<label for="apellido">Apellidos</label>
 	        				</div>
 
 									<div class="input-field col m6 s12">
-	          				<input id="nombre" type="text" class="validate" name="nombre">
+	          				<input id="nombre" type="text" class="validate" name="nombre" v-model="newNombre"> 
 	          				<label for="nombre">Nombres</label>
 	        				</div>
 								</div>
 
 								<div class="row">
 									<div class="input-field col m4 s12">
-	          				<input id="nacimiento" type="text" class="datepicker" name="fecha_nacimiento">
+	          				<input id="nacimiento" type="text" class="datepicker" name="fecha_nacimiento" v-model="newFechaNacimiento">
 	          				<label for="nacimiento">Fecha de Nacimiento</label>
 	        				</div>
 	        				<div class="input-field col m4 s12">
-	          				<input id="lugar" type="text" class="validate" name="lugar_nacimiento">
+	          				<input id="lugar" type="text" class="validate" name="lugar_nacimiento" v-model="newLugarNacimiento">
 	          				<label for="lugar">Lugar de Nacimiento</label>
 	        				</div>
 	        				<div class="input-field col m4 s12">
-	          				<input id="nacionalidad" type="text" class="validate" name="nacionalidad">
+	          				<input id="nacionalidad" type="text" class="validate" name="nacionalidad" v-model="newNacionalidad">
 	          				<label for="nacionalidad">Nacionalidad</label>
 	        				</div>
 								</div>
 
 								<div class="row">
-									<div class="input-field col m4 s12">
-	          				<input id="domiciolio" type="text" class="validate" name="direccion">
-	          				<label for="domiciolio">Domicilio</label>
+									<div class="input-field col s12">
+	          				<input id="domicilio" type="text" class="validate" name="direccion" v-model="newDireccion">
+	          				<label for="domicilio">Domicilio</label>
 	        				</div>
-	        				<div class="input-field col m4 s12">
-	          				<input id="barrio" type="text" class="validate" name="barrio">
+								</div>
+
+								<div class="row">
+									<div class="input-field col m6 s12">
+	          				<input id="barrio" type="text" class="validate" name="barrio" v-model="newBarrio">
 	          				<label for="barrio">Barrio</label>
 	        				</div>
-	        				<div class="input-field col m4 s12">
-	          				<input id="departamento" type="text" class="validate" name="departamento">
+	        				<div class="input-field col m6 s12">
+	          				<input id="departamento" type="text" class="validate" name="departamento" v-model="newDepartamento">
 	          				<label for="departamento">Departamento</label>
 	        				</div>
 								</div>
-					  </div>
 
-					  <div id="alumno2" class="container" style="display: none;">
-
-					  	<p class="center-align"><b>Datos Administrativos del Alumno</b></p>
-
-							<table>
+								<div class="row">
+									<table>
                 <thead>
                   <tr>
                     <th></th>
@@ -81,13 +77,13 @@
                     <td>Asiganación Universal</td>
                     <td>
 											<label>
-								        <input name="asignacion_universal" type="radio" value="1" />
+								        <input name="asignacion_universal" type="radio" value="1" v-model="newAsignacionUniversal"/>
 								        <span></span>
 								      </label>
                     </td>
                     <td>
                     	<label>
-								        <input name="asignacion_universal" type="radio" checked value="0" />
+								        <input name="asignacion_universal" type="radio" checked value="0" v-model="newAsignacionUniversal"/>
 								        <span></span>
 								      </label>
                     </td>
@@ -96,13 +92,13 @@
                     <td>Salario Familiar</td>
                     <td>
 											<label>
-								        <input name="salario_familiar" type="radio" value="1"/>
+								        <input name="salario_familiar" type="radio" value="1" v-model="newSalarioFamiliar"/>
 								        <span></span>
 								      </label>
                     </td>
                     <td>
                     	<label>
-								        <input name="salario_familiar" type="radio" checked value="0"/>
+								        <input name="salario_familiar" type="radio" checked value="0" v-model="newSalarioFamiliar"/>
 								        <span></span>
 								      </label>
                     </td>
@@ -111,13 +107,13 @@
                     <td>Pertenece a un Pueblo Originario</td>
                     <td>
 											<label>
-								        <input name="pueblo_originario" type="radio" value="1"/>
+								        <input name="pueblo_originario" type="radio" value="1" v-model="newPuebloOriginario"/>
 								        <span></span>
 								      </label>
                     </td>
                     <td>
                     	<label>
-								        <input name="pueblo_originario" type="radio" checked value="0"/>
+								        <input name="pueblo_originario" type="radio" checked value="0" v-model="newPuebloOriginario"/>
 								        <span></span>
 								      </label>
                     </td>
@@ -126,13 +122,13 @@
                     <td>Programa CAI</td>
                     <td>
 											<label>
-								        <input name="programa_cai" type="radio" value="1"/>
+								        <input name="programa_cai" type="radio" value="1" v-model="newProgramaCai"/>
 								        <span></span>
 								      </label>
                     </td>
                     <td>
                     	<label>
-								        <input name="programa_cai" type="radio" checked value="0"/>
+								        <input name="programa_cai" type="radio" checked value="0" v-model="newProgramaCai"/>
 								        <span></span>
 								      </label>
                     </td>
@@ -141,27 +137,29 @@
                     <td>Discapacidad</td>
                     <td>
 											<label>
-								        <input name="discapacidad" type="radio" value="1"/>
+								        <input name="discapacidad" type="radio" value="1" v-model="newDiscapacidad"/>
 								        <span></span>
 								      </label>
                     </td>
                     <td>
                     	<label>
-								        <input name="discapacidad" type="radio" checked value="0"/>
+								        <input name="discapacidad" type="radio" checked value="0" v-model="newDiscapacidad"/>
 								        <span></span>
 								      </label>
                     </td>
                   </tr>
                 </tbody>
               </table>
-					  </div>
+								</div>
+						</div>
 
-			      <div id="tutor" style="display: none;">
+						<div class="divider"></div>
+						<br>
 
-			      		<p class="center-align"><b>Datos Personales del Tutor</b></p>
-								
-								<div class="container">
-								<br>				
+						<div id="tutor" class="container">
+							<h6><b><u>Datos de la Familia o Tutor</u></b></h6>
+							<br>
+
 									<p>
 							      <label>
 							        <input name="madre_padre" type="radio" value="0" />
@@ -211,33 +209,26 @@
 									</div>
 
 									<div class="row">
-										<div class="input-field col m4 s12">
+										<div class="input-field col m8 s12">
 		          				<input id="direccion_tutor" type="text" class="validate" name="direccion_tutor">
 		          				<label for="direccion_tutor">Domicilio</label>
 		        				</div>
 		        				<div class="input-field col m4 s12">
-		          				<input id="barrio_tutor" type="text" class="validate" name="barrio_tutor">
-		          				<label for="barrio_tutor">Barrio</label>
-		        				</div>
-		        				<div class="input-field col m4 s12">
-		          				<input id="departamento_tutor" type="text" class="validate" name="departamento_tutor">
-		          				<label for="departamento_tutor">Departamento</label>
+		          				<input id="telefono_tutor" type="text" class="validate" name="telefono_tutor">
+		          				<label for="telefono_tutor">CEL/TEL</label>
 		        				</div>
 									</div>
 
 									<div class="row">
-										<div class="input-field col m4 s12 offset-m4">
-		          				<input id="telefono" type="text" class="validate" name="telefono">
-		          				<label for="telefono">CEL/TEL</label>
+		        				<div class="input-field col m6 s12">
+		          				<input id="barrio_tutor" type="text" class="validate" name="barrio_tutor">
+		          				<label for="barrio_tutor">Barrio</label>
+		        				</div>
+		        				<div class="input-field col m6 s12">
+		          				<input id="departamento_tutor" type="text" class="validate" name="departamento_tutor">
+		          				<label for="departamento_tutor">Departamento</label>
 		        				</div>
 									</div>
-
-	              </div>
-			      </div>
-
-			      <div id="tutor2" style="display: none;">
-
-			      	<p class="center-align"><b>Datos del Tutor en relación con el Alumno</b></p>
 
 									<table>
 		                <thead>
@@ -319,11 +310,12 @@
 		          				<label for="ocupacion">Ocupación</label>
 		        				</div>
 									</div>
-			      </div>
+						</div>
 
-						<div id="enfermedades" style="display: none;">
-							
-							<p class="center-align"><b>Información Médica del Alumno</b></p>
+						<div class="divider"></div>
+						<br>
+
+						<div id="enfermedades" class="container">
 
 							<table>
                 <thead>
@@ -476,13 +468,14 @@
 							<p><b class="red-text">Importante</b> actualmente tiene alguna enfermedad o hay otra situación en particular que quisiera informar</p>
               <textarea id="textarea1" class="materialize-textarea" placeholder="Consignar" name="otros"></textarea>
 							<br>
-			      </div>
+						</div>
 
-			      <div id="documentacion" style="display: none;">
-							
-							<p class="center-align"><b>Documentación presentada por el Alumno</b></p>
+						<br>
+						<div class="divider"></div>
+						<br>
 
-			      	<table>
+						<div id="documentacion" class="container">
+							<table>
                 <thead>
                   <tr>
                     <th>Documentación presentada</th>
@@ -598,22 +591,13 @@
                   </tr>
                 </tbody>
               </table>
-			      </div>
-					
-					</div>
-
-					<div class="card-action grey lighten-5">
-						<a id="falso" class="grey-text"><i class="fas fa-angle-left fa-4x"></i></a>
-						<a id="antes" class="tooltipped" data-position="top" data-tooltip="Anterior" style="display: none; cursor: pointer;" onclick="anterior();"><i class="fas fa-angle-left fa-4x"></i></a>
-          	<a class="right tooltipped" data-position="top" data-tooltip="Siguiente" id="sigue" style="cursor: pointer;" onclick="siguiente();"><i class="fas fa-angle-right fa-4x"></i></a>
-          	<div class="right" id="submit" style="display: none;">
-							{{ Form::submit('Guardar',(['class'=>'btn btn-large green'])) }}
 						</div>
-        	</div>
 
-	  		</div>
-	  	</div>
+					</div>
+					<div class="card-action">
+						<button type="submit" class="btn btn-flat waves-effect waves-green green modal-close white-text">Guardar</button>
+					</div>
+				</div>
+			</div>
     	
-		{!! Form::close() !!}
-
-@endsection
+</form>

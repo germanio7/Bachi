@@ -131,7 +131,8 @@ class CursosController extends Controller
      */
     public function edit($id)
     {
-        //
+        $curso = Curso::find($id);
+        return view('cursos.edit',compact('curso'));
     }
 
     /**
@@ -143,7 +144,15 @@ class CursosController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $curso = Curso::find($id);
+
+        $curso->curso = $request->curso;
+        $curso->orientacion = $request->orientacion;
+        $curso->turno = $request->get("turno");
+
+        $curso->save();
+
+        return redirect('cursos');
     }
 
     /**

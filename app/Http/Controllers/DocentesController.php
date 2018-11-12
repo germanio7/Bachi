@@ -12,23 +12,12 @@ use App\Materia;
 
 class DocentesController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
 
-        // $materias = Materia::all();
-
-        //usar eloquent para que no muestre los softDelete
         $docentes = Docente::orderBy('apellido')->get();
-
-        // return view('docentes.index',compact('docentes'));
-
-        // $docentes = DB::table('docentes')->orderBy('nombre')->get();
-        return view('docentes.index', ['docentes' => $docentes]);
+        return $docentes;
     }
 
     public function buscar(Request $request){
@@ -94,7 +83,8 @@ class DocentesController extends Controller
      */
     public function edit($id)
     {
-        //
+        $docente = Docente::find($id);
+        return view('docentes.edit',compact('docente'));
     }
 
     /**
@@ -106,7 +96,20 @@ class DocentesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $docente = Docente::find($id);
+
+        $docente->cuil = $request->cuil;
+        $docente->apellido = $request->apellido;
+        $docente->nombre = $request->nombre;
+        $docente->matricula = $request->matricula;
+        $docente->titulo = $request->titulo;
+        $docente->direccion = $request->direccion;
+        $docente->telefono = $request->telefono;
+        $docente->email = $request->email;
+
+        $docente->save();
+
+        return redirect('docentes');
     }
 
     /**
@@ -118,9 +121,7 @@ class DocentesController extends Controller
     public function destroy($id)
     {
         $docente = Docente::find($id);
-
         $docente->delete();
 
-        return redirect('docentes');
     }
 }
