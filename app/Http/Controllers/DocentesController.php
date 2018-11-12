@@ -12,23 +12,12 @@ use App\Materia;
 
 class DocentesController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
 
-        // $materias = Materia::all();
-
-        //usar eloquent para que no muestre los softDelete
         $docentes = Docente::orderBy('apellido')->get();
-
-        // return view('docentes.index',compact('docentes'));
-
-        // $docentes = DB::table('docentes')->orderBy('nombre')->get();
-        return view('docentes.index', ['docentes' => $docentes]);
+        return $docentes;
     }
 
     public function buscar(Request $request){
@@ -132,9 +121,7 @@ class DocentesController extends Controller
     public function destroy($id)
     {
         $docente = Docente::find($id);
-
         $docente->delete();
 
-        return redirect('docentes');
     }
 }

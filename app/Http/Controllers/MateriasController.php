@@ -20,11 +20,8 @@ class MateriasController extends Controller
     public function index()
     {
         $materias = Materia::orderBy('nombre')->get();
+        return $materias;
 
-        // return view('materias.index',compact('materias'));
-
-        // $materias = DB::table('materias')->orderBy('id','desc')->get();
-        return view('materias.index', ['materias' => $materias]);
     }
 
     public function buscar(Request $request){
@@ -35,17 +32,7 @@ class MateriasController extends Controller
 
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        $docentes = Docente::all();
 
-        return view('materias.create', compact('docentes'));
-    }
 
     /**
      * Store a newly created resource in storage.
@@ -57,14 +44,9 @@ class MateriasController extends Controller
     {
         //crea la materia
         $materia = Materia::create(['nombre' => $request->nombre]);
-
-        //obtiene la materia recientemente creada
         $mat = Materia::find($materia->id);
-
-        //se hace la relacion 
         $mat->docentes()->attach($request->get('docente_id'));
 
-        return redirect('materias');
     }
 
     /**
@@ -117,9 +99,6 @@ class MateriasController extends Controller
     public function destroy($id)
     {
         $materia = Materia::find($id);
-
         $materia->delete();
-
-        return redirect('materias');
     }
 }

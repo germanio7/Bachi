@@ -21,14 +21,8 @@ class InicioController extends Controller
     public function index()
     {
         $cursos = Curso::orderBy('curso')->get();
-        $alumnos = Alumno::orderBy('apellido')->get();
-        $docentes = Docente::orderBy('apellido')->get();
-        $materias = Materia::orderBy('nombre')->get();
-        $alumnocurso = DB::table('alumno_curso')->get();
-        $cursomateria = DB::table('curso_materia')->get();
-        $docentemateria = DB::table('docente_materia')->get();
-        $num = count($cursos);
-        return view('welcome', ['alumnocurso' => $alumnocurso, 'cursos' => $cursos, 'num' => $num, 'alumnos' => $alumnos, 'cursomateria' => $cursomateria, 'docentemateria' => $docentemateria, 'docentes' => $docentes, 'materias' => $materias]);
+
+        return view('welcome', ['cursos' => $cursos]);
     
     }
 
