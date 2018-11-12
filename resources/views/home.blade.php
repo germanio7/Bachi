@@ -4,9 +4,8 @@
 	<meta charset="UTF-8">
 	<link rel="shortcut icon" href="{{'/img/icono.png'}}"/>
 	<title>E.E.S Nº. 9 "Maestro Sarmiento"</title>
-	<link rel="stylesheet" href="{{'/materialize/css/materialize.css'}}">
-	<link rel="stylesheet" href="{{'/materialize/css/style.css'}}">
-	<link rel="stylesheet" href="{{'/fontawesome/css/all.css'}}">
+	<link rel="stylesheet" href="{{asset('/css/app.css')}}">
+	<link rel="stylesheet" href="{{'/css/fontawesome.css'}}">
 </head>
 <body class="scrollbar">
 
@@ -21,9 +20,9 @@
     	</div>
     </div>
 	
-	<script src="{{'/materialize/js/materialize.js'}}"></script>
+	<script src="{{asset('/js/app.js')}}"></script>
 	<script src="{{'/js/funciones.js'}}"></script>
-	<script src="{{'/fontawesome/js/all.js'}}"></script>
+	<script src="{{'/js/fontawesome.js'}}"></script>
 	<script>
 		M.AutoInit();
 	</script>
