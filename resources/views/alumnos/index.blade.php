@@ -45,40 +45,6 @@
 		</div>
 	</div>
 
-<<<<<<< HEAD
-	<blockquote><h1>Alumnos</h1></blockquote>
-
-	<table class="striped">
-		<thead>
-			<tr>
-				<th>Cuil</th>
-				<th>Apellido</th>
-				<th>Nombre</th>
-				<th>Asistencia</th>
-				<th></th>
-			</tr>
-		</thead>
-		<tbody>
-			@foreach($alumnos as $alumno)	
-			<tr>
-				<td>{{$alumno->cuil}}</td>
-				<td>{{$alumno->apellido}}</td>
-				<td>{{$alumno->nombre}}</td>
-				<td></td>
-				<td>
-					<div class="btn-group" role="group">
-			        <a class="btn blue" href="{{route('alumnos.show',$alumno->id)}}"><i class="fas fa-print fa-lg"></i></a>
-			        <a class="btn green" href="{{route('alumnos.edit',$alumno->id)}}"><i class="fas fa-pen fa-lg"></i></a>
-			      
-			      {!!Form::open(['route'=>['alumnos.destroy',$alumno->id],'method'=>'DELETE'])!!}
-						<button class="btn red darken-4"><i class="fas fa-trash fa-lg"></i></button>
-				  {!!Form::close()!!}
-			    </div>
-				</td>
-			@endforeach
-		</tbody>
-	</table>
-=======
 	<script>
 		function change(point){
 			var boton = document.getElementById('boton');
@@ -95,6 +61,5 @@
 			}
 		}		
 	</script>
->>>>>>> 36b32d22cd8cdcff7f25b23d584759de12abf793
 
 @endsection
