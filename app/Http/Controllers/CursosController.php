@@ -24,8 +24,7 @@ class CursosController extends Controller
     public function index()
     {
         $cursos = Curso::orderBy('curso')->get();
-
-        return view('cursos.index',compact('cursos'));
+        return $cursos;
     }
 
     public function buscar(Request $request){
@@ -61,8 +60,6 @@ class CursosController extends Controller
         $curso->turno = $request->get("turno");
 
         $curso->save();
-
-        return redirect('cursos');
     }
 
     /**
@@ -166,7 +163,5 @@ class CursosController extends Controller
         $curso = Curso::find($id);
 
         $curso->delete();
-
-        return redirect('cursos');
     }
 }

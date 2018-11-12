@@ -16,6 +16,10 @@ Route::get('matricula', function () {
     return view('materias/index');
 });
 
+Route::get('cursado', function () {
+    return view('cursos/index');
+});
+
 //-------------------------------------------------------------
 
 //Rutas Controlador

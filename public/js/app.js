@@ -12735,6 +12735,47 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 //----------------------------------------------------
+
+//CRUD Cursos
+	new Vue({
+		el: '#crud_cursos',
+
+		created: function() {
+			this.getCursos();
+		},
+
+		data: {
+			cursos: [],
+			newCurso: '',
+			newOrientacion: '',
+			newTurno: ''
+		},
+
+		methods: {
+			getCursos: function() {
+				var urlCursos = 'cursos';
+				axios.get(urlCursos).then(response => {
+					this.cursos = response.data;
+				});
+			},
+
+			createCursos: function() {
+				var url = 'cursos';
+				axios.post(url, {
+					curso: this.newCurso,
+					orientacion: this.newOrientacion,
+					turno: this.newTurno
+				}).then(response => {
+					this.getCursos();
+					this.newCurso = '';
+					this.newOrientacion = '';
+					this.newTurno = '';
+				}).catch(error => {
+					console.log(error.response.data)
+				});
+			}
+		}
+	});
 /*!
  * Materialize v1.0.0 (http://materializecss.com)
  * Copyright 2014-2017 Materialize
