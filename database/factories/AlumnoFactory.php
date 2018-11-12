@@ -13,8 +13,6 @@ $factory->define(Alumno::class, function (Faker $faker) {
     	'lugar_nacimiento' => $faker->city,
     	'nacionalidad' => $faker->country,
     	'direccion' => $faker->streetAddress,
-    	'telefono' => $faker->e164PhoneNumber,
-    	'email' => $faker->freeEmail,
     	'repitente' => false,
     	'asignacion_universal' => $faker->boolean,
     	'salario_familiar' => $faker->boolean,
