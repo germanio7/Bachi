@@ -133,23 +133,29 @@
 					</thead>
 					<tbody>
 						@foreach($alumnos as $alumno)
-						<tr>
-							<input type="hidden" name="id[]" value="{{$alumno->id}}">
-							<td>{{$alumno->id}}</td>
-							<td>{{$alumno->apellido}}</td>
-							<td>{{$alumno->nombre}}</td>
-							<td>
-								<select name="asistencia[]" class="input-field col s3">
-						    		<option value="" disabled selected>Asistencia</option>
-						      		<option value=1 >Presente</option>
-						      		<option value=0 >Ausente</option>
-						      		<option value=0.5 >Media Falta</option>
-						    	</select>
-							</td>
-							<td>
-								<input type="text" name="comentario[]" class="validate">
-							</td>
-						</tr>
+							@foreach($asistencias as $asis)
+								@if($asis->alumno_id == $alumno->id && $asis->fecha == $hoy)
+									<h5><b>Asistencia realizada</b></h5>
+								@else
+									<tr>
+										<input type="hidden" name="id[]" value="{{$alumno->id}}">
+										<td>{{$alumno->id}}</td>
+										<td>{{$alumno->apellido}}</td>
+										<td>{{$alumno->nombre}}</td>
+										<td>
+											<select name="asistencia[]" class="input-field col s3">
+									    		<option value="" disabled selected>Asistencia</option>
+									      		<option value=1 >Presente</option>
+									      		<option value=0 >Ausente</option>
+									      		<option value=0.5 >Media Falta</option>
+									    	</select>
+										</td>
+										<td>
+											<input type="text" name="comentario[]" class="validate">
+										</td>
+									</tr>
+								@endif
+							@endforeach
 						@endforeach
 					</tbody>
 				</table>
