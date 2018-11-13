@@ -12613,6 +12613,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 		created: function() {
 			this.getAlumnos();
+			console.log('cambios');
 		},
 
 		data: {

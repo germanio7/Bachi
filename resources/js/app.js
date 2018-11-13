@@ -6,6 +6,7 @@
 
 		created: function() {
 			this.getAlumnos();
+			console.log('cambios');
 		},
 
 		data: {
