@@ -1,59 +1,52 @@
-@extends('home')
+	<div id="create" class="modal">
+			<form method='POST' v-on:submit.prevent="createDocente()">
+	    	<div class="modal-content">
+	    		<blockquote><h4>Nuevo Docente</h4></blockquote>
+	    		<br>
+		      	<div class="row">
+					<div class="input-field col s12">
+			          <input id="cuil" type="text" class="validate" name="cuil" v-model="newCuil">
+			          <label for="cuil">Cuil</label>
+			        </div>
 
-@section('contenido')
+			        <div class="input-field col s12">
+			          <input id="apellido" type="text" class="validate" name="apellido" v-model="newApellido">
+			          <label for="apellido">Apellido</label>
+			        </div>
 
-	<h1>Nuevo Docente</h1>
+			        <div class="input-field col s12">
+			          <input id="nombre" type="text" class="validate" name="nombre" v-model="newNombre">
+			          <label for="nombre">Nombre</label>
+			        </div>
 
-	<div class="card-panel hoverable green lighten-4">
+			        <div class="input-field col s12">
+			          <input id="matricula" type="text" class="validate" name="matricula" v-model="newMatricula">
+			          <label for="matricula">Matricula</label>
+			        </div>
 
-		{!! Form::open(['action' => 'DocentesController@store','method'=>'POST','file'=>'true','enctype'=>'multipart/form-data','class'=>'form']) !!}
-			
-			<div class="row">
-				<div class="input-field col s4">
-		    		{{ Form::label('cuil','Cuil',(['class'=>'active','for'=>'cuil'])) }}
-		    		{{ Form::text('cuil','',(['class'=>'validate'])) }}
+			        <div class="input-field col s12">
+			          <input id="titulo" type="text" class="validate" name="titulo" v-model="newTitulo">
+			          <label for="titula">Titulo</label>
+			        </div>
+
+			        <div class="input-field col s12">
+			          <input id="direccion" type="text" class="validate" name="direccion" v-model="newDireccion">
+			          <label for="direccion">Direccion</label>
+			        </div>
+
+			        <div class="input-field col s12">
+			          <input id="telefono" type="text" class="validate" name="telefono" v-model="newTelefono">
+			          <label for="telefono">Telefono</label>
+			        </div>
+
+			        <div class="input-field col s12">
+			          <input id="email" type="text" class="validate" name="email" v-model="newEmail">
+			          <label for="email">Email</label>
+			        </div>
 				</div>
-
-				<div class="input-field col s4">
-		    		{{ Form::label('apellido','Apellido',(['class'=>'active','for'=>'apellido'])) }}
-		    		{{ Form::text('apellido','',(['class'=>'validate'])) }}
-				</div>
-
-				<div class="input-field col s4">
-		    		{{ Form::label('nombre','Nombre',(['class'=>'active','for'=>'nombre'])) }}
-		    		{{ Form::text('nombre','',(['class'=>'validate'])) }}
-				</div>
-
-				<div class="input-field col s4">
-		    		{{ Form::label('matricula','Matricula',(['class'=>'active','for'=>'matricula'])) }}
-		    		{{ Form::text('matricula','',(['class'=>'validate'])) }}
-				</div>
-
-				<div class="input-field col s4">
-		    		{{ Form::label('titulo','Titulo',(['class'=>'active','for'=>'titulo'])) }}
-		    		{{ Form::text('titulo','',(['class'=>'validate'])) }}
-				</div>
-
-				<div class="input-field col s4">
-		    		{{ Form::label('direccion','Direccion',(['class'=>'active','for'=>'direccion'])) }}
-		    		{{ Form::text('direccion','',(['class'=>'validate'])) }}
-				</div>
-
-				<div class="input-field col s4">
-		    		{{ Form::label('telefono','Telefono',(['class'=>'active','for'=>'telefono'])) }}
-		    		{{ Form::text('telefono','',(['class'=>'validate'])) }}
-				</div>
-
-				<div class="input-field col s4">
-		    		{{ Form::label('email','Email',(['class'=>'active','for'=>'email'])) }}
-		    		{{ Form::text('email','',(['class'=>'validate'])) }}
-				</div>
-			</div>
-
-			{{ Form::submit('Guardar',(['class'=>'btn green'])) }}
-	    	
-		{!! Form::close() !!}
-
-	</div>
-
-@endsection
+	    	</div>
+	    	<div class="modal-footer">
+	     	 	<button type="submit" class="btn btn-flat waves-effect waves-green green modal-close white-text">Guardar</button>
+	    	</div>
+	    </form>
+  	</div>

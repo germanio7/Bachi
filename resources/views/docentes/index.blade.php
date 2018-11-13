@@ -2,56 +2,57 @@
 
 @section('contenido')
 	
-	<div class="fixed-action-btn">
-		<a href="{{route('docentes.create')}}" class="btn-floating btn-large green"><i class="material-icons">add</i>>Agregar Docente</a>
-
-
-	<blockquote class="blockquote text-center"><h1>Lista Docentes</h1></blockquote>
 	
-	<div class="card-panel hoverable green lighten-4">
+	<div class="row" id="crud_docentes">
+		<div class=" margin">
+			
+			<div class="fixed-action-btn" id="boton">
+		  		<a class="btn-floating btn-large green waves-effect waves-light modal-trigger" href="#create"><i class="fas fa-plus fa-lg"></i></a>
+			</div>
 
-	<table class="highlight">
-		<thead>
-			<tr>
-				<th>ID</th>
-				<th>Cuil</th>
-				<th>Apellido</th>
-				<th>Nombre</th>
-				<th>Matricula</th>
-				<th>Titulo</th>
-				<th>Direccion</th>
-				<th>Telefono</th>
-				<th>Email</th>
-				<th>Acciones</th>
-			</tr>
-		</thead>
-		<tbody>
-			@foreach($docentes as $docente)
-			
-			<tr>
-				<td>{{$docente->id}}</td>
-				<td>{{$docente->cuil}}</td>
-				<td>{{$docente->apellido}}</td>
-				<td>{{$docente->nombre}}</td>
-				<td>{{$docente->matricula}}</td>
-				<td>{{$docente->titulo}}</td>
-				<td>{{$docente->direccion}}</td>
-				<td>{{$docente->telefono}}</td>
-				<td>{{$docente->email}}</td>
-				<td>
-					<div class="btn-group btn-group-justified">
-						<a href="{{route('docentes.show',$docente->id)}}" class="btn green darken-4">Ver más</a>
-						<a class="btn green" href="{{route('docentes.edit',$docente->id)}}"><i class="fas fa-pen fa-lg"></i></a>
-						{!!Form::open(['route'=>['docentes.destroy',$docente->id],'method'=>'DELETE'])!!}
-							<button class="btn red darken-4">Eliminar</button>
-						{!!Form::close()!!}
-					</div>
-				</td>
-			</tr>
-			
-			@endforeach
-		</tbody>
-	</table>
+				<blockquote><h1>Docentes</h1></blockquote>
+
+				<table class="striped">
+					<thead>
+						<tr>
+							<th>Cuil</th>
+							<th>Apellido</th>
+							<th>Nombre</th>
+							<th>Matricula</th>
+							<th>Titulo</th>
+							<th>Direccion</th>
+							<th>Telefono</th>
+							<th>Email</th>
+							<th></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr v-for="docente in docentes">
+							<td>@{{docente.cuil}}</td>
+							<td>@{{docente.apellido}}</td>
+							<td>@{{docente.nombre}}</td>
+							<td>@{{docente.matricula}}</td>
+							<td>@{{docente.titulo}}</td>
+							<td>@{{docente.direccion}}</td>
+							<td>@{{docente.telefono}}</td>
+							<td>@{{docente.email}}</td>
+							<td>
+								<div class="btn-group" role="group">
+						      <a class="btn blue"><i class="fas fa-print fa-lg"></i></a>
+						      <a class="btn green"><i class="fas fa-pen fa-lg"></i></a>
+									<a class="btn red darken-4" v-on:click.prevent="deleteDocente(docente)"><i class="fas fa-trash fa-lg"></i></a>
+						    </div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+
+			<div>
+				@include('docentes.create')
+			</div>
+
+		</div>
+	</div>
 
 
 @endsection

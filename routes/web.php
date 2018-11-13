@@ -20,6 +20,10 @@ Route::get('cursado', function () {
     return view('cursos/index');
 });
 
+Route::get('administracion', function () {
+    return view('docentes/index');
+});
+
 //-------------------------------------------------------------
 
 //Rutas Controlador
