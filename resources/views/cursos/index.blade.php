@@ -15,6 +15,7 @@
 					<thead>
 						<tr>
 							<th>Curso</th>
+							<th>Division</th>
 							<th>Orientación</th>
 							<th>Turno</th>
 							<th></th>
@@ -23,13 +24,14 @@
 					<tbody>
 						<tr v-for="curso in cursos">
 							<td>@{{curso.curso}}</td>
+							<td>@{{curso.division}}</td>
 							<td>@{{curso.orientacion}}</td>
 							<td>@{{curso.turno}}</td>
 							<td>
 								<div class="btn-group" role="group">
-						      		<a class="btn blue" v-on:click.prevent="verCurso(curso)"><i class="fas fa-print fa-lg"></i></a>
-						      		<a class="btn green"><i class="fas fa-pen fa-lg"></i></a>
-									<a class="btn red darken-4" v-on:click.prevent="deleteCurso(curso)"><i class="fas fa-trash fa-lg"></i></a>
+						      		<a class="btn blue" v-on:click.prevent=""><i class="fas fa-print fa-lg"></i></a>
+						      		<a class="btn green modal-trigger" href="#edit" v-on:click.prevent="editCurso(curso)"><i class="fas fa-pen fa-lg"></i></a>
+									<a class="btn red darken-4 modal-trigger" v-on:click.prevent="deleteCurso(curso)"><i class="fas fa-trash fa-lg"></i></a>
 						    	</div>
 							</td>
 						</tr>
@@ -38,6 +40,7 @@
 
 			<div>
 				@include('cursos.create')
+				@include('cursos.edit')
 			</div>
 
 		</div>

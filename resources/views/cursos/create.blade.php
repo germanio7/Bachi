@@ -10,6 +10,11 @@
 			        </div>
 
 			        <div class="input-field col s12">
+			          <input id="division" type="text" class="validate" name="division" v-model="newDivision">
+			          <label for="division">Division</label>
+			        </div>
+
+			        <div class="input-field col s12">
 			          <select id="orientacion" name="orientacion" class="validate" v-model="newOrientacion">
 			            <option value="" disabled selected>Orientacion</option>
 			            <option value="Ciclo Basico">Ciclo Básisco</option>

@@ -247,7 +247,15 @@
 
 		data: {
 			cursos: [],
+			fillCurso: {
+				id: '',
+				curso: '',
+				division: '',
+				orientacion: '',
+				turno: ''
+			},
 			newCurso: '',
+			newDivision: '',
 			newOrientacion: '',
 			newTurno: ''
 		},
@@ -264,13 +272,30 @@
 				var url = 'cursos';
 				axios.post(url, {
 					curso: this.newCurso,
+					division: this.newDivision,
 					orientacion: this.newOrientacion,
 					turno: this.newTurno
 				}).then(response => {
 					this.getCursos();
 					this.newCurso = '';
+					this.newDivision = '';
 					this.newOrientacion = '';
 					this.newTurno = '';
+				}).catch(error => {
+					console.log(error.response.data)
+				});
+			},
+
+			updateCurso: function(id) {
+				axios.put('cursos/'+id, this.fillCurso).then(response => {
+					this.getCursos();
+					this.fillCurso={
+						id: '',
+						curso: '',
+						division: '',
+						orientacion: '',
+						turno: ''
+					};
 				}).catch(error => {
 					console.log(error.response.data)
 				});
@@ -284,11 +309,13 @@
 				});
 			},
 
-			verCurso : function(curso) {
-				var id = curso.id;
-				axios.get('cursos/' + id).then(response => {
-					this.curso = response.data;
-				});
+			editCurso : function(curso) {
+				this.fillCurso.id = curso.id;
+				this.fillCurso.curso = curso.curso;
+				this.fillCurso.division = curso.division;
+				this.fillCurso.orientacion = curso.orientacion;
+				this.fillCurso.turno = curso.turno;
+				return this.fillCurso;
 			}
 		}
 	});
