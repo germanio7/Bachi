@@ -274,6 +274,21 @@
 				}).catch(error => {
 					console.log(error.response.data)
 				});
+			},
+
+			deleteCurso: function(curso) {
+				var id = curso.id;
+				axios.delete('cursos/' + id).then(response => {
+					this.getCursos();
+					M.toast({html: 'Curso Eliminado'})
+				});
+			},
+
+			verCurso : function(curso) {
+				var id = curso.id;
+				axios.get('cursos/' + id).then(response => {
+					this.curso = response.data;
+				});
 			}
 		}
 	});

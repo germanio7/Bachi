@@ -10,13 +10,20 @@
 			        </div>
 
 			        <div class="input-field col s12">
-			          <input id="orientacion" type="text" class="validate" name="orientacion" v-model="newOrientacion">
-			          <label for="orientacion">Orientacion</label>
+			          <select id="orientacion" name="orientacion" class="validate" v-model="newOrientacion">
+			            <option value="" disabled selected>Orientacion</option>
+			            <option value="Ciclo Basico">Ciclo Básisco</option>
+			            <option value="Ciencias Sociales">Ciencias Sociales</option>
+			            <option value="Educacion Fisica">Educación Física</option>
+			          </select>
 			        </div>
 
 			        <div class="input-field col s12">
-			          <input id="turno" type="text" class="validate" name="turno" v-model="newTurno">
-			          <label for="turno">Turno</label>
+			          <select id="turno" name="turno" class="validate" v-model="newTurno">
+			            <option value="" disabled selected>Turno</option>
+			            <option value="Mañana">Mañana</option>
+			            <option value="Tarde">Tarde</option>
+			          </select>
 			        </div>
 				</div>
 	    	</div>

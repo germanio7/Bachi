@@ -111,11 +111,13 @@
           </div>
         </div>
 
-        <div class="row">
-          <div class="input-field col s12">
-            <input id="orientacion" type="text" class="validate" name="orientacion">
-            <label for="orientacion">Orientación</label>
-          </div>
+        <div class="input-field col s12">
+          <select name="orientacion" class="input-field col s3">
+            <option value="" disabled selected>Orientacion</option>
+            <option value="Ciclo Basico">Ciclo Básisco</option>
+            <option value="Ciencias Sociales">Ciencias Sociales</option>
+            <option value="Educacion Fisica">Educación Física</option>
+          </select>
         </div>
 
         <div class="input-field col s12">
