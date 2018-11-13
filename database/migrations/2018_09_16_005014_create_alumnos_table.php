@@ -45,7 +45,7 @@ class CreateAlumnosTable extends Migration
             $table->tinyInteger('esguinces')->nullable();
             $table->tinyInteger('enfermedades_infectocontagiosas')->nullable();
             $table->tinyInteger('incapacidad')->nullable();
-            $table->string('otros')->nullable();
+            $table->string('otros')->nullable()->nullable();
             $table->tinyInteger('certificado_salud')->nullable();
             $table->tinyInteger('certificado_dental')->nullable();
             $table->tinyInteger('carnet_vacuna')->nullable();

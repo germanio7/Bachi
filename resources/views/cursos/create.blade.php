@@ -1,37 +1,27 @@
-@extends('home')
+	<div id="create" class="modal">
+			<form method='POST' v-on:submit.prevent="createCursos">
+	    	<div class="modal-content">
+	    		<blockquote><h4>Nuevo Curso</h4></blockquote>
+	    		<br>
+		      	<div class="row">
+					<div class="input-field col s12">
+			          <input id="curso" type="text" class="validate" name="curso" v-model="newCurso">
+			          <label for="curso">Curso</label>
+			        </div>
 
-@section('contenido')
+			        <div class="input-field col s12">
+			          <input id="orientacion" type="text" class="validate" name="orientacion" v-model="newOrientacion">
+			          <label for="orientacion">Orientacion</label>
+			        </div>
 
-	<h1>Nuevo Curso</h1>
-	
-	<div class="card-panel hoverable green lighten-4">
-
-		{!! Form::open(['action' => 'CursosController@store','method'=>'POST','file'=>'true','enctype'=>'multipart/form-data','class'=>'form']) !!}
-			
-			<div class="row">
-				<div class="input-field col s4">
-		    		{{ Form::label('curso','Curso',(['class'=>'active','for'=>'curso'])) }}
-		    		{{ Form::text('curso','',(['class'=>'validate'])) }}
+			        <div class="input-field col s12">
+			          <input id="turno" type="text" class="validate" name="turno" v-model="newTurno">
+			          <label for="turno">Turno</label>
+			        </div>
 				</div>
-
-				<div class="input-field col s4">
-		    		{{ Form::label('orientacion','Orientacion',(['class'=>'active','for'=>'orientacion'])) }}
-		    		{{ Form::text('orientacion','',(['class'=>'validate'])) }}
-				</div>
-
-				<div class="input-field col s4">
-		    		<select name="turno" class="input-field col s3">
-			    		<option value="" disabled selected>Turno</option>
-			      		<option value="Mañana">Mañana</option>
-			      		<option value="Tarde">Tarde</option>
-			    	</select>
-				</div>
-			</div>
-
-			{{ Form::submit('Guardar',(['class'=>'btn green'])) }}
-	    	
-		{!! Form::close() !!}
-
-	</div>
-
-@endsection
+	    	</div>
+	    	<div class="modal-footer">
+	     	 	<button type="submit" class="btn btn-flat waves-effect waves-green green modal-close white-text">Guardar</button>
+	    	</div>
+	    </form>
+  	</div>
