@@ -10,6 +10,41 @@
 
 		data: {
 			alumnos: [],
+			filalumnos: {
+				id: '',
+				cuil: '',
+				apellido: '',
+				nombre: '',
+				fecha_nacimiento: '',
+				lugar_nacimiento: '',
+				nacionalidad: '',
+				direccion: '',
+				barrio: '',
+				departamento: '',
+				asignacion_universal: '',
+				salario_familiar: '',
+				pueblo_originario: '',
+				programa_cai: '',
+				discapacidad: '',
+				diabetes: '',
+				hernias: '',
+				convulsiones: '',
+				problemas_respiratorios: '',
+				problemas_cardiacos: '',
+				alergias: '',
+				esguinces: '',
+				enfermedades_infectocontagiosas: '',
+				incapacidad: '',
+				otros: '',
+				certificado_salud: '',
+				certificado_dental: '',
+				carnet_vacuna: '',
+				grupo_sanguineo: '',
+				certificado_nivel_inicial: '',
+				fotocopia_dni: '',
+				contribucion_cooperadora: ''
+
+			},
 			newCuil: '',
 			newApellido: '',
 			newNombre: '',
@@ -19,12 +54,12 @@
 			newDireccion: '',
 			newBarrio: '',
 			newDepartamento: '',
-			newAsignacionUniversal: '',
-			newSalarioFamiliar: '',
-			newPuebloOriginario: '',
-			newProgramaCai: '',
-			newDiscapacidad: '',
-			newMadrePadre: '',
+			newAsignacionUniversal: 0,
+			newSalarioFamiliar: 0,
+			newPuebloOriginario: 0,
+			newProgramaCai: 0,
+			newDiscapacidad: 0,
+			newMadrePadre: 0,
 			newCuilTutor: '',
 			newApellidoTutor: '',
 			newNombreTutor: '',
@@ -35,28 +70,28 @@
 			newTelefonoTutor: '',
 			newBarrioTutor: '',
 			newDepartamentoTutor: '',
-			newACargo: '',
-			newEsTutor: '',
-			newPatriaPotestad: '',
-			newViveConAlumno: '',
+			newACargo: 0,
+			newEsTutor: 0,
+			newPatriaPotestad: 0,
+			newViveConAlumno: 0,
 			newOcupacion: '',
-			newDiabetes: '',
-			newHernias: '',
-			newConvulsiones: '',
-			newProblemasRespiratorios: '',
-			newProblemasCardiacos: '',
-			newAlergias: '',
-			newEsguiences: '',
-			newEnfermedadesInfectocontagiosas: '',
-			newIncapacidad: '',
+			newDiabetes: 0,
+			newHernias: 0,
+			newConvulsiones: 0,
+			newProblemasRespiratorios: 0,
+			newProblemasCardiacos: 0,
+			newAlergias: 0,
+			newEsguiences: 0,
+			newEnfermedadesInfectocontagiosas: 0,
+			newIncapacidad: 0,
 			newOtros: '',
-			newCertificadoSalud: '',
-			newCertificadoDental: '',
-			newCarnetVacuna: '',
-			newGrupoSanguineo: '',
-			newCertificadoNivelInicial: '',
-			newFotocopiaDni: '',
-			newContribucionCooperadora: ''
+			newCertificadoSalud: 0,
+			newCertificadoDental: 0,
+			newCarnetVacuna: 0,
+			newGrupoSanguineo: 0,
+			newCertificadoNivelInicial: 0,
+			newFotocopiaDni: 0,
+			newContribucionCooperadora: 0
 		},
 
 		methods: {
@@ -75,6 +110,10 @@
 			},
 			createAlumno: function(){
 				var url = 'alumnos';
+				var nacimiento = document.getElementById('nacimiento').value;
+				this.newFechaNacimiento = nacimiento;
+				var fecha_nacimiento_tutor = document.getElementById('fecha_nacimiento_tutor').value;
+				this.newFechaNacimientoTutor = fecha_nacimiento_tutor;
 				axios.post(url, {
 					cuil: this.newCuil,
 					apellido: this.newApellido,
@@ -133,12 +172,12 @@
 					this.newDireccion = '';
 					this.newBarrio = '';
 					this.newDepartamento = '';
-					this.newAsignacionUniversal = '';
-					this.newSalarioFamiliar = '';
-					this.newPuebloOriginario = '';
-					this.newProgramaCai = '';
-					this.newDiscapacidad = '';
-					this.newMadrePadre = '';
+					this.newAsignacionUniversal = 0;
+					this.newSalarioFamiliar = 0;
+					this.newPuebloOriginario = 0;
+					this.newProgramaCai = 0;
+					this.newDiscapacidad = 0;
+					this.newMadrePadre = 0;
 					this.newCuilTutor = '';
 					this.newApellidoTutor = '';
 					this.newNombreTutor = '';
@@ -149,31 +188,68 @@
 					this.newTelefonoTutor = '';
 					this.newBarrioTutor = '';
 					this.newDepartamentoTutor = '';
-					this.newACargo = '';
-					this.newEsTutor = '';
-					this.newPatriaPotestad = '';
-					this.newViveConAlumno = '';
+					this.newACargo = 0;
+					this.newEsTutor = 0;
+					this.newPatriaPotestad = 0;
+					this.newViveConAlumno = 0;
 					this.newOcupacion = '';
-					this.newDiabetes = '';
-					this.newHernias = '';
-					this.newConvulsiones = '';
-					this.newProblemasRespiratorios = '';
-					this.newProblemasCardiacos = '';
-					this.newAlergias = '';
-					this.newEsguiences = '';
-					this.newEnfermedadesInfectocontagiosas = '';
-					this.newIncapacidad = '';
+					this.newDiabetes = 0;
+					this.newHernias = 0;
+					this.newConvulsiones = 0;
+					this.newProblemasRespiratorios = 0;
+					this.newProblemasCardiacos = 0;
+					this.newAlergias = 0;
+					this.newEsguiences = 0;
+					this.newEnfermedadesInfectocontagiosas = 0;
+					this.newIncapacidad = 0;
 					this.newOtros = '';
-					this.newCertificadoSalud = '';
-					this.newCertificadoDental = '';
-					this.newCarnetVacuna = '';
-					this.newGrupoSanguineo = '';
-					this.newCertificadoNivelInicial = '';
-					this.newFotocopiaDni = '';
-					this.newContribucionCooperadora = '';
+					this.newCertificadoSalud = 0;
+					this.newCertificadoDental = 0;
+					this.newCarnetVacuna = 0;
+					this.newGrupoSanguineo = 0;
+					this.newCertificadoNivelInicial = 0;
+					this.newFotocopiaDni = 0;
+					this.newContribucionCooperadora = 0;
 
 				});
+			},
+			editAlumno: function(alumno) {
+				this.filalumnos.id = alumno.id;
+				this.filalumnos.cuil = alumno.cuil;
+				this.filalumnos.apellido = alumno.apellido;
+				this.filalumnos.nombre = alumno.nombre;
+				this.filalumnos.fecha_nacimiento = alumno.fecha_nacimiento;
+				this.filalumnos.lugar_nacimiento = alumno.lugar_nacimiento;
+				this.filalumnos.nacionalidad = alumno.nacionalidad;
+				this.filalumnos.direccion = alumno.direccion;
+				this.filalumnos.barrio = alumno.barrio;
+				this.filalumnos.departamento = alumno.departamento;
+				this.filalumnos.asignacion_universal = alumno.asignacion_universal;
+				this.filalumnos.salario_familiar = alumno.salario_familiar;
+				this.filalumnos.pueblo_originario = alumno.pueblo_originario;
+				this.filalumnos.programa_cai = alumno.programa_cai;
+				this.filalumnos.discapacidad = alumno.discapacidad;
+				this.filalumnos.diabetes = alumno.diabetes;
+				this.filalumnos.hernias = alumno.hernias;
+				this.filalumnos.convulsiones = alumno.convulsiones;
+				this.filalumnos.problemas_respiratorios = alumno.problemas_respiratorios;
+				this.filalumnos.problemas_cardiacos = alumno.problemas_cardiacos;
+				this.filalumnos.alergias = alumno.alergias;
+				this.filalumnos.esguinces = alumno.esguinces;
+				this.filalumnos.enfermedades_infectocontagiosas = alumno.enfermedades_infectocontagiosas;
+				this.filalumnos.incapacidad = alumno.incapacidad;
+				this.filalumnos.otros = alumno.otros;
+				this.filalumnos.certificado_salud = alumno.certificado_salud;
+				this.filalumnos.certificado_dental = alumno.certificado_dental;
+				this.filalumnos.carnet_vacuna = alumno.carnet_vacuna;
+				this.filalumnos.grupo_sanguineo = alumno.grupo_sanguineo;
+				this.filalumnos.certificado_nivel_inicial = alumno.certificado_nivel_inicial;
+				this.filalumnos.fotocopia_dni = alumno.fotocopia_dni;
+				this.filalumnos.contribucion_cooperadora = alumno.contribucion_cooperadora;
+				return this.filalumnos;
 			}
+
+
 		}
 
 	});

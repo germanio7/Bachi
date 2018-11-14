@@ -12626,12 +12626,12 @@ return /******/ (function(modules) { // webpackBootstrap
 			newDireccion: '',
 			newBarrio: '',
 			newDepartamento: '',
-			newAsignacionUniversal: '',
-			newSalarioFamiliar: '',
-			newPuebloOriginario: '',
-			newProgramaCai: '',
-			newDiscapacidad: '',
-			newMadrePadre: '',
+			newAsignacionUniversal: 0,
+			newSalarioFamiliar: 0,
+			newPuebloOriginario: 0,
+			newProgramaCai: 0,
+			newDiscapacidad: 0,
+			newMadrePadre: 0,
 			newCuilTutor: '',
 			newApellidoTutor: '',
 			newNombreTutor: '',
@@ -12642,28 +12642,28 @@ return /******/ (function(modules) { // webpackBootstrap
 			newTelefonoTutor: '',
 			newBarrioTutor: '',
 			newDepartamentoTutor: '',
-			newACargo: '',
-			newEsTutor: '',
-			newPatriaPotestad: '',
-			newViveConAlumno: '',
+			newACargo: 0,
+			newEsTutor: 0,
+			newPatriaPotestad: 0,
+			newViveConAlumno: 0,
 			newOcupacion: '',
-			newDiabetes: '',
-			newHernias: '',
-			newConvulsiones: '',
-			newProblemasRespiratorios: '',
-			newProblemasCardiacos: '',
-			newAlergias: '',
-			newEsguiences: '',
-			newEnfermedadesInfectocontagiosas: '',
-			newIncapacidad: '',
+			newDiabetes: 0,
+			newHernias: 0,
+			newConvulsiones: 0,
+			newProblemasRespiratorios: 0,
+			newProblemasCardiacos: 0,
+			newAlergias: 0,
+			newEsguiences: 0,
+			newEnfermedadesInfectocontagiosas: 0,
+			newIncapacidad: 0,
 			newOtros: '',
-			newCertificadoSalud: '',
-			newCertificadoDental: '',
-			newCarnetVacuna: '',
-			newGrupoSanguineo: '',
-			newCertificadoNivelInicial: '',
-			newFotocopiaDni: '',
-			newContribucionCooperadora: ''
+			newCertificadoSalud: 0,
+			newCertificadoDental: 0,
+			newCarnetVacuna: 0,
+			newGrupoSanguineo: 0,
+			newCertificadoNivelInicial: 0,
+			newFotocopiaDni: 0,
+			newContribucionCooperadora: 0
 		},
 
 		methods: {
@@ -12682,6 +12682,10 @@ return /******/ (function(modules) { // webpackBootstrap
 			},
 			createAlumno: function(){
 				var url = 'alumnos';
+				var nacimiento = document.getElementById('nacimiento').value;
+				this.newFechaNacimiento = nacimiento;
+				var fecha_nacimiento_tutor = document.getElementById('fecha_nacimiento_tutor').value;
+				this.newFechaNacimientoTutor = fecha_nacimiento_tutor;
 				axios.post(url, {
 					cuil: this.newCuil,
 					apellido: this.newApellido,
@@ -12740,12 +12744,12 @@ return /******/ (function(modules) { // webpackBootstrap
 					this.newDireccion = '';
 					this.newBarrio = '';
 					this.newDepartamento = '';
-					this.newAsignacionUniversal = '';
-					this.newSalarioFamiliar = '';
-					this.newPuebloOriginario = '';
-					this.newProgramaCai = '';
-					this.newDiscapacidad = '';
-					this.newMadrePadre = '';
+					this.newAsignacionUniversal = 0;
+					this.newSalarioFamiliar = 0;
+					this.newPuebloOriginario = 0;
+					this.newProgramaCai = 0;
+					this.newDiscapacidad = 0;
+					this.newMadrePadre = 0;
 					this.newCuilTutor = '';
 					this.newApellidoTutor = '';
 					this.newNombreTutor = '';
@@ -12756,28 +12760,28 @@ return /******/ (function(modules) { // webpackBootstrap
 					this.newTelefonoTutor = '';
 					this.newBarrioTutor = '';
 					this.newDepartamentoTutor = '';
-					this.newACargo = '';
-					this.newEsTutor = '';
-					this.newPatriaPotestad = '';
-					this.newViveConAlumno = '';
+					this.newACargo = 0;
+					this.newEsTutor = 0;
+					this.newPatriaPotestad = 0;
+					this.newViveConAlumno = 0;
 					this.newOcupacion = '';
-					this.newDiabetes = '';
-					this.newHernias = '';
-					this.newConvulsiones = '';
-					this.newProblemasRespiratorios = '';
-					this.newProblemasCardiacos = '';
-					this.newAlergias = '';
-					this.newEsguiences = '';
-					this.newEnfermedadesInfectocontagiosas = '';
-					this.newIncapacidad = '';
+					this.newDiabetes = 0;
+					this.newHernias = 0;
+					this.newConvulsiones = 0;
+					this.newProblemasRespiratorios = 0;
+					this.newProblemasCardiacos = 0;
+					this.newAlergias = 0;
+					this.newEsguiences = 0;
+					this.newEnfermedadesInfectocontagiosas = 0;
+					this.newIncapacidad = 0;
 					this.newOtros = '';
-					this.newCertificadoSalud = '';
-					this.newCertificadoDental = '';
-					this.newCarnetVacuna = '';
-					this.newGrupoSanguineo = '';
-					this.newCertificadoNivelInicial = '';
-					this.newFotocopiaDni = '';
-					this.newContribucionCooperadora = '';
+					this.newCertificadoSalud = 0;
+					this.newCertificadoDental = 0;
+					this.newCarnetVacuna = 0;
+					this.newGrupoSanguineo = 0;
+					this.newCertificadoNivelInicial = 0;
+					this.newFotocopiaDni = 0;
+					this.newContribucionCooperadora = 0;
 
 				});
 			}
