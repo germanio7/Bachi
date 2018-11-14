@@ -56,6 +56,7 @@ class CursosController extends Controller
         $curso = new Curso;
 
         $curso->curso = $request->curso;
+        $curso->division = $request->division;
         $curso->orientacion = $request->get("orientacion");
         $curso->turno = $request->get("turno");
 
@@ -144,12 +145,11 @@ class CursosController extends Controller
         $curso = Curso::find($id);
 
         $curso->curso = $request->curso;
-        $curso->orientacion = $request->orientacion;
+        $curso->division = $request->division;
+        $curso->orientacion = $request->get("orientacion");
         $curso->turno = $request->get("turno");
 
         $curso->save();
-
-        return redirect('cursos');
     }
 
     /**

@@ -1,20 +1,17 @@
-@extends('home')
 
-@section('contenido')
-	
 	<div class="card-panel hoverable green lighten-4">
 		<div class="row">
 			<div class="input-field col s4">
 				{{ Form::label('curso','Curso',(['class'=>'active','for'=>''])) }}
-				<h5>{{$curso->curso}}</h5>
+				<h5>@{{$curso.curso}}</h5>
 			</div>
 			<div class="input-field col s4">
 				{{ Form::label('orientacion','Orientacion',(['class'=>'active','for'=>''])) }}
-				<h5>{{$curso->orientacion}}</h5>
+				<h5>@{{$curso.orientacion}}</h5>
 			</div>	
 			<div class="input-field col s4">
 				{{ Form::label('turno','Turno',(['class'=>'active','for'=>''])) }}
-				<h5>{{$curso->turno}}</h5>
+				<h5>@{{$curso.turno}}</h5>
 			</div>
 			<div class="input-field col s4">
 				<a href="#modalAsistencia" class="waves-effect waves-light btn modal-trigger">Asistencia</a>
@@ -29,7 +26,7 @@
 				{{-- Modal --}}
 				<a href="#modalMateria" class="waves-effect waves-light btn modal-trigger">Agregar Materia</a>
 
-				<table class="highlight">
+				{{-- <table class="highlight">
 					<thead>
 						<tr>
 							<th>Materias</th>
@@ -42,14 +39,14 @@
 						</tr>
 						@endforeach
 					</tbody>
-				</table>
+				</table> --}}
 			</div> 
 			
 			<div class="input-field col s6">
 				{{-- Modal --}}
 				<a href="#modalAlumno" class="waves-effect waves-light btn modal-trigger">Agregar Alumno</a>
 
-				<table class="highlight">
+				{{-- <table class="highlight">
 					<thead>
 						<tr>
 							<th>Cuil</th>
@@ -67,7 +64,7 @@
 						</tr>
 						@endforeach
 					</tbody>
-				</table>
+				</table> --}}
 			</div> 
 		</div>
 	</div>
@@ -111,7 +108,7 @@
 	</div> --}}
 
 	{{-- Estructura Modal Asistencia --}}
-	<div id="modalAsistencia" class="modal lime lighten-4">
+	{{-- <div id="modalAsistencia" class="modal lime lighten-4">
 		<div class="modal-content">
 		
 				{!! Form::open(['action' => 'AsistenciasController@store','method'=>'POST','file'=>'true','enctype'=>'multipart/form-data','class'=>'form']) !!}
@@ -165,6 +162,4 @@
 			</div>
 			{!! Form::close() !!}
 		
-	</div>
-
-@endsection
+	</div> --}}
