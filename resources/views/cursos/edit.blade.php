@@ -1,46 +1,39 @@
-@extends('home')
+<div id="edit" class="modal">
+			<form method='POST' v-on:submit.prevent="updateCurso(fillCurso.id)">
+	    	<div class="modal-content">
+	    		<blockquote><h4>Editar Curso</h4></blockquote>
+	    		<br>
+		      	<div class="row">
+					<div class="input-field col s12">
+			          <input id="curso" type="text" class="validate" name="curso" v-model="fillCurso.curso">
+			          <label for="curso"></label>
+			        </div>
 
-@section('contenido')
+			        <div class="input-field col s12">
+			          <input id="division" type="text" class="validate" name="division" v-model="fillCurso.division">
+			          <label for="division"></label>
+			        </div>
 
-	<h1>Editor de Curso</h1>
-	
-	<div class="card-panel hoverable green lighten-4">
+			        <div class="input-field col s12">
+			          <select id="orientacion" name="orientacion" class="validate" v-model="newOrientacion">
+			            <option value="" selected>@{{fillCurso.orientacion}}</option>
+			            <option value="Ciclo Basico">Ciclo Básisco</option>
+			            <option value="Ciencias Sociales">Ciencias Sociales</option>
+			            <option value="Educacion Fisica">Educación Física</option>
+			          </select>
+			        </div>
 
-		{!! Form::open(['action' => ['CursosController@update',$curso->id],'method'=>'POST','file'=>true,'enctype'=>'multipart/form-data','class'=>'form']) !!}
-			
-			<div class="row">
-				<div class="input-field col s4">
-		    		{{ Form::label('curso','Curso',(['class'=>'active','for'=>'curso'])) }}
-		    		{{ Form::text('curso',$curso->curso,(['class'=>'validate'])) }}
+			        <div class="input-field col s12">
+			          <select id="turno" name="turno" class="validate" v-model="newTurno">
+			            <option value="" selected>@{{fillCurso.turno}}</option>
+			            <option value="Mañana">Mañana</option>
+			            <option value="Tarde">Tarde</option>
+			          </select>
+			        </div>
 				</div>
-
-				<div class="input-field col s4">
-		    		{{ Form::label('orientacion','Orientacion',(['class'=>'active','for'=>'orientacion'])) }}
-		    		{{ Form::text('orientacion',$curso->orientacion,(['class'=>'validate'])) }}
-				</div>
-
-				<div class="input-field col s4">
-		    		<select name="turno" class="input-field col s3">
-			    		<option value="{{$curso->turno}}">{{$curso->turno}}</option>
-			    		@if($curso->turno == "Mañana") {
-			    			<option value="Tarde">Tarde</option>
-			    		}@else {
-			    		<option value="Mañana">Mañana</option>
-			    		}
-
-			    		@endif
-			      		
-			      		
-			    	</select>
-				</div>
-			</div>
-
-			{{Form::hidden('_method','PUT')}}
-
-			{{ Form::submit('Guardar',(['class'=>'btn green'])) }}
-	    	
-		{!! Form::close() !!}
-
-	</div>
-
-@endsection
+	    	</div>
+	    	<div class="modal-footer">
+	     	 	<button type="submit" class="btn btn-flat waves-effect waves-green green modal-close white-text">Guardar</button>
+	    	</div>
+	    </form>
+  	</div>

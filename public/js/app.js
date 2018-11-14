@@ -12837,7 +12837,15 @@ return /******/ (function(modules) { // webpackBootstrap
 
 		data: {
 			cursos: [],
+			fillCurso: {
+				id: '',
+				curso: '',
+				division: '',
+				orientacion: '',
+				turno: ''
+			},
 			newCurso: '',
+			newDivision: '',
 			newOrientacion: '',
 			newTurno: ''
 		},
@@ -12854,18 +12862,121 @@ return /******/ (function(modules) { // webpackBootstrap
 				var url = 'cursos';
 				axios.post(url, {
 					curso: this.newCurso,
+					division: this.newDivision,
 					orientacion: this.newOrientacion,
 					turno: this.newTurno
 				}).then(response => {
 					this.getCursos();
 					this.newCurso = '';
+					this.newDivision = '';
 					this.newOrientacion = '';
 					this.newTurno = '';
 				}).catch(error => {
 					console.log(error.response.data)
 				});
+			},
+
+			updateCurso: function(id) {
+				axios.put('cursos/'+id, this.fillCurso).then(response => {
+					this.getCursos();
+					this.fillCurso={
+						id: '',
+						curso: '',
+						division: '',
+						orientacion: '',
+						turno: ''
+					};
+				}).catch(error => {
+					console.log(error.response.data)
+				});
+			},
+
+			deleteCurso: function(curso) {
+				var id = curso.id;
+				axios.delete('cursos/' + id).then(response => {
+					this.getCursos();
+					M.toast({html: 'Curso Eliminado'})
+				});
+			},
+
+			editCurso : function(curso) {
+				this.fillCurso.id = curso.id;
+				this.fillCurso.curso = curso.curso;
+				this.fillCurso.division = curso.division;
+				this.fillCurso.orientacion = curso.orientacion;
+				this.fillCurso.turno = curso.turno;
+				return this.fillCurso;
 			}
 		}
+	});
+
+	// //----------------------------------------------------
+
+//CRUD Docentes
+
+	new Vue({
+
+		el: '#crud_docentes',
+
+		created: function() {
+			this.getDocentes();
+		},
+
+		data: {
+			
+			docentes: [],
+			newCuil: '',
+			newApellido: '',
+			newNombre: '',
+			newMatricula: '',
+			newTitulo: '',
+			newDireccion: '',
+			newTelefono: '',
+			newEmail: ''
+		},
+
+		methods: {
+
+			getDocentes: function() {
+				var urlDocentes = 'docentes';
+				axios.get(urlDocentes).then(response => {
+				this.docentes = response.data;
+				});
+			},
+			deleteDocente: function(docente) {
+				var id = docente.id;
+				axios.delete('docentes/' + id).then(response => {
+					this.getMaterias();
+					M.toast({html: 'Docente Eliminado'})
+				});
+			},
+			createDocente: function(){
+				var url = 'docentes';
+				axios.post(url, {
+					cuil: this.newCuil,
+					apellido: this.newApellido,
+					nombre: this.newNombre,
+					matricula: this.newMatricula,
+					titulo: this.newTitulo,
+					direccion: this.newDireccion,
+					telefono: this.newTelefono,
+					email: this.newEmail
+				}).then(response => {
+					this.getDocentes();
+					this.newCuil = '';
+					this.newApellido = '';
+					this.newNombre = '';
+					this.newMatricula = '';
+					this.newTitulo = '';
+					this.newDireccion = '';
+					this.newTelefono = '';
+					this.newEmail = '';
+				}).catch(error => {
+					console.log(error.response.data)
+				});
+			}
+		}
+
 	});
 /*!
  * Materialize v1.0.0 (http://materializecss.com)
