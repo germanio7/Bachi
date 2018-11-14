@@ -69,37 +69,39 @@ class AlumnosController extends Controller
         $alumno->enfermedades_infectocontagiosas = $request->get('enfermedades_infectocontagiosas');
         $alumno->incapacidad = $request->get('incapacidad');
         $alumno->otros = $request->otros;
-        // $alumno->certificado_salud = $request->get('certificado_salud');
-        // $alumno->certificado_dental = $request->get('certificado_dental');
-        // $alumno->carnet_vacuna = $request->get('carnet_vacuna');
-        // $alumno->grupo_sanguineo = $request->get('grupo_sanguineo');
-        // $alumno->certificado_nivel_inicial = $request->get('certificado_nivel_inicial');
-        // $alumno->fotocopia_dni = $request->get('fotocopia_dni');
-        // $alumno->contribucion_cooperadora = $request->get('contribucion_cooperadora');
+        $alumno->certificado_salud = $request->get('certificado_salud');
+        $alumno->certificado_dental = $request->get('certificado_dental');
+        $alumno->carnet_vacuna = $request->get('carnet_vacuna');
+        $alumno->grupo_sanguineo = $request->get('grupo_sanguineo');
+        $alumno->certificado_nivel_inicial = $request->get('certificado_nivel_inicial');
+        $alumno->fotocopia_dni = $request->get('fotocopia_dni');
+        $alumno->contribucion_cooperadora = $request->get('contribucion_cooperadora');
         $alumno->save();
-        // $alumno = Alumno::orderby('created_at','DESC')->take(1)->get();
-        // foreach ($alumno as $a) {
-        //     $alumno_id = $a->id;
-        // }
-        // $padre = new Padre;
-        // $padre->alumno_id = $alumno_id;
-        // $padre->madre_padre = $request->get('madre_padre');
-        // $padre->cuil = $request->cuil_tutor;
-        // $padre->apellido = $request->apellido_tutor;
-        // $padre->nombre = $request->nombre_tutor;
-        // $padre->fecha_nacimiento = $request->fecha_nacimiento_tutor;
-        // $padre->lugar_nacimiento = $request->lugar_nacimiento_tutor;
-        // $padre->nacionalidad = $request->nacionalidad_tutor;
-        // $padre->direccion = $request->direccion_tutor;
-        // $padre->barrio = $request->barrio_tutor;
-        // $padre->departamento = $request->departamento_tutor;
-        // $padre->telefono = $request->telefono_tutor;
-        // $padre->a_cargo = $request->get('a_cargo');
-        // $padre->es_tutor = $request->get('es_tutor');
-        // $padre->patria_potestad = $request->get('patria_potestad');
-        // $padre->vive_con_alumno = $request->get('vive_con_alumno');
-        // $padre->ocupacion = $request->ocupacion;
-        // $padre->save();
+
+        $alumno = Alumno::orderby('created_at','DESC')->take(1)->get();
+        foreach ($alumno as $a) {
+            $alumno_id = $a->id;
+        }
+        
+        $padre = new Padre;
+        $padre->alumno_id = $alumno_id;
+        $padre->madre_padre = $request->get('madre_padre');
+        $padre->cuil = $request->cuil_tutor;
+        $padre->apellido = $request->apellido_tutor;
+        $padre->nombre = $request->nombre_tutor;
+        $padre->fecha_nacimiento = $request->fecha_nacimiento_tutor;
+        $padre->lugar_nacimiento = $request->lugar_nacimiento_tutor;
+        $padre->nacionalidad = $request->nacionalidad_tutor;
+        $padre->direccion = $request->direccion_tutor;
+        $padre->barrio = $request->barrio_tutor;
+        $padre->departamento = $request->departamento_tutor;
+        $padre->telefono = $request->telefono_tutor;
+        $padre->a_cargo = $request->get('a_cargo');
+        $padre->es_tutor = $request->get('es_tutor');
+        $padre->patria_potestad = $request->get('patria_potestad');
+        $padre->vive_con_alumno = $request->get('vive_con_alumno');
+        $padre->ocupacion = $request->ocupacion;
+        $padre->save();
         // $alumno = Alumno::find($alumno_id);
         // $tutor = Padre::where('alumno_id',$alumno_id)->get();
         // $pdf = PDF::loadView('alumnos.inscripcion', compact('alumno', 'tutor'))->setPaper('Legal');;

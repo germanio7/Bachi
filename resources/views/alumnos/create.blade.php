@@ -32,7 +32,7 @@
 
 								<div class="row">
 									<div class="input-field col m4 s12">
-	          				<input id="nacimiento" type="text" class="datepicker" name="fecha_nacimiento"/>
+	          				<input id="nacimiento" type="text" class="datepicker" name="fecha_nacimiento">
 	          				<label for="nacimiento">Fecha de Nacimiento</label>
 	        				</div>
 	        				<div class="input-field col m4 s12">
@@ -65,91 +65,91 @@
 
 								<div class="row">
 									<table>
-		                <thead>
-		                  <tr>
-		                    <th></th>
-		                    <th>SI</th>
-		                    <th>NO</th>
-		                  </tr>
-		                </thead>
-		                <tbody>
-		                  <tr>
-		                    <td>Asiganación Universal</td>
-		                    <td>
-													<label>
-										        <input name="asignacion_universal" type="radio" value="1" v-model="newAsignacionUniversal"/>
-										        <span></span>
-										      </label>
-		                    </td>
-		                    <td>
-		                    	<label>
-										        <input name="asignacion_universal" type="radio" checked value="0"/>
-										        <span></span>
-										      </label>
-		                    </td>
-		                  </tr>
-		                  <tr>
-		                    <td>Salario Familiar</td>
-		                    <td>
-													<label>
-										        <input name="salario_familiar" type="radio" value="1" v-model="newSalarioFamiliar"/>
-										        <span></span>
-										      </label>
-		                    </td>
-		                    <td>
-		                    	<label>
-										        <input name="salario_familiar" type="radio" checked value="0"/>
-										        <span></span>
-										      </label>
-		                    </td>
-		                  </tr>
-		                  <tr>
-		                    <td>Pertenece a un Pueblo Originario</td>
-		                    <td>
-													<label>
-										        <input name="pueblo_originario" type="radio" value="1" v-model="newPuebloOriginario"/>
-										        <span></span>
-										      </label>
-		                    </td>
-		                    <td>
-		                    	<label>
-										        <input name="pueblo_originario" type="radio" value="0" checked />
-										        <span></span>
-										      </label>
-		                    </td>
-		                  </tr>
-		                  <tr>
-		                    <td>Programa CAI</td>
-		                    <td>
-													<label>
-										        <input name="programa_cai" type="radio" value="1" v-model="newProgramaCai"/>
-										        <span></span>
-										      </label>
-		                    </td>
-		                    <td>
-		                    	<label>
-										        <input name="programa_cai" type="radio" checked value="0"/>
-										        <span></span>
-										      </label>
-		                    </td>
-		                  </tr>
-		                  <tr>
-		                    <td>Discapacidad</td>
-		                    <td>
-													<label>
-										        <input name="discapacidad" type="radio" value="1" v-model="newDiscapacidad"/>
-										        <span></span>
-										      </label>
-		                    </td>
-		                    <td>
-		                    	<label>
-										        <input name="discapacidad" type="radio" checked value="0"/>
-										        <span></span>
-										      </label>
-		                    </td>
-		                  </tr>
-		                </tbody>
-		              </table>
+                <thead>
+                  <tr>
+                    <th></th>
+                    <th>SI</th>
+                    <th>NO</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Asiganación Universal</td>
+                    <td>
+											<label>
+								        <input name="asignacion_universal" type="radio" value="1" v-model="newAsignacionUniversal"/>
+								        <span></span>
+								      </label>
+                    </td>
+                    <td>
+                    	<label>
+								        <input name="asignacion_universal" type="radio" checked value="0"/>
+								        <span></span>
+								      </label>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Salario Familiar</td>
+                    <td>
+											<label>
+								        <input name="salario_familiar" type="radio" value="1" v-model="newSalarioFamiliar"/>
+								        <span></span>
+								      </label>
+                    </td>
+                    <td>
+                    	<label>
+								        <input name="salario_familiar" type="radio" checked value="0" />
+								        <span></span>
+								      </label>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Pertenece a un Pueblo Originario</td>
+                    <td>
+											<label>
+								        <input name="pueblo_originario" type="radio" value="1" v-model="newPuebloOriginario"/>
+								        <span></span>
+								      </label>
+                    </td>
+                    <td>
+                    	<label>
+								        <input name="pueblo_originario" type="radio" checked value="0" />
+								        <span></span>
+								      </label>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Programa CAI</td>
+                    <td>
+											<label>
+								        <input name="programa_cai" type="radio" value="1" v-model="newProgramaCai"/>
+								        <span></span>
+								      </label>
+                    </td>
+                    <td>
+                    	<label>
+								        <input name="programa_cai" type="radio" checked value="0" />
+								        <span></span>
+								      </label>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Discapacidad</td>
+                    <td>
+											<label>
+								        <input name="discapacidad" type="radio" value="1" v-model="newDiscapacidad"/>
+								        <span></span>
+								      </label>
+                    </td>
+                    <td>
+                    	<label>
+								        <input name="discapacidad" type="radio" checked value="0" />
+								        <span></span>
+								      </label>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
 								</div>
 						</div>
 
@@ -162,7 +162,7 @@
 
 									<p>
 							      <label>
-							        <input name="madre_padre" type="radio" value="0" {{-- v-model="newMadrePadre" --}} />
+							        <input name="madre_padre" type="radio" value="0" />
 							        <span>Madre</span>
 							      </label>
 									</p>
@@ -195,7 +195,7 @@
 
 									<div class="row">
 										<div class="input-field col m4 s12">
-		          				<input id="fecha_nacimiento_tutor" type="text" class="datepicker" name="fecha_nacimiento_tutor" {{-- v-model="newFechaNacimientoTutor" --}}>
+		          				<input id="fecha_nacimiento_tutor" type="text" class="datepicker" name="fecha_nacimiento_tutor">
 		          				<label for="fecha_nacimiento_tutor">Fecha de Nacimiento</label>
 		        				</div>
 		        				<div class="input-field col m4 s12">
@@ -249,7 +249,7 @@
 		                    </td>
 		                    <td>
 		                    	<label>
-										        <input name="a_cargo" type="radio" value="0" {{-- v-model="newACargo" --}}/>
+										        <input name="a_cargo" type="radio" value="0" />
 										        <span></span>
 										      </label>
 		                    </td>
@@ -264,7 +264,7 @@
 		                    </td>
 		                    <td>
 		                    	<label>
-										        <input name="es_tutor" type="radio" value="0"/ {{-- v-model="newEsTutor" --}}/>
+										        <input name="es_tutor" type="radio" value="0"/ >
 										        <span></span>
 										      </label>
 		                    </td>
@@ -279,7 +279,7 @@
 		                    </td>
 		                    <td>
 		                    	<label>
-										        <input name="patria_potestad" type="radio" value="0" {{-- v-model="newPatriaPotestad" --}}/>
+										        <input name="patria_potestad" type="radio" value="0" />
 										        <span></span>
 										      </label>
 		                    </td>
@@ -294,7 +294,7 @@
 		                    </td>
 		                    <td>
 		                    	<label>
-										        <input name="vive_con_alumno" type="radio" value="0" {{-- v-model="newViveConAlumno" --}}/>
+										        <input name="vive_con_alumno" type="radio" value="0" />
 										        <span></span>
 										      </label>
 		                    </td>
@@ -336,7 +336,7 @@
                     </td>
                     <td>
                     	<label>
-								        <input name="diabetes" type="radio" checked value="0"/>
+								        <input name="diabetes" type="radio" checked value="0"  />
 								        <span></span>
 								      </label>
                     </td>
@@ -351,7 +351,7 @@
                     </td>
                     <td>
                     	<label>
-								        <input name="hernias" type="radio" checked value="0"/>
+								        <input name="hernias" type="radio" checked value="0" />
 								        <span></span>
 								      </label>
                     </td>
@@ -360,13 +360,13 @@
                     <td>Convulsiones</td>
                     <td>
 											<label>
-								        <input name="convulsiones" type="radio" value="1" v-model="newConvulsiones"/>
+								        <input name="convulsiones" type="radio" value="1" />
 								        <span></span>
 								      </label>
                     </td>
                     <td>
                     	<label>
-								        <input name="convulsiones" type="radio" checked value="0"/>
+								        <input name="convulsiones" type="radio" checked value="0" />
 								        <span></span>
 								      </label>
                     </td>
@@ -375,13 +375,13 @@
                     <td>Problemas respiratorios</td>
                     <td>
 											<label>
-								        <input name="problemas_respiratorios" type="radio" value="1" v-model="newProblemasRespiratorios"/>
+								        <input name="problemas_respiratorios" type="radio" value="1" />
 								        <span></span>
 								      </label>
                     </td>
                     <td>
                     	<label>
-								        <input name="problemas_respiratorios" type="radio" checked value="0"/>
+								        <input name="problemas_respiratorios" type="radio" checked value="0"  />
 								        <span></span>
 								      </label>
                     </td>
@@ -396,7 +396,7 @@
                     </td>
                     <td>
                     	<label>
-								        <input name="problemas_cardiacos" type="radio" checked value="0"/>
+								        <input name="problemas_cardiacos" type="radio" checked value="0" />
 								        <span></span>
 								      </label>
                     </td>
@@ -411,7 +411,7 @@
                     </td>
                     <td>
                     	<label>
-								        <input name="alergias" type="radio" checked value="0"/>
+								        <input name="alergias" type="radio" checked value="0" />
 								        <span></span>
 								      </label>
                     </td>
@@ -426,7 +426,7 @@
                     </td>
                     <td>
                     	<label>
-								        <input name="esguinces" type="radio" checked value="0"/>
+								        <input name="esguinces" type="radio" checked value="0"  />
 								        <span></span>
 								      </label>
                     </td>
@@ -441,7 +441,7 @@
                     </td>
                     <td>
                     	<label>
-								        <input name="enfermedades_infectocontagiosas" type="radio" checked value="0"/>
+								        <input name="enfermedades_infectocontagiosas" type="radio" checked value="0" />
 								        <span></span>
 								      </label>
                     </td>
@@ -456,7 +456,7 @@
                     </td>
                     <td>
                     	<label>
-								        <input name="incapacidad" type="radio" checked value="0"/>
+								        <input name="incapacidad" type="radio" checked value="0" />
 								        <span></span>
 								      </label>
                     </td>
@@ -494,7 +494,7 @@
                     </td>
                     <td>
                     	<label>
-								        <input name="certificado_salud" type="radio" checked value="0" {{-- v-model="newCertificadoSalud" --}}/>
+								        <input name="certificado_salud" type="radio" checked value="0" />
 								        <span></span>
 								      </label>
                     </td>
@@ -509,7 +509,7 @@
                     </td>
                     <td>
                     	<label>
-								        <input name="certificado_dental" type="radio" checked value="0" {{-- v-model="newCertificadoDental" --}}/>
+								        <input name="certificado_dental" type="radio" checked value="0" />
 								        <span></span>
 								      </label>
                     </td>
@@ -524,7 +524,7 @@
                     </td>
                     <td>
                     	<label>
-								        <input name="carnet_vacuna" type="radio" checked value="0" {{-- v-model="newCarnetVacuna" --}}/>
+								        <input name="carnet_vacuna" type="radio" checked value="0" />
 								        <span></span>
 								      </label>
                     </td>
@@ -539,7 +539,7 @@
                     </td>
                     <td>
                     	<label>
-								        <input name="grupo_sanguineo" type="radio" checked value="0" {{-- v-model="newGrupoSanguineo" --}}/>
+								        <input name="grupo_sanguineo" type="radio" checked value="0" />
 								        <span></span>
 								      </label>
                     </td>
@@ -554,7 +554,7 @@
                     </td>
                     <td>
                     	<label>
-								        <input name="certificado_nivel_inicial" type="radio" checked value="0" {{-- v-model="newCertificadoNivelInicial" --}}/>
+								        <input name="certificado_nivel_inicial" type="radio" checked value="0" />
 								        <span></span>
 								      </label>
                     </td>
@@ -569,7 +569,7 @@
                     </td>
                     <td>
                     	<label>
-								        <input name="fotocopia_dni" type="radio" checked value="0" {{-- v-model="newFotocopiaDni" --}}/>
+								        <input name="fotocopia_dni" type="radio" checked value="0" />
 								        <span></span>
 								      </label>
                     </td>
@@ -584,7 +584,7 @@
                     </td>
                     <td>
                     	<label>
-								        <input name="contribucion_cooperadora" type="radio" checked value="0" {{-- v-model="newContribucionCooperadora" --}}/>
+								        <input name="contribucion_cooperadora" type="radio" checked value="0" />
 								        <span></span>
 								      </label>
                     </td>

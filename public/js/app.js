@@ -12632,6 +12632,22 @@ return /******/ (function(modules) { // webpackBootstrap
 			newPuebloOriginario: 0,
 			newProgramaCai: 0,
 			newDiscapacidad: 0,
+			newMadrePadre: 0,
+			newCuilTutor: '',
+			newApellidoTutor: '',
+			newNombreTutor: '',
+			newFechaNacimientoTutor: '',
+			newLugarNacimientoTutor: '',
+			newNacionalidadTutor: '',
+			newDireccionTutor: '',
+			newTelefonoTutor: '',
+			newBarrioTutor: '',
+			newDepartamentoTutor: '',
+			newACargo: 0,
+			newEsTutor: 0,
+			newPatriaPotestad: 0,
+			newViveConAlumno: 0,
+			newOcupacion: '',
 			newDiabetes: 0,
 			newHernias: 0,
 			newConvulsiones: 0,
@@ -12641,7 +12657,14 @@ return /******/ (function(modules) { // webpackBootstrap
 			newEsguiences: 0,
 			newEnfermedadesInfectocontagiosas: 0,
 			newIncapacidad: 0,
-			newOtros: ''
+			newOtros: '',
+			newCertificadoSalud: 0,
+			newCertificadoDental: 0,
+			newCarnetVacuna: 0,
+			newGrupoSanguineo: 0,
+			newCertificadoNivelInicial: 0,
+			newFotocopiaDni: 0,
+			newContribucionCooperadora: 0
 		},
 
 		methods: {
@@ -12662,6 +12685,8 @@ return /******/ (function(modules) { // webpackBootstrap
 				var url = 'alumnos';
 				var nacimiento = document.getElementById('nacimiento').value;
 				this.newFechaNacimiento = nacimiento;
+				var fecha_nacimiento_tutor = document.getElementById('fecha_nacimiento_tutor').value;
+				this.newFechaNacimientoTutor = fecha_nacimiento_tutor;
 				axios.post(url, {
 					cuil: this.newCuil,
 					apellido: this.newApellido,
@@ -12703,6 +12728,22 @@ return /******/ (function(modules) { // webpackBootstrap
 					this.newPuebloOriginario = 0;
 					this.newProgramaCai = 0;
 					this.newDiscapacidad = 0;
+					this.newMadrePadre = 0;
+					this.newCuilTutor = '';
+					this.newApellidoTutor = '';
+					this.newNombreTutor = '';
+					this.newFechaNacimientoTutor = '';
+					this.newLugarNacimientoTutor = '';
+					this.newNacionalidadTutor = '';
+					this.newDireccionTutor = '';
+					this.newTelefonoTutor = '';
+					this.newBarrioTutor = '';
+					this.newDepartamentoTutor = '';
+					this.newACargo = 0;
+					this.newEsTutor = 0;
+					this.newPatriaPotestad = 0;
+					this.newViveConAlumno = 0;
+					this.newOcupacion = '';
 					this.newDiabetes = 0;
 					this.newHernias = 0;
 					this.newConvulsiones = 0;
@@ -12713,6 +12754,14 @@ return /******/ (function(modules) { // webpackBootstrap
 					this.newEnfermedadesInfectocontagiosas = 0;
 					this.newIncapacidad = 0;
 					this.newOtros = '';
+					this.newCertificadoSalud = 0;
+					this.newCertificadoDental = 0;
+					this.newCarnetVacuna = 0;
+					this.newGrupoSanguineo = 0;
+					this.newCertificadoNivelInicial = 0;
+					this.newFotocopiaDni = 0;
+					this.newContribucionCooperadora = 0;
+
 				});
 			}
 		}
