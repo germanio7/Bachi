@@ -80,6 +80,18 @@
 		                  <tr>
 		                    <td>Asiganación Universal</td>
 		                    <td>
+<<<<<<< HEAD
+							    <label>
+							        <input name="asignacion_universal" type="radio" value="1"/ @if($alumno->asignacion_universal == 1) checked @endif>
+							        <span></span>
+							    </label>
+		                    </td>
+		                    <td>
+		                    	<label>
+							        <input name="asignacion_universal" type="radio" value="0"/ @if($alumno->asignacion_universal == 0) checked @endif>
+							        <span></span>
+							    </label>
+=======
 													<label>
 							        			<input name="asignacion_universal" type="radio" value="1" @if($alumno->asignacion_universal == 1) checked @endif />
 							        			<span></span>
@@ -90,12 +102,24 @@
 							        		<input name="asignacion_universal" type="radio" value="0" @if($alumno->asignacion_universal == 0) checked @endif />
 							        		<span></span>
 							      			</label>
+>>>>>>> 36b32d22cd8cdcff7f25b23d584759de12abf793
 		                    </td>
 		                  </tr>
 		                  <tr>
 		                    <td>Salario Familiar</td>
 		                    <td>
 								<label>
+<<<<<<< HEAD
+							        <input name="salario_familiar" type="radio" value="1"/ @if($alumno->salario_familiar == 1) checked @endif>
+							        <span></span>
+							    </label>
+		                    </td>
+		                    <td>
+		                    	<label>
+		                    		<input name="salario_familiar" type="radio" value="0"/ @if($alumno->salario_familiar == 0) checked @endif>
+							        <span></span>
+							    </label>
+=======
 							        <input name="salario_familiar" type="radio" value="1" @if($alumno->salario_familiar == 1) checked @endif/>
 							        <span></span>
 							      </label>
@@ -105,27 +129,49 @@
 							        <input name="salario_familiar" type="radio" value="0" @if($alumno->salario_familiar == 0) checked @endif/>
 							        <span></span>
 							      </label>
+>>>>>>> 36b32d22cd8cdcff7f25b23d584759de12abf793
 		                    </td>
 		                  </tr>
 		                  <tr>
 		                    <td>Pertenece a un Pueblo Originario</td>
 		                    <td>
 								<label>
+<<<<<<< HEAD
+							        <input name="pueblo_originario" type="radio" value="1"/ @if($alumno->pueblo_originario == 1) checked @endif>
+=======
 							        <input name="pueblo_originario" type="radio" value="1" @if($alumno->pueblo_originario == 1) checked @endif/>
+>>>>>>> 36b32d22cd8cdcff7f25b23d584759de12abf793
 							        <span></span>
 							      </label>
 		                    </td>
 		                    <td>
 		                    	<label>
+<<<<<<< HEAD
+							        <input name="pueblo_originario" type="radio" value="0"/ @if($alumno->pueblo_originario == 0) checked @endif>
+							        <span></span>
+							    </label>
+=======
 							        <input name="pueblo_originario" type="radio" value="0" @if($alumno->asignacion_universal == 0) checked @endif/>
 							        <span></span>
 							      </label>
+>>>>>>> 36b32d22cd8cdcff7f25b23d584759de12abf793
 		                    </td>
 		                  </tr>
 		                  <tr>
 		                    <td>Programa CAI</td>
 		                    <td>
 								<label>
+<<<<<<< HEAD
+							        <input name="programa_cai" type="radio" value="1"/ @if ($alumno->programa_cai == 1) checked @endif>
+							        <span></span>
+							    </label>
+		                    </td>
+		                    <td>
+		                    	<label>
+							        <input name="programa_cai" type="radio" value="0"/ @if ($alumno->programa_cai == 0) checked @endif>
+							        <span></span>
+							    </label>
+=======
 							        <input name="programa_cai" type="radio" value="1" @if($alumno->programa_cai == 1) checked @endif/>
 							        <span></span>
 							      </label>
@@ -135,12 +181,24 @@
 							        <input name="programa_cai" type="radio" value="0" @if($alumno->programa_cai == 0) checked @endif/>
 							        <span></span>
 							      </label>
+>>>>>>> 36b32d22cd8cdcff7f25b23d584759de12abf793
 		                    </td>
 		                  </tr>
 		                  <tr>
 		                    <td>Discapacidad</td>
 		                    <td>
 								<label>
+<<<<<<< HEAD
+							        <input name="discapacidad" type="radio" value="1"/ @if($alumno->discapacidad == 1) checked @endif>
+							        <span></span>
+							    </label>
+		                    </td>
+		                    <td>
+		                    	<label>
+							        <input name="discapacidad" type="radio" value="0"/ @if($alumno->discapacidad == 0) checked @endif>
+							        <span></span>
+							    </label>
+=======
 							        <input name="discapacidad" type="radio" value="1" @if($alumno->discapacidad == 1) checked @endif/>
 							        <span></span>
 							      </label>
@@ -150,6 +208,7 @@
 							        <input name="discapacidad" type="radio" value="0" @if($alumno->discapacidad == 0) checked @endif/>
 							        <span></span>
 							      </label>
+>>>>>>> 36b32d22cd8cdcff7f25b23d584759de12abf793
 		                    </td>
 		                  </tr>
 		                </tbody>
@@ -331,13 +390,21 @@
 		                    <td>Diabetes</td>
 		                    <td>
 								<label>
+<<<<<<< HEAD
+							        <input name="diabetes" type="radio" value="1"/ @if($alumno->diabetes == 1) checked @endif>
+=======
 							        <input name="diabetes" type="radio" value="1"/>
+>>>>>>> 36b32d22cd8cdcff7f25b23d584759de12abf793
 							        <span></span>
 							    </label>
 		                    </td>
 		                    <td>
 		                    	<label>
+<<<<<<< HEAD
+							        <input name="diabetes" type="radio" value="0" @if($alumno->diabetes == 0) checked @endif />
+=======
 							        <input name="diabetes" type="radio" checked value="0" />
+>>>>>>> 36b32d22cd8cdcff7f25b23d584759de12abf793
 							        <span></span>
 							    </label>
 		                    </td>
@@ -346,13 +413,21 @@
 		                    <td>Hernias</td>
 		                    <td>
 								<label>
+<<<<<<< HEAD
+							        <input name="hernias" type="radio" value="1"/ @if($alumno->hernias == 1) checked @endif>
+=======
 							        <input name="hernias" type="radio" value="1"/>
+>>>>>>> 36b32d22cd8cdcff7f25b23d584759de12abf793
 							        <span></span>
 							    </label>
 		                    </td>
 		                    <td>
 		                    	<label>
+<<<<<<< HEAD
+							        <input name="hernias" type="radio" value="0"/ @if($alumno->hernias == 0) checked @endif>
+=======
 							        <input name="hernias" type="radio" checked value="0" />
+>>>>>>> 36b32d22cd8cdcff7f25b23d584759de12abf793
 							        <span></span>
 							    </label>
 		                    </td>
@@ -361,13 +436,21 @@
 		                    <td>Convulsiones</td>
 		                    <td>
 								<label>
+<<<<<<< HEAD
+							        <input name="convulsiones" type="radio" value="1"/ @if($alumno->convulsiones == 1) checked @endif>
+=======
 							        <input name="convulsiones" type="radio" value="1"/>
+>>>>>>> 36b32d22cd8cdcff7f25b23d584759de12abf793
 							        <span></span>
 							    </label>
 		                    </td>
 		                    <td>
 		                    	<label>
+<<<<<<< HEAD
+							        <input name="convulsiones" type="radio" value="0"/ @if($alumno->convulsiones == 0) checked @endif>
+=======
 							        <input name="convulsiones" type="radio" checked value="0" />
+>>>>>>> 36b32d22cd8cdcff7f25b23d584759de12abf793
 							        <span></span>
 							    </label>
 		                    </td>
@@ -376,13 +459,21 @@
 		                    <td>Problemas respiratorios</td>
 		                    <td>
 								<label>
+<<<<<<< HEAD
+							        <input name="problemas_respiratorios" type="radio" value="1"/ @if($alumno->problemas_respiratorios == 1) checked @endif>
+=======
 							        <input name="problemas_respiratorios" type="radio" value="1"/>
+>>>>>>> 36b32d22cd8cdcff7f25b23d584759de12abf793
 							        <span></span>
 							    </label>
 		                    </td>
 		                    <td>
 		                    	<label>
+<<<<<<< HEAD
+							        <input name="problemas_respiratorios" type="radio" value="0"/ @if($alumno->problemas_respiratorios == 0) checked @endif>
+=======
 							        <input name="problemas_respiratorios" type="radio" checked value="0" />
+>>>>>>> 36b32d22cd8cdcff7f25b23d584759de12abf793
 							        <span></span>
 							    </label>
 		                    </td>
@@ -391,13 +482,21 @@
 		                    <td>Problemas cardiacos</td>
 		                    <td>
 								<label>
+<<<<<<< HEAD
+							        <input name="problemas_cardiacos" type="radio" value="1"/ @if($alumno->problemas_cardiacos == 1) checked @endif>
+=======
 							        <input name="problemas_cardiacos" type="radio" value="1"/>
+>>>>>>> 36b32d22cd8cdcff7f25b23d584759de12abf793
 							        <span></span>
 							    </label>
 		                    </td>
 		                    <td>
 		                    	<label>
+<<<<<<< HEAD
+							        <input name="problemas_cardiacos" type="radio" value="0"/ @if($alumno->problemas_cardiacos == 0) checked @endif>
+=======
 							        <input name="problemas_cardiacos" type="radio" checked value="0" />
+>>>>>>> 36b32d22cd8cdcff7f25b23d584759de12abf793
 							        <span></span>
 							    </label>
 		                    </td>
@@ -406,13 +505,21 @@
 		                    <td>Alergias (consignar)</td>
 		                    <td>
 								<label>
+<<<<<<< HEAD
+							        <input name="alergias" type="radio" value="1"/ @if($alumno->alergias == 1) checked @endif>
+=======
 							        <input name="alergias" type="radio" value="1"/>
+>>>>>>> 36b32d22cd8cdcff7f25b23d584759de12abf793
 							        <span></span>
 							    </label>
 		                    </td>
 		                    <td>
 		                    	<label>
+<<<<<<< HEAD
+							        <input name="alergias" type="radio" value="0"/ @if($alumno->alergias == 0) checked @endif>
+=======
 							        <input name="alergias" type="radio" checked value="0" />
+>>>>>>> 36b32d22cd8cdcff7f25b23d584759de12abf793
 							        <span></span>
 							    </label>
 		                    </td>
@@ -421,13 +528,21 @@
 		                    <td>En los últimos 60 días ha padecido: Luxaciones - Esguínces (torceduras de tobillos, hombros, muñecas, etc)</td>
 		                    <td>
 								<label>
+<<<<<<< HEAD
+							        <input name="esguinces" type="radio" value="1"/ @if($alumno->esguinces == 1) checked @endif>
+=======
 							        <input name="esguinces" type="radio" value="1"/>
+>>>>>>> 36b32d22cd8cdcff7f25b23d584759de12abf793
 							        <span></span>
 							    </label>
 		                    </td>
 		                    <td>
 		                    	<label>
+<<<<<<< HEAD
+							        <input name="esguinces" type="radio" value="0"/ @if($alumno->esguinces == 0) checked @endif>
+=======
 							        <input name="esguinces" type="radio" checked value="0" />
+>>>>>>> 36b32d22cd8cdcff7f25b23d584759de12abf793
 							        <span></span>
 							    </label>
 		                    </td>
@@ -436,13 +551,21 @@
 		                    <td>Enfermedades Infectocontagiosas: (paperas, sarampión, varicela, etc)</td>
 		                    <td>
 								<label>
+<<<<<<< HEAD
+							        <input name="enfermedades_infectocontagiosas" type="radio" value="1"/ @if($alumno->enfermedades_infectocontagiosas == 1) checked @endif>
+=======
 							        <input name="enfermedades_infectocontagiosas" type="radio" value="1"/>
+>>>>>>> 36b32d22cd8cdcff7f25b23d584759de12abf793
 							        <span></span>
 							    </label>
 		                    </td>
 		                    <td>
 		                    	<label>
+<<<<<<< HEAD
+							        <input name="enfermedades_infectocontagiosas" type="radio" value="0"/ @if($alumno->enfermedades_infectocontagiosas == 0) checked @endif>
+=======
 							        <input name="enfermedades_infectocontagiosas" type="radio" checked value="0" />
+>>>>>>> 36b32d22cd8cdcff7f25b23d584759de12abf793
 							        <span></span>
 							    </label>
 		                    </td>
@@ -451,13 +574,21 @@
 		                    <td>Tuvo algún accidente que lo dejo con alguna incapacidad o impedimento</td>
 		                    <td>
 								<label>
+<<<<<<< HEAD
+							        <input name="incapacidad" type="radio" value="1"/ @if($alumno->incapacidad == 1) checked @endif>
+=======
 							        <input name="incapacidad" type="radio" value="1"/>
+>>>>>>> 36b32d22cd8cdcff7f25b23d584759de12abf793
 							        <span></span>
 							    </label>
 		                    </td>
 		                    <td>
 		                    	<label>
+<<<<<<< HEAD
+							        <input name="incapacidad" type="radio" value="0"/ @if($alumno->incapacidad == 0) checked @endif>
+=======
 							        <input name="incapacidad" type="radio" checked value="0" />
+>>>>>>> 36b32d22cd8cdcff7f25b23d584759de12abf793
 							        <span></span>
 							    </label>
 		                    </td>
@@ -488,13 +619,21 @@
 		                    <td>Certificado de salud</td>
 		                    <td>
 								<label>
+<<<<<<< HEAD
+							        <input name="certificado_salud" type="radio" value="1"/ @if($alumno->certificado_salud == 1) checked @endif>
+=======
 							        <input name="certificado_salud" type="radio" value="1"/>
+>>>>>>> 36b32d22cd8cdcff7f25b23d584759de12abf793
 							        <span></span>
 								</label>
 		                    </td>
 		                    <td>
 		                    	<label>
+<<<<<<< HEAD
+							        <input name="certificado_salud" type="radio" value="0"/ @if($alumno->certificado_salud == 0) checked @endif>
+=======
 							        <input name="certificado_salud" type="radio" checked value="0" />
+>>>>>>> 36b32d22cd8cdcff7f25b23d584759de12abf793
 							        <span></span>
 							    </label>
 		                    </td>
@@ -503,13 +642,21 @@
 		                    <td>Certificado Buco dental</td>
 		                    <td>
 								<label>
+<<<<<<< HEAD
+							        <input name="certificado_dental" type="radio" value="1"/ @if($alumno->certificado_dental == 1) checked @endif>
+=======
 							        <input name="certificado_dental" type="radio" value="1"/>
+>>>>>>> 36b32d22cd8cdcff7f25b23d584759de12abf793
 							        <span></span>
 							    </label>
 		                    </td>
 		                    <td>
 		                    	<label>
+<<<<<<< HEAD
+							        <input name="certificado_dental" type="radio" value="0"/ @if($alumno->certificado_dental == 0) checked @endif>
+=======
 							        <input name="certificado_dental" type="radio" checked value="0" />
+>>>>>>> 36b32d22cd8cdcff7f25b23d584759de12abf793
 							        <span></span>
 							    </label>
 		                    </td>
@@ -518,13 +665,21 @@
 		                    <td>Fotocopia del Carnet de Vacunación</td>
 		                    <td>
 								<label>
+<<<<<<< HEAD
+							        <input name="carnet_vacuna" type="radio" value="1"/ @if($alumno->carnet_vacuna == 1) checked @endif>
+=======
 							        <input name="carnet_vacuna" type="radio" value="1"/>
+>>>>>>> 36b32d22cd8cdcff7f25b23d584759de12abf793
 							        <span></span>
 							    </label>
 		                    </td>
 		                    <td>
 		                    	<label>
+<<<<<<< HEAD
+							        <input name="carnet_vacuna" type="radio" value="0"/ @if($alumno->carnet_vacuna == 0) checked @endif>
+=======
 							        <input name="carnet_vacuna" type="radio" checked value="0" />
+>>>>>>> 36b32d22cd8cdcff7f25b23d584759de12abf793
 							        <span></span>
 							    </label>
 		                    </td>
@@ -533,13 +688,21 @@
 		                    <td>Fotocopia del grupo Sanguíneo</td>
 		                    <td>
 								<label>
+<<<<<<< HEAD
+							        <input name="grupo_sanguineo" type="radio" value="1"/ @if($alumno->grupo_sanguineo == 1) checked @endif>
+=======
 							        <input name="grupo_sanguineo" type="radio" value="1"/>
+>>>>>>> 36b32d22cd8cdcff7f25b23d584759de12abf793
 							        <span></span>
 							    </label>
 		                    </td>
 		                    <td>
 		                    	<label>
+<<<<<<< HEAD
+							        <input name="grupo_sanguineo" type="radio" value="0"/ @if($alumno->grupo_sanguineo == 0) checked @endif>
+=======
 							        <input name="grupo_sanguineo" type="radio" checked value="0" />
+>>>>>>> 36b32d22cd8cdcff7f25b23d584759de12abf793
 							        <span></span>
 							    </label>
 		                    </td>
@@ -548,13 +711,21 @@
 		                    <td>Certificado de finalización del Jardín Infantes</td>
 		                    <td>
 								<label>
+<<<<<<< HEAD
+							        <input name="certificado_nivel_inicial" type="radio" value="1"/ @if($alumno->certificado_nivel_inicial == 1) checked @endif>
+=======
 							        <input name="certificado_nivel_inicial" type="radio" value="1"/>
+>>>>>>> 36b32d22cd8cdcff7f25b23d584759de12abf793
 							        <span></span>
 							    </label>
 		                    </td>
 		                    <td>
 		                    	<label>
+<<<<<<< HEAD
+							        <input name="certificado_nivel_inicial" type="radio" value="0"/ @if($alumno->certificado_nivel_inicial == 0) checked @endif>
+=======
 							        <input name="certificado_nivel_inicial" type="radio" checked value="0" />
+>>>>>>> 36b32d22cd8cdcff7f25b23d584759de12abf793
 							        <span></span>
 							    </label>
 		                    </td>
@@ -563,13 +734,21 @@
 		                    <td>Fotocopia del DNI</td>
 		                    <td>
 								<label>
+<<<<<<< HEAD
+							        <input name="fotocopia_dni" type="radio" value="1"/ @if($alumno->fotocopia_dni == 1) checked @endif>
+=======
 							        <input name="fotocopia_dni" type="radio" value="1"/>
+>>>>>>> 36b32d22cd8cdcff7f25b23d584759de12abf793
 							        <span></span>
 							    </label>
 		                    </td>
 		                    <td>
 		                    	<label>
+<<<<<<< HEAD
+							        <input name="fotocopia_dni" type="radio" value="0"/ @if($alumno->fotocopia_dni == 0) checked @endif>
+=======
 							        <input name="fotocopia_dni" type="radio" checked value="0" />
+>>>>>>> 36b32d22cd8cdcff7f25b23d584759de12abf793
 							        <span></span>
 							    </label>
 		                    </td>
@@ -578,13 +757,21 @@
 		                    <td>Contribución a Cooperadora</td>
 		                    <td>
 								<label>
+<<<<<<< HEAD
+							        <input name="contribucion_cooperadora" type="radio" value="1"/ @if($alumno->contribucion_cooperadora == 1) checked @endif>
+=======
 							        <input name="contribucion_cooperadora" type="radio" value="1"/>
+>>>>>>> 36b32d22cd8cdcff7f25b23d584759de12abf793
 							        <span></span>
 							    </label>
 		                    </td>
 		                    <td>
 		                    	<label>
+<<<<<<< HEAD
+							        <input name="contribucion_cooperadora" type="radio" value="0"/ @if($alumno->contribucion_cooperadora == 0) checked @endif>
+=======
 							        <input name="contribucion_cooperadora" type="radio" checked value="0" />
+>>>>>>> 36b32d22cd8cdcff7f25b23d584759de12abf793
 							        <span></span>
 							    </label>
 		                    </td>

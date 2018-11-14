@@ -3,10 +3,10 @@
 @section('contenido')
 
 	<div class="row" id="crud_alumno">
-		<div class="margin">
+		<div class="margin" id="inicio">
 
 			<div class="fixed-action-btn" id="boton">
-		  		<a href="#create" class="btn-floating btn-large green waves-effect waves-light" onclick="change(2);"><i class="fas fa-plus fa-lg"></i></a>
+		  		<a href="#inicio" class="btn-floating btn-large green waves-effect waves-light" onclick="change(2);"><i class="fas fa-plus fa-lg"></i></a>
 			</div>
 
 			<div id="index">
@@ -46,6 +46,7 @@
 	</div>
 
 	<script>
+
 		function change(point){
 			var boton = document.getElementById('boton');
 			var index = document.getElementById('index');
@@ -59,7 +60,8 @@
 				index.style.display = 'none';			
 				boton.innerHTML = '<a class="btn-floating btn-large blue waves-effect waves-light" onclick="change(1);"><i class="fas fa-arrow-left fa-lg"></i></a>';
 			}
-		}		
+		}
+			
 	</script>
 
 @endsection

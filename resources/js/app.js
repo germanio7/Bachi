@@ -6,6 +6,7 @@
 
 		created: function() {
 			this.getAlumnos();
+			console.log('cambios');
 		},
 
 		data: {
@@ -19,11 +20,21 @@
 			newDireccion: '',
 			newBarrio: '',
 			newDepartamento: '',
-			newAsignacionUniversal: '',
-			newSalarioFamiliar: '',
-			newPuebloOriginario: '',
-			newProgramaCai: '',
-			newDiscapacidad: ''
+			newAsignacionUniversal: 0,
+			newSalarioFamiliar: 0,
+			newPuebloOriginario: 0,
+			newProgramaCai: 0,
+			newDiscapacidad: 0,
+			newDiabetes: 0,
+			newHernias: 0,
+			newConvulsiones: 0,
+			newProblemasRespiratorios: 0,
+			newProblemasCardiacos: 0,
+			newAlergias: 0,
+			newEsguiences: 0,
+			newEnfermedadesInfectocontagiosas: 0,
+			newIncapacidad: 0,
+			newOtros: ''
 		},
 
 		methods: {
@@ -42,6 +53,8 @@
 			},
 			createAlumno: function(){
 				var url = 'alumnos';
+				var nacimiento = document.getElementById('nacimiento').value;
+				this.newFechaNacimiento = nacimiento;
 				axios.post(url, {
 					cuil: this.newCuil,
 					apellido: this.newApellido,
@@ -56,14 +69,43 @@
 					salario_familiar: this.newSalarioFamiliar,
 					pueblo_originario: this.newPuebloOriginario,
 					programa_cai: this.newProgramaCai,
-					discapacidad: this.newDiscapacidad
+					discapacidad: this.newDiscapacidad,
+					diabetes: this.newDiabetes,
+					hernias: this.newHernias,
+					convulsiones: this.newConvulsiones,
+					problemas_respiratorios: this.newProblemasRespiratorios,
+					problemas_cardiacos: this.newProblemasCardiacos,
+					alergias: this.newAlergias,
+					esguinces: this.newEsguiences,
+					enfermedades_infectocontagiosas: this.newEnfermedadesInfectocontagiosas,
+					incapacidad: this.newIncapacidad,
+					otros: this.newOtros
 				}).then(response => {
 					this.getAlumnos();
 					this.newCuil = '';
 					this.newApellido = '';
 					this.newNombre = '';
-				}).catch(error => {
-					console.log(error.response.data)
+					this.newFechaNacimiento = '';
+					this.newLugarNacimiento = '';
+					this.newNacionalidad = '';
+					this.newDireccion = '';
+					this.newBarrio = '';
+					this.newDepartamento = '';
+					this.newAsignacionUniversal = 0;
+					this.newSalarioFamiliar = 0;
+					this.newPuebloOriginario = 0;
+					this.newProgramaCai = 0;
+					this.newDiscapacidad = 0;
+					this.newDiabetes = 0;
+					this.newHernias = 0;
+					this.newConvulsiones = 0;
+					this.newProblemasRespiratorios = 0;
+					this.newProblemasCardiacos = 0;
+					this.newAlergias = 0;
+					this.newEsguiences = 0;
+					this.newEnfermedadesInfectocontagiosas = 0;
+					this.newIncapacidad = 0;
+					this.newOtros = '';
 				});
 			}
 		}
