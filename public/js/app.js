@@ -12926,6 +12926,75 @@ return /******/ (function(modules) { // webpackBootstrap
 			}
 		}
 	});
+
+	// //----------------------------------------------------
+
+//CRUD Docentes
+
+	new Vue({
+
+		el: '#crud_docentes',
+
+		created: function() {
+			this.getDocentes();
+		},
+
+		data: {
+			
+			docentes: [],
+			newCuil: '',
+			newApellido: '',
+			newNombre: '',
+			newMatricula: '',
+			newTitulo: '',
+			newDireccion: '',
+			newTelefono: '',
+			newEmail: ''
+		},
+
+		methods: {
+
+			getDocentes: function() {
+				var urlDocentes = 'docentes';
+				axios.get(urlDocentes).then(response => {
+				this.docentes = response.data;
+				});
+			},
+			deleteDocente: function(docente) {
+				var id = docente.id;
+				axios.delete('docentes/' + id).then(response => {
+					this.getMaterias();
+					M.toast({html: 'Docente Eliminado'})
+				});
+			},
+			createDocente: function(){
+				var url = 'docentes';
+				axios.post(url, {
+					cuil: this.newCuil,
+					apellido: this.newApellido,
+					nombre: this.newNombre,
+					matricula: this.newMatricula,
+					titulo: this.newTitulo,
+					direccion: this.newDireccion,
+					telefono: this.newTelefono,
+					email: this.newEmail
+				}).then(response => {
+					this.getDocentes();
+					this.newCuil = '';
+					this.newApellido = '';
+					this.newNombre = '';
+					this.newMatricula = '';
+					this.newTitulo = '';
+					this.newDireccion = '';
+					this.newTelefono = '';
+					this.newEmail = '';
+				}).catch(error => {
+					console.log(error.response.data)
+				});
+			}
+		}
+
+	});
 /*!
  * Materialize v1.0.0 (http://materializecss.com)
  * Copyright 2014-2017 Materialize

@@ -59,7 +59,6 @@ class DocentesController extends Controller
 
         $docente->save();
 
-        return redirect('docentes');
     }
 
     /**
