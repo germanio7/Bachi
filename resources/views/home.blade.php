@@ -2,6 +2,7 @@
 <html lang="es">
 <head>
 	<meta charset="UTF-8">
+	<meta name="csrf-token" content="{{csrf_token()}}">
 	<link rel="shortcut icon" href="{{'/img/icono.png'}}"/>
 	<title>E.E.S Nº. 9 "Maestro Sarmiento"</title>
 	<link rel="stylesheet" href="{{asset('/css/app.css')}}">

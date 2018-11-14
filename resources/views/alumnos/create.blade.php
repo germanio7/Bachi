@@ -6,6 +6,14 @@
 				<div class="card margin">
 					<div class="card-content">
 
+						<div>
+							<img src="{{'/img/ministerio.png'}}" width="250">
+							<h5 class="center-align">PLANILLA ANEXA I - RESOLUCION Nº 9558</h5>
+						</div>
+
+						<div class="divider"></div>
+						<br>
+
 						<div id="alumno" class="container">
 
 							<h6><b><u>Datos del Alumno:</u></b></h6>
@@ -13,41 +21,41 @@
 
 								<div class="row">
 									<div class="input-field col m4 s12">
-	          				<input id="cuil" type="text" class="validate" name="cuil" v-model="newCuil"/>
+	          				<input id="cuil" type="text" class="validate" name="cuil" v-model="newCuil" required/>
 	          				<label for="cuil">CUIL Nº</label>
 	        				</div>
 								</div>
 
 								<div class="row">
 									<div class="input-field col m6 s12">
-	          				<input id="apellido" type="text" class="validate" name="apellido" v-model="newApellido"/>
+	          				<input id="apellido" type="text" class="validate" name="apellido" v-model="newApellido" required/>
 	          				<label for="apellido">Apellidos</label>
 	        				</div>
 
 									<div class="input-field col m6 s12">
-	          				<input id="nombre" type="text" class="validate" name="nombre" v-model="newNombre"/> 
+	          				<input id="nombre" type="text" class="validate" name="nombre" v-model="newNombre" required/> 
 	          				<label for="nombre">Nombres</label>
 	        				</div>
 								</div>
 
 								<div class="row">
 									<div class="input-field col m4 s12">
-	          				<input id="nacimiento" type="text" class="datepicker" name="fecha_nacimiento">
+	          				<input id="nacimiento" type="text" class="datepicker" name="fecha_nacimiento" required>
 	          				<label for="nacimiento">Fecha de Nacimiento</label>
 	        				</div>
 	        				<div class="input-field col m4 s12">
-	          				<input id="lugar" type="text" class="validate" name="lugar_nacimiento" v-model="newLugarNacimiento"/>
+	          				<input id="lugar" type="text" class="validate" name="lugar_nacimiento" v-model="newLugarNacimiento" required/>
 	          				<label for="lugar">Lugar de Nacimiento</label>
 	        				</div>
 	        				<div class="input-field col m4 s12">
-	          				<input id="nacionalidad" type="text" class="validate" name="nacionalidad" v-model="newNacionalidad"/>
+	          				<input id="nacionalidad" type="text" class="validate" name="nacionalidad" value="Argentina"  required/>
 	          				<label for="nacionalidad">Nacionalidad</label>
 	        				</div>
 								</div>
 
 								<div class="row">
 									<div class="input-field col s12">
-	          				<input id="domicilio" type="text" class="validate" name="direccion" v-model="newDireccion"/>
+	          				<input id="domicilio" type="text" class="validate" name="direccion" v-model="newDireccion" required/>
 	          				<label for="domicilio">Domicilio</label>
 	        				</div>
 								</div>
@@ -58,8 +66,34 @@
 	          				<label for="barrio">Barrio</label>
 	        				</div>
 	        				<div class="input-field col m6 s12">
-	          				<input id="departamento" type="text" class="validate" name="departamento" v-model="newDepartamento"/>
-	          				<label for="departamento">Departamento</label>
+	          				<select id="departamento" required>
+								      <option value="Mayor Luis Jorge Fontana" selected>Mayor Luis Jorge Fontana</option>
+								      <option value="Almirante Brown">Almirante Brown</option>
+								      <option value="Bermejo">Bermejo</option>
+								      <option value="Chacabuco">Chacabuco</option>
+								      <option value="Comandante Fernández">Comandante Fernández</option>
+								      <option value="Doce de Octubre">Doce de Octubre</option>
+								      <option value="Dos de Abril">Dos de Abril</option>
+								      <option value="Fray Justo Santa María de Oro">Fray Justo Santa María de Oro</option>
+								      <option value="General Belgrano">General Belgrano</option>
+								      <option value="General Donovan">General Donovan</option>
+								      <option value="General Güemes">General Güemes</option>
+								      <option value="Independencia">Independencia</option>
+								      <option value="Libertad">Libertad</option>
+								      <option value="Libertador General San Martín">Libertador General San Martín</option>
+								      <option value="Maipú">Maipú</option>
+								      <option value="Nueve de Julio">Nueve de Julio</option>
+								      <option value="O'Higgins">O'Higgins</option>
+								      <option value="Presidencia de la Plaza">Presidencia de la Plaza</option>
+								      <option value="Primero de Mayo">Primero de Mayo</option>
+								      <option value="Quitilipi">Quitilipi</option>
+								      <option value="San Fernando">San Fernando</option>
+								      <option value="San Lorenzo">San Lorenzo</option>
+								      <option value="Sargento Cabral">Sargento Cabral</option>
+								      <option value="Tapenagá">Tapenagá</option>
+								      <option value="Veinticinco de Mayo">Veinticinco de Mayo</option>
+								    </select>
+								    <label>Departamento</label>
 	        				</div>
 								</div>
 
@@ -162,13 +196,13 @@
 
 									<p>
 							      <label>
-							        <input name="madre_padre" type="radio" value="0" />
+							        <input name="madre_padre" type="radio" value="0" v-model="newMadrePadre" required/>
 							        <span>Madre</span>
 							      </label>
 									</p>
 									<p>
 							      <label>
-							        <input name="madre_padre" type="radio" value="1" {{-- v-model="newMadrePadre" --}} />
+							        <input name="madre_padre" type="radio" value="1" v-model="newMadrePadre" required/>
 							        <span>Padre</span>
 							      </label>
 							    </p>
@@ -176,56 +210,82 @@
 
 				      		<div class="row">
 										<div class="input-field col m4 s12">
-		          				<input id="cuil_tutor" type="text" class="validate" name="cuil_tutor" {{-- v-model="newCuilTutor" --}}>
+		          				<input id="cuil_tutor" type="text" class="validate" name="cuil_tutor" v-model="newCuilTutor" required>
 		          				<label for="cuil_tutor">CUIL Nº</label>
 		        				</div>
 									</div>
 
 									<div class="row">
 										<div class="input-field col m6 s12">
-		          				<input id="apellido_tutor" type="text" class="validate" name="apellido_tutor" {{-- v-model="newApellidoTutor" --}}>
+		          				<input id="apellido_tutor" type="text" class="validate" name="apellido_tutor" v-model="newApellidoTutor" required>
 		          				<label for="apellido_tutor">Apellidos</label>
 		        				</div>
 
 										<div class="input-field col m6 s12">
-		          				<input id="nombre_tutor" type="text" class="validate" name="nombre_tutor" {{-- v-model="newNombreTutor" --}}>
+		          				<input id="nombre_tutor" type="text" class="validate" name="nombre_tutor" v-model="newNombreTutor" required>
 		          				<label for="nombre_tutor">Nombres</label>
 		        				</div>
 									</div>
 
 									<div class="row">
 										<div class="input-field col m4 s12">
-		          				<input id="fecha_nacimiento_tutor" type="text" class="datepicker" name="fecha_nacimiento_tutor">
+		          				<input id="fecha_nacimiento_tutor" type="text" class="datepicker" name="fecha_nacimiento_tutor" required>
 		          				<label for="fecha_nacimiento_tutor">Fecha de Nacimiento</label>
 		        				</div>
 		        				<div class="input-field col m4 s12">
-		          				<input id="lugar_nacimiento_tutor" type="text" class="validate" name="lugar_nacimiento_tutor" {{-- v-model="newLugarNacimientoTutor" --}}>
+		          				<input id="lugar_nacimiento_tutor" type="text" class="validate" name="lugar_nacimiento_tutor" v-model="newLugarNacimientoTutor" required>
 		          				<label for="lugar_nacimiento_tutor">Lugar de Nacimiento</label>
 		        				</div>
 		        				<div class="input-field col m4 s12">
-		          				<input id="nacionalidad_tutor" type="text" class="validate" name="nacionalidad_tutor" {{-- v-model="newNacionalidadTutor" --}}>
+		          				<input id="nacionalidad_tutor" type="text" class="validate" name="nacionalidad_tutor" value="Argentina" required>
 		          				<label for="nacionalidad_tutor">Nacionalidad</label>
 		        				</div>
 									</div>
 
 									<div class="row">
 										<div class="input-field col m8 s12">
-		          				<input id="direccion_tutor" type="text" class="validate" name="direccion_tutor" {{-- v-model="newDireccionTutor" --}}>
+		          				<input id="direccion_tutor" type="text" class="validate" name="direccion_tutor" v-model="newDireccionTutor" required>
 		          				<label for="direccion_tutor">Domicilio</label>
 		        				</div>
 		        				<div class="input-field col m4 s12">
-		          				<input id="telefono_tutor" type="text" class="validate" name="telefono_tutor" {{-- v-model="newTelefonoTutor" --}}>
+		          				<input id="telefono_tutor" type="text" class="validate" name="telefono_tutor" v-model="newTelefonoTutor" required>
 		          				<label for="telefono_tutor">CEL/TEL</label>
 		        				</div>
 									</div>
 
 									<div class="row">
 		        				<div class="input-field col m6 s12">
-		          				<input id="barrio_tutor" type="text" class="validate" name="barrio_tutor" {{-- v-model="newBarrioTutor" --}}>
+		          				<input id="barrio_tutor" type="text" class="validate" name="barrio_tutor" v-model="newBarrioTutor">
 		          				<label for="barrio_tutor">Barrio</label>
 		        				</div>
 		        				<div class="input-field col m6 s12">
-		          				<input id="departamento_tutor" type="text" class="validate" name="departamento_tutor" {{-- v-model="newDepartamentoTutor" --}}>
+		          				<select id="departamento_tutor" required>
+									      <option value="Mayor Luis Jorge Fontana" selected>Mayor Luis Jorge Fontana</option>
+									      <option value="Almirante Brown">Almirante Brown</option>
+									      <option value="Bermejo">Bermejo</option>
+									      <option value="Chacabuco">Chacabuco</option>
+									      <option value="Comandante Fernández">Comandante Fernández</option>
+									      <option value="Doce de Octubre">Doce de Octubre</option>
+									      <option value="Dos de Abril">Dos de Abril</option>
+									      <option value="Fray Justo Santa María de Oro">Fray Justo Santa María de Oro</option>
+									      <option value="General Belgrano">General Belgrano</option>
+									      <option value="General Donovan">General Donovan</option>
+									      <option value="General Güemes">General Güemes</option>
+									      <option value="Independencia">Independencia</option>
+									      <option value="Libertad">Libertad</option>
+									      <option value="Libertador General San Martín">Libertador General San Martín</option>
+									      <option value="Maipú">Maipú</option>
+									      <option value="Nueve de Julio">Nueve de Julio</option>
+									      <option value="O'Higgins">O'Higgins</option>
+									      <option value="Presidencia de la Plaza">Presidencia de la Plaza</option>
+									      <option value="Primero de Mayo">Primero de Mayo</option>
+									      <option value="Quitilipi">Quitilipi</option>
+									      <option value="San Fernando">San Fernando</option>
+									      <option value="San Lorenzo">San Lorenzo</option>
+									      <option value="Sargento Cabral">Sargento Cabral</option>
+									      <option value="Tapenagá">Tapenagá</option>
+									      <option value="Veinticinco de Mayo">Veinticinco de Mayo</option>
+									    </select>
 		          				<label for="departamento_tutor">Departamento</label>
 		        				</div>
 									</div>
@@ -243,13 +303,13 @@
 		                    <td>Esta a Cargo del Alumno</td>
 		                    <td>
 													<label>
-										        <input name="a_cargo" type="radio" value="1" {{-- v-model="newACargo" --}} />
+										        <input name="a_cargo" type="radio" value="1" v-model="newACargo" />
 										        <span></span>
 										      </label>
 		                    </td>
 		                    <td>
 		                    	<label>
-										        <input name="a_cargo" type="radio" value="0" />
+										        <input name="a_cargo" type="radio" value="0" checked/>
 										        <span></span>
 										      </label>
 		                    </td>
@@ -258,13 +318,13 @@
 		                    <td>Es Tutor del Alumno</td>
 		                    <td>
 													<label>
-										        <input name="es_tutor" type="radio" value="1" {{-- v-model="newEsTutor" --}}/>
+										        <input name="es_tutor" type="radio" value="1" v-model="newEsTutor"/>
 										        <span></span>
 										      </label>
 		                    </td>
 		                    <td>
 		                    	<label>
-										        <input name="es_tutor" type="radio" value="0"/ >
+										        <input name="es_tutor" type="radio" value="0" checked/>
 										        <span></span>
 										      </label>
 		                    </td>
@@ -273,13 +333,13 @@
 		                    <td>Tiene la Patria Potestad del Alumno</td>
 		                    <td>
 													<label>
-										        <input name="patria_potestad" type="radio" value="1" {{-- v-model="newPatriaPotestad" --}}/>
+										        <input name="patria_potestad" type="radio" value="1" v-model="newPatriaPotestad"/>
 										        <span></span>
 										      </label>
 		                    </td>
 		                    <td>
 		                    	<label>
-										        <input name="patria_potestad" type="radio" value="0" />
+										        <input name="patria_potestad" type="radio" value="0" checked/>
 										        <span></span>
 										      </label>
 		                    </td>
@@ -288,13 +348,13 @@
 		                    <td>Vive con el Alumno</td>
 		                    <td>
 													<label>
-										        <input name="vive_con_alumno" type="radio" value="1" {{-- v-model="newViveConAlumno" --}}/>
+										        <input name="vive_con_alumno" type="radio" value="1" v-model="newViveConAlumno"/>
 										        <span></span>
 										      </label>
 		                    </td>
 		                    <td>
 		                    	<label>
-										        <input name="vive_con_alumno" type="radio" value="0" />
+										        <input name="vive_con_alumno" type="radio" value="0" checked/>
 										        <span></span>
 										      </label>
 		                    </td>
@@ -306,7 +366,7 @@
 
 	              	<div class="row">
 										<div class="input-field col s12">
-		          				<input id="ocupacion" type="text" class="validate" name="ocupacion" {{-- v-model="newOcupacion" --}}>
+		          				<input id="ocupacion" type="text" class="validate" name="ocupacion" v-model="newOcupacion">
 		          				<label for="ocupacion">Ocupación</label>
 		        				</div>
 									</div>
@@ -360,7 +420,7 @@
                     <td>Convulsiones</td>
                     <td>
 											<label>
-								        <input name="convulsiones" type="radio" value="1" />
+								        <input name="convulsiones" type="radio" value="1" v-model="newConvulsiones"/>
 								        <span></span>
 								      </label>
                     </td>
@@ -375,7 +435,7 @@
                     <td>Problemas respiratorios</td>
                     <td>
 											<label>
-								        <input name="problemas_respiratorios" type="radio" value="1" />
+								        <input name="problemas_respiratorios" type="radio" value="1" v-model="newProblemasRespiratorios"/>
 								        <span></span>
 								      </label>
                     </td>
@@ -488,7 +548,7 @@
                     <td>Certificado de salud</td>
                     <td>
 											<label>
-								        <input name="certificado_salud" type="radio" value="1" {{-- v-model="newCertificadoSalud" --}}/>
+								        <input name="certificado_salud" type="radio" value="1" v-model="newCertificadoSalud"/>
 								        <span></span>
 								      </label>
                     </td>
@@ -503,7 +563,7 @@
                     <td>Certificado Buco dental</td>
                     <td>
 											<label>
-								        <input name="certificado_dental" type="radio" value="1" {{-- v-model="newCertificadoDental" --}}/>
+								        <input name="certificado_dental" type="radio" value="1" v-model="newCertificadoDental"/>
 								        <span></span>
 								      </label>
                     </td>
@@ -518,7 +578,7 @@
                     <td>Fotocopia del Carnet de Vacunación</td>
                     <td>
 											<label>
-								        <input name="carnet_vacuna" type="radio" value="1" {{-- v-model="newCarnetVacuna" --}}/>
+								        <input name="carnet_vacuna" type="radio" value="1" v-model="newCarnetVacuna"/>
 								        <span></span>
 								      </label>
                     </td>
@@ -533,7 +593,7 @@
                     <td>Fotocopia del grupo Sanguíneo</td>
                     <td>
 											<label>
-								        <input name="grupo_sanguineo" type="radio" value="1" {{-- v-model="newGrupoSanguineo" --}}/>
+								        <input name="grupo_sanguineo" type="radio" value="1" v-model="newGrupoSanguineo"/>
 								        <span></span>
 								      </label>
                     </td>
@@ -548,7 +608,7 @@
                     <td>Certificado de finalización del Jardín Infantes</td>
                     <td>
 											<label>
-								        <input name="certificado_nivel_inicial" type="radio" value="1" {{-- v-model="newCertificadoNivelInicial" --}}/>
+								        <input name="certificado_nivel_inicial" type="radio" value="1" v-model="newCertificadoNivelInicial"/>
 								        <span></span>
 								      </label>
                     </td>
@@ -563,7 +623,7 @@
                     <td>Fotocopia del DNI</td>
                     <td>
 											<label>
-								        <input name="fotocopia_dni" type="radio" value="1" {{-- v-model="newFotocopiaDni" --}}/>
+								        <input name="fotocopia_dni" type="radio" value="1" v-model="newFotocopiaDni"/>
 								        <span></span>
 								      </label>
                     </td>
@@ -578,7 +638,7 @@
                     <td>Contribución a Cooperadora</td>
                     <td>
 											<label>
-								        <input name="contribucion_cooperadora" type="radio" value="1" {{-- v-model="newContribucionCooperadora" --}}/>
+								        <input name="contribucion_cooperadora" type="radio" value="1" v-model="newContribucionCooperadora"/>
 								        <span></span>
 								      </label>
                     </td>

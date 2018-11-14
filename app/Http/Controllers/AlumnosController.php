@@ -169,8 +169,6 @@ class AlumnosController extends Controller
         $alumno->direccion = $request->direccion;
         $alumno->barrio = $request->barrio;
         $alumno->departamento = $request->departamento;
-        $alumno->telefono = $request->telefono;
-        $alumno->email = $request->email;
         $alumno->asignacion_universal = $request->get('asignacion_universal');
         $alumno->salario_familiar = $request->get('salario_familiar');
         $alumno->pueblo_originario = $request->get('pueblo_originario');
@@ -205,6 +203,7 @@ class AlumnosController extends Controller
      */
     public function destroy($id)
     {
+        $alumno = Alumno::find($id);
         $alumno = Alumno::find($id);
         $alumno->delete();
     }
