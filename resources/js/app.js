@@ -6,12 +6,11 @@
 
 		created: function() {
 			this.getAlumnos();
-			console.log('cambios');
 		},
 
 		data: {
 			alumnos: [],
-			filalumnos: {
+			fillAlumnos: {
 				id: '',
 				cuil: '',
 				apellido: '',
@@ -44,7 +43,6 @@
 				certificado_nivel_inicial: '',
 				fotocopia_dni: '',
 				contribucion_cooperadora: ''
-
 			},
 			newCuil: '',
 			newApellido: '',
@@ -60,7 +58,7 @@
 			newPuebloOriginario: 0,
 			newProgramaCai: 0,
 			newDiscapacidad: 0,
-			newMadrePadre: 0,
+			newMadrePadre: '',
 			newCuilTutor: '',
 			newApellidoTutor: '',
 			newNombreTutor: '',
@@ -102,20 +100,56 @@
 					this.alumnos = response.data
 				});
 			},
+			change: function(point) {
+				console.log('function');
+				var boton_crear = document.getElementById('boton_crear');
+				var boton_editar = document.getElementById('boton_editar');
+				var index = document.getElementById('index');
+				var crear = document.getElementById('create');
+				var edit = document.getElementById('edit');
+				if(point == 1){
+					boton_crear.style.display = 'block';
+					boton_editar.style.display = 'none';
+					crear.style.display = 'none';
+					index.style.display = 'block';
+					edit.style.display	= 'none';
+				}else if(point == 2) {	
+					boton_crear.style.display = 'none';
+					boton_editar.style.display = 'block';
+					crear.style.display = 'block';
+					index.style.display = 'none';
+					edit.style.display	= 'none';			
+				}else if(point == 3) {
+					boton_crear.style.display = 'none';
+					boton_editar.style.display = 'block';
+					crear.style.display = 'none';
+					index.style.display = 'none';
+					edit.style.display	= 'block';
+				}
+			},
 			deleteAlumno: function(alumno) {
 				var id = alumno.id;
 				axios.delete('alumnos/' + id).then(response => {
 					this.getAlumnos();
-					M.toast({html: 'Alumno Eliminado'})
+					M.toast({html: 'Alumno Eliminado', classes: 'red'})
 				});
 			},
 			createAlumno: function(){
 				var url = 'alumnos';
 				var nacimiento = document.getElementById('nacimiento').value;
-				this.newFechaNacimiento = nacimiento;
+				var nacionalidad = document.getElementById('nacionalidad').value;
+				var departamento = document.getElementById('departamento').value;
 				var fecha_nacimiento_tutor = document.getElementById('fecha_nacimiento_tutor').value;
+				var nacionalidad_tutor = document.getElementById('nacionalidad_tutor').value;
+				var departamento_tutor = document.getElementById('departamento_tutor').value;
+				this.newFechaNacimiento = nacimiento;
+				this.newNacionalidad = nacionalidad;
+				this.newDepartamento = departamento;
 				this.newFechaNacimientoTutor = fecha_nacimiento_tutor;
+				this.newNacionalidadTutor = nacionalidad_tutor;
+				this.newDepartamentoTutor = departamento_tutor;
 				axios.post(url, {
+					//Datos Alumnos
 					cuil: this.newCuil,
 					apellido: this.newApellido,
 					nombre: this.newNombre,
@@ -139,9 +173,35 @@
 					esguinces: this.newEsguiences,
 					enfermedades_infectocontagiosas: this.newEnfermedadesInfectocontagiosas,
 					incapacidad: this.newIncapacidad,
-					otros: this.newOtros
+					otros: this.newOtros,
+					certificado_salud: this.newCertificadoSalud,
+					certificado_dental: this.newCertificadoDental,
+					carnet_vacuna: this.newCarnetVacuna,
+					grupo_sanguineo: this.newGrupoSanguineo,
+					certificado_nivel_inicial: this.newCertificadoNivelInicial,
+					fotocopia_dni: this.newFotocopiaDni,
+					contribucion_cooperadora: this.newContribucionCooperadora,
+					//Datos Tutor
+					madre_padre: this.newMadrePadre,
+					cuil_tutor: this.newCuilTutor,
+					apellido_tutor: this.newApellidoTutor,
+					nombre_tutor: this.newNombreTutor,
+					fecha_nacimiento_tutor: this.newFechaNacimientoTutor,
+					lugar_nacimiento_tutor: this.newLugarNacimientoTutor,
+					nacionalidad_tutor: this.newNacionalidadTutor,
+					direccion_tutor: this.newDireccionTutor,
+					barrio_tutor: this.newBarrioTutor,
+					departamento_tutor: this.newDepartamentoTutor,
+					telefono_tutor: this.newTelefonoTutor,
+					a_cargo: this.newACargo,
+					es_tutor: this.newEsTutor,
+					patria_potestad: this.newPatriaPotestad,
+					vive_con_alumno: this.newViveConAlumno,
+					ocupacion: this.newOcupacion
 				}).then(response => {
+					this.change(1);
 					this.getAlumnos();
+					M.toast({html: 'Alumno Registrado', classes: 'green'})
 					this.newCuil = '';
 					this.newApellido = '';
 					this.newNombre = '';
@@ -189,45 +249,95 @@
 					this.newCertificadoNivelInicial = 0;
 					this.newFotocopiaDni = 0;
 					this.newContribucionCooperadora = 0;
-
+				}).catch(error => {
+					this.change(1);
+					this.getAlumnos();
+					M.toast({html: 'X Error', classes: 'red'})
+					console.log(error.response.data)
 				});
 			},
 			editAlumno: function(alumno) {
-				this.filalumnos.id = alumno.id;
-				this.filalumnos.cuil = alumno.cuil;
-				this.filalumnos.apellido = alumno.apellido;
-				this.filalumnos.nombre = alumno.nombre;
-				this.filalumnos.fecha_nacimiento = alumno.fecha_nacimiento;
-				this.filalumnos.lugar_nacimiento = alumno.lugar_nacimiento;
-				this.filalumnos.nacionalidad = alumno.nacionalidad;
-				this.filalumnos.direccion = alumno.direccion;
-				this.filalumnos.barrio = alumno.barrio;
-				this.filalumnos.departamento = alumno.departamento;
-				this.filalumnos.asignacion_universal = alumno.asignacion_universal;
-				this.filalumnos.salario_familiar = alumno.salario_familiar;
-				this.filalumnos.pueblo_originario = alumno.pueblo_originario;
-				this.filalumnos.programa_cai = alumno.programa_cai;
-				this.filalumnos.discapacidad = alumno.discapacidad;
-				this.filalumnos.diabetes = alumno.diabetes;
-				this.filalumnos.hernias = alumno.hernias;
-				this.filalumnos.convulsiones = alumno.convulsiones;
-				this.filalumnos.problemas_respiratorios = alumno.problemas_respiratorios;
-				this.filalumnos.problemas_cardiacos = alumno.problemas_cardiacos;
-				this.filalumnos.alergias = alumno.alergias;
-				this.filalumnos.esguinces = alumno.esguinces;
-				this.filalumnos.enfermedades_infectocontagiosas = alumno.enfermedades_infectocontagiosas;
-				this.filalumnos.incapacidad = alumno.incapacidad;
-				this.filalumnos.otros = alumno.otros;
-				this.filalumnos.certificado_salud = alumno.certificado_salud;
-				this.filalumnos.certificado_dental = alumno.certificado_dental;
-				this.filalumnos.carnet_vacuna = alumno.carnet_vacuna;
-				this.filalumnos.grupo_sanguineo = alumno.grupo_sanguineo;
-				this.filalumnos.certificado_nivel_inicial = alumno.certificado_nivel_inicial;
-				this.filalumnos.fotocopia_dni = alumno.fotocopia_dni;
-				this.filalumnos.contribucion_cooperadora = alumno.contribucion_cooperadora;
-				return this.filalumnos;
+				this.change(3);
+				this.fillAlumnos.id = alumno.id;
+				this.fillAlumnos.cuil = alumno.cuil;
+				this.fillAlumnos.apellido = alumno.apellido;
+				this.fillAlumnos.nombre = alumno.nombre;
+				this.fillAlumnos.fecha_nacimiento = alumno.fecha_nacimiento;
+				this.fillAlumnos.lugar_nacimiento = alumno.lugar_nacimiento;
+				this.fillAlumnos.nacionalidad = alumno.nacionalidad;
+				this.fillAlumnos.direccion = alumno.direccion;
+				this.fillAlumnos.barrio = alumno.barrio;
+				this.fillAlumnos.departamento = alumno.departamento;
+				this.fillAlumnos.asignacion_universal = alumno.asignacion_universal;
+				this.fillAlumnos.salario_familiar = alumno.salario_familiar;
+				this.fillAlumnos.pueblo_originario = alumno.pueblo_originario;
+				this.fillAlumnos.programa_cai = alumno.programa_cai;
+				this.fillAlumnos.discapacidad = alumno.discapacidad;
+				this.fillAlumnos.diabetes = alumno.diabetes;
+				this.fillAlumnos.hernias = alumno.hernias;
+				this.fillAlumnos.convulsiones = alumno.convulsiones;
+				this.fillAlumnos.problemas_respiratorios = alumno.problemas_respiratorios;
+				this.fillAlumnos.problemas_cardiacos = alumno.problemas_cardiacos;
+				this.fillAlumnos.alergias = alumno.alergias;
+				this.fillAlumnos.esguinces = alumno.esguinces;
+				this.fillAlumnos.enfermedades_infectocontagiosas = alumno.enfermedades_infectocontagiosas;
+				this.fillAlumnos.incapacidad = alumno.incapacidad;
+				this.fillAlumnos.otros = alumno.otros;
+				this.fillAlumnos.certificado_salud = alumno.certificado_salud;
+				this.fillAlumnos.certificado_dental = alumno.certificado_dental;
+				this.fillAlumnos.carnet_vacuna = alumno.carnet_vacuna;
+				this.fillAlumnos.grupo_sanguineo = alumno.grupo_sanguineo;
+				this.fillAlumnos.certificado_nivel_inicial = alumno.certificado_nivel_inicial;
+				this.fillAlumnos.fotocopia_dni = alumno.fotocopia_dni;
+				this.fillAlumnos.contribucion_cooperadora = alumno.contribucion_cooperadora;
+				return this.fillAlumnos;
+			},
+			updateAlumno: function(id) {
+				axios.put('alumnos/'+id, this.fillAlumnos).then(response => {
+					this.change(1);
+					this.getAlumnos();
+					M.toast({html: 'Datos Actualizados', classes: 'green'})
+					this.fillAlumnos={
+						id: '',
+						cuil: '',
+						apellido: '',
+						nombre: '',
+						fecha_nacimiento: '',
+						lugar_nacimiento: '',
+						nacionalidad: '',
+						direccion: '',
+						barrio: '',
+						departamento: '',
+						asignacion_universal: '',
+						salario_familiar: '',
+						pueblo_originario: '',
+						programa_cai: '',
+						discapacidad: '',
+						diabetes: '',
+						hernias: '',
+						convulsiones: '',
+						problemas_respiratorios: '',
+						problemas_cardiacos: '',
+						alergias: '',
+						esguinces: '',
+						enfermedades_infectocontagiosas: '',
+						incapacidad: '',
+						otros: '',
+						certificado_salud: '',
+						certificado_dental: '',
+						carnet_vacuna: '',
+						grupo_sanguineo: '',
+						certificado_nivel_inicial: '',
+						fotocopia_dni: '',
+						contribucion_cooperadora: ''
+					};
+				}).catch(error => {
+					this.change(1);
+					this.getAlumnos();
+					M.toast({html: 'X Error', classes: 'red'})
+					console.log(error.response.data)
+				});
 			}
-
 
 		}
 
