@@ -12617,11 +12617,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 		data: {
 			alumnos: [],
-<<<<<<< HEAD
-			filalumnos: {
-=======
 			fillAlumnos: {
->>>>>>> 45acd27ada040bfa87b2d04599727577cb2135b7
 				id: '',
 				cuil: '',
 				apellido: '',
@@ -12654,10 +12650,6 @@ return /******/ (function(modules) { // webpackBootstrap
 				certificado_nivel_inicial: '',
 				fotocopia_dni: '',
 				contribucion_cooperadora: ''
-<<<<<<< HEAD
-
-=======
->>>>>>> 45acd27ada040bfa87b2d04599727577cb2135b7
 			},
 			newCuil: '',
 			newApellido: '',
@@ -12952,47 +12944,8 @@ return /******/ (function(modules) { // webpackBootstrap
 					M.toast({html: 'X Error', classes: 'red'})
 					console.log(error.response.data)
 				});
-			},
-			editAlumno: function(alumno) {
-				this.filalumnos.id = alumno.id;
-				this.filalumnos.cuil = alumno.cuil;
-				this.filalumnos.apellido = alumno.apellido;
-				this.filalumnos.nombre = alumno.nombre;
-				this.filalumnos.fecha_nacimiento = alumno.fecha_nacimiento;
-				this.filalumnos.lugar_nacimiento = alumno.lugar_nacimiento;
-				this.filalumnos.nacionalidad = alumno.nacionalidad;
-				this.filalumnos.direccion = alumno.direccion;
-				this.filalumnos.barrio = alumno.barrio;
-				this.filalumnos.departamento = alumno.departamento;
-				this.filalumnos.asignacion_universal = alumno.asignacion_universal;
-				this.filalumnos.salario_familiar = alumno.salario_familiar;
-				this.filalumnos.pueblo_originario = alumno.pueblo_originario;
-				this.filalumnos.programa_cai = alumno.programa_cai;
-				this.filalumnos.discapacidad = alumno.discapacidad;
-				this.filalumnos.diabetes = alumno.diabetes;
-				this.filalumnos.hernias = alumno.hernias;
-				this.filalumnos.convulsiones = alumno.convulsiones;
-				this.filalumnos.problemas_respiratorios = alumno.problemas_respiratorios;
-				this.filalumnos.problemas_cardiacos = alumno.problemas_cardiacos;
-				this.filalumnos.alergias = alumno.alergias;
-				this.filalumnos.esguinces = alumno.esguinces;
-				this.filalumnos.enfermedades_infectocontagiosas = alumno.enfermedades_infectocontagiosas;
-				this.filalumnos.incapacidad = alumno.incapacidad;
-				this.filalumnos.otros = alumno.otros;
-				this.filalumnos.certificado_salud = alumno.certificado_salud;
-				this.filalumnos.certificado_dental = alumno.certificado_dental;
-				this.filalumnos.carnet_vacuna = alumno.carnet_vacuna;
-				this.filalumnos.grupo_sanguineo = alumno.grupo_sanguineo;
-				this.filalumnos.certificado_nivel_inicial = alumno.certificado_nivel_inicial;
-				this.filalumnos.fotocopia_dni = alumno.fotocopia_dni;
-				this.filalumnos.contribucion_cooperadora = alumno.contribucion_cooperadora;
-				return this.filalumnos;
 			}
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 45acd27ada040bfa87b2d04599727577cb2135b7
 		}
 
 	});
