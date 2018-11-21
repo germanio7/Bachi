@@ -43,13 +43,13 @@
 
 .radios input[type="radio"]:checked + label:before{
   display: none;
-}*/
+}
 
 /*Color Select on focus*/
 select:focus {
   outline: 1px solid #689f38;
 }
-
+*/
 /*Margenes perzonalizados*/
 
 .margin {

@@ -26,7 +26,7 @@
 				{{-- Modal --}}
 				<a href="#modalMateria" class="waves-effect waves-light btn modal-trigger">Agregar Materia</a>
 
-				{{-- <table class="highlight">
+				<table class="highlight">
 					<thead>
 						<tr>
 							<th>Materias</th>
@@ -39,14 +39,14 @@
 						</tr>
 						@endforeach
 					</tbody>
-				</table> --}}
+				</table>
 			</div> 
 			
 			<div class="input-field col s6">
 				{{-- Modal --}}
 				<a href="#modalAlumno" class="waves-effect waves-light btn modal-trigger">Agregar Alumno</a>
 
-				{{-- <table class="highlight">
+				<table class="highlight">
 					<thead>
 						<tr>
 							<th>Cuil</th>
@@ -64,13 +64,13 @@
 						</tr>
 						@endforeach
 					</tbody>
-				</table> --}}
+				</table>
 			</div> 
 		</div>
 	</div>
 
 	{{-- Estructura Modal Materia --}}
-{{-- 	<div id="modalMateria" class="modal lime lighten-4">
+	<div id="modalMateria" class="modal lime lighten-4">
 		<div class="modal-content">
 			{!! Form::open(['action' => 'CursosController@agregarMateria','method'=>'POST','file'=>'true','enctype'=>'multipart/form-data','class'=>'form']) !!}
 			
@@ -86,10 +86,10 @@
 	    	
 			{!! Form::close() !!}
 		</div>
-	</div> --}}
+	</div>
 
 	{{-- Estructura Modal Alumno --}}
-{{-- 	<div id="modalAlumno" class="modal lime lighten-4">
+	<div id="modalAlumno" class="modal lime lighten-4">
 		<div class="modal-content">
 			{!! Form::open(['action' => 'CursosController@agregarAlumno','method'=>'POST','file'=>'true','enctype'=>'multipart/form-data','class'=>'form']) !!}
 			
@@ -105,10 +105,10 @@
 	    	
 			{!! Form::close() !!}
 		</div>
-	</div> --}}
+	</div>
 
 	{{-- Estructura Modal Asistencia --}}
-	{{-- <div id="modalAsistencia" class="modal lime lighten-4">
+	<div id="modalAsistencia" class="modal lime lighten-4">
 		<div class="modal-content">
 		
 				{!! Form::open(['action' => 'AsistenciasController@store','method'=>'POST','file'=>'true','enctype'=>'multipart/form-data','class'=>'form']) !!}
@@ -162,4 +162,4 @@
 			</div>
 			{!! Form::close() !!}
 		
-	</div> --}}
+	</div>

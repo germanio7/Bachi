@@ -156,7 +156,7 @@
 	    	</table>
 	    </div>
 	    <div id="tutor">
-	    	@foreach($tutor as $t)
+	    	@foreach($padre as $t)
 	    	<table>
 	    		<tbody>
 	    			<tr>

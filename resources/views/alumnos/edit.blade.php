@@ -40,7 +40,7 @@
 
 								<div class="row">
 									<div class="input-field col m4 s12">
-	          				<input id="nacimiento" type="text" class="datepicker" name="fecha_nacimiento" v-model="fillAlumnos.fecha_nacimiento" required>
+	          				<input id="edit_nacimiento" type="text" class="datepicker" name="fecha_nacimiento" required>
 	          				<span class="helper-text light-green-text text-darken-2">Fecha de Nacimiento</span>
 	        				</div>
 	        				<div class="input-field col m4 s12">
@@ -66,7 +66,7 @@
 	          				<span class="helper-text light-green-text text-darken-2">Barrio</span>
 	        				</div>
 	        				<div class="input-field col m6 s12">
-	          				<select id="departamento" required>
+	          				<select id="edit_departamento" required>
 								      <option value="Mayor Luis Jorge Fontana">Mayor Luis Jorge Fontana</option>
 								      <option value="Almirante Brown">Almirante Brown</option>
 								      <option value="Bermejo">Bermejo</option>
@@ -93,8 +93,7 @@
 								      <option value="Tapenagá">Tapenagá</option>
 								      <option value="Veinticinco de Mayo">Veinticinco de Mayo</option>
 								    </select>
-								    <label>Departamento</label>
-								    <span class="helper-text light-green-text text-darken-2">@{{fillAlumnos.departamento}}</span>
+								    <span class="helper-text light-green-text text-darken-2">Departamento</span>
 	        				</div>
 								</div>
 
