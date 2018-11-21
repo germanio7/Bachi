@@ -1,4 +1,6 @@
+@extends('home')
 
+@section('contenido')
 	<div class="card-panel hoverable green lighten-4">
 		<div class="row">
 			<div class="input-field col s4">
@@ -26,7 +28,7 @@
 				{{-- Modal --}}
 				<a href="#modalMateria" class="waves-effect waves-light btn modal-trigger">Agregar Materia</a>
 
-				{{-- <table class="highlight">
+				<table class="highlight">
 					<thead>
 						<tr>
 							<th>Materias</th>
@@ -39,14 +41,14 @@
 						</tr>
 						@endforeach
 					</tbody>
-				</table> --}}
+				</table>
 			</div> 
 			
 			<div class="input-field col s6">
 				{{-- Modal --}}
 				<a href="#modalAlumno" class="waves-effect waves-light btn modal-trigger">Agregar Alumno</a>
 
-				{{-- <table class="highlight">
+				<table class="highlight">
 					<thead>
 						<tr>
 							<th>Cuil</th>
@@ -64,13 +66,13 @@
 						</tr>
 						@endforeach
 					</tbody>
-				</table> --}}
+				</table>
 			</div> 
 		</div>
 	</div>
 
 	{{-- Estructura Modal Materia --}}
-{{-- 	<div id="modalMateria" class="modal lime lighten-4">
+	<div id="modalMateria" class="modal lime lighten-4">
 		<div class="modal-content">
 			{!! Form::open(['action' => 'CursosController@agregarMateria','method'=>'POST','file'=>'true','enctype'=>'multipart/form-data','class'=>'form']) !!}
 			
@@ -86,10 +88,10 @@
 	    	
 			{!! Form::close() !!}
 		</div>
-	</div> --}}
+	</div>
 
 	{{-- Estructura Modal Alumno --}}
-{{-- 	<div id="modalAlumno" class="modal lime lighten-4">
+	<div id="modalAlumno" class="modal lime lighten-4">
 		<div class="modal-content">
 			{!! Form::open(['action' => 'CursosController@agregarAlumno','method'=>'POST','file'=>'true','enctype'=>'multipart/form-data','class'=>'form']) !!}
 			
@@ -105,10 +107,10 @@
 	    	
 			{!! Form::close() !!}
 		</div>
-	</div> --}}
+	</div>
 
 	{{-- Estructura Modal Asistencia --}}
-	{{-- <div id="modalAsistencia" class="modal lime lighten-4">
+	<div id="modalAsistencia" class="modal lime lighten-4">
 		<div class="modal-content">
 		
 				{!! Form::open(['action' => 'AsistenciasController@store','method'=>'POST','file'=>'true','enctype'=>'multipart/form-data','class'=>'form']) !!}
@@ -116,24 +118,22 @@
 
 				<p>{{$hoy}}</p>
 
-				<div class="card-panel hoverable">
+				@if(count($existe) == 0)
 
-				<table class="highlight">
-					<thead>
-						<tr>
-							<th>ID</th>
-							<th>Apellido</th>
-							<th>Nombre</th>
-							<th>Asistencia</th>
-							<th>Comentario</th>
-						</tr>
-					</thead>
-					<tbody>
-						@foreach($alumnos as $alumno)
-							@foreach($asistencias as $asis)
-								@if($asis->alumno_id == $alumno->id && $asis->fecha == $hoy)
-									<h5><b>Asistencia realizada</b></h5>
-								@else
+					<div class="card-panel hoverable">
+
+						<table class="highlight">
+							<thead>
+								<tr>
+									<th>ID</th>
+									<th>Apellido</th>
+									<th>Nombre</th>
+									<th>Asistencia</th>
+									<th>Comentario</th>
+								</tr>
+							</thead>
+							<tbody>
+								@foreach($alumnos as $alumno)
 									<tr>
 										<input type="hidden" name="id[]" value="{{$alumno->id}}">
 										<td>{{$alumno->id}}</td>
@@ -151,15 +151,20 @@
 											<input type="text" name="comentario[]" class="validate">
 										</td>
 									</tr>
-								@endif
-							@endforeach
-						@endforeach
-					</tbody>
-				</table>
-			</div>
+								@endforeach
+							</tbody>
+						</table>
+					</div>
+				@else
+					<p>Asistencia realizada</p>
+				@endif
+
 			<div class="modal-footer">
 				{{ Form::submit('Alamacenar',(['class'=>'btn green'])) }}
 			</div>
 			{!! Form::close() !!}
 		
-	</div> --}}
+	</div>
+
+
+@endsection

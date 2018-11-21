@@ -56,3 +56,12 @@ Route::resource('notas', 'NotasController');
 Route::resource('inicio', 'InicioController');
 
 Route::get('pdf', 'PDFController@pdf');
+
+
+
+
+
+
+Route::post('agregarAlumno','CursosController@agregarAlumno')->name('cursos.agregarAlumno');
+
+Route::post('AgregarMateria','CursosController@agregarMateria')->name('cursos.agregarMateria');
