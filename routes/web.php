@@ -68,18 +68,6 @@ Route::resource('notas', 'NotasController');
 
 Route::resource('inicio', 'InicioController');
 
-<<<<<<< HEAD
-Route::get('pdf', 'PDFController@pdf');
-
-
-
-
-
-
-Route::post('agregarAlumno','CursosController@agregarAlumno')->name('cursos.agregarAlumno');
-
-Route::post('AgregarMateria','CursosController@agregarMateria')->name('cursos.agregarMateria');
-=======
 // Rutas PDF 
 
 Route::get('inscripcion/{id}', function($id){
@@ -90,4 +78,3 @@ Route::get('inscripcion/{id}', function($id){
 })->name('inscripcion');
  
 //---------------------------------------------------------------- 
->>>>>>> 1bfbc0aefe0b61054b530e72f73443fbea423d81
