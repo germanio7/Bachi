@@ -5,15 +5,15 @@
 		<div class="row">
 			<div class="input-field col s4">
 				{{ Form::label('curso','Curso',(['class'=>'active','for'=>''])) }}
-				<h5>@{{$curso.curso}}</h5>
+				<h5>{{$curso->curso}}</h5>
 			</div>
 			<div class="input-field col s4">
 				{{ Form::label('orientacion','Orientacion',(['class'=>'active','for'=>''])) }}
-				<h5>@{{$curso.orientacion}}</h5>
+				<h5>{{$curso->orientacion}}</h5>
 			</div>	
 			<div class="input-field col s4">
 				{{ Form::label('turno','Turno',(['class'=>'active','for'=>''])) }}
-				<h5>@{{$curso.turno}}</h5>
+				<h5>{{$curso->turno}}</h5>
 			</div>
 			<div class="input-field col s4">
 				<a href="#modalAsistencia" class="waves-effect waves-light btn modal-trigger">Asistencia</a>
@@ -118,7 +118,7 @@
 
 				<p>{{$hoy}}</p>
 
-				@if(count($existe) == 0)
+				@if(empty($hay))
 
 					<div class="card-panel hoverable">
 

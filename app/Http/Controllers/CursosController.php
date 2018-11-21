@@ -92,9 +92,22 @@ class CursosController extends Controller
 
         $asistencias = Asistencia::where('fecha', $hoy)->get();
 
-        return $existe = $asistencias->where('alumno_id', 7);
+        $existe = array();
 
-        return view('cursos.show', compact('curso', 'materiasCurso', 'alumnos', 'agregarMaterias', 'agregarAlumnos', 'hoy', 'asistencias', 'existe'));
+        foreach ($alumnos as $alumno) {
+            foreach ($asistencias as $asistencia) {
+
+            // $existe = $asistencias->where('alumno_id', $alumno->id);
+            // $hay = $existe->concat($existe);
+
+            if ($asistencia->alumno_id == $alumno->id) {
+                $existe = $asistencia->get();
+                $hay = $existe->concat($existe);
+            }
+        }
+        }
+
+        return view('cursos.show', compact('curso', 'materiasCurso', 'alumnos', 'agregarMaterias', 'agregarAlumnos', 'hoy', 'asistencias', 'hay'));
     }
 
     public function agregarMateria(Request $request){
