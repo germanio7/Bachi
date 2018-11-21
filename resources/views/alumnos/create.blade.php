@@ -655,7 +655,7 @@
 
 					</div>
 					<div class="card-action">
-						<button type="submit" class="btn btn-flat waves-effect waves-green green modal-close white-text">Guardar</button>
+						<button type="submit" class="btn btn-flat waves-effect waves-green green modal-close white-text"><i class="fas fa-save fa-lg"></i> Guardar</button>
 					</div>
 				</div>
 			</div>

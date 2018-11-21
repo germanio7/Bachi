@@ -164,7 +164,11 @@
 			</div>
 			{!! Form::close() !!}
 		
+<<<<<<< HEAD
 	</div>
 
 
 @endsection
+=======
+	</div>
+>>>>>>> 1bfbc0aefe0b61054b530e72f73443fbea423d81

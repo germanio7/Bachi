@@ -1,27 +1,20 @@
-@extends('home')
+		<div id="editar" class="modal modal-fixed-footer scrollbar">
+				<form method='POST' v-on:submit.prevent="updateMateria(fillMaterias.id)">
+		    	<div class="modal-content">
+		    		<blockquote><h4>Nueva Materia</h4></blockquote>
+		    		<br>
+		      	<div class="row">
+							<div class="input-field col s12">
+			          <input id="nombre" type="text" class="validate" name="nombre" v-model="fillMaterias.nombre">
+			          <span class="helper-text green-text">Nombre</span>
+			        </div>
+						</div>
 
-@section('contenido')
+					</div>
 
-	<h1>Editor de Materia</h1>
+		    	<div class="modal-footer">
+		     	 	<button type="submit" class="btn btn-flat waves-effect waves-green green modal-close white-text">Guardar</button>
+		    	</div>
 
-	<div class="card-panel hoverable green lighten-4">
-
-		{!! Form::open(['action' => ['MateriasController@update',$materia->id],'method'=>'POST','file'=>'true','enctype'=>'multipart/form-data','class'=>'form']) !!}
-			
-			<div class="row">
-				<div class="input-field col s4">
-		    		{{ Form::label('nombre','Nombre',(['class'=>'active','for'=>'nombre'])) }}
-		    		{{ Form::text('nombre',$materia->nombre,(['class'=>'validate'])) }}
-				</div>
-
-			</div>
-
-			{{Form::hidden('_method','PUT')}}
-
-			{{ Form::submit('Guardar',(['class'=>'btn green',])) }}
-	    	
-		{!! Form::close() !!}
-
-	</div>
-
-@endsection
+		    </form>
+  	</div>

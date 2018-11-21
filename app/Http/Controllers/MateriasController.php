@@ -12,37 +12,31 @@ use App\Docente;
 
 class MateriasController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
-        $materias = Materia::orderBy('nombre')->get();
-        return $materias;
+        $materias = Materia::orderBy('created_at', 'desc')->paginate(5);
+        return [
+            'pagination' => [
+                'total' =>$materias->total(),
+                'current_page' =>$materias->currentPage(),
+                'per_page' =>$materias->perPage(),
+                'last_page' =>$materias->lastPage(),
+                'from' =>$materias->firstItem(),
+                'to' =>$materias->lastPage(),
+            ],
+            'materias' => $materias
+        ];
 
     }
 
     public function buscar(Request $request){
-
         $materias = Materia::where('nombre','like','%'.$request->busqueda.'%')->get();
-
-        return view('materias.index', compact('materias'));
-
+        return $materias;
     }
 
-
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-        //crea la materia
         $materia = Materia::create(['nombre' => $request->nombre]);
         $mat = Materia::find($materia->id);
         $mat->docentes()->attach($request->get('docente_id'));
@@ -85,9 +79,7 @@ class MateriasController extends Controller
     {
         $materia = Materia::find($id);
         $materia->nombre = $request->nombre;
-
         $materia->save();
-        return redirect('materias');
     }
 
     /**

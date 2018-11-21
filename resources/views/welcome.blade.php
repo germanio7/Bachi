@@ -14,6 +14,9 @@
   </ul>
 </div>
 
+<div id="app">
+  
+</div>
 
 <div class="container">
   <ul class="collapsible popout">

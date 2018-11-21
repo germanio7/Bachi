@@ -5,32 +5,32 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Alumno;
-
 use App\Padre;
-
 use App\Curso;
-
 use App\Nota;
-
 use App\Asistencia;
-
 use App\Materia;
-
 use PDF;
 
 use Illuminate\Support\Facades\DB;
 
 class AlumnosController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
+    
+    public function index(Request $request)
     {   
-        $alumnos = Alumno::orderBy('apellido')->get();
-        return $alumnos;
+        $alumnos = Alumno::orderBy('apellido')->paginate(5);
+        return [
+            'pagination' => [
+                'total' =>$alumnos->total(),
+                'current_page' =>$alumnos->currentPage(),
+                'per_page' =>$alumnos->perPage(),
+                'last_page' =>$alumnos->lastPage(),
+                'from' =>$alumnos->firstItem(),
+                'to' =>$alumnos->lastPage(),
+            ],
+            'alumnos' => $alumnos
+        ];
 
     }
 
@@ -102,58 +102,41 @@ class AlumnosController extends Controller
         $padre->vive_con_alumno = $request->get('vive_con_alumno');
         $padre->ocupacion = $request->ocupacion;
         $padre->save();
-        // $alumno = Alumno::find($alumno_id);
-        // $tutor = Padre::where('alumno_id',$alumno_id)->get();
-        // $pdf = PDF::loadView('alumnos.inscripcion', compact('alumno', 'tutor'))->setPaper('Legal');;
-        // return $pdf->stream();
+
+        return $alumno_id;
+
+        // $id = $request->get('curso');
+        // $curso = Curso::find($id);
+        // $anio = now()->format('Y');
+        // $curso->alumnos()->attach($alumno_id,['anio'=>$anio]);
+        
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function show($id)
     {
         $alumno = Alumno::find($id);
-
         $notas = Nota::where('alumno_id',$alumno->id)->get();
-
         $asistencias = Asistencia::where('alumno_id',$alumno->id)->orderBy('fecha')->get();
-
         $cantAsistencia = Asistencia::where('alumno_id',$alumno->id)->sum('asistencia');
-
         $totalAsistencia = Asistencia::where('alumno_id',$alumno->id)->count();
-
         $porcentaje = Asistencia::where('alumno_id',$alumno->id)->avg('asistencia')*100;
-
         //año actual
         $hoy = now()->format('Y');
-
         //devuelve el año de la tabla intermedia alumno_curso
         $anio = $alumno->cursos()->select('anio')->where('anio', $hoy)->value('anio');
-
         //recupera el id del curso de la tabla intermedia alumno_curso
         $idcurso = $alumno->cursos()->select('curso_id')->where('anio', $hoy)->value('curso_id');
         if ($idcurso>0) {
             //busca el curso a partir del id recuperado
             $curso = Curso::find($idcurso);
-
         } else {
             $curso = $idcurso;
         }
-
         $materias = Materia::whereDoesntHave('notas')->orderBy('nombre')->get();
-
         // $materias = Materia::whereDoesntHave('notas')->whereNotIn('id',Alumno::doesntHave('notas'))->orderBy('nombre')->get();
-
         // $materias = Materia::whereRaw('notas', )->get();
-
         // $materias = Materia::whereIn('id', Nota::whereDoesntHave('alumnos'))->get();
-        
         return view('alumnos.show', compact('alumno', 'curso', 'anio', 'notas', 'materias', 'asistencias', 'cantAsistencia', 'totalAsistencia', 'porcentaje'));
-
     }
 
     public function update(Request $request, $id)
@@ -195,12 +178,6 @@ class AlumnosController extends Controller
         $alumno->save();
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
         $alumno = Alumno::find($id);
