@@ -9081,7 +9081,7 @@ input[type=range]::-ms-thumb {
 
 /*Radio Buttoms perzonalizables*/
 
-.radios input[type="radio"] {
+/*.radios input[type="radio"] {
   display: none; 
 }
 
@@ -9130,7 +9130,7 @@ input[type=range]::-ms-thumb {
 select:focus {
   outline: 1px solid #689f38;
 }
-
+*/
 /*Margenes perzonalizados*/
 
 .margin {

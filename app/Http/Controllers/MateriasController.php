@@ -65,6 +65,7 @@ class MateriasController extends Controller
     public function edit($id)
     {
         $materia = Materia::find($id);
+        $doc = $materia->docentes()->get();
         return view('materias.edit',compact('materia'));
     }
 
