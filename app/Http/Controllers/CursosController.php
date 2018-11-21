@@ -80,8 +80,6 @@ class CursosController extends Controller
         //recupera los alumnos de la tabla intermedia donde el año coincide con el actual
         $alumnos = $curso->alumnos()->orderBy('apellido')->where('anio', $anio)->get();
 
-        // $agregarMaterias = Materia::all();
-
         //recupera los alumnos que no existen en la tabla intermedia
         $agregarAlumnos = Alumno::doesntHave('cursos')->orderBy('nombre')->get();
 
@@ -92,9 +90,11 @@ class CursosController extends Controller
         //contiene las materias que no estan relacionadas con el curso en cuestion
         $agregarMaterias = $todas->diff($materiasCurso);
 
-        $asistencias = Asistencia::all();
+        $asistencias = Asistencia::where('fecha', $hoy)->get();
 
-        return view('cursos.show', compact('curso', 'materiasCurso', 'alumnos', 'agregarMaterias', 'agregarAlumnos', 'hoy', 'asistencias'));
+        return $existe = $asistencias->where('alumno_id', 7);
+
+        return view('cursos.show', compact('curso', 'materiasCurso', 'alumnos', 'agregarMaterias', 'agregarAlumnos', 'hoy', 'asistencias', 'existe'));
     }
 
     public function agregarMateria(Request $request){

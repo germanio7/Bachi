@@ -1,4 +1,6 @@
+@extends('home')
 
+@section('contenido')
 	<div class="card-panel hoverable green lighten-4">
 		<div class="row">
 			<div class="input-field col s4">
@@ -116,24 +118,22 @@
 
 				<p>{{$hoy}}</p>
 
-				<div class="card-panel hoverable">
+				@if(count($existe) == 0)
 
-				<table class="highlight">
-					<thead>
-						<tr>
-							<th>ID</th>
-							<th>Apellido</th>
-							<th>Nombre</th>
-							<th>Asistencia</th>
-							<th>Comentario</th>
-						</tr>
-					</thead>
-					<tbody>
-						@foreach($alumnos as $alumno)
-							@foreach($asistencias as $asis)
-								@if($asis->alumno_id == $alumno->id && $asis->fecha == $hoy)
-									<h5><b>Asistencia realizada</b></h5>
-								@else
+					<div class="card-panel hoverable">
+
+						<table class="highlight">
+							<thead>
+								<tr>
+									<th>ID</th>
+									<th>Apellido</th>
+									<th>Nombre</th>
+									<th>Asistencia</th>
+									<th>Comentario</th>
+								</tr>
+							</thead>
+							<tbody>
+								@foreach($alumnos as $alumno)
 									<tr>
 										<input type="hidden" name="id[]" value="{{$alumno->id}}">
 										<td>{{$alumno->id}}</td>
@@ -151,15 +151,24 @@
 											<input type="text" name="comentario[]" class="validate">
 										</td>
 									</tr>
-								@endif
-							@endforeach
-						@endforeach
-					</tbody>
-				</table>
-			</div>
+								@endforeach
+							</tbody>
+						</table>
+					</div>
+				@else
+					<p>Asistencia realizada</p>
+				@endif
+
 			<div class="modal-footer">
 				{{ Form::submit('Alamacenar',(['class'=>'btn green'])) }}
 			</div>
 			{!! Form::close() !!}
 		
+<<<<<<< HEAD
 	</div>
+
+
+@endsection
+=======
+	</div>
+>>>>>>> 1bfbc0aefe0b61054b530e72f73443fbea423d81
