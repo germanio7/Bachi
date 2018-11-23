@@ -19,18 +19,9 @@ class AlumnosController extends Controller
     
     public function index(Request $request)
     {   
-        $alumnos = Alumno::orderBy('apellido')->paginate(5);
-        return [
-            'pagination' => [
-                'total' =>$alumnos->total(),
-                'current_page' =>$alumnos->currentPage(),
-                'per_page' =>$alumnos->perPage(),
-                'last_page' =>$alumnos->lastPage(),
-                'from' =>$alumnos->firstItem(),
-                'to' =>$alumnos->lastPage(),
-            ],
-            'alumnos' => $alumnos
-        ];
+        $alumnos = Alumno::orderBy('apellido');
+
+        return $alumnos->paginate(10);
 
     }
 

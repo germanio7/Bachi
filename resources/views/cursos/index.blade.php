@@ -46,7 +46,7 @@
 		</div>
 	</div>
 
-	<script src="{{asset('/js/app.js')}}"></script>
+	<script src="{{asset('/js/home.js')}}"></script>
 	<script>
 		new Vue({
 			el: '#crud_cursos',
