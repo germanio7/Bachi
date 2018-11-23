@@ -18,5 +18,9 @@
         "lodash": "^4.17.11",
         "popper.js": "^1.14.5",
         "vue": "^2.5.7"
+    },
+    "dependencies": {
+        "install": "^0.12.2",
+        "vue-infinite-loading": "^2.4.1"
     }
 }
