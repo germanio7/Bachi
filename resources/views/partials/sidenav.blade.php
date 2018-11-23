@@ -9,8 +9,6 @@
   <li><a class="waves-effect white-text" href="{{'matricula'}}">Materias</a></li>
   <li><a class="waves-effect white-text" href="{{'alumnado'}}">Alumnos</a></li>
   <li><a class="waves-effect white-text" href="{{'administracion'}}">Docentes</a></li>
-  <li><a class="waves-effect white-text" href="{{route('notas.index')}}">Calificaciones</a></li>
-  <li><a class="waves-effect white-text" href="{{route('asistencias.index')}}">Asistencias</a></li>
   <li><a class="waves-effect white-text" href="{{route('padres.index')}}">Tutores</a></li>
 </ul>
 
@@ -20,7 +18,5 @@
   <li><a class="waves-effect white-text" href="{{'matricula'}}">Materias</a></li>
   <li><a class="waves-effect white-text" href="{{'alumnado'}}">Alumnos</a></li>
   <li><a class="waves-effect white-text" href="{{'administracion'}}">Docentes</a></li>
-  <li><a class="waves-effect white-text" href="{{route('notas.index')}}">Calificaciones</a></li>
-  <li><a class="waves-effect white-text" href="{{route('asistencias.index')}}">Asistencias</a></li>
   <li><a class="waves-effect white-text" href="{{route('padres.index')}}">Tutores</a></li>
 </ul>
