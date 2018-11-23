@@ -132,10 +132,8 @@ class AlumnosController extends Controller
         } else {
             $curso = $idcurso;
         }
-        $materias = Materia::whereDoesntHave('notas')->orderBy('nombre')->get();
-        // $materias = Materia::whereDoesntHave('notas')->whereNotIn('id',Alumno::doesntHave('notas'))->orderBy('nombre')->get();
-        // $materias = Materia::whereRaw('notas', )->get();
-        // $materias = Materia::whereIn('id', Nota::whereDoesntHave('alumnos'))->get();
+        $materias = $curso->materias()->get();
+        
         return view('alumnos.show', compact('alumno', 'curso', 'anio', 'notas', 'materias', 'asistencias', 'cantAsistencia', 'totalAsistencia', 'porcentaje'));
     }
 
