@@ -14015,14 +14015,7 @@ module.exports = Cancel;
 
 /*  */
 
-<<<<<<< HEAD
-Vue.component('example-component', __webpack_require__(40));
-Vue.component('alumnos-index', __webpack_require__(43));
-Vue.component('alumnos-create', __webpack_require__(46));
-Vue.component('alumnos-edit', __webpack_require__(49));
-=======
 var emptyObject = Object.freeze({});
->>>>>>> 4cf10f13e63861e281746bb44416e4c07d8217c0
 
 // these helpers produces better vm code in JS engines due to their
 // explicitness and function inlining
@@ -45875,34 +45868,8 @@ module.exports = function(module) {
       return ScrollSpy._jQueryInterface;
     };
 
-<<<<<<< HEAD
-var disposed = false
-var normalizeComponent = __webpack_require__(2)
-/* script */
-var __vue_script__ = __webpack_require__(44)
-/* template */
-var __vue_template__ = __webpack_require__(45)
-/* template functional */
-var __vue_template_functional__ = false
-/* styles */
-var __vue_styles__ = null
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_template_functional__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "resources/js/components/alumnos/AlumnosIndex.vue"
-=======
     return ScrollSpy;
   }($);
->>>>>>> 4cf10f13e63861e281746bb44416e4c07d8217c0
 
   /**
    * --------------------------------------------------------------------------
@@ -45960,48 +45927,6 @@ Component.options.__file = "resources/js/components/alumnos/AlumnosIndex.vue"
         this._element = element;
       } // Getters
 
-<<<<<<< HEAD
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
-throw new Error("Cannot find module \"vue-infinite-loading\"");
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-=======
->>>>>>> 4cf10f13e63861e281746bb44416e4c07d8217c0
 
       var _proto = Tab.prototype;
 
@@ -46082,138 +46007,6 @@ throw new Error("Cannot find module \"vue-infinite-loading\"");
           activeElements = $$$1(container).children(Selector.ACTIVE);
         }
 
-<<<<<<< HEAD
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "row" },
-    [
-      _c("table", [
-        _vm._m(0),
-        _vm._v(" "),
-        _c(
-          "tbody",
-          _vm._l(_vm.alumnos, function(alumno, index) {
-            return _c("tr", [
-              _c("td", [_vm._v(_vm._s(index + 1) + _vm._s(alumno.cuil))]),
-              _vm._v(" "),
-              _c("td", [_vm._v(_vm._s(alumno.apellido))]),
-              _vm._v(" "),
-              _c("td", [_vm._v(_vm._s(alumno.nombre))]),
-              _vm._v(" "),
-              _c("td", [
-                _c(
-                  "div",
-                  { staticClass: "btn-group", attrs: { role: "group" } },
-                  [
-                    _vm._m(1, true),
-                    _vm._v(" "),
-                    _vm._m(2, true),
-                    _vm._v(" "),
-                    _c(
-                      "a",
-                      {
-                        staticClass: "btn red darken-4",
-                        on: {
-                          click: function($event) {
-                            $event.preventDefault()
-                            _vm.deleteAlumno(alumno)
-                          }
-                        }
-                      },
-                      [_c("i", { staticClass: "fas fa-trash fa-lg" })]
-                    )
-                  ]
-                )
-              ])
-            ])
-          })
-        )
-      ]),
-      _vm._v(" "),
-      _c("infinite-loading", { on: { infinite: _vm.infiniteHandler } }, [
-        _c("span", { attrs: { slot: "no-more" }, slot: "no-more" }, [
-          _vm._v("\n\t\t\t\t\tTodos los datos han sido cargados\n\t\t\t\t")
-        ])
-      ])
-    ],
-    1
-  )
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("thead", [
-      _c("tr", [
-        _c("th", [_vm._v("Cuil")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("Apellido")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("Nombre")]),
-        _vm._v(" "),
-        _c("th")
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("a", { staticClass: "btn blue" }, [
-      _c("i", { staticClass: "fas fa-print fa-lg" })
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("a", { staticClass: "btn green" }, [
-      _c("i", { staticClass: "fas fa-pen fa-lg" })
-    ])
-  }
-]
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-444fc3ae", module.exports)
-  }
-}
-
-/***/ }),
-/* 46 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-var normalizeComponent = __webpack_require__(2)
-/* script */
-var __vue_script__ = __webpack_require__(47)
-/* template */
-var __vue_template__ = __webpack_require__(48)
-/* template functional */
-var __vue_template_functional__ = false
-/* styles */
-var __vue_styles__ = null
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_template_functional__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "resources/js/components/alumnos/AlumnosCreate.vue"
-=======
         var active = activeElements[0];
         var isTransitioning = callback && active && $$$1(active).hasClass(ClassName.FADE);
 
@@ -46237,7 +46030,6 @@ Component.options.__file = "resources/js/components/alumnos/AlumnosCreate.vue"
           if (dropdownChild) {
             $$$1(dropdownChild).removeClass(ClassName.ACTIVE);
           }
->>>>>>> 4cf10f13e63861e281746bb44416e4c07d8217c0
 
           if (active.getAttribute('role') === 'tab') {
             active.setAttribute('aria-selected', false);
@@ -46250,14 +46042,8 @@ Component.options.__file = "resources/js/components/alumnos/AlumnosCreate.vue"
           element.setAttribute('aria-selected', true);
         }
 
-<<<<<<< HEAD
-/***/ }),
-/* 47 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-=======
         Util.reflow(element);
         $$$1(element).addClass(ClassName.SHOW);
->>>>>>> 4cf10f13e63861e281746bb44416e4c07d8217c0
 
         if (element.parentNode && $$$1(element.parentNode).hasClass(ClassName.DROPDOWN_MENU)) {
           var dropdownElement = $$$1(element).closest(Selector.DROPDOWN)[0];
@@ -48858,11 +48644,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-<<<<<<< HEAD
-/* 48 */
-=======
 /* 47 */
->>>>>>> 4cf10f13e63861e281746bb44416e4c07d8217c0
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -51327,25 +51109,15 @@ if (false) {
 }
 
 /***/ }),
-<<<<<<< HEAD
-/* 49 */
-=======
 /* 48 */
->>>>>>> 4cf10f13e63861e281746bb44416e4c07d8217c0
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(3)
 /* script */
-<<<<<<< HEAD
-var __vue_script__ = __webpack_require__(50)
-/* template */
-var __vue_template__ = __webpack_require__(51)
-=======
 var __vue_script__ = __webpack_require__(49)
 /* template */
 var __vue_template__ = __webpack_require__(50)
->>>>>>> 4cf10f13e63861e281746bb44416e4c07d8217c0
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -51384,11 +51156,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-<<<<<<< HEAD
-/* 50 */
-=======
 /* 49 */
->>>>>>> 4cf10f13e63861e281746bb44416e4c07d8217c0
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -51932,11 +51700,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-<<<<<<< HEAD
-/* 51 */
-=======
 /* 50 */
->>>>>>> 4cf10f13e63861e281746bb44416e4c07d8217c0
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
