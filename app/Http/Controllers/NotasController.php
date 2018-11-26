@@ -43,10 +43,10 @@ class NotasController extends Controller
         $nota->primer_trimestre = $request->primer_trimestre;
         $nota->segundo_trimestre = $request->segundo_trimestre;
         $nota->tercer_trimestre = $request->tercer_trimestre;
-        $nota->integral = $request->integral;
+        $nota->integral = $request->tercer_trimestre;
         $nota->diciembre = $request->diciembre;
         $nota->marzo = $request->marzo;
-        $nota->final = $request->final;
+        $nota->final = ($request->primer_trimestre+$request->segundo_trimestre+$request->tercer_trimestre)/3;
 
         $nota->save();
 

@@ -78,3 +78,9 @@ Route::get('inscripcion/{id}', function($id){
 })->name('inscripcion');
  
 //---------------------------------------------------------------- 
+
+
+
+Route::post('agregarAlumno','CursosController@agregarAlumno')->name('cursos.agregarAlumno');
+
+Route::post('AgregarMateria','CursosController@agregarMateria')->name('cursos.agregarMateria');

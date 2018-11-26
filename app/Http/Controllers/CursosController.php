@@ -60,8 +60,23 @@ class CursosController extends Controller
         //contiene las materias que no estan relacionadas con el curso en cuestion
         $agregarMaterias = $todas->diff($materiasCurso);
         $asistencias = Asistencia::where('fecha', $hoy)->get();
-        return $existe = $asistencias->where('alumno_id', 7);
-        return view('cursos.show', compact('curso', 'materiasCurso', 'alumnos', 'agregarMaterias', 'agregarAlumnos', 'hoy', 'asistencias', 'existe'));
+
+        $existe = array();
+
+        foreach ($alumnos as $alumno) {
+            foreach ($asistencias as $asistencia) {
+
+            // $existe = $asistencias->where('alumno_id', $alumno->id);
+            // $hay = $existe->concat($existe);
+
+            if ($asistencia->alumno_id == $alumno->id) {
+                $existe = $asistencia->get();
+                $hay = $existe->concat($existe);
+            }
+        }
+        }
+
+        return view('cursos.show', compact('curso', 'materiasCurso', 'alumnos', 'agregarMaterias', 'agregarAlumnos', 'hoy', 'asistencias', 'hay'));
     }
 
     public function agregarMateria(Request $request){

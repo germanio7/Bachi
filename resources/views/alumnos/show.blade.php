@@ -250,13 +250,13 @@
 				@endif
 			</div>
 
-			<div class="input-field col s12">
+			{{-- <div class="input-field col s12">
 				<a href="{{route('descargarAlumno',$alumno->id)}}" class="btn green darken-4">Descargar</a>
-			</div>
+			</div> --}}
 		</div>
 	</div>
 
-	<div class="card-panel hoverable green lighten-4">
+	{{-- <div class="card-panel hoverable green lighten-4">
 		<b>Datos Del Tutor</b>
 		<div class="row">
 			<div class="input-field col s4">
@@ -275,7 +275,7 @@
 				<a href="{{route('padres.show',$alumno->padre->id)}}" class="btn green darken-4">Ver más</a>
 			</div>
 		</div>
-	</div>
+	</div> --}}
 
 
 	{{-- Estructura Modal --}}
@@ -295,10 +295,8 @@
 								<th>1_trimestre</th>
 								<th>2_trimestre</th>
 								<th>3_trimestre</th>
-								<th>Integral</th>
 								<th>Diciembre</th>
 								<th>Marzo</th>
-								<th>Final</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -319,18 +317,14 @@
 										<td>
 											{{ Form::text('tercer_trimestre','',(['class'=>'validate'])) }}
 										</td>
-										<td>
-											{{ Form::text('integral','',(['class'=>'validate'])) }}
-										</td>
+										
 										<td>
 											{{ Form::text('diciembre','',(['class'=>'validate'])) }}
 										</td>
 										<td>
 											{{ Form::text('marzo','',(['class'=>'validate'])) }}
 										</td>
-										<td>
-											{{ Form::text('final','',(['class'=>'validate'])) }}
-										</td>
+										
 									</tr>
 								@endforeach
 							@endif					
@@ -371,9 +365,15 @@
 							@else
 								@foreach($notas as $nota)
 									<tr>
-										@foreach($nota->materias as $materia)
+										{{-- @foreach($nota->materias as $materia)
 											<td>{{$materia->nombre}}</td>
-										@endforeach
+										@endforeach --}}
+										{{-- <td>{{$materias->where('id', $nota->materia_id)->get('nombre')}}</td> --}}
+
+										{{-- ver materia sin foreach --}}
+										{{-- <td>{{$materias->where('id', $nota->materia_id)}}</td> --}}
+
+										<td>{{$nota->materia_id}}</td>
 										<td>{{$nota->primer_trimestre}}</td>
 										<td>{{$nota->segundo_trimestre}}</td>
 										<td>{{$nota->tercer_trimestre}}</td>
