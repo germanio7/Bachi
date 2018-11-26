@@ -6,11 +6,6 @@ use Illuminate\Support\Facades\DB;
 
 class MateriaSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     *
-     * @return void
-     */
     public function run()
     {
         DB::table('materias')->insert([
