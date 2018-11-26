@@ -1,5 +1,19 @@
 <template>
-	<div class="row">				
+	<div class="row">
+		<div id="create" style="display: none;">
+			<alumnos-create></alumnos-create>	
+		</div>
+		<div id="edit" style="display: none;">
+			<alumnos-edit :edit_alumno="edit_alumno"></alumnos-edit>	
+		</div>
+		<div id="index">
+
+			<div id="boton">
+				<div class="fixed-action-btn">
+					<a v-on:click="change(2);" class="btn-floating btn-large waves-effect waves-light green"><i class="fas fa-plus fa-lg"></i></a>
+				</div>
+			</div>
+
 				<table>
 					<thead>
 						<tr>
@@ -17,8 +31,8 @@
 							<td>
 								<div class="btn-group" role="group">
 						      <a class="btn blue"><i class="fas fa-print fa-lg"></i></a>
-						      <a class="btn green"><i class="fas fa-pen fa-lg"></i></a>
-									<a class="btn red darken-4" v-on:click.prevent="deleteAlumno(alumno)"><i class="fas fa-trash fa-lg"></i></a>
+						      <a class="btn green" v-on:click.prevent="editAlumno(alumno)"><i class="fas fa-pen fa-lg"></i></a>
+									<a href="#eliminar" class="btn red darken-4 modal-trigger" v-on:click.prevent="confirmDelete(alumno)"><i class="fas fa-trash fa-lg"></i></a>
 						    </div>
 							</td>
 						</tr>
@@ -29,6 +43,19 @@
 						Todos los datos han sido cargados
 					</span>
 				</infinite-loading>
+		</div>
+
+	  <div id="eliminar" class="modal">
+	    <div class="modal-content">
+	      <h4>¿Estas Seguro?</h4>
+	      <p>¿Realmente desea eliminar los datos del alumno?</p>
+	    </div>
+	    <div class="modal-footer">
+	    	<a href="#!" class="modal-close waves-effect waves-green btn green">¡NO! Cancelar</a>
+	      <a href="#!" class="modal-close waves-effect waves-green btn red" v-on:click.prevent="deleteAlumno()">¡SI! Eliminar</a>
+	    </div>
+	  </div>
+
 	</div>
 </template>
 
@@ -36,16 +63,23 @@
 	
 	import axios from 'axios';
 	import InfiniteLoading from 'vue-infinite-loading';
+	import EventBus from '../../event-bus';
 
 	export default {
 		
 		created() {
-			this.getAlumnos()
+			this.getAlumnos();
+			EventBus.$on('change', data => {
+        this.change(data);
+        this.getAlumnos();
+       });
 		},
 
 		data() {
 			return {
-				alumnos: []
+				alumnos: [],
+				edit_alumno: {},
+				delete_alumno: ''
 			}
 		},
 
@@ -78,9 +112,38 @@
 				}
 			},
 
-			deleteAlumno: function(alumno) {
-				var id = alumno.id;
-				axios.delete('alumnos/' + id).then(response => {
+			editAlumno: function(alumno) {
+				this.edit_alumno = alumno;
+				var	fecha_nacimiento = alumno.fecha_nacimiento;
+				EventBus.$emit('nacimiento', fecha_nacimiento)
+				this.change(3);
+			},
+
+			change: function(point) {
+				var index = document.getElementById('index');
+				var create = document.getElementById('create');
+				var edit = document.getElementById('edit');
+				if (point == 1) {
+					index.style.display = 'block';
+					create.style.display = 'none';
+					edit.style.display = 'none';
+				} else if (point == 2) {
+					index.style.display = 'none';
+					create.style.display = 'block';
+					edit.style.display = 'none';
+				} else if (point == 3) {
+					index.style.display = 'none';
+					create.style.display = 'none';
+					edit.style.display = 'block';
+				};
+			},
+
+			confirmDelete: function(alumno) {
+				this.delete_alumno = alumno.id;
+			},
+
+			deleteAlumno: function() {
+				axios.delete('alumnos/' + this.delete_alumno).then(response => {
 					this.getAlumnos();
 					M.toast({html: 'Alumno Eliminado', classes: 'red'})
 				});
