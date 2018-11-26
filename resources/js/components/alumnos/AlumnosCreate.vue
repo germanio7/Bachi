@@ -856,7 +856,6 @@ export default {
 				this.change(1);
 			}).catch(error => {
 				this.change(1);
-				this.getAlumnos();
 				M.toast({html: 'X Error', classes: 'red'})
 				console.log(error.response.data)
 			});

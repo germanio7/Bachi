@@ -24,13 +24,13 @@
 						</tr>
 					</thead>
 					<tbody>
-						<tr v-for="alumno, index in alumnos">
-							<td>{{index + 1}}{{alumno.cuil}}</td>
+						<tr v-for="alumno in alumnos">
+							<td>{{alumno.cuil}}</td>
 							<td>{{alumno.apellido}}</td>							
 							<td>{{alumno.nombre}}</td>
 							<td>
 								<div class="btn-group" role="group">
-						      <a class="btn blue"><i class="fas fa-print fa-lg"></i></a>
+						      <a class="btn blue" v-on:click="pdf(alumno.id)"><i class="fas fa-print fa-lg"></i></a>
 						      <a class="btn green" v-on:click.prevent="editAlumno(alumno)"><i class="fas fa-pen fa-lg"></i></a>
 									<a href="#eliminar" class="btn red darken-4 modal-trigger" v-on:click.prevent="confirmDelete(alumno)"><i class="fas fa-trash fa-lg"></i></a>
 						    </div>
@@ -136,6 +136,10 @@
 					create.style.display = 'none';
 					edit.style.display = 'block';
 				};
+			},
+
+			pdf: function(id) {
+				window.open('/inscripcion/'+id);
 			},
 
 			confirmDelete: function(alumno) {
