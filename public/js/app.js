@@ -375,39 +375,12 @@ module.exports = {
 
 /***/ }),
 /* 1 */
-/***/ (function(module, exports) {
-
-var g;
-
-// This works in non-strict mode
-g = (function() {
-	return this;
-})();
-
-try {
-	// This works if eval is allowed (see CSP)
-	g = g || Function("return this")() || (1,eval)("this");
-} catch(e) {
-	// This works if the window reference is available
-	if(typeof window === "object")
-		g = window;
-}
-
-// g can still be undefined, but nothing to do about it...
-// We return undefined, instead of nothing here, so it's
-// easier to handle this case. if(!global) { ...}
-
-module.exports = g;
-
-
-/***/ }),
-/* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(22);
 
 /***/ }),
-/* 3 */
+/* 2 */
 /***/ (function(module, exports) {
 
 /* globals __VUE_SSR_CONTEXT__ */
@@ -516,7 +489,7 @@ module.exports = function normalizeComponent (
 
 
 /***/ }),
-/* 4 */
+/* 3 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -524,6 +497,33 @@ window.Vue = __webpack_require__(14);
 var bus = new Vue();
 
 /* harmony default export */ __webpack_exports__["a"] = (bus);
+
+/***/ }),
+/* 4 */
+/***/ (function(module, exports) {
+
+var g;
+
+// This works in non-strict mode
+g = (function() {
+	return this;
+})();
+
+try {
+	// This works if eval is allowed (see CSP)
+	g = g || Function("return this")() || (1,eval)("this");
+} catch(e) {
+	// This works if the window reference is available
+	if(typeof window === "object")
+		g = window;
+}
+
+// g can still be undefined, but nothing to do about it...
+// We return undefined, instead of nothing here, so it's
+// easier to handle this case. if(!global) { ...}
+
+module.exports = g;
+
 
 /***/ }),
 /* 5 */
@@ -3170,7 +3170,7 @@ Popper.Defaults = Defaults;
 /* harmony default export */ __webpack_exports__["default"] = (Popper);
 //# sourceMappingURL=popper.js.map
 
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(1)))
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(4)))
 
 /***/ }),
 /* 7 */
@@ -24965,7 +24965,7 @@ Vue.compile = compileToFunctions;
 
 module.exports = Vue;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1), __webpack_require__(40).setImmediate))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4), __webpack_require__(40).setImmediate))
 
 /***/ }),
 /* 15 */
@@ -25002,7 +25002,7 @@ Vue.component('alumnos-edit', __webpack_require__(48));
 //Cursos
 Vue.component('cursos-index', __webpack_require__(51));
 Vue.component('cursos-create', __webpack_require__(54));
-// Vue.component('alumnos-edit', require('./components/alumnos/AlumnosEdit.vue'));
+Vue.component('cursos-edit', __webpack_require__(57));
 
 var app = new Vue({
     el: '#app'
@@ -25034,7 +25034,7 @@ try {
  * CSRF token as a header based on the value of the "XSRF" token cookie.
  */
 
-window.axios = __webpack_require__(2);
+window.axios = __webpack_require__(1);
 
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
@@ -42182,7 +42182,7 @@ if (token) {
   }
 }.call(this));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1), __webpack_require__(20)(module)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4), __webpack_require__(20)(module)))
 
 /***/ }),
 /* 20 */
@@ -47112,7 +47112,7 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
                          (typeof global !== "undefined" && global.clearImmediate) ||
                          (this && this.clearImmediate);
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
 
 /***/ }),
 /* 41 */
@@ -47305,14 +47305,14 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
     attachTo.clearImmediate = clearImmediate;
 }(typeof self === "undefined" ? typeof global === "undefined" ? this : global : self));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1), __webpack_require__(9)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4), __webpack_require__(9)))
 
 /***/ }),
 /* 42 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-var normalizeComponent = __webpack_require__(3)
+var normalizeComponent = __webpack_require__(2)
 /* script */
 var __vue_script__ = __webpack_require__(43)
 /* template */
@@ -47360,11 +47360,11 @@ module.exports = Component.exports
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_infinite_loading__ = __webpack_require__(15);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_infinite_loading___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_vue_infinite_loading__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__event_bus__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__event_bus__ = __webpack_require__(3);
 //
 //
 //
@@ -47724,7 +47724,7 @@ if (false) {
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-var normalizeComponent = __webpack_require__(3)
+var normalizeComponent = __webpack_require__(2)
 /* script */
 var __vue_script__ = __webpack_require__(46)
 /* template */
@@ -47772,9 +47772,9 @@ module.exports = Component.exports
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__event_bus__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__event_bus__ = __webpack_require__(3);
 //
 //
 //
@@ -51113,7 +51113,7 @@ if (false) {
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-var normalizeComponent = __webpack_require__(3)
+var normalizeComponent = __webpack_require__(2)
 /* script */
 var __vue_script__ = __webpack_require__(49)
 /* template */
@@ -51161,7 +51161,7 @@ module.exports = Component.exports
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__event_bus__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__event_bus__ = __webpack_require__(3);
 //
 //
 //
@@ -53987,7 +53987,7 @@ var staticRenderFns = [
             "btn btn-flat waves-effect waves-green green modal-close white-text",
           attrs: { type: "submit" }
         },
-        [_vm._v("Guardar")]
+        [_vm._v("Actualizar Datos")]
       )
     ])
   }
@@ -54006,7 +54006,7 @@ if (false) {
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-var normalizeComponent = __webpack_require__(3)
+var normalizeComponent = __webpack_require__(2)
 /* script */
 var __vue_script__ = __webpack_require__(52)
 /* template */
@@ -54054,11 +54054,22 @@ module.exports = Component.exports
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_infinite_loading__ = __webpack_require__(15);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_infinite_loading___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_vue_infinite_loading__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__event_bus__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__event_bus__ = __webpack_require__(3);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -54125,16 +54136,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 	created: function created() {
 		var _this = this;
 
-		this.getCursos();
 		__WEBPACK_IMPORTED_MODULE_2__event_bus__["a" /* default */].$on('change', function (data) {
-			_this.getCursos();
 			_this.change(data);
 		});
 	},
 	data: function data() {
 		return {
 			cursos: [],
-			edit_curso: {}
+			edit_curso: {},
+			delete_curso: ''
 		};
 	},
 
@@ -54189,6 +54199,24 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 				create.style.display = 'none';
 				edit.style.display = 'block';
 			};
+		},
+
+		editCurso: function editCurso(curso) {
+			this.edit_curso = curso;
+			this.change(3);
+		},
+
+		confirmDelete: function confirmDelete(curso) {
+			this.delete_curso = curso.id;
+		},
+
+		deleteCurso: function deleteCurso() {
+			var _this4 = this;
+
+			__WEBPACK_IMPORTED_MODULE_0_axios___default.a.delete('cursos/' + this.delete_curso).then(function (response) {
+				_this4.getCursos();
+				M.toast({ html: 'Curso Eliminado', classes: 'red' });
+			});
 		}
 
 	}
@@ -54211,7 +54239,12 @@ var render = function() {
       1
     ),
     _vm._v(" "),
-    _c("div", { staticStyle: { display: "none" }, attrs: { id: "edit" } }),
+    _c(
+      "div",
+      { staticStyle: { display: "none" }, attrs: { id: "edit" } },
+      [_c("cursos-edit", { attrs: { edit_curso: _vm.edit_curso } })],
+      1
+    ),
     _vm._v(" "),
     _c(
       "div",
@@ -54221,7 +54254,7 @@ var render = function() {
           _c(
             "a",
             {
-              staticClass: "btn-floating btn-large green modal-trigger",
+              staticClass: "btn-floating btn-large green",
               on: {
                 click: function($event) {
                   _vm.change(2)
@@ -54259,17 +54292,30 @@ var render = function() {
                       _c(
                         "a",
                         {
-                          staticClass: "btn green modal-trigger",
+                          staticClass: "btn green",
                           on: {
-                            onclick: function($event) {
-                              _vm.edit_curso = curso
+                            click: function($event) {
+                              _vm.editCurso(curso)
                             }
                           }
                         },
                         [_c("i", { staticClass: "fas fa-pen fa-lg" })]
                       ),
                       _vm._v(" "),
-                      _vm._m(3, true)
+                      _c(
+                        "a",
+                        {
+                          staticClass: "btn red darken-4 modal-trigger",
+                          attrs: { href: "#eliminar" },
+                          on: {
+                            click: function($event) {
+                              $event.preventDefault()
+                              _vm.confirmDelete(curso)
+                            }
+                          }
+                        },
+                        [_c("i", { staticClass: "fas fa-trash fa-lg" })]
+                      )
                     ]
                   )
                 ])
@@ -54285,7 +54331,37 @@ var render = function() {
         ])
       ],
       1
-    )
+    ),
+    _vm._v(" "),
+    _c("div", { staticClass: "modal", attrs: { id: "eliminar" } }, [
+      _vm._m(3),
+      _vm._v(" "),
+      _c("div", { staticClass: "modal-footer" }, [
+        _c(
+          "a",
+          {
+            staticClass: "modal-close waves-effect waves-green btn green",
+            attrs: { href: "#!" }
+          },
+          [_vm._v("¡NO! Cancelar")]
+        ),
+        _vm._v(" "),
+        _c(
+          "a",
+          {
+            staticClass: "modal-close waves-effect waves-green btn red",
+            attrs: { href: "#!" },
+            on: {
+              click: function($event) {
+                $event.preventDefault()
+                _vm.deleteCurso()
+              }
+            }
+          },
+          [_vm._v("¡SI! Eliminar")]
+        )
+      ])
+    ])
   ])
 }
 var staticRenderFns = [
@@ -54325,8 +54401,10 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("a", { staticClass: "btn red darken-4 modal-trigger" }, [
-      _c("i", { staticClass: "fas fa-trash fa-lg" })
+    return _c("div", { staticClass: "modal-content" }, [
+      _c("h4", [_vm._v("¿Estas Seguro?")]),
+      _vm._v(" "),
+      _c("p", [_vm._v("¿Realmente desea eliminar los datos del Curso?")])
     ])
   }
 ]
@@ -54344,7 +54422,7 @@ if (false) {
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-var normalizeComponent = __webpack_require__(3)
+var normalizeComponent = __webpack_require__(2)
 /* script */
 var __vue_script__ = __webpack_require__(55)
 /* template */
@@ -54392,9 +54470,39 @@ module.exports = Component.exports
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__event_bus__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__event_bus__ = __webpack_require__(3);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -54503,6 +54611,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 	methods: {
 
 		change: function change(point) {
+			this.newCurso = '';
+			this.newDivision = '';
+			this.newOrientacion = '';
+			this.newTurno = '';
 			__WEBPACK_IMPORTED_MODULE_1__event_bus__["a" /* default */].$emit('change', point);
 		},
 
@@ -54521,6 +54633,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 				_this.newOrientacion = '';
 				_this.newTurno = '';
 				_this.change(1);
+				var toastHTML = 'Curso Registrado';
+				M.toast({ html: toastHTML, classes: 'green' });
 			}).catch(function (error) {
 				_this.change(1);
 				console.log(error.response.data);
@@ -54558,6 +54672,21 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
+    _c("div", { staticClass: "fixed-action-btn", attrs: { id: "boton" } }, [
+      _c(
+        "a",
+        {
+          staticClass: "btn-floating btn-large blue",
+          on: {
+            click: function($event) {
+              _vm.change(1)
+            }
+          }
+        },
+        [_c("i", { staticClass: "fas fa-arrow-left fa-lg" })]
+      )
+    ]),
+    _vm._v(" "),
     _c("div", { staticClass: "col s10 offset-s1" }, [
       _vm._m(0),
       _vm._v(" "),
@@ -54576,113 +54705,269 @@ var render = function() {
           _c("div", { staticClass: "card" }, [
             _c("div", { staticClass: "card-content" }, [
               _c("div", { staticClass: "row" }, [
-                _c("div", { staticClass: "input-field col s6" }, [
+                _c("div", { staticClass: "col m6 s12" }, [
+                  _vm._m(1),
+                  _vm._v(" "),
                   _c(
-                    "select",
-                    {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.newCurso,
-                          expression: "newCurso"
-                        }
-                      ],
-                      staticClass: "validate",
-                      attrs: { name: "curso", id: "curso" },
-                      on: {
-                        change: function($event) {
-                          var $$selectedVal = Array.prototype.filter
-                            .call($event.target.options, function(o) {
-                              return o.selected
-                            })
-                            .map(function(o) {
-                              var val = "_value" in o ? o._value : o.value
-                              return val
-                            })
-                          _vm.newCurso = $event.target.multiple
-                            ? $$selectedVal
-                            : $$selectedVal[0]
-                        }
-                      }
-                    },
+                    "div",
+                    { staticClass: "radio-group", attrs: { required: "" } },
                     [
-                      _c(
-                        "option",
-                        { attrs: { value: "", disabled: "", selected: "" } },
-                        [_vm._v("Curso")]
-                      ),
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.newCurso,
+                            expression: "newCurso"
+                          }
+                        ],
+                        attrs: { type: "radio", value: "1º", id: "c1" },
+                        domProps: { checked: _vm._q(_vm.newCurso, "1º") },
+                        on: {
+                          change: function($event) {
+                            _vm.newCurso = "1º"
+                          }
+                        }
+                      }),
                       _vm._v(" "),
-                      _c("option", { attrs: { value: "1º" } }, [_vm._v("1º")]),
+                      _vm._m(2),
                       _vm._v(" "),
-                      _c("option", { attrs: { value: "2º" } }, [_vm._v("2º")]),
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.newCurso,
+                            expression: "newCurso"
+                          }
+                        ],
+                        attrs: { type: "radio", value: "2º", id: "c2" },
+                        domProps: { checked: _vm._q(_vm.newCurso, "2º") },
+                        on: {
+                          change: function($event) {
+                            _vm.newCurso = "2º"
+                          }
+                        }
+                      }),
                       _vm._v(" "),
-                      _c("option", { attrs: { value: "3º" } }, [_vm._v("3º")]),
+                      _vm._m(3),
                       _vm._v(" "),
-                      _c("option", { attrs: { value: "4º" } }, [_vm._v("4º")]),
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.newCurso,
+                            expression: "newCurso"
+                          }
+                        ],
+                        attrs: { type: "radio", value: "3º", id: "c3" },
+                        domProps: { checked: _vm._q(_vm.newCurso, "3º") },
+                        on: {
+                          change: function($event) {
+                            _vm.newCurso = "3º"
+                          }
+                        }
+                      }),
                       _vm._v(" "),
-                      _c("option", { attrs: { value: "5º" } }, [_vm._v("5º")])
+                      _vm._m(4),
+                      _vm._v(" "),
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.newCurso,
+                            expression: "newCurso"
+                          }
+                        ],
+                        attrs: { type: "radio", value: "4º", id: "c4" },
+                        domProps: { checked: _vm._q(_vm.newCurso, "4º") },
+                        on: {
+                          change: function($event) {
+                            _vm.newCurso = "4º"
+                          }
+                        }
+                      }),
+                      _vm._v(" "),
+                      _vm._m(5),
+                      _vm._v(" "),
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.newCurso,
+                            expression: "newCurso"
+                          }
+                        ],
+                        attrs: { type: "radio", value: "5º", id: "c5" },
+                        domProps: { checked: _vm._q(_vm.newCurso, "5º") },
+                        on: {
+                          change: function($event) {
+                            _vm.newCurso = "5º"
+                          }
+                        }
+                      }),
+                      _vm._v(" "),
+                      _vm._m(6)
                     ]
                   )
                 ]),
                 _vm._v(" "),
-                _c("div", { staticClass: "input-field col s6" }, [
+                _c("div", { staticClass: "col m6 s12" }, [
+                  _vm._m(7),
+                  _vm._v(" "),
                   _c(
-                    "select",
-                    {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.newDivision,
-                          expression: "newDivision"
-                        }
-                      ],
-                      staticClass: "validate",
-                      attrs: { name: "division", id: "division" },
-                      on: {
-                        change: function($event) {
-                          var $$selectedVal = Array.prototype.filter
-                            .call($event.target.options, function(o) {
-                              return o.selected
-                            })
-                            .map(function(o) {
-                              var val = "_value" in o ? o._value : o.value
-                              return val
-                            })
-                          _vm.newDivision = $event.target.multiple
-                            ? $$selectedVal
-                            : $$selectedVal[0]
-                        }
-                      }
-                    },
+                    "div",
+                    { staticClass: "radio-group", attrs: { required: "" } },
                     [
-                      _c(
-                        "option",
-                        { attrs: { value: "", disabled: "", selected: "" } },
-                        [_vm._v("División")]
-                      ),
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.newDivision,
+                            expression: "newDivision"
+                          }
+                        ],
+                        attrs: { type: "radio", value: "1ª", id: "d1" },
+                        domProps: { checked: _vm._q(_vm.newDivision, "1ª") },
+                        on: {
+                          change: function($event) {
+                            _vm.newDivision = "1ª"
+                          }
+                        }
+                      }),
                       _vm._v(" "),
-                      _c("option", { attrs: { value: "1ª" } }, [_vm._v("1ª")]),
+                      _vm._m(8),
                       _vm._v(" "),
-                      _c("option", { attrs: { value: "2ª" } }, [_vm._v("2ª")]),
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.newDivision,
+                            expression: "newDivision"
+                          }
+                        ],
+                        attrs: { type: "radio", value: "2ª", id: "d2" },
+                        domProps: { checked: _vm._q(_vm.newDivision, "2ª") },
+                        on: {
+                          change: function($event) {
+                            _vm.newDivision = "2ª"
+                          }
+                        }
+                      }),
                       _vm._v(" "),
-                      _c("option", { attrs: { value: "3ª" } }, [_vm._v("3ª")]),
+                      _vm._m(9),
                       _vm._v(" "),
-                      _c("option", { attrs: { value: "4ª" } }, [_vm._v("4ª")]),
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.newDivision,
+                            expression: "newDivision"
+                          }
+                        ],
+                        attrs: { type: "radio", value: "3ª", id: "d3" },
+                        domProps: { checked: _vm._q(_vm.newDivision, "3ª") },
+                        on: {
+                          change: function($event) {
+                            _vm.newDivision = "3ª"
+                          }
+                        }
+                      }),
                       _vm._v(" "),
-                      _c("option", { attrs: { value: "5ª" } }, [_vm._v("5ª")]),
+                      _vm._m(10),
                       _vm._v(" "),
-                      _c("option", { attrs: { value: "6ª" } }, [_vm._v("6ª")]),
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.newDivision,
+                            expression: "newDivision"
+                          }
+                        ],
+                        attrs: { type: "radio", value: "4ª", id: "d4" },
+                        domProps: { checked: _vm._q(_vm.newDivision, "4ª") },
+                        on: {
+                          change: function($event) {
+                            _vm.newDivision = "4ª"
+                          }
+                        }
+                      }),
                       _vm._v(" "),
-                      _c("option", { attrs: { value: "7ª" } }, [_vm._v("7ª")])
+                      _vm._m(11),
+                      _vm._v(" "),
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.newDivision,
+                            expression: "newDivision"
+                          }
+                        ],
+                        attrs: { type: "radio", value: "5ª", id: "d5" },
+                        domProps: { checked: _vm._q(_vm.newDivision, "5ª") },
+                        on: {
+                          change: function($event) {
+                            _vm.newDivision = "5ª"
+                          }
+                        }
+                      }),
+                      _vm._v(" "),
+                      _vm._m(12),
+                      _vm._v(" "),
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.newDivision,
+                            expression: "newDivision"
+                          }
+                        ],
+                        attrs: { type: "radio", value: "6ª", id: "d6" },
+                        domProps: { checked: _vm._q(_vm.newDivision, "6ª") },
+                        on: {
+                          change: function($event) {
+                            _vm.newDivision = "6ª"
+                          }
+                        }
+                      }),
+                      _vm._v(" "),
+                      _vm._m(13),
+                      _vm._v(" "),
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.newDivision,
+                            expression: "newDivision"
+                          }
+                        ],
+                        attrs: { type: "radio", value: "7ª", id: "d7" },
+                        domProps: { checked: _vm._q(_vm.newDivision, "7ª") },
+                        on: {
+                          change: function($event) {
+                            _vm.newDivision = "7ª"
+                          }
+                        }
+                      }),
+                      _vm._v(" "),
+                      _vm._m(14)
                     ]
                   )
                 ])
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "row" }, [
-                _c("div", { staticClass: "input-field col s6" }, [
+                _c("div", { staticClass: "input-field col m4 s12" }, [
                   _c(
                     "select",
                     {
@@ -54695,7 +54980,7 @@ var render = function() {
                         }
                       ],
                       staticClass: "validate",
-                      attrs: { id: "orientacion", name: "orientacion" },
+                      attrs: { id: "orientacion", requierd: "" },
                       on: {
                         change: function($event) {
                           var $$selectedVal = Array.prototype.filter
@@ -54782,54 +55067,72 @@ var render = function() {
                   )
                 ]),
                 _vm._v(" "),
-                _c("div", { staticClass: "input-field col s6" }, [
+                _c("div", { staticClass: "col m6 s12 offset-m2" }, [
+                  _vm._m(15),
+                  _vm._v(" "),
                   _c(
-                    "select",
-                    {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.newTurno,
-                          expression: "newTurno"
-                        }
-                      ],
-                      staticClass: "validate",
-                      attrs: { id: "turno", name: "turno" },
-                      on: {
-                        change: function($event) {
-                          var $$selectedVal = Array.prototype.filter
-                            .call($event.target.options, function(o) {
-                              return o.selected
-                            })
-                            .map(function(o) {
-                              var val = "_value" in o ? o._value : o.value
-                              return val
-                            })
-                          _vm.newTurno = $event.target.multiple
-                            ? $$selectedVal
-                            : $$selectedVal[0]
-                        }
-                      }
-                    },
+                    "div",
+                    { staticClass: "radio-group", attrs: { required: "" } },
                     [
-                      _c(
-                        "option",
-                        { attrs: { value: "", disabled: "", selected: "" } },
-                        [_vm._v("Turno")]
-                      ),
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.newTurno,
+                            expression: "newTurno"
+                          }
+                        ],
+                        attrs: { type: "radio", value: "Mañana", id: "mañana" },
+                        domProps: { checked: _vm._q(_vm.newTurno, "Mañana") },
+                        on: {
+                          change: function($event) {
+                            _vm.newTurno = "Mañana"
+                          }
+                        }
+                      }),
                       _vm._v(" "),
-                      _c("option", { attrs: { value: "Mañana" } }, [
-                        _vm._v("Mañana")
-                      ]),
+                      _vm._m(16),
                       _vm._v(" "),
-                      _c("option", { attrs: { value: "Tarde" } }, [
-                        _vm._v("Tarde")
-                      ]),
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.newTurno,
+                            expression: "newTurno"
+                          }
+                        ],
+                        attrs: { type: "radio", value: "Tarde", id: "tarde" },
+                        domProps: { checked: _vm._q(_vm.newTurno, "Tarde") },
+                        on: {
+                          change: function($event) {
+                            _vm.newTurno = "Tarde"
+                          }
+                        }
+                      }),
                       _vm._v(" "),
-                      _c("option", { attrs: { value: "Noche" } }, [
-                        _vm._v("Noche")
-                      ])
+                      _vm._m(17),
+                      _vm._v(" "),
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.newTurno,
+                            expression: "newTurno"
+                          }
+                        ],
+                        attrs: { type: "radio", value: "Noche", id: "noche" },
+                        domProps: { checked: _vm._q(_vm.newTurno, "Noche") },
+                        on: {
+                          change: function($event) {
+                            _vm.newTurno = "Noche"
+                          }
+                        }
+                      }),
+                      _vm._v(" "),
+                      _vm._m(18)
                     ]
                   )
                 ])
@@ -54856,7 +55159,7 @@ var render = function() {
               _c("br")
             ]),
             _vm._v(" "),
-            _vm._m(1)
+            _vm._m(19)
           ])
         ]
       )
@@ -54869,6 +55172,120 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("blockquote", [_c("h4", [_vm._v("Nuevo Curso")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("h6", [_c("b", [_vm._v("Curso: ")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("label", { attrs: { for: "c1" } }, [_c("b", [_vm._v("1º")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("label", { attrs: { for: "c2" } }, [_c("b", [_vm._v("2º")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("label", { attrs: { for: "c3" } }, [_c("b", [_vm._v("3º")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("label", { attrs: { for: "c4" } }, [_c("b", [_vm._v("4º")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("label", { attrs: { for: "c5" } }, [_c("b", [_vm._v("5º")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("h6", [_c("b", [_vm._v("División: ")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("label", { attrs: { for: "d1" } }, [_c("b", [_vm._v("1ª")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("label", { attrs: { for: "d2" } }, [_c("b", [_vm._v("2ª")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("label", { attrs: { for: "d3" } }, [_c("b", [_vm._v("3ª")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("label", { attrs: { for: "d4" } }, [_c("b", [_vm._v("4ª")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("label", { attrs: { for: "d5" } }, [_c("b", [_vm._v("5ª")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("label", { attrs: { for: "d6" } }, [_c("b", [_vm._v("6ª")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("label", { attrs: { for: "d7" } }, [_c("b", [_vm._v("7ª")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("h6", [_c("b", [_vm._v("Turno: ")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("label", { attrs: { for: "mañana" } }, [
+      _c("b", [_vm._v("Mañana")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("label", { attrs: { for: "tarde" } }, [
+      _c("b", [_vm._v("Tarde")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("label", { attrs: { for: "noche" } }, [
+      _c("b", [_vm._v("Noche")])
+    ])
   },
   function() {
     var _vm = this
@@ -54893,6 +55310,853 @@ if (false) {
   module.hot.accept()
   if (module.hot.data) {
     require("vue-hot-reload-api")      .rerender("data-v-dcd138e0", module.exports)
+  }
+}
+
+/***/ }),
+/* 57 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(2)
+/* script */
+var __vue_script__ = __webpack_require__(58)
+/* template */
+var __vue_template__ = __webpack_require__(59)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/js/components/cursos/CursosEdit.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-3c53489e", Component.options)
+  } else {
+    hotAPI.reload("data-v-3c53489e", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 58 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__event_bus__ = __webpack_require__(3);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+
+	props: ['edit_curso'],
+
+	methods: {
+
+		change: function change(point) {
+			__WEBPACK_IMPORTED_MODULE_1__event_bus__["a" /* default */].$emit('change', point);
+		},
+
+		updateCurso: function updateCurso() {
+			console.log(this.edit_curso);
+			// axios.put('cursos/'+this.edit_curso.id, this.edit_curso).then(response => {
+			// 	M.toast({html: 'Datos Actualizados', classes: 'green'});
+			//       this.change(1);
+			// }).catch(error => {
+			// 	M.toast({html: 'X Error', classes: 'red'})
+			// 	console.log(error.response.data);
+			//       this.change(1);
+			// });
+		}
+
+	}
+
+});
+
+/***/ }),
+/* 59 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [
+    _c("div", { staticClass: "fixed-action-btn", attrs: { id: "boton" } }, [
+      _c(
+        "a",
+        {
+          staticClass: "btn-floating btn-large blue",
+          on: {
+            click: function($event) {
+              _vm.change(1)
+            }
+          }
+        },
+        [_c("i", { staticClass: "fas fa-arrow-left fa-lg" })]
+      )
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "col s10 offset-s1" }, [
+      _c(
+        "form",
+        {
+          attrs: { method: "POST" },
+          on: {
+            submit: function($event) {
+              $event.preventDefault()
+              _vm.updateCurso()
+            }
+          }
+        },
+        [
+          _c("div", { staticClass: "card" }, [
+            _c("div", { staticClass: "card-content" }, [
+              _c("div", { staticClass: "row" }, [
+                _c("div", { staticClass: "col m6 s12" }, [
+                  _vm._m(0),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    { staticClass: "radio-group", attrs: { required: "" } },
+                    [
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.edit_curso.curso,
+                            expression: "edit_curso.curso"
+                          }
+                        ],
+                        attrs: { type: "radio", value: "1º", id: "c1" },
+                        domProps: {
+                          checked: _vm._q(_vm.edit_curso.curso, "1º")
+                        },
+                        on: {
+                          change: function($event) {
+                            _vm.$set(_vm.edit_curso, "curso", "1º")
+                          }
+                        }
+                      }),
+                      _vm._v(" "),
+                      _vm._m(1),
+                      _vm._v(" "),
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.edit_curso.curso,
+                            expression: "edit_curso.curso"
+                          }
+                        ],
+                        attrs: { type: "radio", value: "2º", id: "c2" },
+                        domProps: {
+                          checked: _vm._q(_vm.edit_curso.curso, "2º")
+                        },
+                        on: {
+                          change: function($event) {
+                            _vm.$set(_vm.edit_curso, "curso", "2º")
+                          }
+                        }
+                      }),
+                      _vm._v(" "),
+                      _vm._m(2),
+                      _vm._v(" "),
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.edit_curso.curso,
+                            expression: "edit_curso.curso"
+                          }
+                        ],
+                        attrs: { type: "radio", value: "3º", id: "c3" },
+                        domProps: {
+                          checked: _vm._q(_vm.edit_curso.curso, "3º")
+                        },
+                        on: {
+                          change: function($event) {
+                            _vm.$set(_vm.edit_curso, "curso", "3º")
+                          }
+                        }
+                      }),
+                      _vm._v(" "),
+                      _vm._m(3),
+                      _vm._v(" "),
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.edit_curso.curso,
+                            expression: "edit_curso.curso"
+                          }
+                        ],
+                        attrs: { type: "radio", value: "4º", id: "c4" },
+                        domProps: {
+                          checked: _vm._q(_vm.edit_curso.curso, "4º")
+                        },
+                        on: {
+                          change: function($event) {
+                            _vm.$set(_vm.edit_curso, "curso", "4º")
+                          }
+                        }
+                      }),
+                      _vm._v(" "),
+                      _vm._m(4),
+                      _vm._v(" "),
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.edit_curso.curso,
+                            expression: "edit_curso.curso"
+                          }
+                        ],
+                        attrs: { type: "radio", value: "5º", id: "c5" },
+                        domProps: {
+                          checked: _vm._q(_vm.edit_curso.curso, "5º")
+                        },
+                        on: {
+                          change: function($event) {
+                            _vm.$set(_vm.edit_curso, "curso", "5º")
+                          }
+                        }
+                      }),
+                      _vm._v(" "),
+                      _vm._m(5)
+                    ]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "col m6 s12" }, [
+                  _vm._m(6),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    { staticClass: "radio-group", attrs: { required: "" } },
+                    [
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.edit_curso.division,
+                            expression: "edit_curso.division"
+                          }
+                        ],
+                        attrs: { type: "radio", value: "1ª", id: "d1" },
+                        domProps: {
+                          checked: _vm._q(_vm.edit_curso.division, "1ª")
+                        },
+                        on: {
+                          change: function($event) {
+                            _vm.$set(_vm.edit_curso, "division", "1ª")
+                          }
+                        }
+                      }),
+                      _vm._v(" "),
+                      _vm._m(7),
+                      _vm._v(" "),
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.edit_curso.division,
+                            expression: "edit_curso.division"
+                          }
+                        ],
+                        attrs: { type: "radio", value: "2ª", id: "d2" },
+                        domProps: {
+                          checked: _vm._q(_vm.edit_curso.division, "2ª")
+                        },
+                        on: {
+                          change: function($event) {
+                            _vm.$set(_vm.edit_curso, "division", "2ª")
+                          }
+                        }
+                      }),
+                      _vm._v(" "),
+                      _vm._m(8),
+                      _vm._v(" "),
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.edit_curso.division,
+                            expression: "edit_curso.division"
+                          }
+                        ],
+                        attrs: { type: "radio", value: "3ª", id: "d3" },
+                        domProps: {
+                          checked: _vm._q(_vm.edit_curso.division, "3ª")
+                        },
+                        on: {
+                          change: function($event) {
+                            _vm.$set(_vm.edit_curso, "division", "3ª")
+                          }
+                        }
+                      }),
+                      _vm._v(" "),
+                      _vm._m(9),
+                      _vm._v(" "),
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.edit_curso.division,
+                            expression: "edit_curso.division"
+                          }
+                        ],
+                        attrs: { type: "radio", value: "4ª", id: "d4" },
+                        domProps: {
+                          checked: _vm._q(_vm.edit_curso.division, "4ª")
+                        },
+                        on: {
+                          change: function($event) {
+                            _vm.$set(_vm.edit_curso, "division", "4ª")
+                          }
+                        }
+                      }),
+                      _vm._v(" "),
+                      _vm._m(10),
+                      _vm._v(" "),
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.edit_curso.division,
+                            expression: "edit_curso.division"
+                          }
+                        ],
+                        attrs: { type: "radio", value: "5ª", id: "d5" },
+                        domProps: {
+                          checked: _vm._q(_vm.edit_curso.division, "5ª")
+                        },
+                        on: {
+                          change: function($event) {
+                            _vm.$set(_vm.edit_curso, "division", "5ª")
+                          }
+                        }
+                      }),
+                      _vm._v(" "),
+                      _vm._m(11),
+                      _vm._v(" "),
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.edit_curso.division,
+                            expression: "edit_curso.division"
+                          }
+                        ],
+                        attrs: { type: "radio", value: "6ª", id: "d6" },
+                        domProps: {
+                          checked: _vm._q(_vm.edit_curso.division, "6ª")
+                        },
+                        on: {
+                          change: function($event) {
+                            _vm.$set(_vm.edit_curso, "division", "6ª")
+                          }
+                        }
+                      }),
+                      _vm._v(" "),
+                      _vm._m(12),
+                      _vm._v(" "),
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.edit_curso.division,
+                            expression: "edit_curso.division"
+                          }
+                        ],
+                        attrs: { type: "radio", value: "7ª", id: "d7" },
+                        domProps: {
+                          checked: _vm._q(_vm.edit_curso.division, "7ª")
+                        },
+                        on: {
+                          change: function($event) {
+                            _vm.$set(_vm.edit_curso, "division", "7ª")
+                          }
+                        }
+                      }),
+                      _vm._v(" "),
+                      _vm._m(13)
+                    ]
+                  )
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "row" }, [
+                _vm._m(14),
+                _vm._v(" "),
+                _c("div", { staticClass: "col m6 s12 offset-m2" }, [
+                  _vm._m(15),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    { staticClass: "radio-group", attrs: { required: "" } },
+                    [
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.edit_curso.turno,
+                            expression: "edit_curso.turno"
+                          }
+                        ],
+                        attrs: { type: "radio", value: "Mañana", id: "mañana" },
+                        domProps: {
+                          checked: _vm._q(_vm.edit_curso.turno, "Mañana")
+                        },
+                        on: {
+                          change: function($event) {
+                            _vm.$set(_vm.edit_curso, "turno", "Mañana")
+                          }
+                        }
+                      }),
+                      _vm._v(" "),
+                      _vm._m(16),
+                      _vm._v(" "),
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.edit_curso.turno,
+                            expression: "edit_curso.turno"
+                          }
+                        ],
+                        attrs: { type: "radio", value: "Tarde", id: "tarde" },
+                        domProps: {
+                          checked: _vm._q(_vm.edit_curso.turno, "Tarde")
+                        },
+                        on: {
+                          change: function($event) {
+                            _vm.$set(_vm.edit_curso, "turno", "Tarde")
+                          }
+                        }
+                      }),
+                      _vm._v(" "),
+                      _vm._m(17),
+                      _vm._v(" "),
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.edit_curso.turno,
+                            expression: "edit_curso.turno"
+                          }
+                        ],
+                        attrs: { type: "radio", value: "Noche", id: "noche" },
+                        domProps: {
+                          checked: _vm._q(_vm.edit_curso.turno, "Noche")
+                        },
+                        on: {
+                          change: function($event) {
+                            _vm.$set(_vm.edit_curso, "turno", "Noche")
+                          }
+                        }
+                      }),
+                      _vm._v(" "),
+                      _vm._m(18)
+                    ]
+                  )
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "row" }, [
+                _c("div", { staticClass: "input-field col s12" }, [
+                  _c("input", {
+                    staticClass: "validate",
+                    attrs: { type: "text", value: "", id: "buscar" },
+                    on: {
+                      keyup: function($event) {
+                        _vm.getMaterias()
+                      }
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("label", { attrs: { for: "buscar" } }, [
+                    _vm._v("Buscar Materia")
+                  ])
+                ])
+              ]),
+              _vm._v(" "),
+              _c("br")
+            ]),
+            _vm._v(" "),
+            _vm._m(19)
+          ])
+        ]
+      )
+    ])
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("h6", [_c("b", [_vm._v("Curso: ")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("label", { attrs: { for: "c1" } }, [_c("b", [_vm._v("1º")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("label", { attrs: { for: "c2" } }, [_c("b", [_vm._v("2º")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("label", { attrs: { for: "c3" } }, [_c("b", [_vm._v("3º")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("label", { attrs: { for: "c4" } }, [_c("b", [_vm._v("4º")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("label", { attrs: { for: "c5" } }, [_c("b", [_vm._v("5º")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("h6", [_c("b", [_vm._v("División: ")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("label", { attrs: { for: "d1" } }, [_c("b", [_vm._v("1ª")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("label", { attrs: { for: "d2" } }, [_c("b", [_vm._v("2ª")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("label", { attrs: { for: "d3" } }, [_c("b", [_vm._v("3ª")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("label", { attrs: { for: "d4" } }, [_c("b", [_vm._v("4ª")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("label", { attrs: { for: "d5" } }, [_c("b", [_vm._v("5ª")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("label", { attrs: { for: "d6" } }, [_c("b", [_vm._v("6ª")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("label", { attrs: { for: "d7" } }, [_c("b", [_vm._v("7ª")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "input-field col m4 s12" }, [
+      _c(
+        "select",
+        { staticClass: "validate", attrs: { id: "orientacion", requierd: "" } },
+        [
+          _c("option", { attrs: { value: "", disabled: "", selected: "" } }, [
+            _vm._v("Orientación")
+          ]),
+          _vm._v(" "),
+          _c("option", { attrs: { value: "Ciclo Basico" } }, [
+            _vm._v("Ciclo Básisco")
+          ]),
+          _vm._v(" "),
+          _c("option", { attrs: { value: "Ciencias Sociales" } }, [
+            _vm._v("Ciencias Sociales y Humanidades.")
+          ]),
+          _vm._v(" "),
+          _c("option", { attrs: { value: "Educacion Fisica" } }, [
+            _vm._v("Ciencias Naturales")
+          ]),
+          _vm._v(" "),
+          _c("option", { attrs: { value: "Economía y Administración" } }, [
+            _vm._v("Economía y Administración")
+          ]),
+          _vm._v(" "),
+          _c("option", { attrs: { value: "Lenguas" } }, [_vm._v("Lenguas")]),
+          _vm._v(" "),
+          _c("option", { attrs: { value: "Agro y Ambiente" } }, [
+            _vm._v("Agro y Ambiente")
+          ]),
+          _vm._v(" "),
+          _c("option", { attrs: { value: "Comunicación" } }, [
+            _vm._v("Comunicación")
+          ]),
+          _vm._v(" "),
+          _c("option", { attrs: { value: "Informática" } }, [
+            _vm._v("Informática")
+          ]),
+          _vm._v(" "),
+          _c("option", { attrs: { value: "Educación Física" } }, [
+            _vm._v("Educación Física")
+          ]),
+          _vm._v(" "),
+          _c("option", { attrs: { value: "Turismo" } }, [_vm._v("Turismo")]),
+          _vm._v(" "),
+          _c("option", { attrs: { value: "Arte" } }, [_vm._v("Arte")]),
+          _vm._v(" "),
+          _c("option", { attrs: { value: "Literatura" } }, [
+            _vm._v("Literatura")
+          ]),
+          _vm._v(" "),
+          _c("option", { attrs: { value: "Educación" } }, [
+            _vm._v("Educación")
+          ]),
+          _vm._v(" "),
+          _c("option", { attrs: { value: "Física y Matemática" } }, [
+            _vm._v("Física y Matemática")
+          ])
+        ]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("h6", [_c("b", [_vm._v("Turno: ")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("label", { attrs: { for: "mañana" } }, [
+      _c("b", [_vm._v("Mañana")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("label", { attrs: { for: "tarde" } }, [
+      _c("b", [_vm._v("Tarde")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("label", { attrs: { for: "noche" } }, [
+      _c("b", [_vm._v("Noche")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "card-action" }, [
+      _c(
+        "button",
+        {
+          staticClass:
+            "btn btn-flat waves-effect waves-green green modal-close white-text",
+          attrs: { type: "submit" }
+        },
+        [_vm._v("Guardar")]
+      )
+    ])
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-3c53489e", module.exports)
   }
 }
 

@@ -12,7 +12,7 @@ Vue.component('alumnos-edit', require('./components/alumnos/AlumnosEdit.vue'));
 //Cursos
 Vue.component('cursos-index', require('./components/cursos/CursosIndex.vue'));
 Vue.component('cursos-create', require('./components/cursos/CursosCreate.vue'));
-// Vue.component('alumnos-edit', require('./components/alumnos/AlumnosEdit.vue'));
+Vue.component('cursos-edit', require('./components/cursos/CursosEdit.vue'));
 
 const app = new Vue({
     el: '#app'

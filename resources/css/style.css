@@ -152,7 +152,7 @@ select:focus {
  textarea.materialize-textarea:focus:not([readonly]) {
   border-bottom: 1px solid #689f38;
   -webkit-box-shadow: 0 1px 0 0 #689f38;
-          box-shadow: 0 1px 0 0 #689f38;
+  box-shadow: 0 1px 0 0 #689f38;
 }
 
 .input-field .helper-text {
@@ -226,8 +226,38 @@ blockquote {
   border-bottom-left-radius: 0;
 }
 
+.btn-group>.btn-border:first-child:not(:last-child) {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-top: 2px solid #000000;
+  border-left: 2px solid #000000;
+  border-bottom: 2px solid #000000;
+
+}
+
+.btn-group>.btn-border:not(:first-child):not(:last-child) {
+  border: 2px solid #000000;
+  border-radius: 0;
+}
+
+.btn-group>.btn-border:last-child:not(:first-child) {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-top: 2px solid #000000;
+  border-right: 2px solid #000000;
+  border-bottom: 2px solid #000000;
+}
+
 .btn-group>.btn-inactive {
-  background-color: #607d8b;
+  background-color: #ffff;
+}
+
+.btn-group>.btn-inactive {
+  background-color: #ffff;
+}
+
+.btn-group>.btn-inactive span {
+  color: #000000;
 }
 
 .btn-group>.btn {
@@ -236,12 +266,65 @@ blockquote {
 }
 
 .btn-group>.btn-inactive:hover {
-  background-color: #728F9D;
+  background-color: #558b2f;
 }
 
 .btn-group>.btn:hover {
   -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+}
+
+/*Bouttom Group Radio buttom*/
+
+.radio-group {
+  box-sizing: border-box;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+.radio-group input {
+  width: 0;
+  height: 0;
+  position: absolute;
+  left: -9999px;
+}
+.radio-group  input + label {
+  margin: 0;
+  padding: 5px 15px;
+  color: #000;
+  box-sizing: border-box;
+  border-left: solid 2px #DDD;
+  border-top: solid 2px #DDD;
+  border-bottom: solid 2px #DDD;
+  position: relative;
+  display: inline-block;
+  background-color: #FFF;
+  text-align: center;
+  box-shadow: 0 0 0 rgba(255, 255, 255, 0);
+}
+
+.radio-group input + label:first-of-type {
+  border-radius: 5px 0 0 5px;
+  border-left: solid 2px #DDD;
+  border-top: solid 2px #DDD;
+  border-bottom: solid 2px #DDD;
+  border-right: none;
+}
+.radio-group input + label:last-of-type {
+  border-radius: 0 6px 6px 0;
+  border: solid 2px #DDD;
+}
+.radio-group input:hover + label {
+  background-color: #dcedc8;
+  border: none;
+}
+.radio-group input:checked + label {
+  background-color: #7cb342;
+  color: #FFF;
+  border: none;
+  box-shadow: 0 0 10px rgba(102, 179, 251, 0.5);
+  z-index: 1;
 }
 
 /*Configuracion del NavBar*/

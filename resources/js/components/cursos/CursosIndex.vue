@@ -6,13 +6,13 @@
 		</div>
 
 		<div id="edit" style="display: none;">
-			
+			<cursos-edit :edit_curso="edit_curso"></cursos-edit>
 		</div>
 
 		<div id="index" style="display: block;">
 
 			<div class="fixed-action-btn" id="boton">
-		  	<a class="btn-floating btn-large green modal-trigger" v-on:click="change(2);"><i class="fas fa-plus fa-lg"></i></a>
+		  	<a class="btn-floating btn-large green" v-on:click="change(2);"><i class="fas fa-plus fa-lg"></i></a>
 			</div>
 
 			<blockquote><h1>Cursos</h1></blockquote>
@@ -36,9 +36,9 @@
 						<td>
 							<div class="btn-group" role="group">
 					      <a class="btn blue"><i class="fas fa-print fa-lg"></i></a>
-					      <a class="btn green modal-trigger" @onclick="edit_curso = curso"><i class="fas fa-pen fa-lg"></i></a>
-								<a class="btn red darken-4 modal-trigger"><i class="fas fa-trash fa-lg"></i></a>
-					    	</div>
+					      <a class="btn green" v-on:click="editCurso(curso);"><i class="fas fa-pen fa-lg"></i></a>
+								<a href="#eliminar" class="btn red darken-4 modal-trigger" v-on:click.prevent="confirmDelete(curso)"><i class="fas fa-trash fa-lg"></i></a>
+					    </div>
 						</td>
 					</tr>
 				</tbody>
@@ -50,6 +50,17 @@
 				</span>
 			</infinite-loading>
 		</div>
+
+		<div id="eliminar" class="modal">
+	    <div class="modal-content">
+	      <h4>¿Estas Seguro?</h4>
+	      <p>¿Realmente desea eliminar los datos del Curso?</p>
+	    </div>
+	    <div class="modal-footer">
+	    	<a href="#!" class="modal-close waves-effect waves-green btn green">¡NO! Cancelar</a>
+	      <a href="#!" class="modal-close waves-effect waves-green btn red" v-on:click.prevent="deleteCurso()">¡SI! Eliminar</a>
+	    </div>
+	  </div>
 
 	</div>
 </template>
@@ -63,9 +74,7 @@
 	export default {
 
 		created() {
-			this.getCursos();
 			EventBus.$on('change', data => {
-				this.getCursos();
         this.change(data);
        });
 		},
@@ -73,7 +82,8 @@
 		data() {
 			return {
 				cursos: [],
-				edit_curso: {}
+				edit_curso: {},
+				delete_curso: ''
 			}
 		},
 
@@ -125,6 +135,22 @@
 					edit.style.display = 'block';
 				};
 			},
+
+			editCurso: function(curso) {
+				this.edit_curso = curso;
+				this.change(3);
+			},
+
+			confirmDelete: function(curso) {
+				this.delete_curso = curso.id;
+			},
+
+			deleteCurso: function() {
+				axios.delete('cursos/' + this.delete_curso).then(response => {
+					this.getCursos();
+					M.toast({html: 'Curso Eliminado', classes: 'red'})
+				});
+			}
 
 		}
 

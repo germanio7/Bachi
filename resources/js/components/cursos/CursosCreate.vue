@@ -1,86 +1,116 @@
 <template>
 	<div>
+		<div class="fixed-action-btn" id="boton">
+		  <a class="btn-floating btn-large blue" v-on:click="change(1);"><i class="fas fa-arrow-left fa-lg"></i></a>
+		</div>
 		<div class="col s10 offset-s1">
 			<blockquote><h4>Nuevo Curso</h4></blockquote>
-			<form method='POST' v-on:submit.prevent="createCursos">
-	      <div class="card">
-	        <div class="card-content">
-          	<div class="row">
-							<div class="input-field col s6">
-			          <select name="curso" id="curso" class="validate" v-model="newCurso">
-			          	<option value="" disabled selected>Curso</option>
-			          	<option value="1º">1º</option>
-			          	<option value="2º">2º</option>
-			          	<option value="3º">3º</option>
-			          	<option value="4º">4º</option>
-			          	<option value="5º">5º</option>
-			          </select>
-			        </div>
+				<form method='POST' v-on:submit.prevent="createCursos">
+		      <div class="card">
+		        <div class="card-content">
+	          	<div class="row">
+								<div class="col m6 s12">
+									<h6><b>Curso: </b></h6>
+				          <div class="radio-group" required>
+										<input type="radio" v-model="newCurso" value="1º" id="c1" />
+										<label for="c1"><b>1º</b></label>
 
-			        <div class="input-field col s6">
-			          <select name="division" id="division" class="validate" v-model="newDivision">
-			          	<option value="" disabled selected>División</option>
-			          	<option value="1ª">1ª</option>
-			          	<option value="2ª">2ª</option>
-			          	<option value="3ª">3ª</option>
-			          	<option value="4ª">4ª</option>
-			          	<option value="5ª">5ª</option>
-			          	<option value="6ª">6ª</option>
-			          	<option value="7ª">7ª</option>
-			          </select>
-			        </div>
-			      </div>
-						<div class="row">
-			        <div class="input-field col s6">
-			          <select id="orientacion" name="orientacion" class="validate" v-model="newOrientacion">
-			            <option value="" disabled selected>Orientación</option>
-			            <option value="Ciclo Basico">Ciclo Básisco</option>
-			            <option value="Ciencias Sociales">Ciencias Sociales y Humanidades.</option>
-			            <option value="Educacion Fisica">Ciencias Naturales</option>
-			            <option value="Economía y Administración">Economía y Administración</option>
-			            <option value="Lenguas">Lenguas</option>
-			            <option value="Agro y Ambiente">Agro y Ambiente</option>
-			            <option value="Comunicación">Comunicación</option>
-			            <option value="Informática">Informática</option>
-			            <option value="Educación Física">Educación Física</option>
-			            <option value="Turismo">Turismo</option>
-			            <option value="Arte">Arte</option>
-			            <option value="Literatura">Literatura</option>
-			            <option value="Educación">Educación</option>
-			            <option value="Física y Matemática">Física y Matemática</option>
-			          </select>
-			        </div>
+										<input type="radio" v-model="newCurso" value="2º" id="c2" />
+										<label for="c2"><b>2º</b></label>
 
-			        <div class="input-field col s6">
-			          <select id="turno" name="turno" class="validate" v-model="newTurno">
-			            <option value="" disabled selected>Turno</option>
-			            <option value="Mañana">Mañana</option>
-			            <option value="Tarde">Tarde</option>
-			            <option value="Noche">Noche</option>
-			          </select>
-			        </div>
+										<input type="radio" v-model="newCurso" value="3º" id="c3" />
+										<label for="c3"><b>3º</b></label>
+
+										<input type="radio" v-model="newCurso" value="4º" id="c4" />
+										<label for="c4"><b>4º</b></label>
+
+										<input type="radio" v-model="newCurso" value="5º" id="c5" />
+										<label for="c5"><b>5º</b></label>
+									</div>
+				        </div>
+
+				        <div class="col m6 s12">
+									<h6><b>División: </b></h6>
+				          <div class="radio-group" required>
+										<input type="radio" v-model="newDivision" value="1ª" id="d1" />
+										<label for="d1"><b>1ª</b></label>
+
+										<input type="radio" v-model="newDivision" value="2ª" id="d2" />
+										<label for="d2"><b>2ª</b></label>
+
+										<input type="radio" v-model="newDivision" value="3ª" id="d3" />
+										<label for="d3"><b>3ª</b></label>
+
+										<input type="radio" v-model="newDivision" value="4ª" id="d4" />
+										<label for="d4"><b>4ª</b></label>
+
+										<input type="radio" v-model="newDivision" value="5ª" id="d5" />
+										<label for="d5"><b>5ª</b></label>
+
+										<input type="radio" v-model="newDivision" value="6ª" id="d6" />
+										<label for="d6"><b>6ª</b></label>
+
+										<input type="radio" v-model="newDivision" value="7ª" id="d7" />
+										<label for="d7"><b>7ª</b></label>
+									</div>
+				        </div>
+				      </div>
+							<div class="row">
+				        <div class="input-field col m4 s12">
+				          <select id="orientacion" requierd v-model="newOrientacion" class="validate">
+				            <option value="" disabled selected>Orientación</option>
+				            <option value="Ciclo Basico">Ciclo Básisco</option>
+				            <option value="Ciencias Sociales">Ciencias Sociales y Humanidades.</option>
+				            <option value="Educacion Fisica">Ciencias Naturales</option>
+				            <option value="Economía y Administración">Economía y Administración</option>
+				            <option value="Lenguas">Lenguas</option>
+				            <option value="Agro y Ambiente">Agro y Ambiente</option>
+				            <option value="Comunicación">Comunicación</option>
+				            <option value="Informática">Informática</option>
+				            <option value="Educación Física">Educación Física</option>
+				            <option value="Turismo">Turismo</option>
+				            <option value="Arte">Arte</option>
+				            <option value="Literatura">Literatura</option>
+				            <option value="Educación">Educación</option>
+				            <option value="Física y Matemática">Física y Matemática</option>
+				          </select>
+				        </div>
+
+				        <div class="col m6 s12 offset-m2">
+									<h6><b>Turno: </b></h6>
+				          <div class="radio-group" required>
+										<input type="radio" v-model="newTurno" value="Mañana" id="mañana" />
+										<label for="mañana"><b>Mañana</b></label>
+
+										<input type="radio" v-model="newTurno" value="Tarde" id="tarde" />
+										<label for="tarde"><b>Tarde</b></label>
+
+										<input type="radio" v-model="newTurno" value="Noche" id="noche" />
+										<label for="noche"><b>Noche</b></label>
+									</div>
+				        </div>
+				      </div>
+							<div class="row">
+								<div class="input-field col s12">
+									<input type="text" value="" id="buscar" v-on:keyup="getMaterias()" class="validate">
+									<label for="buscar">Buscar Materia</label>
+				        </div>
+				      </div>
+			        <br>
+				      <!-- <div v-for="materia in materias">
+			          <div class="input-field col s12 m6">
+									<label>
+						        <input type="checkbox" v-model="newMateriaId" :value="materia.id"/>
+						        <span> @{{materia.nombre}}</span>
+						      </label>
+								</div>
+			        </div> -->
 			      </div>
-						<div class="row">
-							<div class="input-field col s12">
-								<input type="text" value="" id="buscar" v-on:keyup="getMaterias()" class="validate">
-								<label for="buscar">Buscar Materia</label>
-			        </div>
-			      </div>
-		        <br>
-			      <!-- <div v-for="materia in materias">
-		          <div class="input-field col s12 m6">
-								<label>
-					        <input type="checkbox" v-model="newMateriaId" :value="materia.id"/>
-					        <span> @{{materia.nombre}}</span>
-					      </label>
-							</div>
-		        </div> -->
+		        <div class="card-action">
+		          <button type="submit" class="btn btn-flat waves-effect waves-green green modal-close white-text">Guardar</button>
+		        </div>
 		      </div>
-	        <div class="card-action">
-	          <button type="submit" class="btn btn-flat waves-effect waves-green green modal-close white-text">Guardar</button>
-	        </div>
-	      </div>
-			</form>
+				</form>
 		</div>
 	</div>
 </template>
@@ -106,6 +136,10 @@
 		methods: {
 
 			change: function(point) {
+				this.newCurso = '';
+					this.newDivision = '';
+					this.newOrientacion = '';
+					this.newTurno = '';
 				EventBus.$emit('change', point);
 			},
 
@@ -122,6 +156,8 @@
 					this.newOrientacion = '';
 					this.newTurno = '';
 					this.change(1);
+					var toastHTML = 'Curso Registrado';
+					M.toast({html: toastHTML, classes: 'green'});
 				}).catch(error => {
 					this.change(1);
 					console.log(error.response.data)
