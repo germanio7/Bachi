@@ -67,6 +67,12 @@
 /* 0 */
 /***/ (function(module, exports, __webpack_require__) {
 
+module.exports = __webpack_require__(22);
+
+/***/ }),
+/* 1 */
+/***/ (function(module, exports, __webpack_require__) {
+
 "use strict";
 
 
@@ -374,12 +380,6 @@ module.exports = {
 
 
 /***/ }),
-/* 1 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(22);
-
-/***/ }),
 /* 2 */
 /***/ (function(module, exports) {
 
@@ -543,7 +543,7 @@ module.exports = g;
 "use strict";
 /* WEBPACK VAR INJECTION */(function(process) {
 
-var utils = __webpack_require__(0);
+var utils = __webpack_require__(1);
 var normalizeHeaderName = __webpack_require__(25);
 
 var DEFAULT_CONTENT_TYPE = {
@@ -13769,7 +13769,7 @@ process.umask = function() { return 0; };
 "use strict";
 
 
-var utils = __webpack_require__(0);
+var utils = __webpack_require__(1);
 var settle = __webpack_require__(26);
 var buildURL = __webpack_require__(28);
 var parseHeaders = __webpack_require__(29);
@@ -25007,6 +25007,10 @@ Vue.component('cursos-edit', __webpack_require__(57));
 Vue.component('materias-index', __webpack_require__(60));
 Vue.component('materias-create', __webpack_require__(63));
 Vue.component('materias-edit', __webpack_require__(66));
+//Docentes
+Vue.component('docentes-index', __webpack_require__(69));
+Vue.component('docentes-create', __webpack_require__(72));
+Vue.component('docentes-edit', __webpack_require__(75));
 
 var app = new Vue({
     el: '#app'
@@ -25038,7 +25042,7 @@ try {
  * CSRF token as a header based on the value of the "XSRF" token cookie.
  */
 
-window.axios = __webpack_require__(1);
+window.axios = __webpack_require__(0);
 
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
@@ -46173,7 +46177,7 @@ module.exports = function(module) {
 "use strict";
 
 
-var utils = __webpack_require__(0);
+var utils = __webpack_require__(1);
 var bind = __webpack_require__(9);
 var Axios = __webpack_require__(24);
 var defaults = __webpack_require__(6);
@@ -46260,7 +46264,7 @@ function isSlowBuffer (obj) {
 
 
 var defaults = __webpack_require__(6);
-var utils = __webpack_require__(0);
+var utils = __webpack_require__(1);
 var InterceptorManager = __webpack_require__(33);
 var dispatchRequest = __webpack_require__(34);
 
@@ -46345,7 +46349,7 @@ module.exports = Axios;
 "use strict";
 
 
-var utils = __webpack_require__(0);
+var utils = __webpack_require__(1);
 
 module.exports = function normalizeHeaderName(headers, normalizedName) {
   utils.forEach(headers, function processHeader(value, name) {
@@ -46425,7 +46429,7 @@ module.exports = function enhanceError(error, config, code, request, response) {
 "use strict";
 
 
-var utils = __webpack_require__(0);
+var utils = __webpack_require__(1);
 
 function encode(val) {
   return encodeURIComponent(val).
@@ -46498,7 +46502,7 @@ module.exports = function buildURL(url, params, paramsSerializer) {
 "use strict";
 
 
-var utils = __webpack_require__(0);
+var utils = __webpack_require__(1);
 
 // Headers whose duplicates are ignored by node
 // c.f. https://nodejs.org/api/http.html#http_message_headers
@@ -46558,7 +46562,7 @@ module.exports = function parseHeaders(headers) {
 "use strict";
 
 
-var utils = __webpack_require__(0);
+var utils = __webpack_require__(1);
 
 module.exports = (
   utils.isStandardBrowserEnv() ?
@@ -46676,7 +46680,7 @@ module.exports = btoa;
 "use strict";
 
 
-var utils = __webpack_require__(0);
+var utils = __webpack_require__(1);
 
 module.exports = (
   utils.isStandardBrowserEnv() ?
@@ -46736,7 +46740,7 @@ module.exports = (
 "use strict";
 
 
-var utils = __webpack_require__(0);
+var utils = __webpack_require__(1);
 
 function InterceptorManager() {
   this.handlers = [];
@@ -46795,7 +46799,7 @@ module.exports = InterceptorManager;
 "use strict";
 
 
-var utils = __webpack_require__(0);
+var utils = __webpack_require__(1);
 var transformData = __webpack_require__(35);
 var isCancel = __webpack_require__(13);
 var defaults = __webpack_require__(6);
@@ -46888,7 +46892,7 @@ module.exports = function dispatchRequest(config) {
 "use strict";
 
 
-var utils = __webpack_require__(0);
+var utils = __webpack_require__(1);
 
 /**
  * Transform the data for a request or a response
@@ -47364,7 +47368,7 @@ module.exports = Component.exports
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_infinite_loading__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_infinite_loading___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_vue_infinite_loading__);
@@ -47790,7 +47794,7 @@ module.exports = Component.exports
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__event_bus__ = __webpack_require__(3);
 //
@@ -54072,7 +54076,7 @@ module.exports = Component.exports
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_infinite_loading__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_infinite_loading___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_vue_infinite_loading__);
@@ -54494,7 +54498,7 @@ module.exports = Component.exports
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__event_bus__ = __webpack_require__(3);
 //
@@ -55357,7 +55361,7 @@ module.exports = Component.exports
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__event_bus__ = __webpack_require__(3);
 //
@@ -56190,7 +56194,7 @@ module.exports = Component.exports
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_infinite_loading__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_infinite_loading___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_vue_infinite_loading__);
@@ -56588,7 +56592,7 @@ module.exports = Component.exports
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_infinite_loading__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_infinite_loading___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_vue_infinite_loading__);
@@ -56652,7 +56656,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 			}).then(function (response) {
 				_this.newNombre = '';
 				_this.change(1);
-				var toastHTML = 'Materia Registrado';
+				var toastHTML = 'Materia Registrada';
 				M.toast({ html: toastHTML, classes: 'green' });
 			}).catch(function (error) {
 				_this.change(1);
@@ -56696,7 +56700,7 @@ var render = function() {
           on: {
             submit: function($event) {
               $event.preventDefault()
-              return _vm.createMateria($event)
+              _vm.createMateria()
             }
           }
         },
@@ -56827,7 +56831,7 @@ module.exports = Component.exports
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__event_bus__ = __webpack_require__(3);
 //
@@ -56977,7 +56981,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("blockquote", [_c("h4", [_vm._v("Nueva Materia")])])
+    return _c("blockquote", [_c("h4", [_vm._v("Editar Materia")])])
   },
   function() {
     var _vm = this
@@ -57002,6 +57006,1413 @@ if (false) {
   module.hot.accept()
   if (module.hot.data) {
     require("vue-hot-reload-api")      .rerender("data-v-b2375404", module.exports)
+  }
+}
+
+/***/ }),
+/* 69 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(2)
+/* script */
+var __vue_script__ = __webpack_require__(70)
+/* template */
+var __vue_template__ = __webpack_require__(71)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/js/components/docentes/DocentesIndex.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-6adefe2e", Component.options)
+  } else {
+    hotAPI.reload("data-v-6adefe2e", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 70 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_infinite_loading__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_infinite_loading___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_vue_infinite_loading__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__event_bus__ = __webpack_require__(3);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+	created: function created() {
+		var _this = this;
+
+		__WEBPACK_IMPORTED_MODULE_2__event_bus__["a" /* default */].$on('change', function (data) {
+			_this.change(data);
+		});
+	},
+	data: function data() {
+		return {
+			docentes: [],
+			edit_docente: {},
+			delete_docente: ''
+		};
+	},
+
+
+	methods: {
+
+		getDocentes: function getDocentes() {
+			var _this2 = this;
+
+			__WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('docentes').then(function (response) {
+				_this2.docentes = response.data.data;
+			});
+		},
+
+		infiniteHandler: function infiniteHandler($state) {
+			var _this3 = this;
+
+			var limit = this.docentes.length / 10 + 1;
+			__WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('docentes', { params: { page: limit } }).then(function (response) {
+				_this3.loadMore($state, response);
+			});
+		},
+
+		loadMore: function loadMore($state, response) {
+			if (response.data.data.length) {
+				this.docentes = this.docentes.concat(response.data.data);
+				$state.loaded();
+
+				if (response.data.total == this.docentes.length) {
+					$state.complete();
+				}
+			} else {
+				$state.complete();
+			}
+		},
+
+		change: function change(point) {
+			var index = document.getElementById('index');
+			var create = document.getElementById('create');
+			var edit = document.getElementById('edit');
+			if (point == 1) {
+				index.style.display = 'block';
+				create.style.display = 'none';
+				edit.style.display = 'none';
+				this.getDocentes();
+			} else if (point == 2) {
+				index.style.display = 'none';
+				create.style.display = 'block';
+				edit.style.display = 'none';
+			} else if (point == 3) {
+				index.style.display = 'none';
+				create.style.display = 'none';
+				edit.style.display = 'block';
+			};
+		},
+
+		editDocente: function editDocente(docente) {
+			this.edit_docente = docente;
+			this.change(3);
+		},
+
+		confirmDelete: function confirmDelete(docente) {
+			this.delete_docente = docente.id;
+		},
+
+		deleteDocente: function deleteDocente() {
+			var _this4 = this;
+
+			__WEBPACK_IMPORTED_MODULE_0_axios___default.a.delete('docentes/' + this.delete_docente).then(function (response) {
+				_this4.getDocentes();
+				M.toast({ html: 'Docente Eliminado', classes: 'red' });
+			});
+		}
+
+	}
+
+});
+
+/***/ }),
+/* 71 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [
+    _c(
+      "div",
+      { staticStyle: { display: "none" }, attrs: { id: "create" } },
+      [_c("br"), _vm._v(" "), _c("docentes-create")],
+      1
+    ),
+    _vm._v(" "),
+    _c(
+      "div",
+      { staticStyle: { display: "none" }, attrs: { id: "edit" } },
+      [
+        _c("br"),
+        _vm._v(" "),
+        _c("docentes-edit", { attrs: { edit_docente: _vm.edit_docente } })
+      ],
+      1
+    ),
+    _vm._v(" "),
+    _c(
+      "div",
+      { staticStyle: { display: "block" }, attrs: { id: "index" } },
+      [
+        _c("div", { staticClass: "fixed-action-btn", attrs: { id: "boton" } }, [
+          _c(
+            "a",
+            {
+              staticClass: "btn-floating btn-large green",
+              on: {
+                click: function($event) {
+                  _vm.change(2)
+                }
+              }
+            },
+            [_c("i", { staticClass: "fas fa-plus fa-lg" })]
+          )
+        ]),
+        _vm._v(" "),
+        _vm._m(0),
+        _vm._v(" "),
+        _c("table", { staticClass: "striped" }, [
+          _vm._m(1),
+          _vm._v(" "),
+          _c(
+            "tbody",
+            _vm._l(_vm.docentes, function(docente) {
+              return _c("tr", [
+                _c("td", [_vm._v(_vm._s(docente.cuil))]),
+                _vm._v(" "),
+                _c("td", [_vm._v(_vm._s(docente.apellido))]),
+                _vm._v(" "),
+                _c("td", [_vm._v(_vm._s(docente.nombre))]),
+                _vm._v(" "),
+                _c("td", [
+                  _c(
+                    "div",
+                    { staticClass: "btn-group", attrs: { role: "group" } },
+                    [
+                      _vm._m(2, true),
+                      _vm._v(" "),
+                      _c(
+                        "a",
+                        {
+                          staticClass: "btn green",
+                          on: {
+                            click: function($event) {
+                              _vm.editDocente(docente)
+                            }
+                          }
+                        },
+                        [_c("i", { staticClass: "fas fa-pen fa-lg" })]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "a",
+                        {
+                          staticClass: "btn red darken-4 modal-trigger",
+                          attrs: { href: "#eliminar" },
+                          on: {
+                            click: function($event) {
+                              $event.preventDefault()
+                              _vm.confirmDelete(docente)
+                            }
+                          }
+                        },
+                        [_c("i", { staticClass: "fas fa-trash fa-lg" })]
+                      )
+                    ]
+                  )
+                ])
+              ])
+            })
+          )
+        ]),
+        _vm._v(" "),
+        _c("infinite-loading", { on: { infinite: _vm.infiniteHandler } }, [
+          _c("span", { attrs: { slot: "no-more" }, slot: "no-more" }, [
+            _vm._v("\n\t\t\t\tTodos los datos han sido cargados\n\t\t\t")
+          ])
+        ])
+      ],
+      1
+    ),
+    _vm._v(" "),
+    _c("div", { staticClass: "modal", attrs: { id: "eliminar" } }, [
+      _vm._m(3),
+      _vm._v(" "),
+      _c("div", { staticClass: "modal-footer" }, [
+        _c(
+          "a",
+          {
+            staticClass: "modal-close waves-effect waves-green btn green",
+            attrs: { href: "#!" }
+          },
+          [_vm._v("¡NO! Cancelar")]
+        ),
+        _vm._v(" "),
+        _c(
+          "a",
+          {
+            staticClass: "modal-close waves-effect waves-green btn red",
+            attrs: { href: "#!" },
+            on: {
+              click: function($event) {
+                $event.preventDefault()
+                _vm.deleteDocente()
+              }
+            }
+          },
+          [_vm._v("¡SI! Eliminar")]
+        )
+      ])
+    ])
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("blockquote", [_c("h1", [_vm._v("Docentes")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("thead", [
+      _c("tr", [
+        _c("th", [_vm._v("Cuil")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Apellido")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Nombre")]),
+        _vm._v(" "),
+        _c("th")
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("a", { staticClass: "btn blue" }, [
+      _c("i", { staticClass: "fas fa-print fa-lg" })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "modal-content" }, [
+      _c("h4", [_vm._v("¿Estas Seguro?")]),
+      _vm._v(" "),
+      _c("p", [_vm._v("¿Realmente desea eliminar los datos del Docente?")])
+    ])
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-6adefe2e", module.exports)
+  }
+}
+
+/***/ }),
+/* 72 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(2)
+/* script */
+var __vue_script__ = __webpack_require__(73)
+/* template */
+var __vue_template__ = __webpack_require__(74)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/js/components/docentes/DocentesCreate.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-18b51250", Component.options)
+  } else {
+    hotAPI.reload("data-v-18b51250", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 73 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__event_bus__ = __webpack_require__(3);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+	data: function data() {
+		return {
+			newCuil: '',
+			newApellido: '',
+			newNombre: '',
+			newRegistro: '',
+			newTitulo: '',
+			newDireccion: '',
+			newTelefono: '',
+			newMail: ''
+		};
+	},
+
+
+	methods: {
+
+		change: function change(point) {
+			this.newNombre = '';
+			__WEBPACK_IMPORTED_MODULE_1__event_bus__["a" /* default */].$emit('change', point);
+		},
+
+		createDocente: function createDocente() {
+			var _this = this;
+
+			var url = 'docentes';
+			__WEBPACK_IMPORTED_MODULE_0_axios___default.a.post(url, {
+				cuil: this.newCuil,
+				apellido: this.newApellido,
+				nombre: this.newNombre,
+				matricula: this.newRegistro,
+				titulo: this.newTitulo,
+				direccion: this.newDireccion,
+				telefono: this.newTelefono,
+				email: this.newMail
+			}).then(function (response) {
+				_this.newCuil = '';
+				_this.newApellido = '';
+				_this.newNombre = '';
+				_this.newRegistro = '';
+				_this.newTitulo = '';
+				_this.newDireccion = '';
+				_this.newTelefono = '';
+				_this.newMail = '';
+				_this.change(1);
+				var toastHTML = 'Docente Registrado';
+				M.toast({ html: toastHTML, classes: 'green' });
+			}).catch(function (error) {
+				_this.change(1);
+				console.log(error.response.data);
+			});
+		}
+
+	}
+
+});
+
+/***/ }),
+/* 74 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [
+    _c("div", { staticClass: "fixed-action-btn", attrs: { id: "boton" } }, [
+      _c(
+        "a",
+        {
+          staticClass: "btn-floating btn-large blue",
+          on: {
+            click: function($event) {
+              _vm.change(1)
+            }
+          }
+        },
+        [_c("i", { staticClass: "fas fa-arrow-left fa-lg" })]
+      )
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "col s10 offset-s1" }, [
+      _c("div", { staticClass: "card" }, [
+        _c(
+          "form",
+          {
+            attrs: { method: "POST" },
+            on: {
+              submit: function($event) {
+                $event.preventDefault()
+                _vm.createDocente()
+              }
+            }
+          },
+          [
+            _vm._m(0),
+            _vm._v(" "),
+            _c("div", { staticClass: "card-action" }, [
+              _c("div", { staticClass: "row" }, [
+                _c("div", { staticClass: "input-field col m6 s12" }, [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.newCuil,
+                        expression: "newCuil"
+                      }
+                    ],
+                    staticClass: "validate",
+                    attrs: { id: "cuil", type: "text" },
+                    domProps: { value: _vm.newCuil },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.newCuil = $event.target.value
+                      }
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("label", { attrs: { for: "cuil" } }, [_vm._v("Cuil")])
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "row" }, [
+                _c("div", { staticClass: "input-field col m6 s12" }, [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.newApellido,
+                        expression: "newApellido"
+                      }
+                    ],
+                    staticClass: "validate",
+                    attrs: { id: "apellido", type: "text" },
+                    domProps: { value: _vm.newApellido },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.newApellido = $event.target.value
+                      }
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("label", { attrs: { for: "apellido" } }, [
+                    _vm._v("Apellido")
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "input-field col m6 s12" }, [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.newNombre,
+                        expression: "newNombre"
+                      }
+                    ],
+                    staticClass: "validate",
+                    attrs: { id: "nombre", type: "text" },
+                    domProps: { value: _vm.newNombre },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.newNombre = $event.target.value
+                      }
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("label", { attrs: { for: "nombre" } }, [_vm._v("Nombre")])
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "row" }, [
+                _c("div", { staticClass: "input-field col m6 s12" }, [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.newRegistro,
+                        expression: "newRegistro"
+                      }
+                    ],
+                    staticClass: "validate",
+                    attrs: { id: "registro", type: "text" },
+                    domProps: { value: _vm.newRegistro },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.newRegistro = $event.target.value
+                      }
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("label", { attrs: { for: "registro" } }, [
+                    _vm._v("Nº Registro")
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "input-field col m6 s12" }, [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.newTitulo,
+                        expression: "newTitulo"
+                      }
+                    ],
+                    staticClass: "validate",
+                    attrs: { id: "titulo", type: "text" },
+                    domProps: { value: _vm.newTitulo },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.newTitulo = $event.target.value
+                      }
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("label", { attrs: { for: "titulo" } }, [_vm._v("Titulo")])
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "row" }, [
+                _c("div", { staticClass: "input-field col m6 s12" }, [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.newDireccion,
+                        expression: "newDireccion"
+                      }
+                    ],
+                    staticClass: "validate",
+                    attrs: { id: "direccion", type: "text" },
+                    domProps: { value: _vm.newDireccion },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.newDireccion = $event.target.value
+                      }
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("label", { attrs: { for: "direccion" } }, [
+                    _vm._v("Dirección")
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "input-field col m6 s12" }, [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.newTelefono,
+                        expression: "newTelefono"
+                      }
+                    ],
+                    staticClass: "validate",
+                    attrs: { id: "telefono", type: "text" },
+                    domProps: { value: _vm.newTelefono },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.newTelefono = $event.target.value
+                      }
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("label", { attrs: { for: "telefono" } }, [
+                    _vm._v("Telefono")
+                  ])
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "row" }, [
+                _c("div", { staticClass: "input-field col m6 s12" }, [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.newMail,
+                        expression: "newMail"
+                      }
+                    ],
+                    staticClass: "validate",
+                    attrs: { id: "mail", type: "text" },
+                    domProps: { value: _vm.newMail },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.newMail = $event.target.value
+                      }
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("label", { attrs: { for: "mail" } }, [_vm._v("Email")])
+                ])
+              ])
+            ]),
+            _vm._v(" "),
+            _vm._m(1)
+          ]
+        )
+      ])
+    ])
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "card-content" }, [
+      _c("blockquote", [_c("h4", [_vm._v("Nuevo Docente")])])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "card-action" }, [
+      _c(
+        "button",
+        {
+          staticClass:
+            "btn btn-flat waves-effect waves-green green modal-close white-text",
+          attrs: { type: "submit" }
+        },
+        [_vm._v("Guardar")]
+      )
+    ])
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-18b51250", module.exports)
+  }
+}
+
+/***/ }),
+/* 75 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(2)
+/* script */
+var __vue_script__ = __webpack_require__(76)
+/* template */
+var __vue_template__ = __webpack_require__(77)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/js/components/docentes/DocentesEdit.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-2ee4b144", Component.options)
+  } else {
+    hotAPI.reload("data-v-2ee4b144", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 76 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__event_bus__ = __webpack_require__(3);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+
+	props: ['edit_docente'],
+
+	methods: {
+
+		change: function change(point) {
+			this.newNombre = '';
+			__WEBPACK_IMPORTED_MODULE_1__event_bus__["a" /* default */].$emit('change', point);
+		},
+
+		updateDocente: function updateDocente() {
+			var _this = this;
+
+			__WEBPACK_IMPORTED_MODULE_0_axios___default.a.put('docentes/' + this.edit_docente.id, this.edit_docente).then(function (response) {
+				M.toast({ html: 'Datos Actualizados', classes: 'green' });
+				_this.change(1);
+			}).catch(function (error) {
+				M.toast({ html: 'X Error', classes: 'red' });
+				console.log(error.response.data);
+				_this.change(1);
+			});
+		}
+
+	}
+
+});
+
+/***/ }),
+/* 77 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [
+    _c("div", { staticClass: "fixed-action-btn", attrs: { id: "boton" } }, [
+      _c(
+        "a",
+        {
+          staticClass: "btn-floating btn-large blue",
+          on: {
+            click: function($event) {
+              _vm.change(1)
+            }
+          }
+        },
+        [_c("i", { staticClass: "fas fa-arrow-left fa-lg" })]
+      )
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "col s10 offset-s1" }, [
+      _c("div", { staticClass: "card" }, [
+        _c(
+          "form",
+          {
+            attrs: { method: "POST" },
+            on: {
+              submit: function($event) {
+                $event.preventDefault()
+                _vm.updateDocente()
+              }
+            }
+          },
+          [
+            _vm._m(0),
+            _vm._v(" "),
+            _c("div", { staticClass: "card-action" }, [
+              _c("div", { staticClass: "row" }, [
+                _c("div", { staticClass: "input-field col m6 s12" }, [
+                  _c("p", { staticClass: "green-text" }, [_vm._v("Cuil")]),
+                  _vm._v(" "),
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.edit_docente.cuil,
+                        expression: "edit_docente.cuil"
+                      }
+                    ],
+                    staticClass: "validate",
+                    attrs: { id: "cuil", type: "text" },
+                    domProps: { value: _vm.edit_docente.cuil },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(_vm.edit_docente, "cuil", $event.target.value)
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "row" }, [
+                _c("div", { staticClass: "input-field col m6 s12" }, [
+                  _c("p", { staticClass: "green-text" }, [_vm._v("Apellido")]),
+                  _vm._v(" "),
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.edit_docente.apellido,
+                        expression: "edit_docente.apellido"
+                      }
+                    ],
+                    staticClass: "validate",
+                    attrs: { id: "apellido", type: "text" },
+                    domProps: { value: _vm.edit_docente.apellido },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(
+                          _vm.edit_docente,
+                          "apellido",
+                          $event.target.value
+                        )
+                      }
+                    }
+                  })
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "input-field col m6 s12" }, [
+                  _c("p", { staticClass: "green-text" }, [_vm._v("Nombre")]),
+                  _vm._v(" "),
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.edit_docente.nombre,
+                        expression: "edit_docente.nombre"
+                      }
+                    ],
+                    staticClass: "validate",
+                    attrs: { id: "nombre", type: "text" },
+                    domProps: { value: _vm.edit_docente.nombre },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(
+                          _vm.edit_docente,
+                          "nombre",
+                          $event.target.value
+                        )
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "row" }, [
+                _c("div", { staticClass: "input-field col m6 s12" }, [
+                  _c("p", { staticClass: "green-text" }, [
+                    _vm._v("Nº Registro")
+                  ]),
+                  _vm._v(" "),
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.edit_docente.matricula,
+                        expression: "edit_docente.matricula"
+                      }
+                    ],
+                    staticClass: "validate",
+                    attrs: { id: "registro", type: "text" },
+                    domProps: { value: _vm.edit_docente.matricula },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(
+                          _vm.edit_docente,
+                          "matricula",
+                          $event.target.value
+                        )
+                      }
+                    }
+                  })
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "input-field col m6 s12" }, [
+                  _c("p", { staticClass: "green-text" }, [_vm._v("Titulo")]),
+                  _vm._v(" "),
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.edit_docente.titulo,
+                        expression: "edit_docente.titulo"
+                      }
+                    ],
+                    staticClass: "validate",
+                    attrs: { id: "titulo", type: "text" },
+                    domProps: { value: _vm.edit_docente.titulo },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(
+                          _vm.edit_docente,
+                          "titulo",
+                          $event.target.value
+                        )
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "row" }, [
+                _c("div", { staticClass: "input-field col m6 s12" }, [
+                  _c("p", { staticClass: "green-text" }, [_vm._v("Dirección")]),
+                  _vm._v(" "),
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.edit_docente.direccion,
+                        expression: "edit_docente.direccion"
+                      }
+                    ],
+                    staticClass: "validate",
+                    attrs: { id: "direccion", type: "text" },
+                    domProps: { value: _vm.edit_docente.direccion },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(
+                          _vm.edit_docente,
+                          "direccion",
+                          $event.target.value
+                        )
+                      }
+                    }
+                  })
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "input-field col m6 s12" }, [
+                  _c("p", { staticClass: "green-text" }, [_vm._v("Telefono")]),
+                  _vm._v(" "),
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.edit_docente.telefono,
+                        expression: "edit_docente.telefono"
+                      }
+                    ],
+                    staticClass: "validate",
+                    attrs: { id: "telefono", type: "text" },
+                    domProps: { value: _vm.edit_docente.telefono },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(
+                          _vm.edit_docente,
+                          "telefono",
+                          $event.target.value
+                        )
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "row" }, [
+                _c("div", { staticClass: "input-field col m6 s12" }, [
+                  _c("p", { staticClass: "green-text" }, [_vm._v("Email")]),
+                  _vm._v(" "),
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.edit_docente.email,
+                        expression: "edit_docente.email"
+                      }
+                    ],
+                    staticClass: "validate",
+                    attrs: { id: "mail", type: "text" },
+                    domProps: { value: _vm.edit_docente.email },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(_vm.edit_docente, "email", $event.target.value)
+                      }
+                    }
+                  })
+                ])
+              ])
+            ]),
+            _vm._v(" "),
+            _vm._m(1)
+          ]
+        )
+      ])
+    ])
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "card-content" }, [
+      _c("blockquote", [_c("h4", [_vm._v("Nuevo Docente")])])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "card-action" }, [
+      _c(
+        "button",
+        {
+          staticClass:
+            "btn btn-flat waves-effect waves-green green modal-close white-text",
+          attrs: { type: "submit" }
+        },
+        [_vm._v("Actualizar Datos")]
+      )
+    ])
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-2ee4b144", module.exports)
   }
 }
 

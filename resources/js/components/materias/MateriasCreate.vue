@@ -6,7 +6,7 @@
 		</div>
 
 		<div class="col s10 offset-s1">
-			<form method='POST' v-on:submit.prevent="createMateria">
+			<form method='POST' v-on:submit.prevent="createMateria()">
 		    <div class="card">
 		    	<div class="card-content">
 				    <blockquote><h4>Nueva Materia</h4></blockquote>
@@ -55,7 +55,7 @@
 				}).then(response => {
 					this.newNombre = '';
 					this.change(1);
-					var toastHTML = 'Materia Registrado';
+					var toastHTML = 'Materia Registrada';
 					M.toast({html: toastHTML, classes: 'green'});
 				}).catch(error => {
 					this.change(1);

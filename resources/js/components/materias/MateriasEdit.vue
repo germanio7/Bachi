@@ -8,7 +8,7 @@
 			<form method='POST' v-on:submit.prevent="updateMateria()">
 		    <div class="card">
 		    	<div class="card-content">
-				    <blockquote><h4>Nueva Materia</h4></blockquote>
+				    <blockquote><h4>Editar Materia</h4></blockquote>
 		      	<div class="row">
 							<div class="input-field col s12">
 								<p class="green-text">Nombre</p>

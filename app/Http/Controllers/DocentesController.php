@@ -12,18 +12,9 @@ class DocentesController extends Controller
 
     public function index()
     {
-        $docentes = Docente::orderBy('apellido')->paginate(5);
-        return [
-            'pagination' => [
-                'total' =>$docentes->total(),
-                'current_page' =>$docentes->currentPage(),
-                'per_page' =>$docentes->perPage(),
-                'last_page' =>$docentes->lastPage(),
-                'from' =>$docentes->firstItem(),
-                'to' =>$docentes->lastPage(),
-            ],
-            'docentes' => $docentes
-        ];
+        $docentes = Docente::orderBy('apellido');
+        return $docentes->paginate(10);
+        
     }
 
     public function buscar(Request $request){
@@ -71,8 +62,6 @@ class DocentesController extends Controller
         $docente->email = $request->email;
 
         $docente->save();
-
-        return redirect('docentes');
     }
 
     public function destroy($id)

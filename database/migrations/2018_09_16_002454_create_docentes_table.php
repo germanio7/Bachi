@@ -18,7 +18,7 @@ class CreateDocentesTable extends Migration
             $table->BigInteger('cuil')->unique();
             $table->string('apellido');
             $table->string('nombre');
-            $table->integer('matricula')->unique();
+            $table->integer('matricula')->unique()->nullable();
             $table->string('titulo');
             $table->string('direccion');
             $table->string('telefono');
