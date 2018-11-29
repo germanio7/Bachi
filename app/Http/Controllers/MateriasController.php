@@ -15,19 +15,8 @@ class MateriasController extends Controller
 
     public function index()
     {
-        $materias = Materia::orderBy('created_at', 'desc')->paginate(5);
-        return [
-            'pagination' => [
-                'total' =>$materias->total(),
-                'current_page' =>$materias->currentPage(),
-                'per_page' =>$materias->perPage(),
-                'last_page' =>$materias->lastPage(),
-                'from' =>$materias->firstItem(),
-                'to' =>$materias->lastPage(),
-            ],
-            'materias' => $materias
-        ];
-
+        $materias = Materia::orderBy('nombre');
+        return $materias->paginate(6);
     }
 
     public function buscar(Request $request){

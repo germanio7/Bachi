@@ -9,6 +9,7 @@
 			<form method='POST' v-on:submit.prevent="updateCurso()">
 		      <div class="card">
 		        <div class="card-content">
+		        	<blockquote><h4>Editar Curso {{this.edit_curso.curso}} {{this.edit_curso.division}} división</h4></blockquote>
 	          	<div class="row">
 								<div class="col m6 s12">
 									<h6><b>Curso: </b></h6>
@@ -59,23 +60,24 @@
 				      </div>
 							<div class="row">
 				        <div class="input-field col m4 s12">
-				          <select id="orientacion" requierd class="validate">
-				            <option value="" disabled selected>Orientación</option>
-				            <option value="Ciclo Basico">Ciclo Básisco</option>
-				            <option value="Ciencias Sociales">Ciencias Sociales y Humanidades.</option>
-				            <option value="Educacion Fisica">Ciencias Naturales</option>
-				            <option value="Economía y Administración">Economía y Administración</option>
-				            <option value="Lenguas">Lenguas</option>
-				            <option value="Agro y Ambiente">Agro y Ambiente</option>
-				            <option value="Comunicación">Comunicación</option>
-				            <option value="Informática">Informática</option>
-				            <option value="Educación Física">Educación Física</option>
-				            <option value="Turismo">Turismo</option>
-				            <option value="Arte">Arte</option>
-				            <option value="Literatura">Literatura</option>
-				            <option value="Educación">Educación</option>
-				            <option value="Física y Matemática">Física y Matemática</option>
-				          </select>
+				        	<p class="green-text">Orientación</p>
+								  <select class="browser-default">
+								    <option value="" disabled selected>{{this.edit_curso.orientacion}}</option>
+					          <option value="Ciclo Basico">Ciclo Básisco</option>
+					          <option value="Ciencias Sociales y Humanidades">Ciencias Sociales y Humanidades</option>
+					          <option value="Ciencias Naturales">Ciencias Naturales</option>
+					          <option value="Economía y Administración">Economía y Administración</option>
+					          <option value="Lenguas">Lenguas</option>
+					          <option value="Agro y Ambiente">Agro y Ambiente</option>
+					          <option value="Comunicación">Comunicación</option>
+					          <option value="Informática">Informática</option>
+					          <option value="Educación Física">Educación Física</option>
+					          <option value="Turismo">Turismo</option>
+					          <option value="Arte">Arte</option>
+					          <option value="Literatura">Literatura</option>
+					          <option value="Educación">Educación</option>
+					          <option value="Física y Matemática">Física y Matemática</option>
+								  </select>
 				        </div>
 
 				        <div class="col m6 s12 offset-m2">
@@ -92,24 +94,9 @@
 									</div>
 				        </div>
 				      </div>
-							<div class="row">
-								<div class="input-field col s12">
-									<input type="text" value="" id="buscar" v-on:keyup="getMaterias()" class="validate">
-									<label for="buscar">Buscar Materia</label>
-				        </div>
-				      </div>
-			        <br>
-				      <!-- <div v-for="materia in materias">
-			          <div class="input-field col s12 m6">
-									<label>
-						        <input type="checkbox" v-model="newMateriaId" :value="materia.id"/>
-						        <span> @{{materia.nombre}}</span>
-						      </label>
-								</div>
-			        </div> -->
 			      </div>
 		        <div class="card-action">
-		          <button type="submit" class="btn btn-flat waves-effect waves-green green modal-close white-text">Guardar</button>
+		          <button type="submit" class="btn btn-flat waves-effect waves-green green modal-close white-text">Actualizar Datos</button>
 		        </div>
 		      </div>
 				</form>
@@ -134,7 +121,8 @@
 			},
 
 			updateCurso: function() {
-				console.log(this.edit_curso)
+				this.edit_curso.orientacion = this.selected.toString();
+				console.log(edit_curso.orientacion);
 				// axios.put('cursos/'+this.edit_curso.id, this.edit_curso).then(response => {
 				// 	M.toast({html: 'Datos Actualizados', classes: 'green'});
     //       this.change(1);

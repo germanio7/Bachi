@@ -9126,6 +9126,8 @@ input[type=range]::-ms-thumb {
   display: none;
 }
 
+/*Select*/
+
 /*Color Select on focus*/
 select:focus {
   outline: 1px solid #689f38;
@@ -9136,7 +9138,7 @@ select:focus {
 .margin {
   margin-right: 2%;
   margin-left: 2%;
-  margin-top: 2%;
+  margin-top: 128px;
 }
 
 /*color card action*/

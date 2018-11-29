@@ -1,13 +1,15 @@
 <template>
 	<div class="row">
 		<div id="create" style="display: none;">
+			<br>
 			<alumnos-create></alumnos-create>	
 		</div>
 		<div id="edit" style="display: none;">
+			<br>
 			<alumnos-edit :edit_alumno="edit_alumno"></alumnos-edit>	
 		</div>
 		<div id="index">
-
+			<blockquote><h1>Alumnos</h1></blockquote>
 			<div id="boton">
 				<div class="fixed-action-btn">
 					<a v-on:click="change(2);" class="btn-floating btn-large waves-effect waves-light green"><i class="fas fa-plus fa-lg"></i></a>

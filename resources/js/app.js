@@ -13,6 +13,10 @@ Vue.component('alumnos-edit', require('./components/alumnos/AlumnosEdit.vue'));
 Vue.component('cursos-index', require('./components/cursos/CursosIndex.vue'));
 Vue.component('cursos-create', require('./components/cursos/CursosCreate.vue'));
 Vue.component('cursos-edit', require('./components/cursos/CursosEdit.vue'));
+//Materias
+Vue.component('materias-index', require('./components/materias/MateriasIndex.vue'));
+Vue.component('materias-create', require('./components/materias/MateriasCreate.vue'));
+Vue.component('materias-edit', require('./components/materias/MateriasEdit.vue'));
 
 const app = new Vue({
     el: '#app'
