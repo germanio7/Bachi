@@ -21,6 +21,9 @@ Vue.component('materias-edit', require('./components/materias/MateriasEdit.vue')
 Vue.component('docentes-index', require('./components/docentes/DocentesIndex.vue'));
 Vue.component('docentes-create', require('./components/docentes/DocentesCreate.vue'));
 Vue.component('docentes-edit', require('./components/docentes/DocentesEdit.vue'));
+//Tutores
+Vue.component('tutores-index', require('./components/tutores/TutoresIndex.vue'));
+Vue.component('tutores-edit', require('./components/tutores/TutoresEdit.vue'));
 
 const app = new Vue({
     el: '#app'

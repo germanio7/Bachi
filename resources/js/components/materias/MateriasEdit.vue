@@ -38,7 +38,6 @@
 		methods: {
 
 			change: function(point) {
-				this.newNombre = '';
 				EventBus.$emit('change', point);
 			},
 

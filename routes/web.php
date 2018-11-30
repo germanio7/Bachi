@@ -27,6 +27,14 @@ Route::get('administracion', function () {
     return view('docentes/index');
 });
 
+Route::get('administracion', function () {
+    return view('docentes/index');
+});
+
+Route::get('tutores', function () {
+    return view('padres/index');
+});
+
 //-------------------------------------------------------------
 
 //Rutas Controlador
@@ -36,8 +44,6 @@ Route::resource('alumnos', 'AlumnosController');
 Route::resource('materias', 'MateriasController');
 
 Route::resource('cursos', 'CursosController');
-
-Route::resource('materias', 'MateriasController');
 
 Route::resource('docentes', 'DocentesController');
 
