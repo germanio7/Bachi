@@ -4,7 +4,7 @@ use App\Alumno;
 use App\Padre;
 
 //Ruta Principal
-Route::get('/', function () {
+Route::get('/inicio', function () {
     return redirect()->action('InicioController@index');
 });
 //------------------------------------------------------------
@@ -27,14 +27,6 @@ Route::get('administracion', function () {
     return view('docentes/index');
 });
 
-Route::get('administracion', function () {
-    return view('docentes/index');
-});
-
-Route::get('tutores', function () {
-    return view('padres/index');
-});
-
 //-------------------------------------------------------------
 
 //Rutas Controlador
@@ -44,6 +36,8 @@ Route::resource('alumnos', 'AlumnosController');
 Route::resource('materias', 'MateriasController');
 
 Route::resource('cursos', 'CursosController');
+
+Route::resource('materias', 'MateriasController');
 
 Route::resource('docentes', 'DocentesController');
 
@@ -90,3 +84,7 @@ Route::get('inscripcion/{id}', function($id){
 Route::post('agregarAlumno','CursosController@agregarAlumno')->name('cursos.agregarAlumno');
 
 Route::post('AgregarMateria','CursosController@agregarMateria')->name('cursos.agregarMateria');
+
+Auth::routes();
+
+Route::get('/', 'HomeController@index')->name('home');

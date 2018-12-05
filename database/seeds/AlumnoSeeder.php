@@ -8,6 +8,6 @@ class AlumnoSeeder extends Seeder
 {
     public function run()
     {
-        factory(Alumno::class, 1000)->create();
+        factory(Alumno::class, 100)->create();
     }
 }

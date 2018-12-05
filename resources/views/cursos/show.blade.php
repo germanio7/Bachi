@@ -1,4 +1,4 @@
-@extends('home')
+@extends('inicio')
 
 @section('contenido')
 	<div class="card-panel hoverable green lighten-4">
@@ -67,7 +67,8 @@
 						@endforeach
 					</tbody>
 				</table>
-			</div> 
+			</div>
+
 		</div>
 	</div>
 

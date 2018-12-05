@@ -3,10 +3,14 @@
 namespace App\Http\Controllers\Auth;
 
 use App\User;
+use App\Alumno;
+use App\Docente;
+// use App\Asistente;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Spatie\Permission\Models\Role;
 
 class RegisterController extends Controller
 {
@@ -28,7 +32,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/';
 
     /**
      * Create a new controller instance.
@@ -49,8 +53,7 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users',
+            'cuil' => 'required|string|max:20',
             'password' => 'required|string|min:6|confirmed',
         ]);
     }
@@ -63,10 +66,31 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
+        $cuil = $data['cuil'];
+
+        $alumno = Alumno::where('cuil',$cuil)->get();
+
+        $docente = Docente::where('cuil',$cuil)->get();
+
+        // $auxiliar = Asistente::where('cuil',$cuil)->get();
+
+        $tipo = '';
+
+        if ($docente->isNotEmpty()) {
+            $tipo = 'docente';
+        } elseif ($alumno->isNotEmpty()) {
+            $tipo = 'alumno';
+        } else{
+            return redirect()->refresh();
+        }
+
+        $user = User::create([
+            'cuil' => $data['cuil'],
             'password' => Hash::make($data['password']),
         ]);
+
+        $user->assignRole($tipo);
+
+        return $user;
     }
 }

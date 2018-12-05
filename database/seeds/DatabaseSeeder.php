@@ -11,5 +11,10 @@ class DatabaseSeeder extends Seeder
         $this->call(AlumnoSeeder::class);
         $this->call(MateriaSeeder::class);
         $this->call(PadreSeeder::class);
+        $this->call(CursoSeeder::class);
+        $this->call(AlumnoCursoSeeder::class);
+        $this->call(CursoMateriaSeeder::class);
+        $this->call(DocenteMateriaSeeder::class);
+        $this->call(RolesAndPermissionsSeeder::class);
     }
 }

@@ -15,8 +15,19 @@ class MateriasController extends Controller
 
     public function index()
     {
-        $materias = Materia::orderBy('nombre');
-        return $materias->paginate(6);
+        $materias = Materia::orderBy('created_at', 'desc')->paginate(5);
+        return [
+            'pagination' => [
+                'total' =>$materias->total(),
+                'current_page' =>$materias->currentPage(),
+                'per_page' =>$materias->perPage(),
+                'last_page' =>$materias->lastPage(),
+                'from' =>$materias->firstItem(),
+                'to' =>$materias->lastPage(),
+            ],
+            'materias' => $materias
+        ];
+
     }
 
     public function buscar(Request $request){
@@ -32,6 +43,12 @@ class MateriasController extends Controller
 
     }
 
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
     public function show($id)
     {
         $materia = Materia::find($id);
@@ -39,6 +56,26 @@ class MateriasController extends Controller
         return view('materias.show', compact('materia'));
     }
 
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
+    {
+        $materia = Materia::find($id);
+        $doc = $materia->docentes()->get();
+        return view('materias.edit',compact('materia'));
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
     public function update(Request $request, $id)
     {
         $materia = Materia::find($id);
@@ -46,6 +83,12 @@ class MateriasController extends Controller
         $materia->save();
     }
 
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
     public function destroy($id)
     {
         $materia = Materia::find($id);
